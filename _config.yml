@@ -1,0 +1,16 @@
+collections:
+  summaries:
+    author: true
+    paper: true
+    score: true
+    output: true
+
+title: cs395T
+
+theme: minima
+
+header_pages:
+  - index.md
+  - schedule.md
+  - summary.md
+  - coding.md

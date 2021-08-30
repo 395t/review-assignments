@@ -1,0 +1,128 @@
+---
+---
+@use "sass:map";
+
+@import "{{ site.theme }}";
+
+/** Tango Color Scheme
+ *
+ * Butter              #fce94f, #edd400, #c4a000
+ * Orange              #fcaf3e, #f57900, #ce5c00
+ * Chocolate           #e9b96e, #c17d11, #8f5902
+ * Chameleon           #8ae234, #73d216, #4e9a06
+ * Sky Blue            #729fcf, #3465a4, #204a87
+ * Plum                #ad7fa8, #75507b, #5c3566
+ * Scarlet Red         #ef2929, #cc0000, #a40000
+ *
+ * Aluminium           #eeeeec, #d3d7cf, #babdb6
+ *                     #888a85, #555753, #2e3436
+ */
+$tango_colors: (
+    "Butter1": #fce94f,
+    "Butter2": #edd400,
+    "Butter3": #c4a000,
+
+    "Orange1": #fcaf3e,
+    "Orange2": #f57900,
+    "Orange3": #ce5c00,
+
+    "Chocolate1": #e9b96e,
+    "Chocolate2": #c17d11,
+    "Chocolate3": #8f5902,
+
+    "Chameleon1": #8ae234,
+    "Chameleon2": #73d216,
+    "Chameleon3": #4e9a06,
+
+    "SkyBlue1": #729fcf,
+    "SkyBlue2": #3465a4,
+    "SkyBlue3": #204a87,
+
+    "Plum1": #ad7fa8,
+    "Plum2": #75507b,
+    "Plum3": #5c3566,
+
+    "ScarletRed1": #ef2929,
+    "ScarletRed2": #cc0000,
+    "ScarletRed3": #a40000,
+
+    "Aluminium1": #eeeeec,
+    "Aluminium2": #d3d7cf,
+    "Aluminium3": #babdb6,
+    "Aluminium4": #888a85,
+    "Aluminium5": #555753,
+    "Aluminium6": #2e3436,
+);
+
+@each $n, $color in $tango_colors {
+  .#{$n} {background-color: $color !important;}
+  .#{$n}.light {background-color: lighten($color, 25%) !important;}
+}
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.overview tr td {
+  background-color: white;
+  border: 0;
+  padding: 5px 15px;
+}
+.overview tr td:nth-child(1) {
+  background-color: white;
+  border: 0;
+  font-weight: bold;
+  padding: 0;
+}
+table.overview {
+  border: 0;
+  width: inherit;
+}
+.s1 {
+  border-radius: 3px;
+  padding: 1px;
+  background-color: map-get($tango_colors, "SkyBlue3");
+  color: map-get($tango_colors, "Aluminium1");
+  display: inline-block;
+}
+.s2 {
+  border-radius: 3px;
+  padding: 1px;
+  background-color: map-get($tango_colors, "ScarletRed3");
+  color: map-get($tango_colors, "Aluminium1");
+  display: inline-block;
+}
+.r {
+  border-radius: 3px;
+  padding: 1px;
+  background-color: map-get($tango_colors, "Chocolate3");
+  color: map-get($tango_colors, "Aluminium1");
+  display: inline-block;
+}
+.c {
+  border-radius: 3px;
+  padding: 1px;
+  background-color: map-get($tango_colors, "Chameleon3");
+  color: map-get($tango_colors, "Aluminium1");
+  display: inline-block;
+}
+.f {
+  border-radius: 3px;
+  padding: 1px;
+  background-color: map-get($tango_colors, "Plum3");
+  color: map-get($tango_colors, "Aluminium1");
+  display: inline-block;
+}
+.wrapper {
+  max-width: 90%;
+}
+table.paper-list {
+  border: 0;
+  margin-bottom: 0;
+}
+table.paper-list tr:nth-child(even) {
+  background-color: inherit;
+}
+table.paper-list td {
+  padding: 2px;
+  border: 0;
+}

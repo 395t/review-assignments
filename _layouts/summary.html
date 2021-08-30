@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% for topic in site.data.paper_info -%}
+{%- assign t = topic[1] %}
+{%- assign paper = t[page.paper] %}
+{%- if paper %}
+{%- break %}
+{%- endif %}
+{%- endfor -%}
+{%- if paper -%}
+<div class="subtitle">{% include paper_info.html paper=paper%} - Summary</div>
+{%- else -%}
+<div class="subtitle">Invalid paper tag!</div>
+{% endif %}
+<table class="overview">
+    <tr><td>author:</td><td> {{page.author}}</td></tr>
+    <tr><td>score:</td><td> {{page.score}} / 10</td></tr>
+</table>
+
+{{ content }}
