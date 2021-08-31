@@ -7,7 +7,28 @@
   - Replace `paper` and `author` with your assigned one and your github id.
 
   - Write up the contents.
+    - Use math:
+      
+      ```
+      You can use $$\mathrm{math}$$ using $$\LaTeX$$ (inline).
 
+      $$
+      1+2 \textrm{ in Display mode}
+      $$
+
+      ```
+      Make sure to place a blank line above and below.
+      
+    - Insert figure:
+      
+      ```
+      You can add figure by using the following code snippet:
+      
+      ![GoogLeNet](szegedy2014going_1a.png)
+      ```
+
+      Make sure to name your figure properly, `${paper_tage}_{1/2}{a/b/c/...}.{jpg/png}` might be a good idea.
+      
 
 2. (Optional) Preview your review locally.
 
