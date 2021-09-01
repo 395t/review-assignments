@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: Maxout Networks
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: specfazhou
+score: 5
 ---
 
 TODO: Summarize the paper:
