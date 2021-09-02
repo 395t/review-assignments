@@ -55,6 +55,8 @@ score: 6
 
     The authors found that complicated activation functions consistently underperform simpler activation functions during search. The best activation functions are usually the one that use the preactivation $$x$$ as input to the final binary function: $$b(x, g(x))$$.
 
+    TODO: add comment on Swish analysis for allowing small gradients propagation.
+
     From a glance, Softplus generally matched Swish in performance for image classification tasks and PReLU and LReLU generally matched Swish in performance for translation tasks.
 
 ## TL;DR
