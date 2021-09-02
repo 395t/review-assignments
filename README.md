@@ -31,6 +31,8 @@
 
       Make sure to name your figure properly, `${paper_tage}_{1/2}{a/b/c/...}.{jpg/png}` might be a good idea.
       
+    - You can also check out the two examplar summaries (`_summaries/he2015deep_1.md` and `_summaries/lecun1998gradient_1.md`) for proper formatting and naming.
+
 
 2. (Optional) Preview your review locally.
 
