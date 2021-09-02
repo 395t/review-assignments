@@ -4,7 +4,7 @@ title: Summary
 paper: goodfellow2013maxout
 # Please fill out info below
 author: Zayne-sprague
-score: 8/10
+score: 8
 ---
 
 *TODO - how is this different than max-pooling for CNNs?  Adding this would be helpful to the review.
