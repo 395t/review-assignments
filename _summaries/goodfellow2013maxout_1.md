@@ -25,7 +25,8 @@ Maxout networks use "Maxout Layers".
 Maxout Layers have multiple weight matrices and biases for the same input!  
 (tip: Think of convolutional feature maps, in MLPs or linear layers they are just extra weight matrices and biases)
 
-Maxout Layers takes the values from all the weight matrices in its layer and does an element wise maximum across them
+Maxout Layers takes the values from all the weight matrices in its layer, does the element wise multiplication with the
+input per weight matrix, and then does an element wise maximum across all the different activations for that input.
 
 
 TODO* {{A cool visual should go here}}
