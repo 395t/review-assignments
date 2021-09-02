@@ -10,7 +10,7 @@ score: 9
 TODO: Summarize the paper:
 * What is the core idea?
 
-  * First paper (I believe) to prove using rectifier function ($$max(0,  x)$$) better than $$\em{logistic sigmoid}$$ or $$\em{hyperbolic tangent}$$ activation functions. Approaches this from the field of computational neuroscience. 
+  * First paper (I believe) to prove using rectifier function ($$max(0,  x)$$) better than $$\textit{logistic sigmoid}$$ or $$\textit{hyperbolic tangent}$$ activation functions. Approaches this from the field of computational neuroscience. 
 
   * Proposes the use of rectifying non-linearities as alternatives to the hyperbolic tangent or sigmoid in deep artificial neural networks, in addition to using an $$L_1$$ regularizer on the activation values to promote **sparsity** and prevent potential numerical problems with unbounded activation. 
 
@@ -69,7 +69,7 @@ TODO: Summarize the paper:
 
 * What interesting variants are explored?
 
-  * recctifier versus softplus 
+  * rectifier versus softplus 
 
 ## TL;DR
 * rectifier activation function better than sigmoid and tanh activation functions 
