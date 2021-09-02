@@ -1,5 +1,7 @@
 # Assignments for paper reviews
 
+## Job for summary writer (S1 or S2).
+
 1. Write you review.
 
   - Go into `_summaries/` and find your assigned summary in the format of `${paper_tag}_{1/2}.md`.
@@ -42,9 +44,13 @@
 
   - Create your own branch and create a PR to the main branch. Name your branch `paper_tag+your github id`.
 
+4. Assign your reviewer.
+  - Navigate to your PR page, and there is a "reviewer" section where you can search and type the reviewer's name.
 
+## Job for summary reviewer (R).
 
-
+Leave constructive comments under the PR, possibly @ the author to remind them.
+The writing-review processing can be iterated for multiple cycles.
 
 
 
