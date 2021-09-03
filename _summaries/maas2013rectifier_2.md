@@ -22,9 +22,9 @@ For the same speech recognition task, they replace the GMM/HMM acoustic model wi
 
 The paper evaluated the WER (word error rate) and cross entropy (for frame-wise error) obtained by replacing the GMM (Gaussian Mixture Model) acoustic model with the different DNNs. They trained the DNN with a 300 Hour switchboard phone conversation dataset (LDC97S62). 
 
-They found that ReLU DNNs had a lower WER and cross entropy indicating a better estimation of the senone likelihood function. They observed a 2% decrease in WER when using ReLU DNNs compared to ones using sigmoidal activations. Even 4 layer Sigmoidal DNNs performed slightly worse than 2 layer ReLU DNNs despite having 80% more free parameters. Unlike tanh DNNs, the ReLU networks did not suffer from the vanishing gradient problem and hence enable training of deeper networks.
+They found that ReLU DNNs had a lower WER and cross entropy indicating a better estimation of the senone likelihood function. They observed a 2% decrease in WER when using ReLU DNNs compared to ones using sigmoidal activations. Even 4 layer Sigmoidal DNNs performed slightly worse than 2 layer ReLU DNNs despite having 80% more free parameters. Unlike tanh DNNs, the ReLU networks do not suffer from the vanishing gradient problem and hence enable training of deeper networks. So adding a new layer to the ReLU DNN resulted in greater absolute reduction in WER compared to sigmoidal DNNs.
 
-They attribute this better performance to the lower activation probability in a ReLU DNN. They show that the ReLU Layers are more dispersed (low standard deviation) making it a sparser representation than the sigmoidal DNN.
+They further attribute the better performance to the lower activation probability in a ReLU DNN. They show that the ReLU Layers are more dispersed (low standard deviation) making it a sparser representation than the sigmoidal DNN.
 ![Last layer activation probability of hidden units](../activation_probability.png)
 * What interesting variants are explored?
 
