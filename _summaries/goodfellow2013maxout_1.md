@@ -4,19 +4,15 @@ title: Summary
 paper: goodfellow2013maxout
 # Please fill out info below
 author: Zayne-sprague
-score: 8
+score: 7
 ---
-
-*TODO - how is this different than max-pooling for CNNs?  Adding this would be helpful to the review.
-*TODO - add the visuals where marked
-*TODO - add equations where marked
-*TODO - break up sections a bit neater.
 
 
 **_Main Idea_**
 
 Taking the element-wise max of an input across multiple weight matrices produces a non-linear activation function
-that can learn any convex function and take advantage of dropout layers while improving accuracy and allowing deeper networks.
+that can learn approximations of any convex function and take advantage of dropout layers while improving accuracy and 
+allowing deeper networks.
 
 **_How is it realized_**
 
@@ -28,19 +24,41 @@ Maxout Layers have multiple weight matrices and biases for the same input!
 Maxout Layers takes the values from all the weight matrices in its layer, does the element wise multiplication with the
 input per weight matrix, and then does an element wise maximum across all the different activations for that input.
 
+$$
+x^T \textrm{is input to a layer (image/text/features from previous layer etc.)}
+$$
 
-TODO* {{A cool visual should go here}}
+$$
+W_{...ij}, b_{ij} \textrm{is the jth weight matrix & bias term of the ith layer for the maxout network}
+$$
+
+$$
+z_{ij} = x^TW_{...ij} + b_{ij} 
+$$
+
+$$
+h_i(x) = {max}_{j\in[1,k]} z_{ij}
+$$
+
+
+![Simple Maxout Layer (1 unit)](/assets/Goodfellow2013maxout_1_a.png)
+
 
 
 **_What does this mean_**
 
-Because each input to the layer has a set of weights that are going to be Maxxed over, 
+Because each input to the layer has a set of weights that are going to be Maxed over, 
 the activation function has "learnable weights".
 
-Due to the max operator, and that the weights are learned, the maxout activations can learn any arbitrary convex function
-(RELU, LeakyRELU, etc., they also have a more detailed proof in the paper)
+With sufficient cardinality (weight matrices per maxout unit), Maxout is capable of representing convex functions including 
+Relu or Leaky Relu.
 
-TODO* {{equations should go here}}
+Furthermore, if you incorporate 2 Maxout units with high cardinality (as seen below), the Maxout activations can **approximate** any continuous function
+
+![Maxout Layer (2 units), any continous function](/assets/Goodfellow2013maxout_1_b.png)
+
+they also have a more detailed proof in the paper as to why this is true.
+
 
 **_Why is this important_**
 
@@ -52,12 +70,16 @@ Maxout Layers do not suffer from this as much because the values can be negative
 
 Thus maxout layers will utilize more of the model than rectifiers will, which usually improves accuracy and allows for deeper networks
 
-TODO* {{graphs on the activations switching between positive and negatives should go here}}
+
+![Histogram of Maxout activation values](/assets/Goodfellow2013maxout_1_c.png)
+
+![Activations + Maxouts Approximations](/assets/Goodfellow2013maxout_1_d.jpeg)
 
 
 **_What are the costs_**
 
-The major cost is that you now have many more weights per layer than you would if you used a rectifier.
+The major cost is that you now add many more weights per neuron increasing the computation time and size of your model 
+for better approximations of convex functions.
 
 
 **_How well does the paper perform?_**
@@ -71,22 +93,20 @@ However, the biggest performance improvement is best shown by how much of the mo
 Other models that use rectifiers suffered from dead neurons which made the gradient suffer and learning stall,
 Maxout overcomes these issues.
 
-Because of this, Maxout is able to support deeper models and make better use of the parameters, indicating that 
+Because of this, Maxout is able to support deeper models and make a more efficient use of the parameters, indicating that 
 even better performance may be achievable.
 
 
 **_Interesting Variants_**
 
-They show how their model fairs with MLPs (linear layers) and CNNs.  
+The authors found empirically that gradient flows through the model more efficiently due to Maxout not suffering from dead neurons
 
-Beyond that, they mostly stick with the mathematical ramifications of why Maxout works, specifically on why it works best
-with dropout.
-
-
+The authors found empirically that Maxout trains better with Dropout than rectifiers due to Dropout performing model 
+averaging because Maxout units able to stabilize better with noisy input
 
 
 
 ## TL;DR
 - Maxout requires a single layer to have multiple (k) weight matrices and takes the maximum values of those k activations as the final output
 - Maxout Activations take advantage of Dropout more than any other activation function (at the time of the writing of the paper)
-- Maxout Layers help use the entire model whereas rectifiers (or other activations) can "turn off" activations by being set to 0
+- Maxout alleviates the dead neuron issues prevalent with rectifiers by learning a representation that is less sparse.
