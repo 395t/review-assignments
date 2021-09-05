@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{clever2015fast}}
+paper: {{clevert2015fast}}
 # Please fill out info below
 author: joshpapermaster
 score: 8/10
@@ -13,7 +13,10 @@ score: 8/10
 * How well does the paper perform?
 * What interesting variants are explored? -->
 
-This paper introduces an activation function called the exponential linear unit (ELU), which has faster learning properties than the previous most common activation functions such as ReLU, LReLU, and PReLU.
+# Summary 1: FAST AND ACCURATE DEEP NETWORK LEARNING BY EXPONENTIAL LINEAR UNITS (ELUS) 
+
+
+This paper introduces an activation function called the exponential linear unit (ELU), which has faster learning properties than the previous most commonly used activation functions such as ReLU, LReLU, and PReLU.
 
 
 ELU maintains the nice properties of ReLU by maintaining f(x) = x for x >= 0. 
@@ -25,25 +28,27 @@ ELU maintains the nice properties of ReLU by maintaining f(x) = x for x >= 0.
 
 ELU expands on the improvements made by LReLU and PReLU by exponentially including negative inputs. 
 
-- As seen from LReLU and PReLU, it's useful for these functions to include negative inputs to help bring the mean closer to 0. 
-- The mean should be closer to 0 to help the speed of the training computation. 
+- As seen from LReLU and PReLU, it's useful for these functions to include negative inputs to help bring the mean closer to 0.
+- The mean should be closer to 0 to help the speed of the training computation because of a reduced bias shift effect. 
 - ReLU has the potential for too many inputs to be negative and drop to zero. By keeping some negative values, more inputs can remain being trained. 
 - The improvement over LReLU and PReLU is that ELU allows the gradient to smoothly approach zero as the input becomes more negative. 
-- This is important because it maintains a consistent method for reducing noise. 
-- The 2 previous functions linearly introduce negative values, while ELU brings them in exponentially. This allows for a deactivation state of inputs similar to ReLU, while maintaining negative values. 
+    - This means that the smaller (more negative) the input becomes, the gradient becomes so small that the information propagated forward essentially converges over time, which reduces noise from these deactivated numbers
+- The other 2 previously mentioned functions linearly introduce negative values, which does not effectively represent their deactivation. 
+- This noise-robust deactivation state is important for ELU to more effectively approximate non-linear functions.
 
 
-* include better looking math to represent ELU
-* include image from paper of differences of activation functions
+![ELU](clevert2015fast_1a.png)
+
+![ELU](clevert2015fast_1b.png)
 
 
-ELU performs well on the major image recognition sets they tested on. The authors proved ELU had significantly lower activation means and training loss than other activation functions when testing with the MNIST dataset. At the time of their evaluations and publication, ELU held the best test score of CIFAR-100 and second best of CIFAR-10. The CIFAR-100 test error used in their evaluation is 24.28%, which is soundly lower than the previous best of 27.62%.
+ELU performs well on the major image recognition sets they tested on. The authors proved ELU had significantly lower activation means and training loss than other activation functions when testing with the MNIST dataset. Thus, ELU comparatively converges faster during training. However, due to the non-linear activation, it was comparitively slower than ReLU and variants during testing. At the time of their evaluations and publication, ELU held the best test score of CIFAR-100 and second best of CIFAR-10. The CIFAR-100 test error used in their evaluation is 24.28%, which is soundly lower than the previous best of 27.62%.
 
 
-Their evaluations proved ELU is adaptable to many different image recognition CNN's. ELU on its own scored higher than ReLU, LReLU, PReLU, and SReLU with and without batch normalization.
+Their evaluations proved ELU is adaptable to many different image recognition CNN's. ELU without batch normalization performed comparatively better than ReLU with and without batch normalization. Batch normalization did not imporve the performance of ELU in their testing.
 
 
 ## TL;DR
-- ELU provides an easily implementable improvement to ReLU, LReLU, PReLU, SReLU, etc.
-- Uses an exponential function for negative values to slowly reduce gradient to zero 
-- ELU increases speed of training and precision of results
+- ELU provides an easily implementable improvement to ReLU and other variants by using an exponential function for negative values to slowly reduce the gradient to zero 
+- This allows for a noise-robust deactivation state that reduces variation in forward propagation 
+- ELU increases speed of training and precision of results with a lower computation demand than batch normalization
