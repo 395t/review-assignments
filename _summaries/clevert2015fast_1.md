@@ -45,7 +45,7 @@ ELU expands on the improvements made by LReLU and PReLU by exponentially includi
 ELU performs well on the major image recognition sets they tested on. The authors proved ELU had significantly lower activation means and training loss than other activation functions when testing with the MNIST dataset. Thus, ELU comparatively converges faster during training. However, due to the non-linear activation, it was comparitively slower than ReLU and variants during testing. At the time of their evaluations and publication, ELU held the best test score of CIFAR-100 and second best of CIFAR-10. The CIFAR-100 test error used in their evaluation is 24.28%, which is soundly lower than the previous best of 27.62%.
 
 
-Their evaluations proved ELU is adaptable to many different image recognition CNN's. ELU without batch normalization performed comparatively better than ReLU with and without batch normalization. Batch normalization did not imporve the performance of ELU in their testing.
+Their evaluations proved ELU is adaptable to many different image recognition CNN's. ELU without batch normalization performed comparatively better than ReLU with batch normalization. Batch normalization did not improve the performance of ELU in their testing.
 
 
 ## TL;DR
