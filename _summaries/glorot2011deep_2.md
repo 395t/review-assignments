@@ -30,7 +30,7 @@ Experiments on bot image and text data indicate that training proceeds better wh
 
 Moreover, ReLU performed better than other commonly used activation functions such as tanh and sigmoid, especially without unsupervied pretraining. 
 
-The hard threshold at 0 does not lead to any optimization issue because ReLU and softplus reached similar performance. 
+The hard threshold at 0 does not lead to any optimization issue as the authors observed that ReLU and softplus reached similar performance. 
 
 Rectifier networks are deep sparse networks. There is an average exact sparsity (fraction of zeros) of the hidden layers of 83.4% on MNIST, 72.0% on CIFAR10, 68.0% on NISTP and 73.8% on NORB. Additional experiments with L1 regularization showed that sparsity under 85% will not hurt model accuracy. 
 
