@@ -25,15 +25,19 @@ score: 9
 
     ![glorot2011deep_1_1](../assets/glorot2011deep_1_1.png)
 
-  * Advantages of sparsity:
+  * Advantages of **sparsity**:
 
     * Information disentangling.
       * A claimed objective of deep learning algorithms (Bengio, 2009) is to disentangle the factors explainging the variations in the data. 
       * A dense representation is highly entangled - almost any change in the input modifies most of the entries in the representation vector.
       * A sparse representation that is robust to small input changes, therefore, conserves the set of non-zero features.
     * Efficient variable-size representation
+      * Different inputs may contain different amounts of information - this can then be reflected with varying amounts of sparsity as a result of the rectifier activation function. 
     * Linear separability
+      * More sparsity, more likely to be linearly separable simply because data is in represented in a high-dimensional space.
     * Distributed but sparse
+      * Information is distributed amongst the non-zero values that if there is some noise and some values have to be discarded, information loss is low.
+      * Storing is easier, only have to store non-zero values and their locations. 
 
   * Disadvantages of sparsity:
 
