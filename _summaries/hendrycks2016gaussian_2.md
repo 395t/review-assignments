@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: Gaussian Error Linear Units (GELUs), Hendrycks, Gimpel Summary
-paper: {{hendrycks2016gaussian}}
+title: Summary
+paper: hendrycks2016gaussian
 # Please fill out info below
 author: jchavezberkeley
 score: 8
