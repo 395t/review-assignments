@@ -15,7 +15,7 @@ For background, the RELU is simply the activation function where f(x) = max(0,x)
 A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\
 
 * How is it realized (technically)?\
-The GELU is defined by the function 0.5x(1 + tanh[p2/π(x + 0.044715x3)])
+The GELU is defined by the function 0.5x(1 + tanh[p2/π(x + 0.044715x3)]) \
 Attempt at using math: $$ 0.5x (1+ tanh [ \sqrt{2/π} (x + 0.044715 x^3) ] )
 
 * How well does the paper perform?\
