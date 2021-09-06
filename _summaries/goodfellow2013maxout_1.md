@@ -10,7 +10,7 @@ score: 7
 
 **_Main Idea_**
 
-Taking the element-wise max of an input across multiple weight matrices produces a non-linear activation function
+Taking the element-wise max of an input ran across multiple weight matrices produces a non-linear activation function
 that can learn approximations of any convex function and take advantage of dropout layers while improving accuracy and 
 allowing deeper networks.
 
@@ -18,10 +18,12 @@ allowing deeper networks.
 
 Maxout networks use "Maxout Layers".  
 
-Maxout Layers have multiple weight matrices and biases for the same input!  
+Maxout Layers are composed of one or more Maxout Units
+
+Maxout Units have multiple weight matrices and biases for the same input!  
 (tip: Think of convolutional feature maps, in MLPs or linear layers they are just extra weight matrices and biases)
 
-Maxout Layers takes the values from all the weight matrices in its layer, does the element wise multiplication with the
+Maxout Units takes the values from all the weight matrices in its layer, does the element wise multiplication with the
 input per weight matrix, and then does an element wise maximum across all the different activations for that input.
 
 $$
