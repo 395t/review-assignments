@@ -3,7 +3,7 @@ layout: summary
 title: Summary
 paper: glorot2010understanding
 author: elampietti
-score: 8/10
+score: 8
 ---
 
 The core idea of this paper is to challenge the effectiveness of asymmetric activation functions, such as sigmoid, with the traditional, random initialization for deep architecture.
