@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{glorot2010understanding}}
+paper: glorot2010understanding
 # Please fill out info below
-author: # slycane9
-score: # 7
+author: slycane9
+score: 7
 ---
 
 Methods of training deep neural networks at the time (through back-propogation and random initialization) were not successful.  This is because the attempts at training in these methods would often result in training weights plateauing.
