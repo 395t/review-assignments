@@ -32,10 +32,4 @@ For simplicity, the GELU can also be modeled by xσ(1.702x). The author states t
 * It outperformed all other models across multiple classification tasks
 * Although the paper is originally from 2016, it has getten more attention recently
 
-$$
-1+2 \textrm{ in Display mode}
-$$
 
-You can use $$\mathrm{math}$$ using $$\LaTeX$$ (inline).
-
-$\sqrt{k}$
