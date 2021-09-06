@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: Maxout Networks
+paper: goodfellow2013maxout
 # Please fill out info below
 author: specfazhou
 score: 5

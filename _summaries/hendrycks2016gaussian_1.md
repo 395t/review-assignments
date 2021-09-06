@@ -4,7 +4,7 @@ title: GELUs
 paper: hendrycks2016gaussian
 # Please fill out info below
 author:  marcobueso
-score:  10/10
+score:  10
 ---
 ## GELUs
 * What is the core idea?\
