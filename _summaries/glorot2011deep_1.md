@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{glorot2011deep}}
+paper: glorot2011deep
 # Please fill out info below
 author: ishank-arora
 score: 9
@@ -23,7 +23,7 @@ score: 9
       * Ex.: in the steady state, when employing the sigmoid activation function, all neurons fire are activated about 50% of the time. This is biologically implausible and hurts gradient-based optimization.
     * Computational Neuroscience used Leaky Integrate-and-fire (LIF) activation function. Deep learning and neural networks literature most commonly used tanh and logisitc sigmoid. (see figure 1)
 
-    ![glorot2011deep_1_1](../assets/glorot2011deep_1_1.png)
+    ![glorot2011deep_1_1](glorot2011deep_1_1.png)
 
   * Advantages of **sparsity**:
 
@@ -43,7 +43,7 @@ score: 9
 
     * Too much sparsity may hurt "predictive performance for an equal number of neurons" as it reduces the "effective capaicty of the model."
 
-  ![glorot2011deep_1_2](../assets/glorot2011deep_1_2.png)
+  ![glorot2011deep_1_2](glorot2011deep_1_2.png)
 
   * Advantages of **rectifier** neurons:
     * Allows network to easily obtain sparse representations
@@ -67,7 +67,7 @@ score: 9
 
   * Experiment results
     * Sparsity does not hurt performance until around 85% of neurons are 0. (see figure 3)
-    * ![glorot2011deep_1_3](../assets/glorot2011deep_1_3.png)
+    * ![glorot2011deep_1_3](glorot2011deep_1_3.png)
     * Rectifiers outperform softplus
     * Rectifer outperforms tanh in image recognition.
     * No improvement using pre-trained autoencoders - hence just using rectifier activation function is easier to use 

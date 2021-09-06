@@ -43,7 +43,7 @@ h_i(x) = {max}_{j\in[1,k]} z_{ij}
 $$
 
 
-![Simple Maxout Layer (1 unit)](/assets/Goodfellow2013maxout_1_a.png)
+![Simple Maxout Layer (1 unit)](Goodfellow2013maxout_1_a.png)
 
 
 
@@ -57,7 +57,7 @@ Relu or Leaky Relu.
 
 Furthermore, if you incorporate 2 Maxout units with high cardinality (as seen below), the Maxout activations can **approximate** any continuous function
 
-![Maxout Layer (2 units), any continous function](/assets/Goodfellow2013maxout_1_b.png)
+![Maxout Layer (2 units), any continous function](Goodfellow2013maxout_1_b.png)
 
 they also have a more detailed proof in the paper as to why this is true.
 
@@ -73,9 +73,9 @@ Maxout Layers do not suffer from this as much because the values can be negative
 Thus maxout layers will utilize more of the model than rectifiers will, which usually improves accuracy and allows for deeper networks
 
 
-![Histogram of Maxout activation values](/assets/Goodfellow2013maxout_1_c.png)
+![Histogram of Maxout activation values](Goodfellow2013maxout_1_c.png)
 
-![Activations + Maxouts Approximations](/assets/Goodfellow2013maxout_1_d.jpeg)
+![Activations + Maxouts Approximations](Goodfellow2013maxout_1_d.jpeg)
 
 
 **_What are the costs_**
