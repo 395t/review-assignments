@@ -21,7 +21,7 @@ score: 6
             <img src="https://d3i71xaburhd42.cloudfront.net/c8c4ab59ac29973a00df4e5c8df3773a3c59995a/2-Figure1-1.png" width="30%" height="30%">
         </p>
 
-        Note that the inputs of the unary functions are restricted to the preactivation $$x$$ and the binary function outputs. This way, the activation function can always take a scalar value as input and output a single scalar value, like ReLU. The full list of functions are:
+        Note that the inputs of the unary functions are restricted to the preactivation $$x$$ and the binary function outputs. This way, the activation function can always take a scalar value as input and output a single scalar value, like ReLU. The full list of functions used in the search are:
 
         * Unary functions:
 
