@@ -51,8 +51,26 @@
 
 ## Job for summary reviewer (R).
 
+### Before reviewing
+Check the following things:
+- `{{paper_tag}}` is replaced to the real one (*e.g.* `he2015deep`).
+
+- The writer writes down the score.
+
+### When reviewing
 Leave constructive comments under the PR, possibly @ the author to remind them.
 The writing-review processing can be iterated for multiple cycles.
+
+The criteria includes the following:
+
+- Completeness: Is everything summarized in the summary?
+- Length: How compact/verbose is the summary?
+- Orginaity: Is the summary in the writer's own words?
+- Structure: Is the summary easy to follow?
+  - adequate context or motivation
+  - clear and well-defined formula
+  - illustrative figure if necessary
+
 
 
 
