@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: maas2013rectifier 
 # Please fill out info below
 author: kelseyball
 score: 9

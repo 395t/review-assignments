@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: misra2019mish_2
+paper: misra2019mish
 # Please fill out info below
 author: biofizzatreya
 score: 7

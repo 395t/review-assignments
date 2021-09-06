@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{saxe2013exact}}
+paper: saxe2013exact
 # Please fill out info below
 author: liyanc
 score: 9

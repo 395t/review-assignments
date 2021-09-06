@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{glorot2011deep}}
+paper: glorot2011deep
 # Please fill out info below
 author: ywen666
 score: 9/10

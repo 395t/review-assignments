@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{clevert2015fast}}
+paper: clevert2015fast
 # Please fill out info below
 author: joshpapermaster
 score: 8/10

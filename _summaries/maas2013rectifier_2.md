@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: Rectifier Nonlinearities Improve Neural Network Acoustic Models, Maas, Hannun, Ng; 2013
-paper: 	{maas2013rectifier}
+title: Summary 
+paper: 	maas2013rectifier
 # Please fill out info below
 author: sritank
 score: 8/10

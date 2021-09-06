@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: GELUs
-paper: {{hendrycks2016gaussian_1_marcobueso}}
+paper: hendrycks2016gaussian
 # Please fill out info below
 author:  marcobueso
 score:  10/10

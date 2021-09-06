@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: he2015delving
 # Please fill out info below
 author: jordi1215
 score: 10

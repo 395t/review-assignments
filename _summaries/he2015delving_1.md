@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: he2015delving
 # Please fill out info below
 author: TongruiLi # Your GitHub id
 score: 10 # How did you like this paper 0(dislike) to 10(love)
