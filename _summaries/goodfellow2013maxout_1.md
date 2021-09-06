@@ -31,7 +31,7 @@ x^T \textrm{is input to a layer (image/text/features from previous layer etc.)}
 $$
 
 $$
-W_{...ij}, b_{ij} \textrm{is the jth weight matrix & bias term of the ith layer for the maxout network}
+W_{...ij}, b_{ij} \textrm{is the jth weight matrix & bias term of the ith unit for the maxout layer}
 $$
 
 $$
