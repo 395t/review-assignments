@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: loshchilov2017decoupled
+paper: {{loshchilov2017decoupled}}
 author: # slycane9
 score: # 8
 ---
