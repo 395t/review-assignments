@@ -1,13 +1,13 @@
 ---
 layout: summary
-title: Gaussian Error Linear Units (GELUs), Hendrycks, Gimpel Summary
-paper: {{hendrycks2016gaussian}}
+title: Summary
+paper: hendrycks2016gaussian
 # Please fill out info below
 author: jchavezberkeley
 score: 8
 ---
 
-This paper proposes the Gaussian Error Linear Unit (GELU), a neural activation function that performs well against ReLU and ELU in similar training experiments. It is often the case that a "deterministic decision" is wanted from a neural network, which motivates the need for a new nonlinearity.
+This paper proposes the Gaussian Error Linear Unit (GELU), a neural activation function that performs well against ReLU and ELU in similar training experiments. It is often the case that a "deterministic decision" is wanted from a neural network, which motivates the need for a new nonlinearity. It has often been the case that nonlinearities and dropouts were seperate innovations, hence GELUs are nonlinearities that relate to stochastic regularizers by being the "expectation" to changes in dropout. Thus, in other words, a neuron's output is more probabilistic.
 
 Thus, the GELU is a nonlinearity that weights input by value rather than gates input by sign, such as in ReLUs.
 
