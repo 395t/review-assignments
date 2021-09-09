@@ -1,5 +1,7 @@
 # Assignments for paper reviews
 
+## Job for summary writer (S1 or S2).
+
 1. Write you review.
 
   - Go into `_summaries/` and find your assigned summary in the format of `${paper_tag}_{1/2}.md`.
@@ -29,6 +31,8 @@
 
       Make sure to name your figure properly, `${paper_tage}_{1/2}{a/b/c/...}.{jpg/png}` might be a good idea.
       
+    - You can also check out the two examplar summaries (`_summaries/he2015deep_1.md` and `_summaries/lecun1998gradient_1.md`) for proper formatting and naming.
+
 
 2. (Optional) Preview your review locally.
 
@@ -42,8 +46,30 @@
 
   - Create your own branch and create a PR to the main branch. Name your branch `paper_tag+your github id`.
 
+4. Assign your reviewer.
+  - Navigate to your PR page, and there is a "reviewer" section where you can search and type the reviewer's name.
 
+## Job for summary reviewer (R).
 
+### Before reviewing
+Check the following things:
+- `{{paper_tag}}` is replaced to the real one (*e.g.* `he2015deep`).
+
+- The writer writes down the score.
+
+### When reviewing
+Leave constructive comments under the PR, possibly @ the author to remind them.
+The writing-review processing can be iterated for multiple cycles.
+
+The criteria includes the following:
+
+- Completeness: Is everything summarized in the summary?
+- Length: How compact/verbose is the summary?
+- Orginaity: Is the summary in the writer's own words?
+- Structure: Is the summary easy to follow?
+  - adequate context or motivation
+  - clear and well-defined formula
+  - illustrative figure if necessary
 
 
 
