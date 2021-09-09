@@ -21,6 +21,7 @@ Also, superconvergence seems to work better as the amount of available training 
 The LR range test:
 Figure 2a shows an example curve, max is peak, and min is max divided by 3 or 4.
 Figure 2b shows that an LR range test for Cifar-10 on a 56 layer residual network, even for large LR such as 3, the network performs unexpectedly well.
+![Smith (2017).](smith2017super-convergence_2_a.png)
 
 
 
@@ -28,7 +29,7 @@ Figure 2b shows that an LR range test for Cifar-10 on a 56 layer residual networ
 #### How well does the paper perform? #### 
 Table 1 shows the comparison of final accuracy results for the two kinds of networks: piecewise constant learning rate, set as 0.35, and cyclical learning rate, with a range of 0.1-3.0.
 This shows that better accuracy results were obtained with CLR, and using only 1/8 of the total iterations (10,000 v. 80,000).
-
+![Smith (2017).](smith2017super-convergence_2_b.png)
 
 
 
