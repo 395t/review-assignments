@@ -1,0 +1,5 @@
+_includes/
+_layouts/
+.jekyll-cache/
+_site/
+/assets/

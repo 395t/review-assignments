@@ -1,3 +1,0 @@
-I"¸<h3 id="the-core-idea">The core idea:</h3>
-<p>Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations).</p>
-:ET
