@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: djork2016elu
+paper: clevert2015fast_2
 # Please fill out info below
 author: aabayomi
-score:     # How did you like this paper 0(dislike) to 10(love)
+score:  8/10   # How did you like this paper 0(dislike) to 10(love)
 ---
 <!-- 
 TODO: Summarize the paper:
@@ -37,7 +37,7 @@ $\alpha$ is the hyperparameter, causes the activation to be negative.
 
 How well does the paper perform?
 
-<img width="500px" src="djork2016elu_1a.png"/>
+<img width="500px" src="clevert2015fast_2a.png"/>
 
 ELU is significantly better than prior activations (ReLU,leaky,srelu)
 
