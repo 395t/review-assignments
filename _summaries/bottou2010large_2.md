@@ -98,7 +98,7 @@ In order to overcome the matrix, SGDQN and Averaged Stochastic Gradient Descent 
 Both SQDQN and ASGD have nice properies and can converge faster than SGD, but still come at a significant cost (ASGD requires 2 weight matrices)
 
 
-_** How well does the paper perform?**_
+_**How well does the paper perform?**_
 
 SGD is used quite often now, so it did become quite popular
 
