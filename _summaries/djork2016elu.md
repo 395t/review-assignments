@@ -11,7 +11,7 @@ TODO: Summarize the paper:
 * What is the core idea?
 * How is it realized (technically)?
 * How well does the paper perform?
-* What interesting variants are explored? --
+* What interesting variants are explored? -->
 
 The vanishing gradient problem as been a problem of training Deep Neural Nets.The core idea of the Exponential Linear Units centers around creating a negative activation to  shift the mean close to zero whereby increasing the learning rate as well a performance.
 
