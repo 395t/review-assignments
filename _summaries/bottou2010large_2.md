@@ -1,17 +1,12 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: bottou2010large
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: zayne-sprague
+score: 7
 ---
 
-TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored?
 
 _**Main Idea**_
 
