@@ -1,0 +1,4 @@
+I"3<p>If AlexNet started the modern era of deep learning, ResNets made sure it would spread to all of computer vision and beyond.
+The core idea of residual networks is to parametrize each layer (or group of layers) as a residual of a function.
+A function \(f_1(x)\) would now become \(f_2(x) = x + g(x)\).</p>
+:ET

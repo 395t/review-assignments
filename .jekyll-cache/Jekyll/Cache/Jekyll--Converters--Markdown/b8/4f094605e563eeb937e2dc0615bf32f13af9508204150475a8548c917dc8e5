@@ -1,0 +1,10 @@
+I"<h2 id="gelus">GELUs</h2>
+<ul>
+  <li>What is the core idea?<br />
+The paper introduces the Gaussian Error Linear Units (GELUs) activation function for neural networks.<br />
+The GELU function has provided performance improvement in practically all deep learning related fields.<br />
+It could be said that the GELU still performs like a RELU in specific cases, such as when σ -&gt; 0. The author discusses that the GELU can be considered a smooth RELU.<br />
+For background, the RELU is simply the activation function where f(x) = max(0,x), basically zero-ing out any negative input.<br />
+A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\</li>
+</ul>
+:ET

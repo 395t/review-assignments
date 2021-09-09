@@ -1,0 +1,89 @@
+I"g<p><strong><em>Main Idea</em></strong></p>
+
+<p>Taking the element-wise max of an input ran across multiple weight matrices produces a non-linear activation function
+that can learn approximations of any convex function and take advantage of dropout layers while improving accuracy and 
+allowing deeper networks.</p>
+
+<p><strong><em>How is it realized</em></strong></p>
+
+<p>Maxout networks use “Maxout Layers”.</p>
+
+<p>Maxout Layers are composed of one or more Maxout Units</p>
+
+<p>Maxout Units have multiple weight matrices and biases for the same input!<br />
+(tip: Think of convolutional feature maps, in MLPs or linear layers they are just extra weight matrices and biases)</p>
+
+<p>Maxout Units takes the values from all the weight matrices in its layer, does the element wise multiplication with the
+input per weight matrix, and then does an element wise maximum across all the different activations for that input.</p>
+
+\[x^T \textrm{is input to a layer (image/text/features from previous layer etc.)}\]
+
+\[W_{...ij}, b_{ij} \textrm{is the jth weight matrix &amp; bias term of the ith unit for the maxout layer}\]
+
+\[z_{ij} = x^TW_{...ij} + b_{ij}\]
+
+\[h_i(x) = {max}_{j\in[1,k]} z_{ij}\]
+
+<p><img src="Goodfellow2013maxout_1_a.png" alt="Simple Maxout Layer (1 unit)" /></p>
+
+<p><strong><em>What does this mean</em></strong></p>
+
+<p>Because each input to the layer has a set of weights that are going to be Maxed over, 
+the activation function has “learnable weights”.</p>
+
+<p>With sufficient cardinality (weight matrices per maxout unit), Maxout is capable of representing convex functions including 
+Relu or Leaky Relu.</p>
+
+<p>Furthermore, if you incorporate 2 Maxout units with high cardinality (as seen below), the Maxout activations can <strong>approximate</strong> any continuous function</p>
+
+<p><img src="Goodfellow2013maxout_1_b.png" alt="Maxout Layer (2 units), any continous function" /></p>
+
+<p>they also have a more detailed proof in the paper as to why this is true.</p>
+
+<p><strong><em>Why is this important</em></strong></p>
+
+<p>Rectifiers (RELUs, etc.) suffer from dead activations, where they basically set the inputs to 0</p>
+
+<p>This means Rectifiers use only a portion of the full potential of the model</p>
+
+<p>Maxout Layers do not suffer from this as much because the values can be negative and rarely go to zero</p>
+
+<p>Thus maxout layers will utilize more of the model than rectifiers will, which usually improves accuracy and allows for deeper networks</p>
+
+<p><img src="Goodfellow2013maxout_1_c.png" alt="Histogram of Maxout activation values" /></p>
+
+<p><img src="Goodfellow2013maxout_1_d.jpeg" alt="Activations + Maxouts Approximations" /></p>
+
+<p><strong><em>What are the costs</em></strong></p>
+
+<p>The major cost is that you now add many more weights per neuron increasing the computation time and size of your model 
+for better approximations of convex functions.</p>
+
+<p><strong><em>How well does the paper perform?</em></strong></p>
+
+<p>They compare their model on various datasets incuding MNIST, CIFAR-10, CIFAR-100 and SVHN.</p>
+
+<p>They achieve state-of-the-art results in some cases reducing error by as much as 4%.</p>
+
+<p>However, the biggest performance improvement is best shown by how much of the model is being utilized.</p>
+
+<p>Other models that use rectifiers suffered from dead neurons which made the gradient suffer and learning stall,
+Maxout overcomes these issues.</p>
+
+<p>Because of this, Maxout is able to support deeper models and make a more efficient use of the parameters, indicating that 
+even better performance may be achievable.</p>
+
+<p><strong><em>Interesting Variants</em></strong></p>
+
+<p>The authors found empirically that gradient flows through the model more efficiently due to Maxout not suffering from dead neurons</p>
+
+<p>The authors found empirically that Maxout trains better with Dropout than rectifiers due to Dropout performing model 
+averaging because Maxout units able to stabilize better with noisy input</p>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>Maxout requires a single layer to have multiple (k) weight matrices and takes the maximum values of those k activations as the final output</li>
+  <li>Maxout Activations take advantage of Dropout more than any other activation function (at the time of the writing of the paper)</li>
+  <li>Maxout alleviates the dead neuron issues prevalent with rectifiers by learning a representation that is less sparse.</li>
+</ul>
+:ET

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>GELUs | cs395T</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="GELUs" />
+<meta name="author" content="marcobueso" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GELUs What is the core idea? The paper introduces the Gaussian Error Linear Units (GELUs) activation function for neural networks. The GELU function has provided performance improvement in practically all deep learning related fields. It could be said that the GELU still performs like a RELU in specific cases, such as when σ -&gt; 0. The author discusses that the GELU can be considered a smooth RELU. For background, the RELU is simply the activation function where f(x) = max(0,x), basically zero-ing out any negative input. A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\" />
+<meta property="og:description" content="GELUs What is the core idea? The paper introduces the Gaussian Error Linear Units (GELUs) activation function for neural networks. The GELU function has provided performance improvement in practically all deep learning related fields. It could be said that the GELU still performs like a RELU in specific cases, such as when σ -&gt; 0. The author discusses that the GELU can be considered a smooth RELU. For background, the RELU is simply the activation function where f(x) = max(0,x), basically zero-ing out any negative input. A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\" />
+<meta property="og:site_name" content="cs395T" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T21:36:34-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GELUs" />
+<script type="application/ld+json">
+{"description":"GELUs What is the core idea? The paper introduces the Gaussian Error Linear Units (GELUs) activation function for neural networks. The GELU function has provided performance improvement in practically all deep learning related fields. It could be said that the GELU still performs like a RELU in specific cases, such as when σ -&gt; 0. The author discusses that the GELU can be considered a smooth RELU. For background, the RELU is simply the activation function where f(x) = max(0,x), basically zero-ing out any negative input. A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\\","author":{"@type":"Person","name":"marcobueso"},"@type":"BlogPosting","url":"/summaries/hendrycks2016gaussian_1.html","headline":"GELUs","dateModified":"2021-09-08T21:36:34-05:00","datePublished":"2021-09-08T21:36:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/summaries/hendrycks2016gaussian_1.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cs395T" /><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cs395T</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="subtitle">Invalid paper tag!</div>
+
+<table class="overview">
+    <tr><td>author:</td><td> marcobueso</td></tr>
+    <tr><td>score:</td><td> 10 / 10</td></tr>
+</table>
+
+<h2 id="gelus">GELUs</h2>
+<ul>
+  <li>
+    <p>What is the core idea?<br />
+The paper introduces the Gaussian Error Linear Units (GELUs) activation function for neural networks.<br />
+The GELU function has provided performance improvement in practically all deep learning related fields.<br />
+It could be said that the GELU still performs like a RELU in specific cases, such as when σ -&gt; 0. The author discusses that the GELU can be considered a smooth RELU.<br />
+For background, the RELU is simply the activation function where f(x) = max(0,x), basically zero-ing out any negative input.<br />
+A main difference with the RELU however, is that rather than gating the inputs by their sign like the RELU does, the GELU gates the inputs based on their relative weight compared to other inputs.\</p>
+  </li>
+  <li>
+    <p>How is it realized (technically)?<br />
+The GELU is defined by the function 0.5x(1 + tanh[p2/π(x + 0.044715x3)]) <br />
+Attempt at using math: $$ 0.5x (1+ tanh [ \sqrt{2/π} (x + 0.044715 x^3) ] )</p>
+  </li>
+  <li>
+    <p>How well does the paper perform?<br />
+The GELU activation function was tested on multiple classification tasks, such as the MNIST classification (handwritten digits dataset), tweet classification, TIMIT classification (speech recognition), CIFAR 10 and 100 (objects/image recognition, 10 and 100 classifications respectively) etc.</p>
+  </li>
+  <li>
+    <p>What interesting variants are explored?<br />
+For simplicity, the GELU can also be modeled by xσ(1.702x). The author states that both approximations are easy to implement, and outperformed the other functions.</p>
+  </li>
+</ul>
+
+<p><img src="https://user-images.githubusercontent.com/50091107/132141868-d439ff24-7198-459c-80ed-1644e5e1aa42.png" alt="image" />
+<em>GELU activation function. Hansen, C. (22 Aug. 2019).</em></p>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>GELU is an activation function similar to RELU. It is modeled by 0.5x(1 + tanh[p2/π(x + 0.044715x3)])</li>
+  <li>It outperformed all other models across multiple classification tasks</li>
+  <li>Although the paper is originally from 2016, it has getten more attention recently</li>
+</ul>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">cs395T</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cs395T</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

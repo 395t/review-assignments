@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Summary | cs395T</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Summary" />
+<meta name="author" content="ywen666" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The core idea: Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations)." />
+<meta property="og:description" content="The core idea: Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations)." />
+<meta property="og:site_name" content="cs395T" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T21:36:34-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Summary" />
+<script type="application/ld+json">
+{"description":"The core idea: Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations).","author":{"@type":"Person","name":"ywen666"},"@type":"BlogPosting","url":"/summaries/glorot2011deep_2.html","headline":"Summary","dateModified":"2021-09-08T21:36:34-05:00","datePublished":"2021-09-08T21:36:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/summaries/glorot2011deep_2.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cs395T" /><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cs395T</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="subtitle">Invalid paper tag!</div>
+
+<table class="overview">
+    <tr><td>author:</td><td> ywen666</td></tr>
+    <tr><td>score:</td><td> 9/10 / 10</td></tr>
+</table>
+
+<h3 id="the-core-idea">The core idea:</h3>
+<p>Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations).</p>
+
+<p>Even from the view of machine learning researchers, sparsity is a concept of interest. A dense representation is highly entangled because almost any change in the input modifies most of the entries in the representation vector. This violates the postulation that deep learning algorithms disentangle the factors explaining the variations in the data.</p>
+
+<p>Therefore, this paper propose to explore the use of rectifying non-linear activation functions as alternatives to the hyperbolic tangent or sigmoid in deep artificial neural networks to promote sparsity.</p>
+
+<h3 id="advantages-of-rectifierx--max0-x-as-activation-functions">Advantages of rectifier(x) = max(0, x) as activation functions</h3>
+<ol>
+  <li>It naturaly induces 50% inactive neurons, leading to desirable sparsity.</li>
+  <li>When neurons are active, they are linear. This allows gradient signals to backprop without any loss of information.</li>
+  <li>The computation is efficient and the implementation is easy.</li>
+</ol>
+
+<h3 id="potential-problems">Potential problems:</h3>
+<p>It is non-differentiable at 0. A variant – softplus was also proposed. The figure illstruates the difference between ReLU and Softplus. 
+<img src="glorot11a_2.png" alt="ReLU" /></p>
+
+<h3 id="experiments">Experiments</h3>
+<p>Experiements in this paper cover image recognition (MNIST, CIFAR10, NISTP and NORB) and sentiment analysis (opentable review data).</p>
+
+<p>Experiments on bot image and text data indicate that training proceeds better when neurons are either off or operating mostly in a linear regime. This justifies the use of rectifying non-linear activation functions.</p>
+
+<p>Moreover, ReLU performed better than other commonly used activation functions such as tanh and sigmoid, especially without unsupervied pretraining.</p>
+
+<p>The hard threshold at 0 does not lead to any optimization issue as the authors observed that ReLU and softplus reached similar performance.</p>
+
+<p>Rectifier networks are deep sparse networks. There is an average exact sparsity (fraction of zeros) of the hidden layers of 83.4% on MNIST, 72.0% on CIFAR10, 68.0% on NISTP and 73.8% on NORB. Additional experiments with L1 regularization showed that sparsity under 85% will not hurt model accuracy.</p>
+
+<h2 id="tldr">TL;DR</h2>
+<p>Sparsity is important in both views of neurosciencists and machine learning researchers. This paper proposed an alternative non-linear activation function – ReLU to promote sparsity in deep neural networks.</p>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">cs395T</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cs395T</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

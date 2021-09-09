@@ -1,0 +1,3 @@
+I"y<p>The core idea of this paper is to challenge the effectiveness of asymmetric activation functions, such as sigmoid, with the traditional, random initialization for deep architecture.
+The paper accomplishes this by providing improved results from their normalized initialization process and by using symmetric activation functions such as hyperbolic tangent and softsign.</p>
+:ET

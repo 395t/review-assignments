@@ -1,0 +1,5 @@
+I"h<p>TODO: Summarize the paper:
+This paper attempts to fix the vanishing gradient problem of Relu activation functions by using, what they call Mish. 
+Relu is a conditionally defined function. It has a fixed value 0 for \(x&lt;0\) and is linear for \(x&gt;0\). Since Relu has a fixed value of 0 for \(x&lt;0\) this results in a problem of vanishing gradients, where negative gradients in one layer do not propagate to the next layer. Moreover, Relu itself is not a smooth function as it is condtionally defined at 0. This creates rugged training landscapes.
+An alternative to using Relu is a function called Swish. Swish is defined as \(x\cdot \text{sigmoid}(\beta\cdot x)\), where the sigmoid function is defined as \(\frac{1}{1+e^{-x}}\). This function makes a smooth-activation function with a shape similar to Relu. This also reduces the vanishing-gradient problem.</p>
+:ET

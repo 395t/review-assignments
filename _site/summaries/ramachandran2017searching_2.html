@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Summary | cs395T</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Summary" />
+<meta name="author" content="liaojh1998" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What is the core idea?" />
+<meta property="og:description" content="What is the core idea?" />
+<meta property="og:site_name" content="cs395T" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T21:36:34-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Summary" />
+<script type="application/ld+json">
+{"description":"What is the core idea?","author":{"@type":"Person","name":"liaojh1998"},"@type":"BlogPosting","url":"/summaries/ramachandran2017searching_2.html","headline":"Summary","dateModified":"2021-09-08T21:36:34-05:00","datePublished":"2021-09-08T21:36:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/summaries/ramachandran2017searching_2.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cs395T" /><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cs395T</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="subtitle">Invalid paper tag!</div>
+
+<table class="overview">
+    <tr><td>author:</td><td> liaojh1998</td></tr>
+    <tr><td>score:</td><td> 6 / 10</td></tr>
+</table>
+
+<ul>
+  <li>
+    <p>What is the core idea?</p>
+
+    <p>This paper proposed a reinforcement learning-based search method for finding good activation functions, then analyzed and evaluated the best found function, Swish, which is defined as \(x \cdot \sigma(\beta x)\). According to evaluations, Swish is found to reliably outperform ReLU and multiple other activation functions in a wide variety of tasks and networks.</p>
+  </li>
+  <li>
+    <p>How is it realized (technically)?</p>
+
+    <ul>
+      <li>
+        <p><em>Activation Function Search</em></p>
+
+        <p>The authors restricted the search space to functions composed from functions that takes in 1 or 2 scalar values and output a scalar. This is done by composing from multiple repetitions of the “core unit”:</p>
+
+        <p align="center">
+      <img src="https://d3i71xaburhd42.cloudfront.net/c8c4ab59ac29973a00df4e5c8df3773a3c59995a/2-Figure1-1.png" width="30%" height="30%" />
+  </p>
+
+        <p>Note that the inputs of the unary functions are restricted to the preactivation \(x\) and the binary function outputs. This way, the activation function can always take a scalar value as input and output a single scalar value, like ReLU. The full list of functions used in the search are:</p>
+
+        <ul>
+          <li>Unary functions:</li>
+        </ul>
+
+\[x, -x, \lvert x \rvert, x^2, x^3, \sqrt{x}, \beta x, x + \beta, \log(\lvert x \rvert + \epsilon), \exp(x), \sin(x), \cos(x), \sinh(x), \cosh(x), \tanh(x), \\ \sinh^{-1}(x), \tan^{-1}(x), \text{sinc}(x), \max(x, 0), \min(x, 0), \sigma(x), \log(1 + \exp(x)), \exp(-x^2), \text{erf}(x), \beta\]
+
+        <ul>
+          <li>Binary functions:</li>
+        </ul>
+
+\[x_1 + x_2, x_1 \cdot x_2, x_1 - x_2, \frac{x_1}{x_2 + \epsilon}, \max(x_1, x_2), \sigma(x_1)\cdot x_2, \exp(-\beta(x_1 - x_2)^2), \\ \exp(-\beta \lvert x_1 - x_2 \rvert), \beta x_1 + (1 - \beta)x_2\]
+
+        <ul>
+          <li><em>Note that \(\beta\) in the above functions are trainable parameters.</em>
+  <br /><br /></li>
+        </ul>
+
+        <p>The choice of the search algorithm depends on the size of the search space. For small search spaces, the algorithm exhaustively enumerate the entire search space, and maintain a list of top performing activation functions ordered by validation accuracy. For large search spaces, the algorithm use an RNN controller to “predict” components of the activation function:</p>
+
+        <p align="center">
+      <img src="https://d3i71xaburhd42.cloudfront.net/c8c4ab59ac29973a00df4e5c8df3773a3c59995a/3-Figure2-1.png" width="30%" height="30%" />
+  </p>
+
+        <p>The RNN predicts a single component of the activation function at each timestep, and each prediction is fed back as input to “predict” the component of the next timestep in an autoregressive fashion. This network is trained with reinforcement learning (Proximal Policy Optimization, <a href="https://arxiv.org/abs/1707.06347">Schulman et al., 2017</a>) to output functions that have high validation accuracies by using validation accuracy as the reward.</p>
+      </li>
+      <li>
+        <p><em>Search Evaluations</em></p>
+
+        <p>Each found activation function is evaluated on a child network, which is computationally expensive. To speed up search, the authors used a distributed training scheme to parallelize the training of each child network on different functions. For each search algorithm update step, candidate activation functions are batched for distributed training and their validation accuracies were aggregated.</p>
+
+        <p>In particular, ResNet-20 (<a href="https://ieeexplore.ieee.org/document/7780459">He et al., 2016a</a>) was used as the child network architecture. Each network was trained for 10 steps on the CIFAR-10 (<a href="https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf">Krizhevsky &amp; Hinton, 2009</a>) dataset by substituting each activation function instead of ReLU.</p>
+
+        <p>The top performing functions were tested on larger networks, specifically ResNet-164 (RN) (<a href="https://arxiv.org/abs/1603.05027">He et al., 2016b</a>), Wide ResNet 28-10 (WRN) (<a href="http://www.bmva.org/bmvc/2016/papers/paper087/index.html">Zagoruyko &amp; Komodakis, 2016</a>), and DenseNet 100-12 (DN) (<a href="https://arxiv.org/abs/1608.06993">Huang et al., 2017</a>), again by replacing ReLU. The authors used the same hyperparameters described in each model.</p>
+
+        <p>The authors found the Swish activation to outperform all other activation functions, so they extensively tested Swish (with both trainable \(\beta\) and \(\beta = 1\)) and several other famous activation functions (especially variants of ELU and Softplus) on challenging real world datasets. For the image classification task, CIFAR-10, CIFAR-100 (<a href="https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf">Krizhevsky &amp; Hinton, 2009</a>), and ImageNet 2012 classification set (<a href="https://arxiv.org/abs/1409.0575">Russakovsky et al., 2015</a>) were used. For the machine translation task, the standard WMT 2014 English→German dataset was used.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>How well does the paper perform?</p>
+
+    <p>For the top activation function search, \(x \cdot \sigma(\beta x)\) (Swish) and \(\max(x, \sigma(x))\) were found to consistently match or outperform ReLU in the RN, WRN, and DN network on the CIFAR-10 set. Swish consistently achieved about 0.2% better than ReLU.</p>
+
+    <p>The following figure summarizes Swish’s performance against other activation functions in different models:</p>
+
+    <p align="center">
+      <img src="https://d3i71xaburhd42.cloudfront.net/c8c4ab59ac29973a00df4e5c8df3773a3c59995a/6-Table3-1.png" width="40%" height="40%" />
+  </p>
+
+    <p>In general, Swish matches or outperforms other activation functions most of the time by about 0.1%-2% in accuracy in CIFAR-100, by about 0.1-1% in top-5 accuracy in ImageNet, and by about 0.1-4.3 in BLEU score in the WMT datasets.</p>
+  </li>
+  <li>
+    <p>What interesting variants are explored?</p>
+
+    <p>The authors found that complicated activation functions consistently underperform simpler activation functions during search. The best activation functions are usually the one that use the preactivation \(x\) as input to the final binary function: \(b(x, g(x))\).</p>
+
+    <p>Different values of \(\beta\) allow Swish (\(x \cdot \sigma(\beta x)\)) to model different kinds of Linear Unit activation functions. For example:</p>
+
+    <ul>
+      <li>When \(\beta = 0\), Swish becomes the scaled linear function \(f(x) = x \cdot \sigma(0) = x/2\).</li>
+      <li>When \(\beta = 1\), Swish becomes the Sigmoid-weighted Linear Unit (SiL) (<a href="https://arxiv.org/abs/1702.03118">Elfwing et al., 2017</a>), \(f(x) = x \cdot \sigma(x)\). This function looks similar to ReLU: bounded at negative values of \(x\) and unbounded at positive values of \(x\). However, some small negative values of \(x\) are allowed to pass in the network.</li>
+      <li>When \(\beta \to \infty\), the sigmoid component of Swish approaches a 0-1 functions, so Swish becomes a lot like ReLU.
+  <br /><br /></li>
+    </ul>
+
+    <p align="center">
+      <img src="https://d3i71xaburhd42.cloudfront.net/c8c4ab59ac29973a00df4e5c8df3773a3c59995a/5-Figure5-1.png" width="50%" height="50%" />
+  </p>
+
+    <p>The authors found trained values of \(\beta\) in the networks were spread between 0 and 1.5, which suggest that the flexibility of the trainable \(\beta\) parameter is useful and models took advantage of it.</p>
+
+    <p>From a glance, Softplus generally matched Swish in performance for image classification tasks and PReLU and LReLU generally matched Swish in performance for translation tasks.</p>
+  </li>
+</ul>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>Swish (\(x\cdot \sigma(\beta x))\)) can replace ReLU as activation functions in networks for slightly better performance.</li>
+  <li>Activation function search by using reinforcement learning to maximize validation accuracy.</li>
+  <li>Functions that perform well in smaller networks will generally perform well in larger networks as well.</li>
+</ul>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">cs395T</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cs395T</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

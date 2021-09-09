@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Summary | cs395T</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Summary" />
+<meta name="author" content="TongruiLi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What is the core idea?" />
+<meta property="og:description" content="What is the core idea?" />
+<meta property="og:site_name" content="cs395T" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T21:36:34-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Summary" />
+<script type="application/ld+json">
+{"description":"What is the core idea?","author":{"@type":"Person","name":"TongruiLi"},"@type":"BlogPosting","url":"/summaries/he2015delving_1.html","headline":"Summary","dateModified":"2021-09-08T21:36:34-05:00","datePublished":"2021-09-08T21:36:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/summaries/he2015delving_1.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cs395T" /><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cs395T</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="subtitle">Invalid paper tag!</div>
+
+<table class="overview">
+    <tr><td>author:</td><td> TongruiLi</td></tr>
+    <tr><td>score:</td><td> 10 / 10</td></tr>
+</table>
+
+<ul>
+  <li>What is the core idea?</li>
+</ul>
+
+<p>The paper presents two contributions - PReLU, a parametrizied activation fuction that allows for more efficient convergence without the risk of overfitting, and He Initialization, an initialization method that allows training with deep models without risk of stalled gradient.</p>
+
+<ul>
+  <li>How is it realized (technically)?</li>
+</ul>
+
+<p>PReLU is defined as \(f(y_i) = max(0, y_i) + a_i min(0, y_i)\) - this formulation basically replaces the cosntant weight in leaky ReLU with a trainable parameter. during training, the gradient of \(a_i\) exists when \(y_i\) is non positive. This activation function allows for the coefficient in convolution layer to gradually increase, thus enabling the model to retain more early stage information and make the discrimination at later stages.</p>
+
+<p>He initialization method is an improvement over the previous Xavier method. In the derivation, it considered the effect of non linear activation and thus yield promising result when training deep models by preserving the magnitude of variance in forward/backward propagation.</p>
+
+<ul>
+  <li>How well does the paper perform?</li>
+</ul>
+
+<p>PReLU’s experimental result shows a consistant performance improvement over ReLU on ImageNet Classification task on multiple scale of images. This effect can be seen across variety of model structures, with no reported drastic increase in computation time.</p>
+
+<p>He initialization method has a noticable improvement over xavier, the previous state of the art initialization method. Over the reported 22 and 30 layer model, He initialization gurantees a faster convergence over xavier, which converged more slowly in the 22 model case and did not converge at all in the 30 model case.</p>
+
+<p>With these two method combined, the best reported result over ImageNet2012 is a 4.94% error rate, which defeats the previously reporrted 5.1% human error rate, thus making this paper achieve superhuman result.</p>
+
+<ul>
+  <li>What interesting variants are explored?</li>
+</ul>
+
+<p>As previously explained, the paper focuses on PReLU, which is a variant of Leaky ReLU and by extension from the default ReLU. He initialization is basically a improvement over the previous xavier initialization.</p>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>PReLU, a paramaterized ReLU activation function, is able to improve performance without added penalty.</li>
+  <li>He initialization, an initialization method that preserves the magnitude of variance with non linear activation units, is able to gurantee a faster convergance when training on deeper models (&lt;30 weighted layers).</li>
+  <li>With PReLU and He initialization together, the paper is able to out-achieve human on ImageNet classification tasks.</li>
+</ul>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">cs395T</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cs395T</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

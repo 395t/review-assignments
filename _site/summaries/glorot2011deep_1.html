@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Summary | cs395T</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Summary" />
+<meta name="author" content="ishank-arora" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What is the core idea?" />
+<meta property="og:description" content="What is the core idea?" />
+<meta property="og:site_name" content="cs395T" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-08T21:36:34-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Summary" />
+<script type="application/ld+json">
+{"description":"What is the core idea?","author":{"@type":"Person","name":"ishank-arora"},"@type":"BlogPosting","url":"/summaries/glorot2011deep_1.html","headline":"Summary","dateModified":"2021-09-08T21:36:34-05:00","datePublished":"2021-09-08T21:36:34-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"/summaries/glorot2011deep_1.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cs395T" /><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cs395T</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="subtitle">Invalid paper tag!</div>
+
+<table class="overview">
+    <tr><td>author:</td><td> ishank-arora</td></tr>
+    <tr><td>score:</td><td> 9 / 10</td></tr>
+</table>
+
+<ul>
+  <li>
+    <p>What is the core idea?</p>
+
+    <ul>
+      <li>
+        <p>First paper (I believe) to prove using rectifier function (\(max(0,  x)\)) better than \(\textit{logistic sigmoid}\) or \(\textit{hyperbolic tangent}\) activation functions. Approaches this from the field of computational neuroscience.</p>
+      </li>
+      <li>
+        <p>Proposes the use of rectifying non-linearities as alternatives to the hyperbolic tangent or sigmoid in deep artificial neural networks, in addition to using an \(L_1\) regularizer on the activation values to promote <strong>sparsity</strong> and prevent potential numerical problems with unbounded activation.</p>
+      </li>
+      <li>
+        <p>Rectifier function brings together the fields of computational neuroscience and machine learning.</p>
+      </li>
+      <li>
+        <p>Rectifying neurons are a better model of biological neurons than hyperbolic tangenet networks.</p>
+      </li>
+      <li>
+        <p>There are gaps between computational neuroscience models and machine learning models. Two main gaps are:</p>
+
+        <ul>
+          <li>It’s estimated that about only 1-4% of neurons are active in the brain at the same time. Ordinary feedforward neural nets (without additional regularization such as an \(L_1\) penalty) do not have this property.
+            <ul>
+              <li>Ex.: in the steady state, when employing the sigmoid activation function, all neurons fire are activated about 50% of the time. This is biologically implausible and hurts gradient-based optimization.</li>
+            </ul>
+          </li>
+          <li>Computational Neuroscience used Leaky Integrate-and-fire (LIF) activation function. Deep learning and neural networks literature most commonly used tanh and logisitc sigmoid. (see figure 1)</li>
+        </ul>
+
+        <p><img src="glorot2011deep_1_1.png" alt="glorot2011deep_1_1" /></p>
+      </li>
+      <li>
+        <p>Advantages of <strong>sparsity</strong>:</p>
+
+        <ul>
+          <li>Information disentangling.
+            <ul>
+              <li>A claimed objective of deep learning algorithms (Bengio, 2009) is to disentangle the factors explainging the variations in the data.</li>
+              <li>A dense representation is highly entangled - almost any change in the input modifies most of the entries in the representation vector.</li>
+              <li>A sparse representation that is robust to small input changes, therefore, conserves the set of non-zero features.</li>
+            </ul>
+          </li>
+          <li>Efficient variable-size representation
+            <ul>
+              <li>Different inputs may contain different amounts of information - this can then be reflected with varying amounts of sparsity as a result of the rectifier activation function.</li>
+            </ul>
+          </li>
+          <li>Linear separability
+            <ul>
+              <li>More sparsity, more likely to be linearly separable simply because data is in represented in a high-dimensional space.</li>
+            </ul>
+          </li>
+          <li>Distributed but sparse
+            <ul>
+              <li>Information is distributed amongst the non-zero values that if there is some noise and some values have to be discarded, information loss is low.</li>
+              <li>Storing is easier, only have to store non-zero values and their locations.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Disadvantages of sparsity:</p>
+
+        <ul>
+          <li>Too much sparsity may hurt “predictive performance for an equal number of neurons” as it reduces the “effective capaicty of the model.”</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><img src="glorot2011deep_1_2.png" alt="glorot2011deep_1_2" /></p>
+
+    <ul>
+      <li>Advantages of <strong>rectifier</strong> neurons:
+        <ul>
+          <li>Allows network to easily obtain sparse representations
+            <ul>
+              <li>Is more biologicially plausible</li>
+            </ul>
+          </li>
+          <li>Computations are also cheaper as sparsity can be exploited</li>
+          <li>No gradient vainishing effect due to activation non-linearities of sigmoid or tanh units.</li>
+          <li>Better gradient flow due on active neurons (where computation is linear - see figure 2)</li>
+        </ul>
+      </li>
+      <li>Potential Problems:
+        <ul>
+          <li>Hard saturation at 0 may hurt optimization
+            <ul>
+              <li>Smooth version of rectifying non-linearity - \(softplus(x) = \log(1 + e^x)\) (see figure 2)
+                <ul>
+                  <li>loses exact sparsity but may hope to gain easier training</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Numerical problems due to unbounded behaviour of the activations
+            <ul>
+              <li>Use the \(L_1\) penalty on the activation values - also promotes additional sparsity.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>How is it realized (technically)?</p>
+
+    <ul>
+      <li>Rectifier function is \(max(0,  x)\).</li>
+      <li>A smoother version: \(softplus(x) = \log(1 + e^x)\)</li>
+    </ul>
+  </li>
+  <li>
+    <p>How well does the paper perform?</p>
+
+    <ul>
+      <li>Experiment results
+        <ul>
+          <li>Sparsity does not hurt performance until around 85% of neurons are 0. (see figure 3)</li>
+          <li><img src="glorot2011deep_1_3.png" alt="glorot2011deep_1_3" /></li>
+          <li>Rectifiers outperform softplus</li>
+          <li>Rectifer outperforms tanh in image recognition.</li>
+          <li>No improvement using pre-trained autoencoders - hence just using rectifier activation function is easier to use</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>What interesting variants are explored?</p>
+
+    <ul>
+      <li>rectifier versus softplus</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>rectifier activation function better than sigmoid and tanh activation functions</li>
+  <li>sparsity is good - increases accuracy, computationally better performance, and representative of the biological neuron</li>
+  <li>50-80% sparsity for best generalising models, whereas the brain is hypothesized to have 95% to 99% sparsity.</li>
+</ul>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">cs395T</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cs395T</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

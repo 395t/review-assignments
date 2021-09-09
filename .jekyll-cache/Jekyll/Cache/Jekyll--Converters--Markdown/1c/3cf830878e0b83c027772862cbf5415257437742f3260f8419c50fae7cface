@@ -1,0 +1,35 @@
+I"=<p>TODO: Summarize the paper:</p>
+
+<ul>
+  <li>
+    <p>What is the core idea? <br />
+This paper comes up with a new function – maxout function, which has parameters that can be learned. Authors believe that models using maxout functions can exhabit the true power of dropout. It is more than just a technique slightly increase performance of other networks or an approximation used in neural networks.</p>
+  </li>
+  <li>
+    <p>How is it realized (technically)? <br />
+the input is a <strong>d</strong>-dim vertical vector, <strong>X=(x_1,x_2,…x_d)^{t}</strong>) with outputs <strong>m</strong>-dim vertical vector <strong>h = (h_1,h_2,…,h_m)^{t}</strong> in the next layer. Choose an integer <strong>k</strong>, and what the maxout function does is equivalent to adding another layer in between with <strong>k</strong> x <strong>m</strong> units, which forms a matrix <strong>Z = (z_{i,j}</strong>) where <strong>0&lt;i&lt;k+1, 0&lt;j&lt;m+1</strong>. Then, the <strong>j</strong>-th column of <strong>Z</strong> is <strong>W(: , :, j)X</strong>, where <strong>W</strong> is a <strong>k</strong> x <strong>d</strong> x <strong>m</strong> tensor with elements are parameters, and <strong>h_j</strong> is the maximum element in the <strong>j</strong>-th column of <strong>Z</strong>.</p>
+  </li>
+  <li>
+    <p>How well does the paper perform?<br />
+On MNIST, CIFAR-10, CIFAR-100, SVHN these four datasets, the neural networks that use maxout function and dropout techique lower the error rate compare to previous works. Especially on CIFAR-100, it reduced error rate from 42.51% to 38.57%. On MNIST, it reduced error rate from 0.47% to 0.45%. On CIFAR-10, although there is a neural network outperform maxout+dropout without data augmentation, but maxout+dropout+data augmentation network still yield the best result, which has error rate 9.38%. On,SVHN, it reduced error rate from 2.68% to 2.47%. Although in some cases, the way they preprocess datas, and the size of models they use are different, they did comparison experiments to show Maxout function is the reason for better performance.</p>
+  </li>
+  <li>
+    <p>What interesting variants are explored?<br />
+It seems this paper only focuses on the maxout function, and mainly discuss how well it performed together with dropout technique. However, one interesting fact is that maxout network with two hidden layers can approximate every continuous function. It is an efficient approximator.</p>
+  </li>
+</ul>
+
+<h2 id="tldr">TL;DR</h2>
+<ul>
+  <li>Three</li>
+  <li>Bullets</li>
+  <li>To highlight the core concepts<br />
+    <ol>
+      <li>The maxout function has parameters can be learned, that’s very different from traditional activication function like softmax, and sigmoid. <br /></li>
+      <li>With two maxout layers, one can approximate any continuous function on closed and bounded subset of <strong>R^d</strong>, and one maxout layer can approximate linearly piecewise function<br /></li>
+      <li>Maxout function is way better than rectifiers<br />
+<strong>These are three things I like about the maxout function (paper)</strong></li>
+    </ol>
+  </li>
+</ul>
+:ET
