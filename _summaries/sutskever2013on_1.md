@@ -9,7 +9,7 @@ score: 9/10
 
 TODO: Summarize the paper:
 * What is the core idea? <br/>
-The paper points that out classical momentum (CM) or Nesterov's accelerated gradient (NAG) can train DNNs and RNNs if initialization is well-designed and momentum coefficients are carefully chosen. It can achieve the performance only has been achieved by using Hessian-Free optimization (HF) before. Before this paper, people considered it was impossible to train DNNs and RNNs by using first-order method. <br/>
+The paper points that out classical momentum (CM) or Nesterov's accelerated gradient (NAG) can train DNNs and RNNs if initialization is well-designed and momentum coefficients are carefully chosen. Before this paper, people did achieved some successes by using first-order method together with good intializations, but that's still not as good as using HF optimization. However, this paper demonstrates that with use of momentum methods, the performance achieved is at the same level as using HF optimization, which shows us more potential of first-order method  <br/>
 
 for reference, the followings are CM and NAG methods' <br/>
 classical momentum (CM):<br/>
