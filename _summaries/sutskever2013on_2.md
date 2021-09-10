@@ -11,6 +11,7 @@ score: 8
 SGD with momentum and careful initialization can train DNN's, RNN's in practice
 
 # Context
+- First-order vs. second-order optimization methods: first-order methods update model parameters using the first-order derivative of the objective function (e.g. gradient descent), while second-order methods also use the second-order derivative
 - Hinton 2006: **DNN's, RNN's are expressive but hard to train using first-order methods like SGD** without some pre-training tricks
 - Martens (2010, 2011) shows that **a type of second-order method called Hessian-free Optimization (HF) can train DNN's, RNN's well** without such tricks
 - Some work (2010-2012) shows that **SGD can still work reasonably well with certain random initializations, though not as good as HF** from Martens (2010)
@@ -26,13 +27,18 @@ SGD with momentum and careful initialization can train DNN's, RNN's in practice
 - Graphical depiction of the difference:
 <img width="500px" src="sutskever2013on_2c.png"/>
 NAG is "more stable", making it more tolerant to larger momentum constants.
-- Theoretical relationship: (1) when the learning rate is sufficiently small, CM and NAG are equivalent; (2) when the learning rate is relatively large; NAG has a smaller effective momentum size for high-curvature eigen-directions, preventing oscillations/divergence.
+- Theoretical relationship: (1) when the learning rate is sufficiently small, CM and NAG are equivalent; (2) when the learning rate is relatively large; NAG has a smaller effective momentum size, preventing oscillations/divergence.
 
 # Experiments on Deep Autoencoders
 - Task: train 3 autoencoders from Hinton & Salakhutdinov (2006)
 - Models: DNN's of 7-11 layers, sigmoid non-linearity, sparse random initializations (SI), and scheduled momentum update from Nesterov (1983).
 - Effect of momentum: NAG usually outperforms CM, especially with higher momentum, and is competitive with contemporaneous HF results.
 - Effect of initializations: Super sensitive to SI scale factor; values of <1 or >3 did not produce sensible results.
+
+# Discussion of momentum scheduling
+- Convergence theory predicts that momentum helps in early stages, but not in final stages
+- This is consistent with what the authors observe empirically: it was helpful to reduce mu during the final updates, but not necessarily when they observed decreasing error
+- Speculative explanation: large values of mu push the solution along flat directions toward better local minima (which first-order methods wouldn't reach); however because these regions are flat, the error doesn't decrease much. Reducing mu too early may preclude this nonetheless crucial progress toward better local minima.
 
 # Experiments on RNNs
 - They use an RNN called an Echo-State Network: the hidden-to-output matrix is learned from data, while the remaining parameters are initialized from a distribution then fixed
