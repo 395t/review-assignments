@@ -75,7 +75,7 @@ _Note: LR stands for Learning Rate_
 
     The author notes the following in general:
 
-    * `triangular2` policy usually trained the model in less iterations for comparable accuracy. Training longer on `triangular2` outperforms training on a  LR policy.
+    * `triangular2` policy usually trained the model in less iterations for comparable accuracy. Training longer on `triangular2` outperforms training on a `fixed` LR policy.
     * Adaptive learning rate methods can combine with cyclical LR to obtain comparable accuracy.
     * Training ResNet, Stochastic Depth networks, and DenseNets with cyclical LR performed better than training with a fixed LR by about 0.2% increase in accuracy on average for CIFAR-10 and by about 0.5% increase in accuracy on average for CIFAR-100.
 
