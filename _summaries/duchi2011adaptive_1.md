@@ -37,7 +37,7 @@ $$\theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{diag(G_t)+\epsilon}} \cdot g_{t}
 
 With Adagrad, we don't need to tune the learning rate (there is still a base learning rate $\eta$, generally set to 0.01). One potential problem is that the accumulation of $diag(G)$ with time is always positive, it might cause the effective learning rate to shrink to 0, leading to no update at all. 
 
-Notice that this summary only reflects the simpliest application of the proposed algorithm. This paper paper considers settings in online learning and projected gradient descent, along with very solid theoretical analysis.
+Notice that this summary only reflects the simpliest application of the proposed algorithm. This paper considers settings in online learning and projected gradient descent, along with very solid theoretical analysis.
 
 ### Experiments
 * Dataset
@@ -51,10 +51,12 @@ Notice that this summary only reflects the simpliest application of the proposed
   * Input features are 0/1 bigram features, leading to sparse feature vectors.
   * RDA and FB are two common online learning algorithms. Adding Adagrad to them improve test set error as illustrated in the table.
 
-|        | RDA  | FB   | ADA-RDA | ADA-FB | 
-| :---   |:----:|  --: | --:   | --: | 
-| ECAT   | .051 | .058 | .044  | .044|
-| CCAT   | .064 | .111 | .053  | .053|
+|        | RDA  | FB   | ADA-RDA  | ADA-FB  | 
+| :---   |:----:|  --: | -------: | ------: | 
+| ECAT   | .051 | .058 |   .044   |   .044  |
+| CCAT   | .064 | .111 |   .053   |   .053  |
+| GCAT   | .046 | .056 |   .040   |   .040  |
+| MCAT   | .037 | .056 |   .035   |   .034  |
 
 * ImageNet Ranking
     
