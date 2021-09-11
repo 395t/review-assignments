@@ -17,10 +17,10 @@ This paper proposed to incorporate the geometry of training data, giving frequen
 
 ### Method 
 
-This paper considers a projected gardient descent training scenario. Assuing the gradient is $g_t$, and we want to update $x_t$ in the opposite direction of $g_t$ while maintaining $x_{t+1}\in \mathcal{X}$, the learning rate is $\eta$. The update at timestep $t$ is (finding the closest point in $\mathcal{X}$ to the ordinary gradient descent update),
-$$x_{t+1} = \prod_{\mathcal{X}} (x_t -  \eta g_t) = \argmin_{x\in \mathcal{X}} || x - (x_t - \eta g_t) ||_2^2$$
+This paper considers a projected gradient descent training scenario. Assuming the gradient is $g_t$, and we want to update $x_t$ in the opposite direction of $g_t$ while maintaining $x_{t+1}\in \mathcal{X}$. Generally, $\mathcal{X}$ is the convex set over which $x_t$ is to be minimized. And the learning rate is $\eta$. The update at timestep $t$ is (finding the closest point in $\mathcal{X}$ to the ordinary gradient descent update),
+$$x_{t+1} = \arg\min_{x\in \mathcal{X}} || x - (x_t - \eta g_t) ||_2^2$$
 
-I summarize this algorithm (Adagrad) in the simply case. Assuming we want to update the weights of a neural network $\theta$, which is high-dimensional. Let $g_{t,i}$ denote the $i^{th}$ dimension of the gradient vector $g_t$. The SGD update for every parameter $\theta_i$ at timestep $t$ is
+I summarize this algorithm (Adagrad) in the simple case. Assuming we want to update the weights of a neural network $\theta$, which is high-dimensional. Let $g_{t,i}$ denote the $i^{th}$ dimension of the gradient vector $g_t$. The SGD update for every parameter $\theta_i$ at timestep $t$ is
 
 $$\theta_{t+1, i} = \theta_{t,i} - \eta \cdot g_{t,i}$$
 
@@ -28,14 +28,14 @@ We want to make $\eta$ adaptive – changing $\eta$ at each time step t for each
 
 For example, if $i^{th}$ feature has zero gradient most of the time, then the value of it in the diagonal matrix $diag(G_t)_i$ is small. With this diagonal matrix, we can make $\eta$ adaptive,
 
-$$\theta_{t+1, i} = \theta_{t,i} - \frac{\eta}{\sqrt{diag(G)_i + \epsilon}} \cdot g_{t,i}$$
+$$\theta_{t+1, i} = \theta_{t,i} - \frac{\eta}{\sqrt{diag(G_t)_i + \epsilon}} \cdot g_{t,i}$$
 
-$\epsilon$ is thesmoothing term that avoids division by zero. The inverse square root is coming from the natural gradient descent algorithm in the convex optimization.
+$\epsilon$ is the smoothing term that avoids division by zero. The inverse square root is coming from the natural gradient descent algorithm in the convex optimization.
 
 In the vectorized form, 
-$$\theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{diag(G)+\epsilon}} \cdot g_{t}$$
+$$\theta_{t+1} = \theta_{t} - \frac{\eta}{\sqrt{diag(G_t)+\epsilon}} \cdot g_{t}$$
 
-With Adagrad, we don't need to tune the learning rate (there is still a based learning rate $\eta$, generally set to 0.01). One potential problem is that the accumulation of $diag(G)$ is always positive, it might cause the effective learning rate to shrink to 0, leading to no update at all. 
+With Adagrad, we don't need to tune the learning rate (there is still a base learning rate $\eta$, generally set to 0.01). One potential problem is that the accumulation of $diag(G)$ with time is always positive, it might cause the effective learning rate to shrink to 0, leading to no update at all. 
 
 Notice that this summary only reflects the simpliest application of the proposed algorithm. This paper paper considers settings in online learning and projected gradient descent, along with very solid theoretical analysis.
 
@@ -56,6 +56,7 @@ Notice that this summary only reflects the simpliest application of the proposed
 | ECAT   | .051 | .058 | .044  | .044|
 | CCAT   | .064 | .111 | .053  | .053|
 
-* ImageNet
+* ImageNet Ranking
     
 ### TL;DR
+This paper proposed adaptive gradient descent algorithm – AdaGrad. The learning rate is adjusted based on the history of the gradient. Its most effective application is sparse feature learning. 
