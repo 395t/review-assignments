@@ -89,6 +89,12 @@ With sufficient training samples, you can model the Expected Risk (the actual di
 
 _**Does 2nd Order Stochastic Gradient Decent (2SGD) have any benefits?**_
 
+$$
+w_{t+1} = w_{t} - \Gamma_{t}\frac{1}{n}\sum^{n}_{i=1}\nabla_{w}Q(z_{i},w_{t})
+$$
+
+The only difference between SGD is $$\Gamma_{t}$$ which approaches the inverse of the Hessian of the cost (and is very expensive)
+
 2SGD, with sufficient assumptions (convexity and regularity), will approach optimum solution as quickly as possible
 
 However, 2SGD requires a large dense matrix that is too computationally expense to compute
@@ -102,9 +108,13 @@ _**How well does the paper perform?**_
 
 SGD is used quite often now, so it did become quite popular
 
+The authors showed how SGD can be applied to various ML tasks beyond Perceptrons including K-Means, SVM, and Lasso
+
 The authors tested SGD, ASGD, and SGDQN on various types of datasets showing that Stochastic Gradient Decent is capable of the Expected Risk quickly beating out other algorithms (30s -> 2.3s)
 
-//TODO include plots here
+![SGD vs TRON](./bottou2010large_2_a.png)
+
+![SGD vs ASGD vs SGDQN](./bottou2010large_2_b.png)
 
 
 _**Interesting Variants**_
