@@ -88,7 +88,11 @@ _Note: LR stands for Learning Rate_
 
         Note that some methods (AdaGrad, AdaDelta) when combined with CLR, while using only 25k iterations of training, still gained a final accuracy that is equivalent to the final accuracy of the method without CLR, which used 70k iterations of training. Refer to the next lecture for explanations on these methods.
 
-    * Training ResNet, Stochastic Depth networks, and DenseNets with cyclical LR performed better than training with a fixed LR by about 0.2% increase in accuracy on average for CIFAR-10 and by about 0.5% increase in accuracy on average for CIFAR-100.
+    * Training ResNet, Stochastic Depth networks, and DenseNets with cyclical LR performed better than training with a fixed LR by about 0.2% increase in accuracy on average for CIFAR-10 and by about 0.5% increase in accuracy on average for CIFAR-100:
+
+        <p align="center">
+            <img src="https://d3i71xaburhd42.cloudfront.net/37b5dfe87d82ba8f310155165d5bf841dc92dea2/6-Table4-1.png" width="25%" height="25%">
+        </p>
 
 ## TL;DR
 * CLR oscillates the learning rate between a minimum and maximum value during training.
