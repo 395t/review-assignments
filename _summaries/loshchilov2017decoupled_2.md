@@ -2,6 +2,7 @@
 layout: summary
 title: Summary
 paper: {{loshchilov2017decoupled}}
+# Please fill out info below
 author: # slycane9
 score: # 8
 ---
@@ -23,7 +24,7 @@ The results of decoupled weight decay (AdamW) on Adam error rates and loss curve
 ![adamvsadamw](loshchilov2017decoupled_2b.png)
 
 
-Results show that decoupled weight decay allows the Adam optimizer to compete with SGD in image classification in terms of having a separable hyperparameter space.
+Results also show that decoupled weight decay allows both SGD and Adam optimizers to better tune their hyperparameters independently.  The left two graphs not using decoupled weight decay show a diagonal trend that makes hyperparameters more dependent on each other.
 
 ![sgdvsadamw](loshchilov2017decoupled_2a.png)
 
