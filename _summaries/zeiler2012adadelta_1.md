@@ -9,12 +9,13 @@ score:  10
 
 TODO: Summarize the paper:
 
-* What is the core idea?
+* Main idea
 - Adaptively change the learning rate in a way that it reduces oscillations i.e. slows down close to minimas, and is large otherwise.
 - Change step size based on the windowed accumulated gradient and also accumulated step sizes, which only require 1st order computations.
-- Also scale the step size by the accumulated previous step sizes, giving it the correct units as if it were a 2nd order adaptive method
+- Windowed accumulation makes sure updates after multiple iterations aren't drowned out by massive accumulated denominator like in ADAGRAD
+- Scaling the step size by the accumulated previous step sizes gives it the correct units, as if it were a 2nd order adaptive method
 
-* How is it realized (technically)?
+* Technical implementation
 - Scaling gradient helps ensure we take an equal step in all directions
 - Builds on ADAGRAD which scales the learning rate based on the accumulated sum of previous gradients. 
 
@@ -28,10 +29,10 @@ where epsilon is used to condition the denominator for numerical purposes.
 - By assuming locally smooth curvature, they scaled up the step size using the exponentially decaying average of previous step sizes.
 
 ![ADADELTA_step](ADADELTA_step.png)
-* How well does the paper perform?
+* Algorithm performance
 - numerator RMS term lags behind the denominator by 1 time step, making it robust to large sudden gradients. Denominator increases slowing down the progress before numerator can blow up.
 - The method makes approximations on Hessian and local curvature, giving it second order characteristics while still costing only one gradient computation per iteration.
-- Training method is used on DNNs with sigmoid and ReLU units. The DNNs were trained for MNIST classification and speech recognition.
+- In experiments, the training method is used on DNNs with sigmoid and ReLU units. The DNNs were trained for MNIST classification and speech recognition.
 
 ![6epoch](6epochs_testerr.png) ![6epoch_ADADELTA](6epoch_ADADELTA.png)
 
