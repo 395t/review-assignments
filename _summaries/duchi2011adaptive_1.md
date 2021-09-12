@@ -41,7 +41,6 @@ Notice that this summary only reflects the simpliest application of the proposed
 
 ### Experiments
 * Dataset
-  * ImageNet
   * Reuters RCV1 text classification
   * MNIST multiclass digit recognition
   * Census income dataset from UCI
@@ -52,13 +51,19 @@ Notice that this summary only reflects the simpliest application of the proposed
   * RDA and FB are two common online learning algorithms. Adding Adagrad to them improve test set error as illustrated in the table.
 
 |        | RDA  | FB   | ADA-RDA  | ADA-FB  | 
-| :---   |:----:|  --: | -------: | ------: | 
-| ECAT   | .051 | .058 |   .044   |   .044  |
-| CCAT   | .064 | .111 |   .053   |   .053  |
-| GCAT   | .046 | .056 |   .040   |   .040  |
-| MCAT   | .037 | .056 |   .035   |   .034  |
+| :---   |:----:| :---:|:--------:| :-----: | 
+| ECAT   | .051 | .058 |  .044    |   .044  |
+| CCAT   | .064 | .111 |  .053    |   .053  |
+| GCAT   | .046 | .056 |  .040    |   .040  |
+| MCAT   | .037 | .056 |  .035    |   .034  |
 
-* ImageNet Ranking
+* Multiclass MNIST 
+On this dataset, his paper compared the adaptive RDA with and without mixed-norm l1/l2, RDA, and multiclass Passive
+Aggressive to one another using the multiclass hinge loss. For each algorithm, we used the first 5000 of 60,000 training examples to choose the base step size. 
+
+RDA has significantly higher sparsity levels (PA do not have any sparsity). Naturally PA has a better accuracy than RDA.
+
+![duchi2011adaptive_1](duchi2011adaptive_1.png)
     
 ### TL;DR
 This paper proposed adaptive gradient descent algorithm – AdaGrad. The learning rate is adjusted based on the history of the gradient. Its most effective application is sparse feature learning. 
