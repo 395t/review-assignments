@@ -13,9 +13,13 @@ _Note: LR stands for Learning Rate_
 
     This paper proposes a learning rate policy where the learning rate oscillates between two bounds and a method to estimate the two bounds reasonably.
 
-    According to [Dauphin et al., 2015](https://arxiv.org/pdf/1502.04390.pdf), loss is more difficult to minimize due to saddle points rather than poor local minima, and increasing the learning rate allows for more rapid traversal away from saddle points. Also, increasing the learning rate might have short term negative effects but can achieve beneficial effects in the long term.
+    According to [Dauphin et al., 2015](https://arxiv.org/pdf/1502.04390.pdf), loss is more difficult to minimize due to saddle points rather than poor local minima, and increasing the learning rate allows for more rapid traversal away from saddle points. Also, increasing the learning rate might have short term negative effects but can achieve beneficial effects in the long term. The author showed this when training GoogleNet on ImageNet:
 
-    Thus, cyclical LR policy may speed up training to achieve better accuracy in the long run. It also removes the need to guess the optimal LR to use at each timestep in training.
+    <p align="center">
+        <img src="https://d3i71xaburhd42.cloudfront.net/37b5dfe87d82ba8f310155165d5bf841dc92dea2/8-Figure12-1.png" width="25%" height="25%">
+    </p>
+
+    Although the validation accuracy decreased during periods of increasing LR, the accuracy improved with higher gains during periods of decreasing LR. Thus, cyclical LR policy may speed up training to achieve better accuracy in the long run. It also removes the need to guess the optimal LR to use at each timestep in training.
 
 * How is it realized (technically)?
 
@@ -68,7 +72,7 @@ _Note: LR stands for Learning Rate_
     The author tested the LR schedule on multiple models designed for image classification. They used the CIFAR-10, CIFAR-100, and ImageNet datasets. Generally, the models performed the best when trained with cyclical LR or its variants, averaging about a 0.8% increase in accuracy over a fixed LR schedule. Here's a summary of comparisons: 
 
     <p align="center">
-        <img src="https://d3i71xaburhd42.cloudfront.net/37b5dfe87d82ba8f310155165d5bf841dc92dea2/5-Table3-1.png" width="25%" height="25%">
+        <img src="https://d3i71xaburhd42.cloudfront.net/37b5dfe87d82ba8f310155165d5bf841dc92dea2/4-Table1-1.png" width="25%" height="25%">
     </p>
 
     For clarifications, `decay` is a LR policy with boundary values in where LR starts at `max_lr` and is reduced to `base_lr` after some iterations, then the LR is kept at `base_lr` for all iterations after. `exp` is an exponential decay policy for LR.
@@ -76,7 +80,14 @@ _Note: LR stands for Learning Rate_
     The author notes the following in general:
 
     * `triangular2` policy usually trained the model in less iterations for comparable accuracy. Training longer on `triangular2` outperforms training on a `fixed` LR policy.
-    * Adaptive learning rate methods can combine with cyclical LR to obtain comparable accuracy.
+    * Adaptive learning rate methods can combine with cyclical LR to obtain comparable accuracy as shown in the following:
+
+        <p align="center">
+            <img src="https://d3i71xaburhd42.cloudfront.net/37b5dfe87d82ba8f310155165d5bf841dc92dea2/5-Table3-1.png" width="25%" height="25%">
+        </p>
+
+        Note that some methods (AdaGrad, AdaDelta) when combined with CLR, while using only 25k iterations of training, still gained a final accuracy that is equivalent to the final accuracy of the method without CLR, which used 70k iterations of training. Refer to the next lecture for explanations on these methods.
+
     * Training ResNet, Stochastic Depth networks, and DenseNets with cyclical LR performed better than training with a fixed LR by about 0.2% increase in accuracy on average for CIFAR-10 and by about 0.5% increase in accuracy on average for CIFAR-100.
 
 ## TL;DR
