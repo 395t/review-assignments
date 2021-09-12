@@ -58,12 +58,25 @@ Notice that this summary only reflects the simpliest application of the proposed
 | MCAT   | .037 | .056 |  .035    |   .034  |
 
 * Multiclass MNIST 
-On this dataset, his paper compared the adaptive RDA with and without mixed-norm l1/l2, RDA, and multiclass Passive
-Aggressive to one another using the multiclass hinge loss. For each algorithm, we used the first 5000 of 60,000 training examples to choose the base step size. 
+  * On this dataset, his paper compared the adaptive RDA with and without mixed-norm l1/l2, RDA, and multiclass Passive
+  * Aggressive to one another using the multiclass hinge loss. For each algorithm, we used the first 5000 of 60,000 training examples to choose the base step size. 
 
 RDA has significantly higher sparsity levels (PA do not have any sparsity). Naturally PA has a better accuracy than RDA.
 
 ![duchi2011adaptive_1](duchi2011adaptive_1.png)
     
+* Income Prediction 
+  * The data consists of 40 demographic and employment related variables which are used to predict whether a person has income above or below $50,000.
+  * They preprocessed the data into 0/1 features. 
+  * A
+
+|Prop. Train| 0.05 |  0.1 | 0.25 | 1    | 
+| :--------:|:----:| :---:|:----:| :--: | 
+| PA        | .049 | .052 | .050 | .048 |
+| RDA       | .055 | .054 | .052 | .050 |
+| Ada-RDA   | .053 | .051 | .049 | .047 |
+| l1 RDA    | .056 | .054 | .053 | .051 |
+| l1 Ada-RDA| .052 | .051 | .050 | .049 |
+
 ### TL;DR
 This paper proposed adaptive gradient descent algorithm – AdaGrad. The learning rate is adjusted based on the history of the gradient. Its most effective application is sparse feature learning. 
