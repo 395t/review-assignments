@@ -112,9 +112,7 @@ The authors showed how SGD can be applied to various ML tasks beyond Perceptrons
 
 The authors tested SGD, ASGD, and SGDQN on various types of datasets showing that Stochastic Gradient Decent is capable of the Expected Risk quickly beating out other algorithms (30s -> 2.3s)
 
-![SGD vs TRON](./bottou2010large_2_a.png)
-
-![SGD vs ASGD vs SGDQN](./bottou2010large_2_b.png)
+![SGD vs ASGD vs SGDQN](./bottou2010large_2_a.png)
 
 
 _**Interesting Variants**_
