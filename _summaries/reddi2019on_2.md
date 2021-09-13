@@ -1,17 +1,11 @@
 ---
 layout: summary
 title: Summary
-paper: {{reddi2019on}}
+paper: reddi2019on
 # Please fill out info below
 author: joshpapermaster
-score: 7/10
+score: 7
 ---
-
-<!-- TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored? -->
 
 This paper introduces scenarios where the ADAM optimizer fails to converge to the best solution. As a solution, the paper provides variants of the ADAM optimizer that not only succeed in fixing the specific issues pointed out by the paper, but also often improve training. 
 
