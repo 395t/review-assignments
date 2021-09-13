@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: sutskever2013on 
 # Please fill out info below
 author: # kelseyball
 score: 8

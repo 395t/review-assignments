@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: sutskever2013on_1
+paper: sutskever2013on
 # Please fill out info below
 author: specfazhou
-score: 9/10
+score: 9
 ---
 
 TODO: Summarize the paper:
@@ -39,9 +39,6 @@ From the results obtained from the training typical RNNs, it seems RNNs can actu
 The authors explains why NAG avoids oscillations (thus, more tolerant of large momentum coefficient) during training intuitively and theoretically in the paper.   
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
 1. Use momentums method with well-designed initialization to train DNNs and RNNs that previously thought impossible. But it turns out that first-order method just as good as truncated Newton methods like HF. <br/>
 2. Compare the differences between classical momentum and Nesterov's accelerated gradient. <br/>
 3. Large momentum coefficient will make momentum methods achieve better performance especially for NAG, because it has better tolerance for large momentum.
