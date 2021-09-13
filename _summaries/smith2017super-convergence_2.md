@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{smith2017super-convergence_2}}
+paper: smith2017super-convergence
 # Please fill out info below
 author: marcobueso
 score: 10
