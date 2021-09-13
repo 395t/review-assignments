@@ -10,7 +10,7 @@ score: 9
 Summarize the paper:
 * What is the core idea?
 
-    The author proposed to analyze the dynamics of training deep networks by constraining on the linear network cases, which demonstrated similar behaviours to nonlinear ones.
+    The authors propose to analyze the dynamics of training deep networks by constraining on the linear network cases, which demonstrated similar behaviours to nonlinear ones.
 The authors formulate the learning process as differential equations and developed analysis into the properties as a result of the dynamics, including symmetries, invariants, and stable points, which implies the network would reach optimal learning speed and convergence when initialized according to these properties.
 Finally, the authors demonstrate the claims on MNIST and shed light on nonlinear case by arguing they share same properties due to the norm-preserving properties of the constructed network.
 * How is it realized (technically)?
@@ -28,7 +28,7 @@ E=\frac{1}{2 \tau} \sum_{\alpha}\left(s_{\alpha}-a^{\alpha} \cdot b^{\alpha}\rig
 $$
 In this equation, we see that the first term implies the vectors in weight matrices should be colinear to minimize the loss, while the second term requires othorgonality.
 Therefore, the result is a set of vectors that are either pairwise orthogonal or colinear.
-The authors further examine the invariance manifold of weight vectors and find that their modes in the spectra evolve independently and staying orthogonal.
+The authors further examine the induced equivariance manifold of weight vectors and find that their modes in the spectra evolve independently and staying orthogonal.
 With similar but limited noisy initial condition, the authors find that the learning speed follows a sigmoid function as described in
 $$
 u_{f}(t)=\frac{s e^{2 s t / \tau}}{e^{2 s t / \tau}-1+s / u_{0}}
@@ -37,15 +37,20 @@ $$
 
   Then the authors generalize to a multi-layer linear network case assuming all weights are orthogonal.
 The differential equation can be therefore written as $$\tau \frac{d}{d t} u=N_{l} u^{2}(s-u)$$, which imples that the learning speed converges to constant when the number of layers goes to infinity.
+
 * How well does the paper perform?
-  The author proposed a pretraining scheme accordingly by first auto-encoding the input data and switching to the actual training.
-  On the MNIST dataset, the loss function demonstrates a step-function-like drop while the randomly-initialized one demonstrates a sigmoid-like drop.
+
+  The author proposed an initialization scheme accordingly by filling weights as random orthogonal matrices.
+  On the MNIST dataset, the loss function demonstrates a step-function-like drop while the randomly Gaussian initial weights demonstrates a sigmoid-like drop.
+
 * What interesting variants are explored?
-  The author moves toward nonlinear deep networks and claims that the properly-initialized networks have the norm-preserving property and therefore plays nicely with nonlinear functions without deminishing or saturating.
+
+  The author moves toward nonlinear deep networks and claims that the properly-initialized networks have the norm-preserving property. 
+  Compared with random gaussianly initialized weights which have uneven concentrations on singular values, orthogonally initialized weights have the additional rank-preserving effect and therefore had better feature extraction capabilities.
+  Combining the norm-preserving and the rank-preserving properties, the proposed orthogonal initialization plays nicely with nonlinear functions without deminishing or saturating.
 They perform experiments to validate the claim as well.
 
 ## TL;DR
 * Solving linear networks analytically as diffeqs demonstrates properties (symmetries, invariants) which have implications on the learning dynamics of them.
 * With such invariants, there is a manifold where the learning trajectory is optimal
-* Initializing the weights on the manifold gives rise to fast and converging learning dynamics, which is validated by experiments
-
+* Initializing the weights on the manifold of orthogonal weights gives rise to fast and converging learning dynamics, which is validated by experiments
