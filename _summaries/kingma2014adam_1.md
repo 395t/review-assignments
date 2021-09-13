@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: kingma2014adam
 # Please fill out info below
 author: jordi1215
 score: 9
