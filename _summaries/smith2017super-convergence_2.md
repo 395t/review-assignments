@@ -23,7 +23,7 @@ Figure 2a shows an example curve, max is peak, and min is max divided by 3 or 4.
 Figure 2b shows that an LR range test for Cifar-10 on a 56 layer residual network, even for large LR such as 3, the network performs unexpectedly well.
 ![Smith (2017).](smith2017super-convergence_2_a.png)
 
-
+The authors propose a learning rate policy called "1cycle", which is to always use one cycle that is smaller than the total number of epochs, and allow the learning rate to decrease several orders of magnitude less than the initial LR for the remaining iterations.
 
 
 #### How well does the paper perform? #### 
@@ -41,5 +41,5 @@ Authors also test under different batch sizes, and conclude that superconvergenc
 
 ## TL;DR
 * Cyclical Learning Rates (CLRs) are used in networks, and lead to the superconvergence phenomenom - reach final accuracy levels faster than a fixed learning rate by a factor of one order of magnitude.
-* CLRs ranges can go up to unexpectedly high learning rate values. Large learning rates proved to be a very effective method for regularization.
+* CLRs ranges can go up to unexpectedly high learning rate values. Large learning rates proved to be a very effective method for regularization. It is large learning rates that lead to the superconvergence phenomenon, particularly under the 1cycle policy the authors introduce.
 * Superconvergence works notably better when the amount of available training becomes more limited.
