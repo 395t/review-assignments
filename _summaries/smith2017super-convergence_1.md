@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{smith2017super-convergence}}
+paper: smith2017super-convergence
 # Please fill out info below
 author: jchavezberkeley
 score: 8
