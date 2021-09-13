@@ -4,7 +4,7 @@ title: Summary
 paper: smith2015cyclical
 # Please fill out info below
 author: liyanc
-score: # How did you like this paper 0(dislike) to 10(love)
+score: 5
 ---
 
 * What is the core idea?
