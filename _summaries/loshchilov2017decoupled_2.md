@@ -4,7 +4,7 @@ title: Summary
 paper: loshchilov2017decoupled
 # Please fill out info below
 author: # slycane9
-score: # 8
+score: 8
 ---
 
 Stochastic Gradient Descent (SGD) with momentum was currently beating out Adam optimizers in Image Classification.
