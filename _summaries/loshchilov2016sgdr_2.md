@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: loshchilov2016sgdr
-paper: {{paper_tag}}
+title: Summary
+paper: loshchilov2016sgdr
 # Please fill out info below
 author: TongruiLi
 score: 5 # How did you like this paper 0(dislike) to 10(love)
