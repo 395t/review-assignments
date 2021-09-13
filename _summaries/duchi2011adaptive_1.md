@@ -68,7 +68,7 @@ RDA has significantly higher sparsity levels (PA do not have any sparsity). Natu
 * Income Prediction 
   * The data consists of 40 demographic and employment related variables which are used to predict whether a person has income above or below $50,000.
   * They preprocessed the data into 0/1 features. 
-  * A
+  * The table demonstrated that the test error v.s. the proportional traininig data in the online learning setup.  
 
 |Prop. Train| 0.05 |  0.1 | 0.25 | 1    | 
 | :--------:|:----:| :---:|:----:| :--: | 
