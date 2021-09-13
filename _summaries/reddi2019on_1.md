@@ -4,14 +4,8 @@ title: Summary
 paper: reddi2019on
 # Please fill out info below
 author: aabayomi # Your GitHub id
-score: 8/10 # How did you like this paper 0(dislike) to 10(love)
+score: 8 # How did you like this paper 0(dislike) to 10(love)
 ---
-
-<!-- TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored? -->
 
 # Summary 1: ON THE CONVERGENCE OF ADAM AND BEYOND
 
