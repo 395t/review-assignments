@@ -51,6 +51,6 @@ The paper also presents an alternative solution called ADAMNC
 
 
 ## TL;DR
-- There are certain situations that come up practically where ADAM slows down or entirely fails to converge 
+- There are certain situations that come up practically where ADAM slows down or entirely fails to converge due to the exponential moving average increasing the learning rate over time
 - This paper provides a solution called AMSGrad that normalizes the exponential moving average of the gradients using the largest seen gradient so that the learning rate does not increase
 - AMSGrad avoids the issues present in ADAM, while also speeding up training in many situations
