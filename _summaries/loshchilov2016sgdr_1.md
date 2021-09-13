@@ -20,7 +20,7 @@ TODO: Summarize the paper:
 * What interesting variants are explored?
   * The authors also perform SGDR on EEG datasets.
   * The authors show that SGDR can achieve smaller test errors than the original learning rate schedule used.
-
+  * The authors also demonstrate that the SGDR is prime candidate for training an ensemble of neural networks, where each network is initially trained using the output at the $$ M^{th} $$ restart. This allowed them to further improve accuracy on CIFAR-10 and CIFAR-100 datasets.
 ## TL;DR
 * Stochastic gradient descent with restarts
 * Learning rate set at max value on restart and decays till next restart
