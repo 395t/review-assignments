@@ -20,6 +20,8 @@ $$x_{t+1} = x_t - \eta_t \Delta f_t(x_t)$$
 
 where $$x_{i}$$ represents the parameter at step i, $$\Delta f_i(*)$$ represents the gradient at step i, and $$\eta_i$$ represents the scale of the gradient (otherwise known as the learning rate) at step i.
 
+![LR_Schedule](loshchilov2016sgdr_2c.png)
+
 The paper proposed to modify the learning rate $$\eta$$ by the following:
 
 $$\eta_t = \eta_{min}^i + \frac{1}{2}(\eta_{max}^i - \eta_{min}^i)(1 + cos(\frac{T_{cur}}{T_{i}}\pi))$$
