@@ -1,0 +1,4 @@
+_site/*
+_summaries/_site/*
+.jekyll-cache/*
+_summaries/.jekyll-cache/*
