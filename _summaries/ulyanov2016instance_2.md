@@ -19,6 +19,7 @@ Ulyanov et. al. revist the task of image stylization. Previous works like Gatys 
 The authors noted that the contrast of the input image should not be a factor in stylization and that contrast of the stylized image should be similar to the contrast of the original style image. As a result, the authors conclude that the network should discard contrast information from the content image. 
 
 $$\mathrm{y_{tijk}=\frac{x_{tijk}}{\sum_{l=1}^{W}\sum_{m=1}^{H}x_{tilk}}}$$
+
 This equation represents a simple version of contrast normalization where each image pixel is divided by the sum of other pixels in its channel.
 
 The generator network in Ulyanov et. al. (2016) actually implements batch normalization using:
