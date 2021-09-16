@@ -17,9 +17,9 @@ BatchNorm is sometimes viewed as a “necessary evil” in the design of CNNs
 
 
 
-[BN EQ1]
+![BN_EQ1](wu2021rethinking_1_1.jpg)
 
-[BN EQ2]
+![BN EQ2](wu2021rethinking_2.jpg)
 
 
 
@@ -48,7 +48,7 @@ Discussion between two statistics computation methods - EMA and PreciseBN.
 
 <u>Exponential moving average (EMA)</u>: updated in every training iteration
 
-[EMA equation]
+![EMA equation](wu2021rethinking_3.jpg)
 
 
 
@@ -169,7 +169,7 @@ Solutions:
 
 Result: both SyncBN and random shuffle can alleviate the leakage issue.
 
-[Table 6.]
+![Table 6.](wu2021rethinking_4.jpg)
 
 
 
