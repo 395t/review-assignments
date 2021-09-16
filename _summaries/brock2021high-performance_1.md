@@ -14,10 +14,10 @@ An adaptive gradient clipping technique introdued can be used without any batch 
  
 # Technical Details
 Traditional gradient clipping methods are defined:
-<img width="300px", src="brock2021high_performance_1_gradient_clipping.png"/>
+<img width="300px" src="brock2021high_performance_1_gradient_clipping.png"/>
 
 The adaptive gradient clipping method introduced is defined below:
-<img width="300px", src="brock2021high_performance_1_adaptive_gradient_clipping.png"/>
+<img width="300px" src="brock2021high_performance_1_adaptive_gradient_clipping.png"/>
 # Results
 
 #  
