@@ -30,7 +30,7 @@ $$ -->
 
 <img width="700px" src="reddi2019on_1c.png"/>
 
-The modified algorithm known as AMSGrad based on adam.
+The modified algorithm known as AMSGrad based on Adam.
 
 
 
@@ -38,7 +38,7 @@ The modified algorithm known as AMSGrad based on adam.
 
 [1] Smaller learning rates
 
-[2] Retains the max value of $v_t$ (Compute bias-corrected second raw moment estimate)
+[2] Retains the max value of v_t$ (Compute bias-corrected second raw moment estimate)
 
 During training AMSGrad does not iteratively change the learning rate unlike ADAGRAD that slightly decrease the learning rate and ADAM that aggressively increases the learning rate. 
 
@@ -71,7 +71,7 @@ AMSGrad vs ADAM for logistic regression, feed forward neural network and CIFARNE
 
 ## What interesting variants are explored? ##
 
-AdamNC alternate approach varies the values of $\beta_1$ and $\beta_2$ (exponential decay rate for moment estimates)
+AdamNC alternate approach varies the values of β1  and β2  (exponential decay rate for moment estimates)
 
 
 <!-- <img width="700px" src="reddi2019on_1b.png"/> -->
