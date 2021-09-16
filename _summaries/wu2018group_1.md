@@ -17,7 +17,7 @@ batch sizes are small and performs comparably with larger sizes. Furthermore,
 group normalization outperforms two alternative forms of normalization: layer
 normalization and instance normalization.
 
-<img width="500px" src="wu2018group_1b.png"/>
+<img width="500px" src="wu2018group_1b.PNG"/>
 
 ### How is it realized (technically)?
 
@@ -46,7 +46,7 @@ channel and image
 
 * Group normalization chooses a group of channels in a single image.
 
-<img width="500px" src="wu2018group_1a.png"/>
+<img width="500px" src="wu2018group_1a.PNG"/>
 
 All four normalization methods learn the the variables $\gamma$ and $\beta$ for
 the formula
@@ -70,7 +70,7 @@ The first experiment in the paper compared the effect the batch size and
 different normalization methods had on accuracy for a neural network model
 training on the **ImageNet** dataset.
 
-<img width="500px" src="wu2018group_1c.png"/>
+<img width="500px" src="wu2018group_1c.PNG"/>
 
 Batch normalization performed the best with a batch size of 32 images per GPU
 (8 GPUs were used) outperforming group normalization by 0.5% on the validation
@@ -86,7 +86,7 @@ resolution images, meaning smaller batch sizes tend to be used for these tasks.
 With 1 image per GPU for 8 GPUs being used for this task, group normalization
 outperformed batch normalization across the board.
 
-<img width="500px" src="wu2018group_1d.png"/>
+<img width="500px" src="wu2018group_1d.PNG"/>
 
 The final set of experiments in the paper had to do with video classification
 using the **Kinetics** dataset.There experiments covered 8 and 4 clips per GPU
@@ -95,7 +95,7 @@ normalization outperformed group normalization for the 32 images per GPU batch
 size, but perfomed worse than group normalization when a batch size of 4 was
 used.
 
-<img width="500px" src="wu2018group_1e.png"/>
+<img width="500px" src="wu2018group_1e.PNG"/>
 
 
 
