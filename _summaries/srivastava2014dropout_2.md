@@ -45,7 +45,7 @@ The performance of dropout was compared with various regularization methods with
 
 The paper discusses the gaussian dropout method which is a variation of Bernoulli dropout where each hidden layer is multiplied by a random variable drawn from   $$\\N(1,\sigma ^{2})$$ instead of multiplying it by _p_. 
 
-One disadvantage of dropout is it slows training by a factor of 2x to 3x as each training is trying to train a different architecture. Hence, the tradeoff of accuracy to training time should be taken into consideration. 
+One disadvantage of dropout is it slows down training by a factor of 2x to 3x as each training is trying to train a different architecture. Hence, the tradeoff of accuracy to training time should be taken into consideration. 
 
 
 ## TL;DR
