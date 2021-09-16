@@ -24,10 +24,11 @@ Dropout has the following features:
 
 **How is it realized (technically)?**
 
-The dropout is realised by the following equations (* denotes element wise product) :
+The dropout is realised by the following feed forward equations (* denotes element wise product) :
 
 ![Training equations](./srivastava2014dropout_2c.png)
 
+In case of Stochastic Gradient Descent(SGD), in a mini-batch each parameter's gradient are averaged over the training cases.
 During test, the weight are scaled as : 
 
 $$
