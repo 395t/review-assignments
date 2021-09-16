@@ -14,10 +14,10 @@ The paper introduces a new way to regularize models namely dropout. Dropout is a
 ![Without and with dropout network](./srivastava2014dropout_2a.png)
 
 Dropout has the following features:
-1. It prevents overfitting by using different “thinned” architectures.
+1. It prevents overfitting by using different “_thinned_” architectures.
 2. It approximates to combining various different architectures by sampling from an exponential set of architectures. 
 3. It adds noise that allows the optimization process to explore different regions of weight space.
-4. It reduces co-adaptations by making other hidden units unreliable. Therefore, any unit should become self robust in different contexts and does not rely on particular units to rectify their mistakes. This can be seen in the following figure.
+4. It reduces co-adaptations by making other hidden units unreliable. Therefore, any unit should become self robust in different contexts and does not rely on          particular units to rectify their mistakes. This can be seen in the following figure.
 5. The Activation of hidden units become sparse. 
 
 ![Without and with dropout first layer features](./srivastava2014dropout_2b.png)
@@ -28,7 +28,7 @@ The dropout is realised by the following equations (* denotes element wise produ
 
 ![Training equations](./srivastava2014dropout_2c.png)
 
-In test times, the weight are scaled as : 
+During test, the weight are scaled as : 
 
 $$
 {W_{test}}^{l} = pW^{l}
