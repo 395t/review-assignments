@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: brock2021high-performance
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: mattkelleher
+score: 8
 ---
 
 TODO: Summarize the paper:
