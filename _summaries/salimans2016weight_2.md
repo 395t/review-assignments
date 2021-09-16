@@ -3,17 +3,11 @@ layout: summary
 title: Summary
 paper: {{salimans2016weight}}
 # Please fill out info below
-author: # samatharhay
-score: # 9
+author: samatharhay
+score: 9
 ---
 
-TODO: Summarize the paper:
-* What is the core idea?
-
 The paper introduces weight normalization, a reparameterization of the weight vectors of a neural network, to speed up convergence of stocastic gradient descent.
-
-
-* How is it realized (technically)?
 
 In standard neural networks the weighted sum computed by each neuron is as follows:
 **intsert equation 1**
@@ -63,8 +57,6 @@ Reinforcment Learning: DQN
 The authors were able to show that weight normalization can help improve convergance speed in several different models, as well as several were batch normalization was not implimentable. 
 
 They also clearly explained how to implement WN and proposed a varient of batch normalization to go along with it.
-
-
 
 ## TL;DR
 * Weight normalization was proposed to increase convergence rate when using SGD
