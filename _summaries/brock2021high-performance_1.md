@@ -14,15 +14,22 @@ An adaptive gradient clipping technique introdued can be used without any batch 
  
 # Technical Details
 Traditional gradient clipping methods are defined:
+
 <img width="300px" src="brock2021high_performance_1_gradient_clipping.PNG"/>
 
 The adaptive gradient clipping method introduced is defined below:
+
 <img width="300px" src="brock2021high_performance_1_adaptive_gradient_clipping.PNG"/>
+
 # Results
 
-#  
+<img width="800px" src="brock2021high_performance_1_results.PNG"/>
+
+# Normalizer Free Networks with Transfer Learning
+
+<img width="400px" src="brock2021high_performance_1_tranfer_results.PNG"/>
 
 ## TL;DR
 * Introduces an adaptive gradient clipping technique that is effective without any batch normalization present in network
-* Bullets
-* To highlight the core concepts
+* Decreased training time without losing accuracy in smaller models, set new top-1 state-of-the-art accuracy for ImageNet with large ResNet model 
+* Out performed ResNet models with batch normalization on transfer learning tasks
