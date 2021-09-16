@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{srivastava2014dropout}}
+paper: srivastava2014dropout
 # Please fill out info below
 author: DartingMelody
 score: 10/10
@@ -11,21 +11,22 @@ score: 10/10
 
 The paper introduces a new way to regularize models namely dropout. Dropout is a technique to randomly drop units and their connection with a probability (_p_) leading to “_thinned_” models. For testing, a single “_unthinned_” model with smaller weight (_pw_) is used which is an approximation of averaging the predictions of all the different “_thinned_” architectures. 
 
-
+![Without and with dropout network](./srivastava2014dropout_2a.png)
 
 Dropout has the following features:
 1. It prevents overfitting by using different “thinned” architectures.
 2. It approximates to combining various different architectures by sampling from an exponential set of architectures. 
 3. It adds noise that allows the optimization process to explore different regions of weight space.
-4. It reduces co-adaptations by making other hidden units unreliable. Therefore, any unit should become self robust in different contexts and does not rely on particular units to rectify their mistakes. This can be seen in figure 2. 
+4. It reduces co-adaptations by making other hidden units unreliable. Therefore, any unit should become self robust in different contexts and does not rely on particular units to rectify their mistakes. This can be seen in the following figure.
 5. The Activation of hidden units become sparse. 
 
-
+![Without and with dropout first layer features](./srivastava2014dropout_2b.png)
 
 **How is it realized (technically)?**
 
 The dropout is realised by the following equations (* denotes element wise product) :
 
+![Training equations](./srivastava2014dropout_2c.png)
 
 In test times, the weight are scaled as : 
 
