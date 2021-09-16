@@ -37,7 +37,7 @@ $$
 
 **How well does the paper perform?**
 
-The paper rigorously tests dropout on various architectures and diverse datasets ranging from different domains like vision, speech and text. There is significant improvement in generalization and accuracy with dropout in all these cases with state of art in SVHN, ImageNet, CIFAR-100 and MNIST. Even with pre-training, dropout improves generalization with a small learning rate. For scare datasets, dropout outperforms all other models apart from the bayesian model. Dropout restricted boltzmann machine(RBM) also performs better than standard RBM. 
+The paper rigorously tests dropout on various architectures and diverse datasets ranging from different domains like vision, speech and text. There is significant improvement in generalization and accuracy with dropout in all these cases with state of art in SVHN, ImageNet, CIFAR-100 and MNIST. Even with pre-training, dropout improves generalization with a small learning rate. For scare datasets, dropout outperforms all other models apart from the bayesian model. Dropout restricted boltzmann machine (RBM) also performs better than standard RBM. 
 
 The performance of dropout was compared with various regularization methods with the conclusion that dropout combined with max-norm regularization gives the lowest generalization error. For almost all the models, the default value of _p_ is 0.5 for hidden layers and 0.8 for input layer.
 
@@ -45,7 +45,7 @@ The performance of dropout was compared with various regularization methods with
 
 The paper discusses the gaussian dropout method which is a variation of Bernoulli dropout where each hidden layer is multiplied by a random variable drawn from   $$\\N(1,\sigma ^{2})$$ instead of multiplying it by _p_. 
 
-One disadvantage of dropout, it slows training by a factor of 2x to 3x as each training is trying to train a different architecture. Hence, the tradeoff of accuracy to training time should be taken into consideration. 
+One disadvantage of dropout is it slows training by a factor of 2x to 3x as each training is trying to train a different architecture. Hence, the tradeoff of accuracy to training time should be taken into consideration. 
 
 
 ## TL;DR
