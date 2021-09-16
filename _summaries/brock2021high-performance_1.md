@@ -24,18 +24,28 @@ The goal of this paper is to address these issues and create normalizer free Res
  
 # Technical Details
 Traditional gradient clipping methods are defined:
+
 $$ G  = \pdv{L}{\Theta } $$ where $$L$$ is loss and $$\Theta $$ is all of the model parameters.
 
 $$ \lambda $$ is the clipping parameter
 
 <img width="300px" src="brock2021high_performance_1_gradient_clipping.PNG"/>
 
-While this traditional clipping does allow for larger batch sizes it is very snesative to $$\lambda $$.
+While this traditional clipping does allow for larger batch sizes it is very sensative to $$\lambda $$.
 
 
 Adaptive Gradient Clipping (AGC):
 
+$$W_{i}^{l}$$ is the $$i^{th}$$ row of the weight matrix of the $$l^{th}$$ layer of the network
+
+$$G^l$$ is the gradient w.r.t $$W^l$$ and $$G_{i}^l$$ is the $$i^{th}$$ row of $$G^l$$
+
+
 <img width="300px" src="brock2021high_performance_1_adaptive_gradient_clipping.PNG"/>
+
+The idea here is that if the norm of the weight updates in a single layer ($$\Delta $$ weights) is much larger than the norm of the current weights in that layer then training will likely become unstable. 
+ 
+
 
 # Results
 
