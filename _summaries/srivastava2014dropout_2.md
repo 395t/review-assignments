@@ -38,7 +38,7 @@ $$
 
 The paper rigorously tests dropout on various architectures and diverse datasets ranging from different domains like vision, speech and text. There is significant improvement in generalization and accuracy with dropout in all these cases with state of art in SVHN, ImageNet, CIFAR-100 and MNIST. Even with pre-training, dropout improves generalization with a small learning rate. For scare datasets, dropout outperforms all other models apart from the bayesian model. Dropout restricted boltzmann machine(RBM) also performs better than standard RBM. 
 
-The performance of dropout was compared with various regularization methods with the conclusion that dropout combined with max-norm regularization gives the lowest generalization error. For almost all the models, the default value of _p_ is 0.5 for hidden layers and 0.8 for input layer is used.
+The performance of dropout was compared with various regularization methods with the conclusion that dropout combined with max-norm regularization gives the lowest generalization error. For almost all the models, the default value of _p_ is 0.5 for hidden layers and 0.8 for input layer.
 
 **What interesting variants are explored?**
 
