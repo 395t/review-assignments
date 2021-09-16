@@ -40,7 +40,7 @@ Test details:
 
 <p align="center"> <img src="bjorck2018understanding_2_a.png" height="300"/> </p>
 
-The model does the same with and without batch normalization in low learning rates, however since we can use high learning rates with batch normalization, we are able to get better results. Thus, the paper argues that batch normalization's reason for success is due to the power of being able to use bigger learning rates.
+The model achieves the same accuracy with and without batch normalization in low learning rates, however since we can use high learning rates with batch normalization, we are able to get better results. Thus, the paper argues that batch normalization's reason for success is due to the power of being able to use bigger learning rates.
 
 As we look at gradients we also see that changes in step size causes divergences (indicated by the increase of loss) more aggressively without batch norm.
 
