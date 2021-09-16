@@ -1,8 +1,19 @@
-ADADELTA: AN ADAPTIVE LEARNING RATE METHOD, Zeiler1; 2012 - Summary
-
-author:	Shivi Agarwal
-
-score:	 / 10
+<table> 
+   <tr>
+     <th> layout</th>
+     <th> title</th>
+     <th> paper</th>
+     <th> author</th>
+     <th> score</th>
+   </tr>
+   <tr> 
+     <td> Summary</td>
+     <td> Summary</td>
+     <td> ADADELTA: AN ADAPTIVE LEARNING RATE METHOD, Zeiler1; 2012 - Summary</td>
+     <td> Shivi Agarwal</td>
+     <td> 8/10</td>
+   </tr>
+</table>
 
 ADADELTA 
 
@@ -17,13 +28,21 @@ ADADELTA uses the window of past gradients that are accumulated to be some fixed
 •	How is it realized (technically)?
 The ADADELTA is defined by the function:
 Using accumulation over window it is defined as : 
-       ∆xt = − η RMS[g]t g 
+       ∆xt = − η /RMS[g]t g 
+	   
+	 where gt is the gradient of the parameters at the t-th iteration
+    and η is a learning rate,
+	∆x is the set of parameters,
+	
        
 Using Correct Units with Hessian Approximation:
 		∆xt = − RMS[∆x]t−1 /RMS[g]t gt
-
+		∆x is the set of parameters
+		gt is the gradient of the parameters at the t-th iteration
+	
 •	How well does the paper perform?
-The ADADELTA Learning Rate was  tested on multiple tasks, such as the MNIST classification (handwritten digits dataset), Speech Data and outperformed other methods in all tasks.
+The ADADELTA Learning Rate was  tested on multiple tasks, such as the MNIST classification (handwritten digits dataset), Speech Data and 
+outperformed other methods like SGD, Momentum, ADAGRAD in all tasks.
 
 •	Experiments to test this learning rate:
     Task: Validate ADADELTA over Speech Recognition.
@@ -44,9 +63,9 @@ TL;DR
 
 •ADADELTA is a learning rate used in gradent decent algorithm.
 
-•It outperformed all other learning rates across multiple classification tasks.
+•It outperformed all other learning rates across multiple classification tasks because it uses fixed window size (w).
 
-•ADADELTA is a robust learning rate method that can be applied in a variety of situations.
+•Due to the window size the laering rate decays at slower rate but the learning doesn't stop.
 
 
 ```python
