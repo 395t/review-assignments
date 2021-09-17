@@ -45,7 +45,7 @@ Note that the mean and variance above are defined for a layer and are same for a
 
 Table 1 compares the invariance properties (if the output changes or not) of 3 normalization techniques -- layer, batch and weight when the model weights and input data are re-scaled and re-centered. 
 
-
+<img width="1320" alt="ba2016layer_1a" src="ba2016layer_1a.png">
 
 In weight normalization, the summed inputs are scaled by the L2 norm of the incoming weights and there is no centering by subtracting mean. There is no clear favourite from the table but it is worth noting from the last column that with layer normalization, the prediction of model does not change even if an individual data point is re-scaled.
 
@@ -55,7 +55,7 @@ The paper does extensive experimentation to show that layer normalization provid
 
 They evaluate their proposal on 6 tasks: image-sentence ranking, question-answering, contextual language modelling, generative modelling, handwriting sequence generation and MNIST classification with different kinds of models (focusing on RNNs though) and show that layer normalization outperforms batch normalization on **both convergence speed and final results** in all tests.
 
-
+![ba2016layer_1b](ba2016layer_1b.png)
 
 Figure above is an exemplar result that shows the speedup in convergence (in terms of validation error) with layer normalization. This is for attentive reader model from the experiment on question-answering task.
 
