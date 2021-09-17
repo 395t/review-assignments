@@ -55,7 +55,7 @@ The paper does extensive experimentation to show that layer normalization provid
 
 They evaluate their proposal on 6 tasks: image-sentence ranking, question-answering, contextual language modelling, generative modelling, handwriting sequence generation and MNIST classification with different kinds of models (focusing on RNNs though) and show that layer normalization outperforms batch normalization on **both convergence speed and final results** in all tests.
 
-<img width="900" alt="ba2016layer_1a" src="ba2016layer_1a.png">
+<img width="900" alt="ba2016layer_1b" src="ba2016layer_1b.png">
 
 Figure above is an exemplar result that shows the speedup in convergence (in terms of validation error) with layer normalization. This is for attentive reader model from the experiment on question-answering task.
 
