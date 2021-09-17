@@ -22,8 +22,7 @@ The authors propose and study Weight Standardization (`WS`) and Batch-Channel No
 
 ## Weight Standardization (`WS`)
 Normalize (Standardize) weights in the convolution layer along with Group Normalization
-### Formulation
-<p align="center"><img src="qiao2019micro-batch_2/ws-equation.png" height="200"/></p>
+<p align="left"><img src="qiao2019micro-batch_2/ws-equation.png" height="200"/></p>
 
 ### `WS` smoothes out the optimization landscape
 Authors theoretically argue that `WS` smoothes out the optimization by reducing the lipschitz constants on the loss and gradients
