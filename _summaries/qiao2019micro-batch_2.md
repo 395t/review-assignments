@@ -12,7 +12,7 @@ The authors propose and study Weight Standardization (`WS`) and Batch-Channel No
 
 ## Context
 * Many normalization methods have been proposed for accelerating deep neural net's training. The normalization process is mostly consistent across these methods but mainly differs on the axis of normalization as shown in the figure below ([Source](https://arxiv.org/pdf/1803.08494.pdf))
-<p align="center"><img src="qiao2019micro-batch_2/normalization-general.png"/></p>
+<p align="center"><img src="qiao2019micro-batch_2/normalization-general.png" width="1000"/></p>
 
 * Batch Normalization (`BN`) is considered to give the best results in practice whenever large batch sizes are possible but with smaller batches (which is the case when using larger models and more detailed inputs) Batch Normalization fails to perform that well because of unreliable estimates of mean and variance required for normalization.
 
