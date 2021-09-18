@@ -3,11 +3,10 @@ layout: summary
 title: Summary
 paper: {{bjorck2018understanding}}
 # Please fill out info below
-author: # timchen0618
-score: # How did you like this paper 0(dislike) to 10(love)
+author: timchen0618
+score: 8/10 # How did you like this paper 0(dislike) to 10(love)
 ---
 
-TODO: Summarize the paper:
 ## Background
 Normalizing the input data to zero-mean and constant standard deviation has long been recognized as good practice in training neural networks. 
 
@@ -30,16 +29,16 @@ The same cannot be observed for neural networks with batch normalization.
 
 ## Experimental Results
 
-#### What makes BN beneficial? Large Learning Rates!
+### What makes BN beneficial? Large Learning Rates!
 As in the above figure, training with or without BN but with a small learning rate (lr=0.0001) yield similar performance. However, networks with BN has clear advantage when the learning rates are large. They conclude that enabling high learning rates is what makes BN beneficial.
 ![Testing Accuracy](bjorck2018understandin_1a.png)
 
-### Why Large Learning Rates Are Good?
+#### Why Large Learning Rates Are Good?
 - They enable faster updates along flat regions -> faster training 
 - Would not stuck in local minima -> better generalization
 - Theoretical Viewpoint: 
-The upper-bound of estimated error of gradient step positively correlates to the learning rate $$\alpha$$.
 
+The upper-bound of estimated error of gradient step positively correlates to the learning rate $$\alpha$$.
 Higher learning rate -> larger estimated error (or noise) -> better generalization. 
 (Will not follow the gradient completely and will not overfit the training loss landscape)
 
