@@ -4,13 +4,13 @@ title: Summary
 paper: ulyanov2016instance
 # Please fill out info below
 author: rll2396
-score: 4
+score: 5
 ---
 
 TODO: Summarize the paper:
 * Core Idea
 
-    Instance normalization can help a feed-forward generator network achieve better performance at stylizing images.
+    Instance normalization can help simplify the task of stylizing images.
 
 * Context
     * Gatys et al. (2016) showed promising results for using CNNs for the task of image stylization
@@ -23,30 +23,31 @@ TODO: Summarize the paper:
 
     ![Stylization](ulyanov2016instance_1a.png)
 
-    The generator network is a CNN that takes as input a random seed and a content image. The network is has a fixed style image to apply to the content image. The output is a stylized image.
+    * Network:
+        * CNN that takes as input a random seed and a content image
+        * fixed style image to apply to the content image
+        * output is a stylized image
 
     ![Contrast](ulyanov2016instance_1e.png)
 
-    The end result is for the most part independent of the contrast of the content image. Thus, contrast normalization is needed. A simple way to implement this is 
+    * Authors theorized that the stylization problem is too difficult for this architecture
+    * Aimed to simplify the problem
+        * end result is independent of the contrast of the content image
+        * instead of having the network learn this, add contrast normalization layer
 
-    $$
-    y_{tijk} = \frac{x_{tijk}}{\sum_{l=1}^W\sum_{m=1}^H x_{tilm}}
-    $$
+    * Architecture already had Batch Normalization layer, which is defined as 
 
-    where $$j$$ and $$k$$ are image dimensions, $$t$$ is the batch dimension, and $$i$$ is the channel dimension.
+        ![Contrast](ulyanov2016instance_1f.png)
 
-    This can be achieved through the usage of normalization layers.
-    Batch Normalization is defined as 
+        where $$j$$ and $$k$$ are image dimensions, $$t$$ is the batch dimension, and $$i$$ is the channel dimension.
 
-    ![Contrast](ulyanov2016instance_1f.png)
+    * Would be changed to Instance Normalization, which is defined as
 
-    Instance Normalization is defined as
+        ![Contrast](ulyanov2016instance_1g.png)
 
-    ![Contrast](ulyanov2016instance_1g.png)
+    * Main difference is that Batch Normalization applies over a batch of images
 
-    The main difference is that Batch Normalization applies over a batch of images.
-
-    ![Contrast](ulyanov2016instance_1b.png)
+        ![Contrast](ulyanov2016instance_1b.png)
 
 * Results
 
@@ -61,4 +62,6 @@ TODO: Summarize the paper:
     ![Contrast](ulyanov2016instance_1d.png)
 
 ## TL;DR
-* Instance normalization is an alternative to batch normalization that can improve performance
+* Image generation is a difficult problem
+* Adding a layer that normalizes over the image can help simplify it
+* Instance normalization has been shown to improve performance on the task of stylizing images
