@@ -19,17 +19,20 @@ However, the reason for the improvement is to be debated.
 (e.g. the paper that propose BN said it was solving "internal covariate shift", but some suggested otherwise)
 
 ## Core idea 
-The paper pointed out that BN is beneficial to training neural networks mainly because it allow for larger learning rates, which encourages updates along flat regions and prevents the network from being trapped in a local minima. 
+The paper tried to answer two main questions:
 
-It also showed empirically that we cannot use large learning rates in networks without BN, since they could lead to  diverging loss. 
+#### Q: What Makes BN Beneficial?
+A: It's mainly because BN allows for larger learing rates, which encourages updates along flat regions and prevents the network from being trapped in a local minima. 
+
+#### Q: Why Need BN? Can't We Just Use High Learning Rates Anyway?
+A: No, we can't. The paper showed empirically that we cannot use large learning rates in networks without BN, since they would lead to diverging loss. 
 
 The same cannot be observed for neural networks with batch normalization.
 
 
-
 ## Experimental Results
 
-### What makes BN beneficial? Large Learning Rates!
+### Large Learning Rates Are the Key
 As in the above figure, training with or without BN but with a small learning rate (lr=0.0001) yield similar performance. However, networks with BN has clear advantage when the learning rates are large. They conclude that enabling high learning rates is what makes BN beneficial.
 
 ![Testing Accuracy](bjorck2018understandin_1a.png)
