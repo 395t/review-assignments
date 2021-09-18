@@ -30,7 +30,7 @@ The same cannot be observed for neural networks with batch normalization.
 
 ## Experimental Results
 
-### What makes BN beneficial?
+#### What makes BN beneficial? Large Learning Rates!
 As in the above figure, training with or without BN but with a small learning rate (lr=0.0001) yield similar performance. However, networks with BN has clear advantage when the learning rates are large. They conclude that enabling high learning rates is what makes BN beneficial.
 ![Testing Accuracy](bjorck2018understandin_1a.png)
 
@@ -38,10 +38,15 @@ As in the above figure, training with or without BN but with a small learning ra
 - They enable faster updates along flat regions -> faster training 
 - Would not stuck in local minima -> better generalization
 - Theoretical Viewpoint: 
-The upper-bound of estimated error of gradient step positively correlates to the learning rate $\alpha$.
+The upper-bound of estimated error of gradient step positively correlates to the learning rate $$\alpha$$.
+
+Higher learning rate -> larger estimated error (or noise) -> better generalization. 
+(Will not follow the gradient completely and will not overfit the training loss landscape)
+
+![Formula](bjorck2018understandin_1f.png)
 
 (Here $$\nabla l(x)$$ means the true gradient, and $$\nabla_{SGD}(x)$$ means the step size taken by SGD.)
-Higher learning rate -> larger estimated error (or noise) -> better generalization. (Will not overfit the training loss landscape)
+
 
 ### Divergence of NN Without BN
 They basically showed that you cannot use large learning rate for networks without NN since it will lead to divergence.
@@ -49,12 +54,19 @@ They basically showed that you cannot use large learning rate for networks witho
 Here they define 
 - relative loss (step-size) = new_loss/old_loss. 
 - divergence: when relative loss > $$10^3$$.
-At first few updates, network without BN exhibit great relative loss.
+
+At first few updates, network without BN exhibit great relative loss (divergence) when the step size > $$10^{-3}$$. 
+Same does not happen to network with BN.
+
 ![Step Size](bjorck2018understandin_1b.png)
+
 Activation of upper layers are extremely large, several orders of magnitude larger than lower ones. (Notice the scale)
 The authors claim that this implies divergence is caused by exploding activations.
 And BN fixes this problem by normalizing the input, preventing the large activations from propagating.
+
 ![Activation Heat Map](bjorck2018understandin_1c.png)
+
+As seen in the figure below, when BN is applied, the activations are indeed contained within a roughly constant value across layers. While the mean and standard deviation of channels grow exponentially with depth.
 
 ![Channel Mean and Variance](bjorck2018understandin_1d.png)
 
@@ -62,20 +74,15 @@ And BN fixes this problem by normalizing the input, preventing the large activat
 ### Gradients With and Without BN
 Below is the gradient of the final output layer, and larger gradients are in yellow. 
 The authors showed with this plot that gradient updates in the same batch (the same row in the plot) are roughly towards the same direction, adding up to a greater absolute value. 
-This result in same and mostly wrong predictions in the first few steps and larger gradients (see the yellow ones in the left figure) to correct them later.
+This result in same and mostly wrong predictions in the first few steps and larger gradients to correct them later. (see the yellow ones in the left figure)
+
 ![Gradient Heat Map](bjorck2018understandin_1e.png)
 
-
-<!-- Also, similar phenomenon is found in convolutional kernels. There's this 'input-independent' 
-![Table 1](bjorck2018understandin_1e.png) -->
-
-
-<!-- * How well does the paper perform? -->
 
 ## What interesting variants are explored?
 
 ### Random Initialization
-They conducted experiments that showed random initialization caused the phenomenon of exploding gradients in networks without BN. 
+They conducted experiments that showed the phenomenon of exploding gradients in networks without BN are caused by random initialization. 
 
 ## TL;DR
 * Batch Normalization is beneficial because it allows for higher learning rates, which result in better generalization and superior performance.
