@@ -10,15 +10,21 @@ score: # How did you like this paper 0(dislike) to 10(love)
 TODO: Summarize the paper:
 ## Background
 Normalizing the input data to zero-mean and constant standard deviation has long been recognized as good practice in training neural networks. 
-Batch normalization (BN) extend this idea to the input of each layer and achieve immense success in various areas. 
+
+Batch normalization (BN) extend this idea to the input of each layer and achieve immense success in various areas.
+
 It enables faster training, larger learning rates, and higher testing accuracy (and better generalizability). 
+
 However, the reason for the improvement is to be debated. 
+
 (e.g. the paper that propose BN said it was solving "internal covariate shift", but some suggested otherwise)
 
 ## Core idea 
 The paper pointed out that BN is beneficial to training neural networks mainly because it allow for larger learning rates, which encourages updates along flat regions and prevents the network from being trapped in a local minima. 
 
-It also showed empirically that we cannot use large learning rates in networks without BN, since they could lead to strong gradient updates, exploding activations and diverging loss. The same cannot be observed for neural networks with batch normalization.
+It also showed empirically that we cannot use large learning rates in networks without BN, since they could lead to  diverging loss. 
+
+The same cannot be observed for neural networks with batch normalization.
 
 
 
@@ -34,7 +40,7 @@ As in the above figure, training with or without BN but with a small learning ra
 - Theoretical Viewpoint: 
 The upper-bound of estimated error of gradient step positively correlates to the learning rate $\alpha$.
 
-(Here $\nabla l(x)$ means the true gradient, and $\nabla_{SGD}(x)$ means the step size taken by SGD.)
+(Here $$\nabla l(x)$$ means the true gradient, and $$\nabla_{SGD}(x)$$ means the step size taken by SGD.)
 Higher learning rate -> larger estimated error (or noise) -> better generalization. (Will not overfit the training loss landscape)
 
 ### Divergence of NN Without BN
@@ -42,7 +48,7 @@ They basically showed that you cannot use large learning rate for networks witho
 
 Here they define 
 - relative loss (step-size) = new_loss/old_loss. 
-- divergence: when relative loss > $10^3$.
+- divergence: when relative loss > $$10^3$$.
 At first few updates, network without BN exhibit great relative loss.
 ![Step Size](bjorck2018understandin_1b.png)
 Activation of upper layers are extremely large, several orders of magnitude larger than lower ones. (Notice the scale)
