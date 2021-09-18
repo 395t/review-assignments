@@ -31,6 +31,7 @@ The same cannot be observed for neural networks with batch normalization.
 
 ### What makes BN beneficial? Large Learning Rates!
 As in the above figure, training with or without BN but with a small learning rate (lr=0.0001) yield similar performance. However, networks with BN has clear advantage when the learning rates are large. They conclude that enabling high learning rates is what makes BN beneficial.
+
 ![Testing Accuracy](bjorck2018understandin_1a.png)
 
 #### Why Large Learning Rates Are Good?
@@ -54,12 +55,14 @@ Here they define
 - relative loss (step-size) = new_loss/old_loss. 
 - divergence: when relative loss > $$10^3$$.
 
-At first few updates, network without BN exhibit great relative loss (divergence) when the step size > $$10^{-3}$$. 
+At first few updates, network without BN exhibit great relative loss (divergence) when the step size is greater than  $$10^{-3}$$. 
 Same does not happen to network with BN.
 
 ![Step Size](bjorck2018understandin_1b.png)
 
-Activation of upper layers are extremely large, several orders of magnitude larger than lower ones. (Notice the scale)
+Other than training loss, they look at the output of activations without BN. 
+
+Activations of upper layers are extremely large, several orders of magnitude larger than lower ones. (Notice the scale)
 The authors claim that this implies divergence is caused by exploding activations.
 And BN fixes this problem by normalizing the input, preventing the large activations from propagating.
 
