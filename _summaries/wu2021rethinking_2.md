@@ -30,7 +30,7 @@ $$\mu_{EMA} = \lambda\mu_{EMA} + (1 - \lambda)\mu_{B}$$
 $$\sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2$$
 
 
-2. Train a ResNet-50 model with varying normalization batch size from 2 to 1024. Error was inspected under 3 setttings - using mini-batch statistics on training set and validation set, and using population statistics on the validation set.
+2. Train a ResNet-50 model with varying normalization batch size from 2 to 1024. Error was inspected under 3 setttings - using mini-batch statistics on training set and validation set, and using population statistics on the validation set. In a second experiment, they replace the last 20 epochs of training with FrozenBN to show its positive impact on performance.
 
 3. Train a ResNet-50 model on ImageNet-C with a normalization batch size of 32. ImageNet-C has corrupted images which was used to induce domain shift. 
 
@@ -40,7 +40,7 @@ $$\sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2$$
 
 ## How well does the paper perform?
 
-### **Population Statistic Computation - More Representative Population Statistics**
+### **Population Statistic Computation - More Precise and Representative Population Statistics**
 
 The paper found that EMA was not successful in finding representative population or mini-batch statistics. They claim that when lambda is large, EMA statistics are composed mainly of features from previous iterations. On the other hand, when \lambda is small, EMA statistics represent more recent batches and is not indicative of the population. This discrepancy was illustrated by the paper in the below graph:
 
@@ -50,15 +50,15 @@ The paper's suggestion for more precise population statistics was using PreciseB
 
 ![Alt Text](wu2021_1h.PNG)
 
-### **Train-Test Set Inconsistency - result of evaluating using population statistics**
-
-![Alt Text](wu2021_1c.PNG)
+### **Train-Test Set Inconsistency - disparity between mini-batch and population statistics**
 
 The paper explores classification error for using mini-batch statistics to evaluate on the training set and validation set, as well as, using the population statistics on the validation set. The error rate was very low when using mini-batch statistics on training set due to a very low train-test consistency. The error rate of using mini-batch statistics on the validation set is less than when using the population statistics also due to greater train-test inconsistency when using the population statistics.
 
 ![Alt Text](wu2021_1d.PNG)
 
-The paper suggests to use a variant of BatchNorm called FrozenBN which used population statistics during training. This method reduced validation error when compared to a reguarly trained model. This method also reduced train-test inconsistency.
+The paper proposes scenarios where mini-batch statistics during inference; however, this approach is not desirable ebcause it removes independence across sample predictions. Instead, the paper looks into a variant of BatchNorm that can use population statistics during training - FrozenBN. This approach uses fixed population statistics which used without standard BatchNorm can lead to performance drop. Therefore, it is more commonly used after training a model with regular BatchNorm, such as on the laast 20 epochs. This method reduced validation error when compared to a reguarly trained model. This method also reduced train-test inconsistency due to training on population statistics.
+
+![Alt Text](wu2021_1i.PNG)
 
 ### **Domain Shift - Train and Test Data have different distribution**
 
