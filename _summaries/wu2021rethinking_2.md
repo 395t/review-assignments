@@ -11,7 +11,7 @@ score: 7
 
 ## What is the core idea?
 
-BatchNorm is a commonly used component of neural networks that has greatly increased performance in image classifcation tasks. However, there are certain inherent aspects of BatchNorm that can lead to sub-optimal performance if not addressed correctly. This paper identifies issues primarily around population statistics computation,  training and test set inconsistency, domain shift, and information leakage. The paper also suggests solutions to combat each of these issues to make the most out of BatchNorm in networks.
+BatchNorm is a commonly used in neural networks and has greatly increased performance in image classifcation tasks. However, there are inherent aspects of BatchNorm that can lead to sub-optimal performance if not addressed correctly. This paper identifies issues primarily around population statistics computation,  training and test set inconsistency, domain shift, and information leakage. The paper also suggests solutions to combat each of these issues to make the most out of BatchNorm in networks.
 
 $$ y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}} $$
 
@@ -56,7 +56,7 @@ The paper explores classification error for using mini-batch statistics to evalu
 
 ![Alt Text](wu2021_1d.PNG)
 
-The paper proposes scenarios where mini-batch statistics during inference; however, this approach is not desirable ebcause it removes independence across sample predictions. Instead, the paper looks into a variant of BatchNorm that can use population statistics during training - FrozenBN. This approach uses fixed population statistics which used without standard BatchNorm can lead to performance drop. Therefore, it is more commonly used after training a model with regular BatchNorm, such as on the laast 20 epochs. This method reduced validation error when compared to a reguarly trained model. This method also reduced train-test inconsistency due to training on population statistics.
+The paper proposes scenarios where mini-batch statistics during inference; however, this approach is not desirable because it removes independence across sample predictions. Instead, the paper looks into a variant of BatchNorm that can use population statistics during training - FrozenBN. This approach uses fixed population statistics which used without standard BatchNorm can lead to performance drop. Therefore, it is more commonly used after training a model with regular BatchNorm, such as on the laast 20 epochs. This method reduced validation error when compared to a reguarly trained model. This method also reduced train-test inconsistency due to training on population statistics.
 
 ![Alt Text](wu2021_1i.PNG)
 
@@ -68,7 +68,7 @@ The paper conducted this experiment in order to show that significant difference
 
 ### **Information Leakage - Information from samples in batch affect prediction**
 
-In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest reduces the information leakage , which results in a more generalized model. SyncBN normalizes regions of interest over all GPUs which diminishes the correlation within in the same normalization batch. Shuffling region of interests across different GPUS also reduces this correlation. The patterns in batches are less likely to be picked up by the model during training. Their results also showed that fixing information leakage can even allow sub-representative population statistics to result in comparable performance.
+In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest showed to reduce the information leakage, which results in a more generalized model. SyncBN normalizes regions of interest over all GPUs which diminishes the correlation within in the same normalization batch. Shuffling region of interests across different GPUS also reduces this correlation. The patterns in batches are less likely to be picked up by the model during training. Their results also showed that addressing information leakage can even allow sub-representative population statistics to result in comparable performance.
 
 ## What interesting variants are explored?
 
