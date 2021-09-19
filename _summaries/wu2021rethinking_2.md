@@ -50,7 +50,7 @@ The paper's suggestion for more precise population statistics was using PreciseB
 
 ![Alt Text](wu2021_1h.PNG)
 
-### **Train-Test Set Inconsistency - disparity between mini-batch and population statistics**
+### **Train-Test Set Inconsistency - Disparity between mini-batch and population statistics**
 
 The paper explores classification error for using mini-batch statistics to evaluate on the training set and validation set, as well as, using the population statistics on the validation set. The error rate was very low when using mini-batch statistics on training set due to a very low train-test consistency. The error rate of using mini-batch statistics on the validation set is less than when using the population statistics also due to greater train-test inconsistency when using the population statistics.
 
@@ -66,15 +66,15 @@ The paper conducted this experiment in order to show that significant difference
 
 ![Alt Text](wu2021_1e.PNG)
 
-### **Information Leakage - information from samples in batch affect prediction**
+### **Information Leakage - Information from samples in batch affect prediction**
 
 In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest reduces the information leakage , which results in a more generalized model. SyncBN normalizes regions of interest over all GPUs which diminishes the correlation within in the same normalization batch. Shuffling region of interests across different GPUS also reduces this correlation. The patterns in batches are less likely to be picked up by the model during training. Their results also showed that fixing information leakage can even allow sub-representative population statistics to result in comparable performance.
 
 ## What interesting variants are explored?
 
-This paper primarly focuses on variants of BatchNorm that can address its problems mentioned above. PreciseBN, and FrozenBN, and SyncBN are interesting variants of BatchNorm that bettered performance and reduced the impact of its shortcomings. 
+This paper primarly focuses on variants of BatchNorm that can address its problems mentioned above. PreciseBN, FrozenBN, and SyncBN are interesting variants of BatchNorm that bettered performance and reduced the impact of its shortcomings. 
 
 ## TL;DR
 * BatchNorm is widely used, but it has subtle shortcomings that can lead to lower performance
 * Non-representative population statistics used in BatchNorm cause performance drop due to train-test inconsistency
-* Domain shift and information leakage are both issues that can improve performance if addressed correctly
+* Domain shift and information leakage are both issues that if addressed correctly can improve performance
