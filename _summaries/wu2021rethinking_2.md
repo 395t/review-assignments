@@ -15,6 +15,10 @@ BatchNorm is a commonly used component of neural networks that has greatly incre
 
 $$y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}}$$
 
+$$\mu = \mu_B, \sigma^2 = \sigma_B^2 \; during\;training$$
+
+$$\mu = \mu_{pop}, \sigma^2 = \sigma_{pop}^2\; during\;testing$$
+
 ## How is it realized (technically)?
 
 There were 4 main experiments performed in this paper:
