@@ -46,7 +46,9 @@ The paper found that EMA was not successful in finding representative population
 
 ![Alt Text](wu2021_1a.PNG)
 
-The paper's suggestion for more precise population statistics was using PreciseBN, which aims to approximate the population statistics using a fixed model state and collecting batch statistics into population statistics. They found that PreciseBN led to better overall accuracy than EMA as it was able to produce population statistics that were more representative of the mini-batch statistics. 
+The paper's suggestion for more precise population statistics was using PreciseBN, which aims to approximate the population statistics using a fixed model state and collecting batch statistics into population statistics. This was different from EMA primarily because PreciseBN uses a model that is unchanging when calculating statistics while EMA is affected by previous states of the model. They found that PreciseBN led to better overall accuracy than EMA as it was able to produce population statistics that were more precise and representative of mini-batch statistics. 
+
+![Alt Text](wu2021_1h.PNG)
 
 ### **Train-Test Set Inconsistency - result of evaluating using population statistics**
 
