@@ -36,7 +36,7 @@ $$\sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2$$
 
 4. Used the second stage of an R-CNN object detector that takes region-of-interets for each image and derives prediction for that ROI. BatchNorm is used in R-CNN where regions from all images are merged into one mini-batch. This model was implemented with a pre-trained ResNet-50. They tested information leakage with 2 scenarios: using SyncBN and shuffling ROI among GPUs prior to the second stage. 
 
-![Alt Text](wu2021_1g.PNG)
+![Alt Text](wu2021_1g.png)
 
 ## How well does the paper perform?
 
