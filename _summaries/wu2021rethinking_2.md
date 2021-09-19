@@ -72,7 +72,7 @@ In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest 
 
 ## What interesting variants are explored?
 
-This paper primarly focuses on variants of BatchNorm that can address its problems mentioned above. PreciseBN and SyncBN are interesting variants of BatchNorm that bettered performance and reduced the impact of its shortcomings. 
+This paper primarly focuses on variants of BatchNorm that can address its problems mentioned above. PreciseBN, and FrozenBN, and SyncBN are interesting variants of BatchNorm that bettered performance and reduced the impact of its shortcomings. 
 
 ## TL;DR
 * BatchNorm is widely used, but it has subtle shortcomings that can lead to lower performance
