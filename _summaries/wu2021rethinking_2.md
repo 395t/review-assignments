@@ -60,9 +60,9 @@ The paper proposes scenarios where mini-batch statistics during inference; howev
 
 ![Alt Text](wu2021_1i.PNG)
 
-### **Domain Shift - Train and Test Data have different distribution**
+### **Domain Shift - Train and Test Data have different distributions**
 
-When training and test sets are from different domains, this is referred to domain shift. Calculating population statistics from datasets in the test domain led to the lowest error rate. This was an effective approach because the train-test inconsistency is lowered and the problem of domain shift is also addressed. 
+The paper conducted this experiment in order to show that significant differences in train and test data can lead to suboptimal results during test time.When training and test sets are from different domains, this is referred to domain shift. Thus, calculating population statistics from datasets in the test domain led to the lowest error rate. This was an effective approach because the train-test inconsistency is lowered and the problem of domain shift is also addressed. However, fixing this issue requires recomputing population statistics which has its own downsides that the paper claims needs deeper analysis and research.
 
 ![Alt Text](wu2021_1e.PNG)
 
