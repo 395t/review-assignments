@@ -81,6 +81,10 @@ Result:
 
 
 
+---
+
+
+
 **Issue #2: inconsistent behaviors between training and inference**
 
 The gap between population statistics and mini-batch statistics introduces inconsistency. 
@@ -102,6 +106,8 @@ The gap between population statistics and mini-batch statistics introduces incon
 - Result: train-test inconsistency is reduced when the batch size is small
 
 
+
+---
 
 
 
@@ -147,6 +153,10 @@ Let's discuss two scenarios.
 - Result:
   - For multi-domains, SGD-statistics-testing consistency is crucial for performance
   - Whether the afﬁne layer is shared or not has little impact
+
+
+
+---
 
 
 
