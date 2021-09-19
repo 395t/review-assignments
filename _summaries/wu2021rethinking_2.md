@@ -15,13 +15,9 @@ BatchNorm is a commonly used component of neural networks that has greatly incre
 
 $$ y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}} $$
 
-$$
-\mu = \mu_B, \sigma^2 = \sigma_B^2 \; during\;training
-$$
+$$ \mu = \mu_B, \sigma^2 = \sigma_B^2 \; during\;training $$
 
-$$
-\mu = \mu_{pop}, \sigma^2 = \sigma_{pop}^2\; during\;testing
-$$
+$$ \mu = \mu_{pop}, \sigma^2 = \sigma_{pop}^2\; during\;testing $$
 
 ## How is it realized (technically)?
 
@@ -30,8 +26,8 @@ There were 4 main experiments performed in this paper:
 1. Train a ResNet-50 model for 100 epochs with a mini-batch size = 8192. EMA (Exponential Moving Average) is used to calculate population statistics with lambda = 0.9. Randomly checked and compared the population mean and EMA mean of a random channel in a random BatchNorm Layer. They run a second experiment on a ResNet-50 model with PreciseBN as the population statistic computation method. 
 
 
-$$\mu_{EMA} = \lambda\mu_{EMA} + (1 - \lambda)\mu_{B}$$
-$$\sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2$$
+$$ \mu_{EMA} = \lambda\mu_{EMA} + (1 - \lambda)\mu_{B} $$
+$$ \sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2 $$
 
 
 2. Train a ResNet-50 model with varying normalization batch size from 2 to 1024. Error was inspected under 3 setttings - using mini-batch statistics on training set and validation set, and using population statistics on the validation set. In a second experiment, they replace the last 20 epochs of training with FrozenBN to show its positive impact on performance.
