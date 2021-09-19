@@ -13,11 +13,17 @@ score: 7
 
 BatchNorm is a commonly used component of neural networks that has greatly increased performance in image classifcation tasks. However, there are certain inherent aspects of BatchNorm that can lead to sub-optimal performance if not addressed correctly. This paper identifies issues primarily around population statistics computation,  training and test set inconsistency, domain shift, and information leakage. The paper also suggests solutions to combat each of these issues to make the most out of BatchNorm in networks.
 
-$$y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}}$$
+$$
+y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}}
+$$
 
-$$\mu = \mu_B, \sigma^2 = \sigma_B^2 \; during\;training$$
+$$
+\mu = \mu_B, \sigma^2 = \sigma_B^2 \; during\;training
+$$
 
-$$\mu = \mu_{pop}, \sigma^2 = \sigma_{pop}^2\; during\;testing$$
+$$
+\mu = \mu_{pop}, \sigma^2 = \sigma_{pop}^2\; during\;testing
+$$
 
 ## How is it realized (technically)?
 
