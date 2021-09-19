@@ -36,12 +36,13 @@ $$\sigma_{EMA}^2 = \lambda\sigma_{EMA}^2 + (1 - \lambda)\sigma_{B}^2$$
 
 4. Used the second stage of an R-CNN object detector that takes region-of-interets for each image and derives prediction for that ROI. BatchNorm is used in R-CNN where regions from all images are merged into one mini-batch. This model was implemented with a pre-trained ResNet-50. They tested information leakage with 2 scenarios: using SyncBN and shuffling ROI among GPUs prior to the second stage. 
 
+![Alt Text](wu2021_1g.PNG)
 
 ## How well does the paper perform?
 
 ### **Population Statistic Computation - More Representative Population Statistics**
 
-The paper found that EMA was not successful in finding representative population or mini-batch statistics. As shown  with the discrepancy in the below graph:
+The paper found that EMA was not successful in finding representative population or mini-batch statistics. They claim that when lambda is large, EMA statistics are composed mainly of features from previous iterations. On the other hand, when \lambda is small, EMA statistics represent more recent batches and is not indicative of the population. This discrepancy was illustrated by the paper in the below graph:
 
 ![Alt Text](wu2021_1a.PNG)
 
