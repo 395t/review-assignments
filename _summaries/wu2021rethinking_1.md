@@ -3,17 +3,17 @@ layout: summary
 title: Rethinking “Batch” in BatchNorm
 paper: wu2021rethinking_1
 # Please fill out info below
-author: # chengchunhsu
-score: 8/10
+author: chengchunhsu
+score: 7/10
 ---
 
 **A short review on BatchNorm**
 
-BatchNorm is sometimes viewed as a “necessary evil” in the design of CNNs
+In the paper, BatchNorm is described as a “necessary evil” in the design of CNNs
 
-- It improves model convergence speed
+- Improving model convergence speed
 
-- regularizing effect to combat overﬁtting
+- Regularizing effect to combat overﬁtting
 
 
 
@@ -30,11 +30,11 @@ Sampling strategies:
 
 
 
-Design issue: how to compute **μ** and **σ^2**?
+<u>Design issue</u>: how to compute **μ** and **σ^2**?
 
-- size
-- data source
-- algorithm to compute the statistics
+- Size
+- Data source
+- Algorithm to compute the statistics
 
 
 
@@ -46,31 +46,38 @@ Discussion between two statistics computation methods - EMA and PreciseBN.
 
 
 
-<u>Exponential moving average (EMA)</u>: updated in every training iteration
+<u>Exponential moving average (EMA)</u>: 
+
+- Updated in every training iteration
+
+
 
 ![EMA equation](wu2021rethinking_3.jpg)
 
 
 
-Problems:
+- Problems:
+  - When λ is large - the statistics are outdated
+  - When λ is small - ignore the whole population
 
-- When λ is large - the statistics outdated
-- When λ is small - ignore the whole population
+
+
+![EMC_training](wu2021rethinking_5.jpg)
 
 
 
 <u>PreciseBN</u>:
 
-- apply the (ﬁxed) model on many mini-batches to collect batch statistics
-- aggregate the per-batch statistics into population statistics
+- Apply the (ﬁxed) model on many mini-batches to collect batch statistics
+- Aggregate the per-batch statistics into population statistics
 
 
 
 Result:
 
-- PreciseBN is better and also more stable than with EMA
+- PreciseBN is better and also more stable than with EMA (for image classification on ImageNet)
 - EMA produces extremely high variance validation results under a larger batch size
-- PreciseBN only requires 103 ∼ 104 samples for near-optimal result
+- PreciseBN only requires 10^3 ∼ 10^4 samples for the near-optimal result
 
 
 
@@ -80,19 +87,19 @@ The gap between population statistics and mini-batch statistics introduces incon
 
 
 
-<u>Strategy #1</u>: using mini batch during inference
+<u>Strategy #1</u>: using mini-batch during inference
 
-Solution: compute  population statistics based on mini batch instead during inference
+- Method: compute population statistics based on mini-batch instead during inference
 
-Result: train-test inconsistency is reduced
+- Result: train-test inconsistency is reduced
 
 
 
 <u>Strategy #2</u>: using population batch during training
 
-Solution: apply FrozenBN in the last few epochs
+- Method: apply FrozenBN in the last few epochs
 
-Result: train-test inconsistency is reduced when the batch size is small
+- Result: train-test inconsistency is reduced when the batch size is small
 
 
 
@@ -112,8 +119,8 @@ What if multiple domains involving during training and inference?
 Domain gaps occur between the inputs in:
 
 - SGD training
-- population statistics training
-- testing generalization
+- Population statistics training
+- Testing generalization
 
 
 
@@ -123,26 +130,23 @@ Let's discuss two scenarios.
 
 <u>Scenarios #1</u>: a model is trained on one domain but tested on others
 
-Solution: re-compute the statistics during inference
+- Solution: re-compute the statistics during inference
 
-Result: 
-
-- train-test inconsistency is reduced
-- yet the gap between SGD and population statistics during training still worth more attentions
+- Result: 
+  - Train-test inconsistency is reduced
+  - Yet the gap between SGD and population statistics during training still worth more attentions
 
 
 
 <u>Scenarios #2</u>:  a model is trained on multiple domains *(in this case we mean feature layers)*. 
 
-Solution: 
+- Solution: 
+  - 1. compute unique population statistics for each feature level
+    2. normalize with the same set of population statistics for all feature levels
 
-1. compute unique population statistics for each feature level
-2. normalize with the same set of population statistics for all feature levels
-
-Result:
-
-- For multi-domains, SGD-statistics-testing consistency is crucial for performance
-- Whether the afﬁne layer is shared or not has little impact
+- Result:
+  - For multi-domains, SGD-statistics-testing consistency is crucial for performance
+  - Whether the afﬁne layer is shared or not has little impact
 
 
 
@@ -154,7 +158,7 @@ Unwanted batch-wise information might be exploited since the model learned from 
 
 Some example: 
 
-- Mini-batch that has the same class label
+- Mini-batches that have the same class label
 - Region of interests (RoIs) from the same image in object detection
 
 
