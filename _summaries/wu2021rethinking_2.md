@@ -68,7 +68,7 @@ The paper conducted this experiment in order to show that significant difference
 
 ### **Information Leakage - information from samples in batch affect prediction**
 
-In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest reduces the information leakage , which results in a more generalized model. The patterns in batches are less likely to be picked up by the model during training. Their results also showed that fixing information leakage can even allow sub-representative population statistics to result in comparable performance.
+In the final experiment with R-CNN, SyncBN and shuffling of regions-of-interest reduces the information leakage , which results in a more generalized model. SyncBN normalizes regions of interest over all GPUs which diminishes the correlation within in the same normalization batch. Shuffling region of interests across different GPUS also reduces this correlation. The patterns in batches are less likely to be picked up by the model during training. Their results also showed that fixing information leakage can even allow sub-representative population statistics to result in comparable performance.
 
 ## What interesting variants are explored?
 
