@@ -9,7 +9,7 @@ score: # 8/10
 
 Core Idea:
 
-The batch norm introduced an optimization in which the outputs of the layers were normalized for a particular batch (scaled and recentered). This lead to significant improvement in performance for a lot of deep learning tasks (one of the most important improvements). However with smaller batch sizes, this technique doesn't work as well. This may be the case if it is impossible to have large batch sizes (models such as BERT) and you have to train on a smaller batch size. This paper introduces a group norm which works on smaller batches and has consistent improvements of performance across batch sizes. Group norm breaks down does normalization of the input layer by breaking channels into groups.
+The batch norm introduced an optimization in which the outputs of the layers were normalized for a particular batch (scaled and recentered). This lead to significant improvement in performance for a lot of deep learning tasks (one of the most important improvements). However with smaller batch sizes, this technique doesn't work as well. This may be the case if it is impossible to have large batch sizes (models such as video classification models) and you have to train on a smaller batch size. This paper introduces a group norm which works on smaller batches and has consistent improvements of performance across batch sizes. Group norm breaks down does normalization of the input layer by breaking channels into groups.
 
 Technical Realization:
 
