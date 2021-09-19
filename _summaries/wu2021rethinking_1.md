@@ -16,6 +16,7 @@ In the paper, BatchNorm is described as a “necessary evil” in the design of 
 - Regularizing effect to combat overﬁtting
 
 
+$$y=\frac{x-\mu}{\sqrt{\sigma^2+\epsilon}}$$
 
 ![BN_EQ1](wu2021rethinking_1_1.jpg)
 
