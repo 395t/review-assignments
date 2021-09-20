@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{wu2018}}
+paper: wu2018group
 # Please fill out info below
-author: # SShivang
-score: # 8/10
+author: SShivang
+score: 8
 ---
 
 Core Idea:
