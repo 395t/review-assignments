@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: Rethinking "Batch" in BatchNorm, Wu, Johnnson; 2021
-paper: wu2021rethinking_2
+title: Summary
+paper: wu2021rethinking
 # Please fill out info below
 author: saikm200022
 score: 7
