@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{bjorck2018understanding}}
+paper: bjorck2018understanding
 # Please fill out info below
 author: timchen0618
-score: 8/10 # How did you like this paper 0(dislike) to 10(love)
+score: 8 # How did you like this paper 0(dislike) to 10(love)
 ---
 
 ## Background
