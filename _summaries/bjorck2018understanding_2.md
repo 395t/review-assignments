@@ -4,7 +4,7 @@ title: Summary
 paper: bjorck2018understanding
 # Please fill out info below
 author: dalmeraz
-score: 5/10
+score: 5
 ---
 
 ## Goal:
