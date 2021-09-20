@@ -4,7 +4,7 @@ title: Summary
 paper: srivastava2014dropout
 # Please fill out info below
 author: DartingMelody
-score: 10/10
+score: 10
 ---
 
 **What is the core idea?**
@@ -24,7 +24,7 @@ Dropout has the following features:
 
 **How is it realized (technically)?**
 
-The dropout is realised by the following feed forward equations (* denotes element wise product) :
+Dropout is generally applied after the non-linear activation function on a layer which then acts as the input to the next layer. Dropout is realised by the following feed forward equations (* denotes element wise product) :
 
 ![Training equations](./srivastava2014dropout_2c.png)
 
