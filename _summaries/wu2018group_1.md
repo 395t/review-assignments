@@ -103,5 +103,4 @@ used.
 ## TL;DR
 * Group Normalization outperforms Batch Normalization for small batch sizes
 * Group Normalization standardizes small groups of channels for each image
-* Group Normalization sufferes performance degradation compared to Batch
-Normalization for larger batch sizes.
+* Group Normalization performs worse than Batch Normalization for larger batch sizes.
