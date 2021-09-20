@@ -53,7 +53,10 @@ Apply both batch and channel normalization together to activations
 
 > Channel based normalizations make estimates based normalizations possible, and estimate based normalization helps channel based normalizations avoid elimination singularities
 
-**TODO**: Add results
+## Results
+Results with `WS` | Results with `WS` + `BCN`
+:-------------------------------------:|:---------------------------------------------:
+<img src="qiao2019micro-batch_2/ws-results.png" height="200"/> | <img src="qiao2019micro-batch_2/ws-bcn-fig.png" width="500"/>
 
 ## TL;DR
 * Weight Standardization can give similar effects of Batch Normalization even with very small batch sizes 
