@@ -88,7 +88,7 @@ With 1 image per GPU for 8 GPUs being used for this task, group normalization
 outperformed batch normalization across the board. The authors also performed
 an experiment on **COCO** dataset where they trained a Mask R-CNN model from
 scratch with group normalization and achieved the highest *from-scratch*
-results that the authors had knowledge of when writing the paper.
+results for **COCO** that the authors had knowledge of when writing the paper.
 
 <img width="500px" src="wu2018group_1d.PNG"/>
 
