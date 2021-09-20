@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: Summary for Layer Normalization (Ba et al, 2016)
+title: Summary
 paper: ba2016layer
 author: jaywhang
 score: 9
