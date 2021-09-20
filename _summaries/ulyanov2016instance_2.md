@@ -4,7 +4,7 @@ title: Summary
 paper: ulyanov2016instance
 # Please fill out info below
 author: kraja99
-score: 6 / 10
+score: 6
 ---
 
 TODO: Summarize the paper:
