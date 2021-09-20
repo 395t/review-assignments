@@ -54,6 +54,7 @@ Apply both batch and channel normalization together to activations
 > Channel based normalizations make estimates based normalizations possible, and estimate based normalization helps channel based normalizations avoid elimination singularities
 
 ## Results
+
 Results with `WS` | Results with `WS` + `BCN`
 :-------------------------------------:|:---------------------------------------------:
 <img src="qiao2019micro-batch_2/ws-results.png" width="500"/> | <img src="qiao2019micro-batch_2/ws-bcn-results.png" width="500"/>
