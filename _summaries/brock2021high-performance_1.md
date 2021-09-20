@@ -47,11 +47,18 @@ The idea here is that if the norm of the weight updates in a single layer ($$\De
  
 
 
-# Results
+# Normalizer Free ResNets and Results
+Networks are designed to optimize training latency and accuracy. 
+The authors manually explore the architecture space and used SE-ResNeXt-D with GELU activations as a baseline model which they further modified.
+Networks are trained with Nesterov Momentum, Adaptive Gradient Clipping with large batch sizes, and aggresive data augmentation.
 
 <img width="800px" src="brock2021high_performance_1_results.PNG"/>
 
+Note that the NF-ResNets not only set state-of-the-art accuracies, they also have competative training latencies and are faster than some of the other top models despite having significantly more parameters and theoretical FLOPs.
+
 # Normalizer Free Networks with Transfer Learning
+NF Networks are pretrained on 300 million labeled images and then fine tuned to ImageNet.
+These networks outperform the analogous networks that use Batch Normalization which the authors claim shows that batch normalization may actually hurt transfer learning techniques.
 
 <img width="400px" src="brock2021high_performance_1_transfer_results.PNG"/>
 
