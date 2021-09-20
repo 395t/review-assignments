@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{salimans2016weight}}
+paper: salimans2016weight
 # Please fill out info below
 author: mmcinnestaylor 
 score: 9 # How did you like this paper 0(dislike) to 10(love)
