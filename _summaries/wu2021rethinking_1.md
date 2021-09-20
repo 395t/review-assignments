@@ -1,10 +1,10 @@
 ---
 layout: summary
-title: Rethinking “Batch” in BatchNorm
+title: Summary
 paper: wu2021rethinking_1
 # Please fill out info below
 author: chengchunhsu
-score: 7/10
+score: 7
 ---
 
 **A short review on BatchNorm**
