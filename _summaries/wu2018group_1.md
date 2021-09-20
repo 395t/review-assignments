@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: Summary of *Group Normalization* by *Wu, He*, 2018
-paper: {{wu2018group}}
+title: Summary
+paper: wu2018group
 # Please fill out info below
 author: trowk
 score: 7
