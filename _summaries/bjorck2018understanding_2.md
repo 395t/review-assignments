@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: bjorck2018understanding
 # Please fill out info below
 author: dalmeraz
 score: 5/10
