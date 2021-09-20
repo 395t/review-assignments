@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: wu2021rethinking_1
+paper: wu2021rethinking
 # Please fill out info below
 author: chengchunhsu
 score: 7
