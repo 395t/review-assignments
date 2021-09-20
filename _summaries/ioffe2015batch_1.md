@@ -21,6 +21,10 @@ Normalization step goes between linear and non-linear layers.
 
 Normalize the activations of a layer so they have 0 mean and unit variance.
 
+Normalization allows the use of much higher learning rates because gradients no longer depend on the scale or the initial values of the parameters.
+
+Removing dropout from a batch-normalized network improves accuracy, possibly because the activations observed for a training example are affected by the random selection of examples in the same mini-batch.
+
 Implementation:
 
 Compute mean and standard deviation over all batches.
