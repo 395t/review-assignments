@@ -83,6 +83,7 @@ The model architecture is a modified version of the SE-ResNeXt-D model:
 <img width="500px" src="brock2021high-performance_2_architecture.png"/>
 Figure 1: Residual block
 
+The modifications include increasing the number of output channels for convolutions (since training speed stays the same on modern hardware) and introducing a simpler, more efficient depth scaling rule for larger model variants.
 
 ## How well does the paper perform?
 
