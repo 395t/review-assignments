@@ -1,9 +1,9 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: brown2020language
 # Please fill out info below
-author: # Your GitHub id
+author: mattkelleher
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
