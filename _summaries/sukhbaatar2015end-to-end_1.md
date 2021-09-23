@@ -54,17 +54,15 @@ Model details:
 6) The default value for number of layers for these models is 3.
 
 **How well does the paper perform?**
-* The model was tried on various variants described above with joint training on all tasks and per tasks trainings. These models were compared with MeMNN, MemNN-WSH, LSTM.
-* All variants of the model beats the weakly supervised baseline models. 
+* The model was tried on various variants described above with joint training on all tasks and per tasks trainings. These models were compared with MeMNN, MemNN-WSH, LSTM. All variants of the model beats the weakly supervised baseline models. 
 * The position encoding representation performs better than bag of words representation especially on tasks where word ordering is important. 
-* Linear Start helps to avoid local minima. 
+* Linear Start helps to avoid local minima. Joint training performs better in all the models.
 * Jittering the time index with random empty noises gives small but consistent boost in performance. 
-* Joint training performs better in all the models.
 
 **What interesting variants are explored?**
 
 The model (operating on a word level) was applied on a language modeling task with the following changes:
-1) The previous _N_ words and current word in the input sentences are embedded into memory separately.
+1) The previous _N_ words and current word in the input sentence are embedded into memory separately.
 2) _q_ is a fixed constant vector (without embeddings) as there is no input query.
 3) ReLU is applied to half of the layer. Layer wise RNN weight sharing is used. 
 4) The model closely resembles RNN with the difference that the sequence over which network is recurrent is not in text but in memory hops. 
