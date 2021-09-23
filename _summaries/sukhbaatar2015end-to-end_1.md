@@ -34,6 +34,7 @@ The Model takes as input $$x_{1},...,x_{i}$$ (to store in memory), query _q_ and
 ![Model with one layer and multiple layer](./sukhbaatar2015end-to-end_1a.png)
 
 *Constraints on embedding vectors*
+
 Adjacent:
 1) The output embedding for one layer is input embedding for another i.e. $$A^{k+1} = C^{k}$$.
 2) The answer prediction matrix is equal to output matrix i.e. $$W^{T} = C^{k}$$. 
@@ -61,6 +62,7 @@ Model details:
 * Joint training performs better in all the models.
 
 **What interesting variants are explored?**
+
 The model (operating on a word level) was applied on a language modeling task with the following changes:
 1) The previous _N_ words and current word in the input sentences are embedded into memory separately.
 2) _q_ is a fixed constant vector (without embeddings) as there is no input query.
