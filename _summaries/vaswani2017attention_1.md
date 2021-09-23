@@ -34,7 +34,7 @@ The paper introduced an architecture based solely on attention mechanisms, which
 
 ##Explination of Hyperparameters in test
 
-##results
+##Results
 
 ![Results](vaswani2017attention_1c.png)
 
