@@ -20,12 +20,12 @@ The authors study self attention based architectures and realize following key p
 The paper starts by studying self-attention networks (`SAN`s) built exclusively out of multi-head self-attention layers. 
 
 They show that the ouput of `SAN` decomposes into the combination of simpler single-head networks, where each single-head corresponds to a unique path across `H` heads and `L` layers
-<p align="left"><img src="dong2021attention_1/path-eqn.png"/></p>
+<p align="left"><img src="dong2021attention_1/path-eqn.png" width="950"/></p>
 <p align="center"><img src="dong2021attention_1/path-vis.png" height="250"/></p>
 
 ## Exponential degeneration of `SAN`s
 The output of `SAN` loses rank (moves towards uniform token representation) exponentially with depth
-<p align="left"><img src="dong2021attention_1/exp-decay.png"/></p>
+<p align="left"><img src="dong2021attention_1/exp-decay.png" width="950"/></p>
 
 ## Skip connections and MLP help in avoiding rank collapse
 <p align="center"><img src="dong2021attention_1/mlp-skip-help.png" width="700"/></p>
