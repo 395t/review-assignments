@@ -9,7 +9,7 @@ score: 8
 ## Core Idea
 It is basically a survey paper that try to identify how BERT works and what it captures to do the end tasks. They also investigate the training process of BERT and the overparameterization problem. 
 
-## Knowledge That BERT Have
+## Knowledge That BERT Has
 ### Syntactic Knowledge
 - BERT representations are hierarchical. (Somewhat similar to the tree structure in syntactic parsing.)
 - BERT is found to have some kind of syntactic knowledge, but it is not similar to the syntactic rules people defined. 
