@@ -35,6 +35,8 @@ It is basically a survey paper that try to identify how BERT works and what it c
 - BERT embeddings form more of a "cone" shape in vector space, which is less favored for static word embeddings
 
 ### Attention Heads
+- Some heads seem to specialize in certain types of linguistic functions
+- Cannot reconstruct a syntactic tree from a single head, but some heads contain fruitful information (e.g. perform coreference resolution)
 
 ### Layers
 - While lower layers have information about word order, higher layers obtain a more hierarchical sentence representation
