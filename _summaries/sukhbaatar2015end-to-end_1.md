@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: sukhbaatar2015end-to-end_1
+paper: sukhbaatar2015end-to-end
 # Please fill out info below
 author: DartingMelody
 score: 7
