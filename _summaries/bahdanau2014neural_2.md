@@ -23,7 +23,7 @@ where $$h_t$$ is the hidden state at time $$t$$ and $$f(\cdot)$$ and $$q(\cdot)$
 
 The proposed architecture also uses a similar encoder as above, except that it uses two RNNs - one running in each direction to generate two sets of hidden states $$(\overrightarrow{h_1},\cdots,\overrightarrow{h_{T_x}})$$ and $$(\overleftarrow{h_1},\cdots,\overleftarrow{h_{T_x}})$$ for each input sequence.  The final hidden state (also called _annotation_) for each word is simply the concatenation of the forward and backward hidden states, i.e. $$h_{j}=\left [ \overrightarrow{h_j^T}; \overleftarrow{h_j^T} \right ]^T$$. This is to include information from both preceding and following words in the annotation of each word. Note that for the proposed model, $$j$$ and $$i$$ are used to index the input and output sequences respectively.
 
-<img width="150" alt="bahdanau2014neural_2a" src="bahdanau2014neural_2a.png">
+<img width="250" alt="bahdanau2014neural_2a" src="bahdanau2014neural_2a.png">
 
 
 The paper largely modifies the decoder architecture of the baseline model where instead of having a fixed encoding $$c$$ for each sequence pair, there is an independent **context-vector $$c_{i}$$** for predicting each word in the output sequence. So, $$c$$ is replaced by $$c_{i}$$ in all equations for predicting the next word $$y_{i}$$ and computing the next state $$s_{i}$$ of the decoder RNN. 
