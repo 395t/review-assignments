@@ -52,6 +52,6 @@ I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs 
 
 
 ## TL;DR
-* Deep Learning Networks are unfit for sequence to sequence tasks beacuse they require a fixed dimensionality of input and output sequences
-* LSTMs can be used to represent an iunput sequence as a large fixed dimensionality vector that can be used when to translate into output sequence
+* Sequence to sequence tasks with deep learning models is challenging because they require a fixed dimensionality of input and output sequences
+* LSTMs can be used to represent an input sequence as a large fixed dimensionality vector that can be used when translate into output sequence of arbitrary length
 * First example of neural approach outperforming baseline statistical machine translation and performance relatively near best approach
