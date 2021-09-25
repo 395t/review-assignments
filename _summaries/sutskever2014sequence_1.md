@@ -30,13 +30,15 @@ The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to 
 
 The most likely transalations during training were found using a left-to-right beam search algorithm. The paper also took the 1000 most likely translations from the baseline (SMT) and rescored them using the log probabilities of each translation hypothesis with their model. The model was trained using Stochastic Gradient Descent without momentum with a batch size of 128 random sentences. 
 
+Another unique implementation detail was that they reversed the input LSTM. Instead of reading sentences into the model from left to right, they read the sentences from right to left. 
+
 ## How well does the paper perform?
 
 The model was used on the WMT'14 English to French Machine Translation task. The paper trained the model on a subset of 12 million sentences with vocabulary size of 348 million and 304 million words for French and English respectively.
 
 They assessed the success of their approach using a BLUE score - typically computed by comparing a translated sentence with some reference translation checking for some overlap. The higher the score, the closer the model's output translations were to the reference translations. With 5 reversed LSTMs and a beam size of 12 they were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. The paper claims this was the first time that such results ever occurred for a neural translation model. The specific results of their experiment are shown below:
 
-![Alt Text](sutskever2014sequence_1c.PNG)
+![Alt Text](sutskever2014sequence_1e.PNG)
 
 The paper also found that rescoring the baseline's 1000 best lists with their own 5 reversed LSTMs lead to a BLEU score of 36.5 which is very close to the best WMT'14 result of 37.0. Overall, this paper states this was the first neural approach that achieved significant results on a sequence to sequence task. 
 
@@ -45,7 +47,7 @@ The paper also found that rescoring the baseline's 1000 best lists with their ow
 
 ## What interesting variants are explored?
 
-I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs read sentences from beginning to end, but this paper reverses the senetences and reads input backwards. Apparently, this significantly helped their model's performance by increasing BLEU score by about 4 - 5. They theorize that because source words are closed to the target words in the decoder, there is fewer "minimal time lag". Since the source and target words are initially closer to each other, it is easier for the model to draw connections between the input and output sentences which led to improvement.
+I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs read sentences from beginning to end, but this paper reverses the sentences and reads input backwards. Apparently, this significantly helped their model's performance by increasing BLEU score by about 4 - 5. They theorize that because source words are closed to the target words in the decoder, there is fewer "minimal time lag". Since the source and target words are initially closer to each other, it is easier for the model to draw connections between the input and output sentences which led to improvement.
 
 
 ## TL;DR
