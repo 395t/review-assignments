@@ -18,7 +18,13 @@ Deep Neural Networks are being used today for all kinds of difficult tasks such 
 
 ## How is it realized (technically)?
  
-The model in the paper uses two LSTMs: one for the input and output sequences respectively. These LSTMs were relatively deep with four layers and a final softmax layer over the LSTMs output. The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the following to obtain the most likely translation: 
+The model in the paper uses two LSTMs: one for the input and output sequences respectively. These LSTMs were relatively deep with four stacked layers and a final softmax layer over the LSTMs output. 
+
+
+![Alt Text](sutskever2014sequence_1c.PNG)
+
+
+The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the following to obtain the most likely translation: 
 
 ![Alt Text](sutskever2014sequence_1a.PNG)
 
