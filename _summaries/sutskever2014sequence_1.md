@@ -29,7 +29,9 @@ The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to 
 ![Alt Text](sutskever2014sequence_1a.PNG)
 
 
-The most likely translations during training were found using a left-to-right beam search algorithm, which is independent of the MLE training goal. The beam size is relevant to determining the best number of translations that are kept at every time step. Smaller beam sizes indicates greedier translation selections. However, the paper found a beam size of 1 and 2 to be sufficient for reasonable results. The paper also took the 1000 most likely translations from the baseline (SMT) and rescored them using the log probabilities of each translation hypothesis with their model. The model was trained using Stochastic Gradient Descent without momentum with a batch size of 128 random sentences. 
+The most likely translations during training were found using a left-to-right beam search algorithm, which is independent of the MLE training goal. The beam size is relevant to determining the best number of translations that are kept at every time step. Smaller beam sizes indicates greedier translation selections. However, the paper found a beam size of 1 and 2 to be sufficient for reasonable results. 
+
+The paper also took the 1000 most likely translations from the baseline (SMT) and rescored them using the log probabilities of each translation hypothesis with their model. The model was trained using Stochastic Gradient Descent without momentum with a batch size of 128 random sentences. 
 
 Another unique implementation detail was that they reversed the input LSTM. Instead of reading sentences into the model from left to right, they read the input sentences from right to left. 
 
