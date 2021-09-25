@@ -17,9 +17,7 @@ Deep Neural Networks are being used today for all kinds of difficult tasks such 
 
 
 ## How is it realized (technically)?
-
-The model was used on the WMT'14 English to French Machine Translation task. The paper trained the model on a subset of 12 million sentences with vocabulary size of 348 million and 304 million words for French and English respectively. 
-
+ 
 The model in the paper uses two LSTMs: one for the input and output sequences respectively. These LSTMs were relatively deep with four layers and a final softmax layer over the LSTMs output. The paper's training algorithm maximized the following to obtain the most likely translation: 
 
 ![Alt Text](sutskever2014sequence_1a.PNG)
@@ -27,6 +25,8 @@ The model in the paper uses two LSTMs: one for the input and output sequences re
 The most likely transalations during training were found using a left-to-right beam search algorithm. The paper also took the 1000 most likely translations from the baseline (SMT) and rescored them using the log probabilities of each translation hypothesis with their model. The model was trained using Stochastic Gradient Descent without momentum with a batch size of 128 random sentences. 
 
 ## How well does the paper perform?
+
+The model was used on the WMT'14 English to French Machine Translation task. The paper trained the model on a subset of 12 million sentences with vocabulary size of 348 million and 304 million words for French and English respectively.
 
 They assessed the success of their approach using a BLUE score - typically computed by comparing a translated sentence with some reference translation checking for some overlap. The higher the score, the closer the model's output translations were to the reference translations. With 5 reversed LSTMs and a beam size of 12 they were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. The paper claims this was the first time that such results ever occurred for a neural translation model. The specific results of their experiment are shown below:
 
