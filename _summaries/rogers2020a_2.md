@@ -53,9 +53,10 @@ They also offer some tips as to how to train a BERT model. Some useful tips incl
 
 **Improvements to Training**
 - Use larger batches
-- Train lower layers first and then retrain the whole model - faster training time
+- Train lower layers first and then retrain the whole model leads to faster training time
 
 **Improvements to Pretraining Data**
+
 Larger pretraining datasets, longer training, including linguistic information in the data, and considering structured knowledge such as knowledge base or entites when training.
 
 ### Improvements on Fine-tuning
