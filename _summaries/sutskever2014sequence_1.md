@@ -39,7 +39,9 @@ Another unique implementation detail was that they reversed the input LSTM. Inst
 
 The model was used on the WMT'14 English to French Machine Translation task. The paper trained the model on a subset of 12 million sentences with vocabulary size of 348 million and 304 million words for French and English respectively.
 
-They assessed the success of their approach using a BLUE score - typically computed by comparing a translated sentence with some reference translation checking for some overlap. The higher the score, the closer the model's output translations were to the reference translations. With 5 reversed LSTMs and a beam size of 12 they were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. The paper claims this was the first time that such results ever occurred for a neural translation model. The specific results of their experiment are shown below:
+Success was based on BLUE score - typically computed by comparing a translated sentence with some reference translation checking for some overlap. The higher the score, the closer the model's output translations were to the reference translations. 
+
+5 LSTMs with different initialization and ordering of batches plus a beam size of 12 were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. The paper claims this was the first time that such results ever occurred for a neural translation model. The specific results of their experiment are shown below:
 
 ![Alt Text](sutskever2014sequence_1e.PNG)
 
