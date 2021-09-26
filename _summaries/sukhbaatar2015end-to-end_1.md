@@ -13,7 +13,7 @@ The paper introduces a novel recurrent neural network with an explicit large mem
 
 **How is it realized (technically)?**
 
-The Model takes as input $$x_{1},...,x_{i}$$ (to store in memory), query _q_ and outputs answer _a_. The model writes all _x_ to the memory up to a fixed buffer size and creates continuous representation of _x_ and _q_. 
+The Model takes as input $$x_{1},...,x_{i}$$ (to store in memory), query _q_ and outputs answer _a_. For the question answering task, each $$x_{i}$$ is a sentence. The model writes all _x_ to the memory up to a fixed buffer size and creates continuous representation of _x_ and _q_. 
 
 ![Question-Answering problem example](./sukhbaatar2015end-to-end_1b.png)
 
