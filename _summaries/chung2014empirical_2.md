@@ -19,15 +19,15 @@ TODO: Summarize the paper:
         * $$\textbf{x}_t$$ and $$\textbf{h}_{t-1}$$ are used to calculate the forget gate, the input gate, and the output gate
 
             $$
-            f_t = \sigma(W_f\textbf{x}_t + U_f\textbf{h}_{t-1} + V_f\textbf{c}_{t-1})
+            f_t = \sigma(W_f\textbf{x}_t + U_f\textbf{h}_{t-1})
             $$
 
             $$
-            i_t = \sigma(W_i\textbf{x}_t + U_i\textbf{h}_{t-1} + V_i\textbf{c}_{t-1})
+            i_t = \sigma(W_i\textbf{x}_t + U_i\textbf{h}_{t-1})
             $$
 
             $$
-            o_t = \sigma(W_o\textbf{x}_t + U_o\textbf{h}_{t-1} + V_o\textbf{c}_{t-1})
+            o_t = \sigma(W_o\textbf{x}_t + U_o\textbf{h}_{t-1})
             $$
 
         * Candidate memory cell calculated as 
