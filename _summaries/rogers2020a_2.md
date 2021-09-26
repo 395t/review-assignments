@@ -28,11 +28,11 @@ It is basically a survey paper that try to identify how BERT works and what it c
 
 
 ## Localized Linguistic Knowledge 
-### BERT Embeddings
+<!-- ### BERT Embeddings
 - The embeddings are contextualized
 - These embeddings form clusters and can be used for word sense disambiguation
 - Distill contextual word embeddings into static ones leads to better performance in word-level tasks
-- BERT embeddings form more of a "cone" shape in vector space, which is less favored for static word embeddings
+- BERT embeddings form more of a "cone" shape in vector space, which is less favored for static word embeddings -->
 
 ### Attention Heads
 - Some heads seem to specialize in certain types of linguistic functions
@@ -45,38 +45,34 @@ It is basically a survey paper that try to identify how BERT works and what it c
 - Some said that lower layers contain low-level syntactic information and higher layers encode high-level semantic information, much like a standard NLP pipeline; however, others suggest middle layers excel at both.
 
 ## Training BERT
-### Model Architecture Choices
-- Number of layers matters more than number of attention heads
-- Attention heads often encode similar information; can tailor self-attention heads for specific needs to improve performance
+They also offer some tips as to how to train a BERT model. Some useful tips include:
 
-### Improvements to Training 
+**Model Architecture Choices**
+- Number of layers matters more than number of attention heads
+- Attention heads often encode similar information; we can tailor self-attention heads for specific needs to improve performance
+
+**Improvements to Training**
 - Use larger batches
 - Train lower layers first and then retrain the whole model - faster training time
 
-### Pretraining
-Pretraining is beneficial to most tasks, but the exact reason is to be investigated. 
-
-**Some improvements to data can be made:**
-
+**Improvements to Pretraining Data**
 Larger pretraining datasets, longer training, including linguistic information in the data, and considering structured knowledge such as knowledge base or entites when training.
-
-
-They also mentioned various alternative training schemes. Some change the masking, others tried to modify the text in ways other than masking, still others incorporate other tasks (e.g. latent knowledge retrieval).
-
 
 ### Improvements on Fine-tuning
 - Considering more than just the output layer
 - A separate supervised training phase in between pretraining and fine-tuning
-- Other methods: Adversarial token perturbations, adversarial regularization, amd mixout regularization
+<!-- - 
+### Pretraining
+Pretraining is beneficial to most tasks, but the exact reason is to be investigated. 
+
+They also mentioned various alternative training schemes. Some change the masking, others tried to modify the text in ways other than masking, still others incorporate other tasks (e.g. latent knowledge retrieval). -->
+
+
 
 ## Overparameterization Problem
+They also stated the BERT is largely overparameterized. For example, people could prune most of the attention heads without great performance loss. In some task, more layers cause performance drops.
 
-### Some proof of this:
-- Could prune most of the attention heads without great performance loss
-- Some observe positive effect from disabling attention heads
-- In some task, more layers cause performance drops
-
-### Solution: Compression Techniques
+**Solution: Compression Techniques**
 - knowledge distillation (e.g. DistillBERT), basically let a student network to learn from the activations of teacher (BERT)
 - Quantization
 - Pruning
