@@ -18,7 +18,7 @@ score: 8 # How did you like this paper 0(dislike) to 10(love)
 ![Architecture](sukhbaatar2015end-to-end_2_b.png) 
 * The inputs $$x_i$$ and query q are transformed using input embedding matrices A and B, respectively. The embedded inputs are 'memories' in the embedding space. 
 $$m_i = \text{Embed}_A(x_i)\qquad u = \text{Embed}_B(q)$$
-* The most relevant embedded memory is matched with the embedded query by taking the inner product of each memory with the query followed by a softmax operation, thus producing a probability vector. The vector with the strongest score is used in subsequent steps.  
+* The relevance of an embedded memory is calculated by taking the inner product of each memory with the embedded query followed by a softmax operation, thus producing a probability vector. The vector with the strongest score is used in subsequent steps.  
 $$p_i = \text{softmax}(u^{\text{T}}m_i)$$  
 * The unembedded inputs (story) are then embedded once again using an output embedding matrix C.  
 $$c_i = \text{Embed}_C(x_i)$$  
