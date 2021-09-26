@@ -38,10 +38,10 @@ where the last equation represents the parameters of an _alignment model_ that l
 
 ## Benefits of proposed model
 
-* With BiRNN and a soft alignment (using attention) over the annotations of the input sequence, the model is able to look at various parts of the source sequence before predicting the next output word. This improves the quality of the translation.
-* By having a context vector for each word in the output, it automatically takes care of cases where source and target sequences are of different lengths.
 * The model no longer requires to encode long sequences into fixed-length vectors which allows a better encoding of the information around all words in the long sequence.
-
+* By having a context vector for each word in the output, it automatically takes care of cases where source and target sequences are of different lengths.
+* With BiRNN and a soft alignment (using attention) over the annotations of the input sequence, the model is able to look at various parts of the source sequence before predicting the next output word. This improves the quality of the translation.
+* The alignment parameters in the $$\alpha$$ matrix above represent the importance of each word in the source sentence to generate a target word. Thus, a simple visualization of this matrix can be used to qualitatively evaluate if the alignments learnt by the model are intuitive for some example translations.
 
 
 ## Performance
