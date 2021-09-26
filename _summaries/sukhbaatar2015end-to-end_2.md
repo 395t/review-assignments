@@ -29,13 +29,13 @@ $$\hat{a} = \text{softmax}(W(o + u))$$
 * During training, utilizing stochastic gradient descent, the matrices A, B, C, and W are learned by minimizing the standard cross-entropy loss between the predicted label, and the correct label.  
 ## Variants 
 * Along with the baseline model, the authors experimented with deepening the architecture by adding additional memory layers, which they term 'hops'.  
-	* Each hop is comprised of embedding matrics A and C and outputs an answer, which is passed to the next memory layer as the query.    
+	* Each hop is comprised of embedding matrics A and C, and outputs an answer, which is passed to the next memory layer as the query.    
 * Two schemes are proposed for defining the input embedding A and output embedding B:  
 $$\text{Adjacent: } A^{k+1} = C^k\qquad W^T=C^K\qquad B=A^1$$  
 $$\text{Layer-wise: } A^1=A^2=...=A^k\qquad C^1=C^2=...=C^k$$ 
 * Two sentence representations were explored: Bag of Words (BoW) which is agnostic to the position of words in a sentence, and a method they call Positional Encoding, which is sensitive to word position.  
 * Given that some stories and questions depend upon the sequence of events which took place, a Temporal Encoding scheme is presented where the memory vectors $$m_i$$ and the output vector are supplemented with a special matrix T which encodes temporal information.  
-	* Random noise, in the form of empty memories, was injected into the temporal matrix to help with regularization during training.  
+	* Random noise, in the form of empty memories, is injected into the temporal matrix to help with regularization during training.  
 * Language modeling experiments were also performed where the model predicted the next word in a given sequence.
 ## Results  
 ![Results](sukhbaatar2015end-to-end_2_c.png)   
