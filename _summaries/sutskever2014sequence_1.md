@@ -52,10 +52,10 @@ The paper also found that rescoring the baseline's 1000 best lists with their ow
 
 ## What interesting variants are explored?
 
-I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs read sentences from beginning to end, but this paper reverses the sentences and reads input backwards. Apparently, this significantly helped their model's performance by increasing BLEU score by about 4 - 5. They theorize that because source words are closed to the target words in the decoder, there is fewer "minimal time lag". Since the source and target words are initially closer to each other, it is easier for the model to draw connections between the input and output sentences which led to improvement.
+I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs read sentences from beginning to end, but this paper reverses the sentences and reads input backwards. Apparently, this significantly helped their model's performance by increasing BLEU score by about 4 - 5. They theorize that because source words are closed to the target words in the decoder, there is fewer "minimal time lag". Since the source and target words are initially closer to each other, it is easier for the model to draw connections between the input and output sentences early on during decoding.
 
 
 ## TL;DR
 * Sequence to sequence tasks with deep learning models is challenging because they require a fixed dimensionality of input and output sequences
-* LSTMs can be used to represent an input sequence as a large fixed dimensionality vector that can be used when translate into output sequence of arbitrary length
+* LSTMs can be used to represent an input sequence as a large fixed dimensionality vector that can be used to translate into an output sequence of arbitrary length
 * First example of neural approach outperforming baseline statistical machine translation and performance relatively near best approach
