@@ -29,11 +29,11 @@ The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to 
 ![Alt Text](sutskever2014sequence_1a.PNG)
 
 
-The most likely translations after training were found using a left-to-right beam search algorithm, which is independent of the MLE training goal. The beam size is relevant to determining the best number of translations that are kept at every time step. Smaller beam sizes indicate greedier translation selections. However, the paper found a beam size of 1 and 2 to be sufficient for reasonable results. 
+The most likely translations after training were found using a left-to-right beam search algorithm, which is independent of the MLE training goal. The beam size is relevant to determining the best number of translations that are kept at every time step. Smaller beam sizes indicate greedier translation selections.
 
 The paper also took the 1000 most likely translations from the baseline Statistical Machine Translation Model (SMT)  and rescored them using the log probabilities of each translation hypothesis with their model. The model was trained using Stochastic Gradient Descent without momentum with a batch size of 128 random sentences. 
 
-Another unique implementation detail was that they reversed the input LSTM. Instead of reading sentences into the model from left to right, they read the input sentences from right to left. They found that this helped their results, which is discussed in the final section of this summary.
+Another unique implementation detail was that they reversed the input LSTM. Instead of reading sentences into the model from left to right, they read the input sentences from right to left.
 
 ## How well does the paper perform?
 
@@ -41,11 +41,11 @@ The model was used on the WMT'14 English to French Machine Translation task. The
 
 Success was based on BLUE score - typically computed by comparing a translated sentence with some reference translation checking for some overlap. The higher the score, the closer the model's output translations were to the reference translations. 
 
-5 LSTMs with different initialization and ordering of batches plus a beam size of 12 were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. The paper claims this was the first time that such results ever occurred for a neural translation model. The specific results of their experiment are shown below:
+5 LSTMs with different initialization and ordering of batches plus a beam size of 12 were able to achieve a BLEU score of 34.81, which was larger than what was achieved by the SMT baseline. 
 
 ![Alt Text](sutskever2014sequence_1e.PNG)
 
-The paper also found that rescoring the baseline's 1000 best lists with their own 5 reversed LSTMs lead to a BLEU score of 36.5 which is very close to the best WMT'14 result of 37.0. Overall, this paper states this was the first neural approach that achieved significant results on a sequence to sequence task. 
+The paper also found that rescoring the baseline's 1000 best lists with their own 5 reversed LSTMs lead to a BLEU score of 36.5 which is very close to the best WMT'14 result of 37.0. Overall, this paper states this was the first time a neural translation approach achieved significant results on a sequence to sequence task. 
 
 
 ![Alt Text](sutskever2014sequence_1d.PNG)
