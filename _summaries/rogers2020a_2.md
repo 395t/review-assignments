@@ -59,7 +59,7 @@ They also offer some tips as to how to train a BERT model. Some useful tips incl
 
 Larger pretraining datasets, longer training, including linguistic information in the data, and considering structured knowledge such as knowledge base or entites when training.
 
-### Improvements on Fine-tuning
+**Improvements on Fine-tuning**
 - Considering more than just the output layer
 - A separate supervised training phase in between pretraining and fine-tuning
 <!-- - 
