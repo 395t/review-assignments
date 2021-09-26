@@ -76,4 +76,4 @@ Though performing decently well when compared to baselines, the end to end netwo
 ## TL;DR
 * End to end memory network is a recurrent neural network on a large external memory with multiple hops.
 * The model is trained end to end making it more applicable for general settings. 
-* The model requires less supervision and hyperparameters and still performs better than most of the baseline model. 
+* The model requires less supervision and hyperparameters and still performs better than most of the baseline model on the question answering task.
