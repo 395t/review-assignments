@@ -1,17 +1,17 @@
 ---
 layout: summary
-title: Summary
+title: Sequence to Sequence Learning with Neural Networks, Sutskever, Vinyals, Le; 2014
 paper: stskever2014sequence
 # Please fill out info below
 author: saikm200022
-score: 9
+score: 8
 ---
 
 # **Summary - Sequence to Sequence Learning with Neural Networks, Sutskever, Vinyals, Le; 2014**
 
 ## What is the core idea?
 
-Deep Neural Networks are being used today for all kinds of difficult tasks such as image detection and speech recognition. However, DNNs are not suitable for sequence to sequence tasks because the dimensionality of input and output sequences can be arbitrary. This paper suggests a Deep Learning approach that is able to apply DNNs for a sequence to sequence task by bypassing its limitation of requiring fixed dimensionality input and output.
+Deep Neural Networks are being used today for all kinds of difficult tasks such as image detection and speech recognition. However, DNNs are not suitable for sequence to sequence tasks because the dimensionality of input and output sequences can be arbitrary. This paper suggests a Deep Learning approach that is suitable for a sequence to sequence task by bypassing its limitation of requiring fixed dimensionality input and output.
 
 ![Alt Text](sutskever2014sequence_1b.PNG)
 
@@ -24,7 +24,7 @@ The model in the paper uses two LSTMs: one for the input and output sequences re
 ![Alt Text](sutskever2014sequence_1c.PNG)
 
 
-The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the below expression to obtain the most likely translation. At the end of each time step, the model computes a vector of vocabulary size that contains the distribution over the vocabulary given the input. The most likely translation is one whose product of probabilities at each time step is the largest. 
+The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the below expression. At the end of each time step, the model computes a vector of vocabulary size that contains the distribution over the vocabulary given the input. Based on the output LSTM, the most likely translation is one whose product of probabilities across time steps is the largest. 
 
 ![Alt Text](sutskever2014sequence_1a.PNG)
 
