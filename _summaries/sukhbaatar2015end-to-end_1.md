@@ -9,7 +9,7 @@ score: 7
 
 **What is the core idea?**
 
-The paper introduces a novel recurrent neural network with an explicit large memory and a recurrent attention mechanism. The model reads recurrently from memory multiple times before giving the results. This model is trained end-to-end and therefore requires comparitively less supervision during training. Hence, it can also be applied to realistic settings. The paper also shows experimentally that multiple hops over the long-term memory leads to good performance of the model. 
+The paper introduces a novel recurrent neural network with an explicit large memory and a recurrent attention mechanism. The model reads recurrently from memory multiple times before giving the results. This model is trained end-to-end and therefore requires comparitively less supervision during training. Hence, it can also be applied to realistic settings. The paper also shows experimentally that multiple hops over the long-term memory leads to better performance of the model. 
 
 **How is it realized (technically)?**
 
@@ -76,4 +76,4 @@ Though performing decently well when compared to baselines, the end to end netwo
 ## TL;DR
 * End to end memory network is a recurrent neural network on a large external memory with multiple hops.
 * The model is trained end to end making it more applicable for general settings. 
-* The model requires less supervision and hyperparameters and still performs better than most of the baseline model on the question answering task.
+* The model requires less supervision and hyperparameters and still performs better than most of the baseline model on question answering tasks.
