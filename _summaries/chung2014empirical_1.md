@@ -1,7 +1,7 @@
 ---
 layout: summary
-title: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling
-paper: {chung2014empirical_1}
+title: Summary
+paper: chung2014empirical
 # Please fill out info below
 author: WhyToFly
 score: 9
