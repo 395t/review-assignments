@@ -57,4 +57,5 @@ Beyond performance statistics, the authors also performed further experiments an
 ## TL;DR
 * Stacking transformer decoder blocks can provide a reasonable architecture for language modeling
 * Generative pre-training can help improve performance of autoregressive language models
+* Author's also improve performance by introuducing task-specific input transformations during fine-tuning while requiring minimal architecture modification
 * Despite SOTA results at the time, GPT was quickly eclipsed by BERT in most non-generative settings
