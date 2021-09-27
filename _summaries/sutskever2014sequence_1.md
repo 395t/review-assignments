@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: Sequence to Sequence Learning with Neural Networks, Sutskever, Vinyals, Le; 2014
+title: Summary
 paper: stskever2014sequence
 # Please fill out info below
 author: saikm200022
