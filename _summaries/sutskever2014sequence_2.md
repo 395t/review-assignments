@@ -38,7 +38,8 @@ p(y_1,...,y_{T'}|x_1,...,x_{T}) = \Pi_{t=1}^{T'}p(y_t|v,y_1,...,y_{t-1})
 $$
 
 where the probability distribution is created over all words in the LSTMs
-vocabulary. 
+vocabulary. However, note that the LSTM factorizes this probability into
+time-step-specific marginals since the joint posterior is intractable.
 
 When outputting the translation after reading tin the input, the authors used a
 left-to-right beam search decoder. At each step of the LSTM, the model
@@ -71,8 +72,15 @@ sentences.
 ### What interesting variants are explored?
 
 The authors tried several different models when testing. Notably, the employed
-ensembles of LSTMs with varying sizes. They also reversed the inputs to the LSTM
-without changing the order of the outputs to improve performance.
+ensembles of LSTMs with varying sizes. The ensembles had randomized
+initializations and random order of minibatches. By using multiple LSTMs in
+an ensemble, they were able get a neural network model to outperform a SMT
+model on a large scale machine-translation task by a large margin for the first time.
+They also reversed the inputs to the LSTM without changing the order of the outputs
+to improve performance. They theorized that this reversion reduced the "minimum
+time lag", the shortest distance from the inputted word to its outputted
+translation (as the final word in the reversed input sequence would correspond
+to the first word in the normal output sequence).
 
 ## TL;DR
 * RNNs perform well with variable input and output sequences
