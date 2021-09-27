@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{sukhbaatar2015end-to-end}}
+paper: sukhbaatar2015end-to-end
 # Please fill out info below
 author: mmcinnestaylor # Your GitHub id
 score: 8 # How did you like this paper 0(dislike) to 10(love)
