@@ -13,16 +13,16 @@ This architecture is meant to challenge more dominant models that rely on sequen
 
 The Transformer uses stacked self-attention and point-wise fully connected layers for both the encoder and decoder.
 
-![Transformer](vaswani2017attention_1a.png | width=100)
+![Transformer](vaswani2017attention_1a.png)
 
-The Encoder is made up of a stack (N=6) of identical layers, each made up of two sub-layers. The first sub-layer is a multi-head self attention mechanism, and the second is a position wise fully connected FFN. A residual connection is employed around each sub-layer and followed by layer normalization. To facilitate the residual connections all sub-layers and embedding layers produce a fixed output (d_{model}=512).
+The Encoder is made up of a stack (N=6) of identical layers, each made up of two sub-layers. The first sub-layer is a multi-head self attention mechanism, and the second is a position wise fully connected FFN. A residual connection is employed around each sub-layer and followed by layer normalization. To facilitate the residual connections all sub-layers and embedding layers produce a fixed output ($`d_{model}`$=512).
 
 The Decoder is composed of a stack (N=6) of identical layers, made up of three sub-layers, two of which are the same as the encoder. The third sublayer, inserted before the self-attention layer, performs multi-head attention over the output of the encoder stack. All sub-layers have residual connections and normalization, like the sub-layers in the encoder. The self-attention layer has added masking to prevent positions from attending to subsequent positions, which helps ensure that predictions for position i can depend only on known outputs for positions before it.
 
 
 The Transformer uses two different types of self-attention: Scaled Dot-Product Attention and Multi-Head Attention. Self-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. It differs from regular attention in that self-attention can be applied many times independently in a single model, while attention usually is only applied once to connect the encoder and decoder (the original input to the ouput.)
 
-![Attention](vaswani2017attention_1b.png | width=100)
+![Attention](vaswani2017attention_1b.png)
 
 Scaled Dot-Product Attention
 * Takes as input queries (Q) and keys (K) of dimension $$\mathrm{d_k}$$ and values (V) of dimension $$d_v$$.
@@ -54,13 +54,13 @@ Since the Transformer has no recurrence or convolution information about the rel
 
 To demonstrate the performance of the Transformer architecture, the authors trained their model on the WMT 2014 English-German dataset and the WMT 2014 English-French dataset. The model used Adam optimization and employed regularization by applying dropout to the output of each sub-layer, applying dropout to the sums of the embeddings and the positional encodings for both the encoder and decoder stacks, and by employing label smoothing. The label smoothing hurt perplexity, making the model more unsure, but improved accuracy and BLEU score.
 
-![Results](vaswani2017attention_1c.png | width=100)
+![Results](vaswani2017attention_1c.png)
 
 The Transformer model produced a new state-of-the-art BLEU score for both datasets. The big model, which achieved the state-of-the-art results trained at a fraction of the cost of the next best models. By evaluating different varied versions of the base model, they found that changing the number of heads in the attention caused the biggest difference in BLEU score. They did not that while single-head attention preformed the worst, to many heads also cause the quality to drop off.
 
 The authors also evaluated the model on English constituency parsing, using the Wall Street Journal portion of the Penn Treebank. The Transformer performed surprisingly well with limited task-specific tuning, outperforming the Berkeley Parser.
 
-![Results2](vaswani2017attention_1f.png | width=100)
+![Results2](vaswani2017attention_1f.png)
 
 
 ## TL;DR
