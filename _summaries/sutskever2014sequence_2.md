@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{Sutskever2014sequence}}
+paper: Sutskever2014sequence
 # Please fill out info below
 author: trowk
 score: 6
