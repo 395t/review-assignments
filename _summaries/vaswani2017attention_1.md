@@ -15,7 +15,7 @@ The Transformer uses stacked self-attention and point-wise fully connected layer
 
 ![Transformer](vaswani2017attention_1a.png)
 
-The Encoder is made up of a stack (N=6) of identical layers, each made up of two sub-layers. The first sub-layer is a multi-head self attention mechanism, and the second is a position wise fully connected FFN. A residual connection is employed around each sub-layer and followed by layer normalization. To facilitate the residual connections all sub-layers and embedding layers produce a fixed output ($`d_{model}`$=512).
+The Encoder is made up of a stack (N=6) of identical layers, each made up of two sub-layers. The first sub-layer is a multi-head self attention mechanism, and the second is a position wise fully connected FFN. A residual connection is employed around each sub-layer and followed by layer normalization. To facilitate the residual connections all sub-layers and embedding layers produce a fixed output ($d_{model}$=512).
 
 The Decoder is composed of a stack (N=6) of identical layers, made up of three sub-layers, two of which are the same as the encoder. The third sublayer, inserted before the self-attention layer, performs multi-head attention over the output of the encoder stack. All sub-layers have residual connections and normalization, like the sub-layers in the encoder. The self-attention layer has added masking to prevent positions from attending to subsequent positions, which helps ensure that predictions for position i can depend only on known outputs for positions before it.
 
