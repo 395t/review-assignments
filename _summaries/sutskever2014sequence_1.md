@@ -24,7 +24,7 @@ The model in the paper uses two LSTMs: one for the input and output sequences re
 ![Alt Text](sutskever2014sequence_1c.PNG)
 
 
-The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the below expression. At the end of each time step, the model computes a vector of vocabulary size that contains the distribution over the vocabulary given the input. Based on the output LSTM, the most likely translation is one whose product of probabilities across time steps is the largest. 
+The paper's training algorithm performed Maximum Likelihood Estimation (MLE) to maximize the below expression. At the end of each time step, the model computes a vector of vocabulary size that contains the distribution over the vocabulary given the input. Based on the output of LSTM, the most likely translation is one whose product of probabilities across time steps is the largest. 
 
 ![Alt Text](sutskever2014sequence_1a.PNG)
 
@@ -56,6 +56,6 @@ I found it interesting that the paper implemented reversed LSTMs. Typical LSTMs 
 
 
 ## TL;DR
-* Sequence to sequence tasks with deep learning models is challenging because they require a fixed dimensionality of input and output sequences
+* Sequence to sequence tasks with deep learning models was challenging because they require a fixed dimensionality of input and output sequences
 * LSTMs can be used to represent an input sequence as a large fixed dimensionality vector that can be used to translate into an output sequence of arbitrary length
 * First example of neural approach outperforming baseline statistical machine translation and performance relatively near best approach
