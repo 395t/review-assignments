@@ -7,7 +7,13 @@ author: ishanashah
 score: 6
 ---
 
+## Core Problem
+
 Without skip connections or mutli-layer perceptrons, the output of self attention networks converges doubly exponentially to a rank 1 matrix.
+
+Rank collapse indicates that the direction of the output vector has become independent of the actual input.
+
+## Paper Contributions
 
 Skip connections play a key role in mitigating rank collapse.
 
@@ -21,6 +27,8 @@ Each path is denoted by a sequence of attention heads.
 
 ![Figure 1](dong2021attention_2a.PNG)
 
+## Mechanisms that Counteract Convergence
+
 In the presense of skip connections, hypothesize that the presence of short paths stops SAN's from degenerating to rank 1.
 
 SAN's with skip connections heavily rely on short paths, which means SAN's behave like ensembles of shallow single-head self-attention networks.
@@ -32,6 +40,8 @@ The more powerful the MLP's are the slower the convergence becomes.
 Layer normalization does not slow down the convergence to rank 1.
 
 ![Figure 2](dong2021attention_2b.PNG)
+
+## Path Effectiveness
 
 Short paths carry predicive power, while the output of longer paths is not much better than a random guess.
 
