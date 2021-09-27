@@ -11,9 +11,10 @@ score: 6
 
 DNN are models that perform very well on a variety of different tasks. However,
 these models struggle with sequence-to-sequence problems, tasks where the inputs
-and outputs are not fixed. Instead of DNNs, we can use two different LSTMs: one
-to encode the sequence of inputs into a vector representation and another to
-decode this vector into an output sequence.
+and outputs are not fixed. We can use two different LSTMs, a type of DNN, to
+increase performance on these tasks. One LSTM will be used to encode the sequence
+of inputs into a vector representation and the other to decode this vector into
+an output sequence.
 
 ###  How is it realized (technically)?
 
