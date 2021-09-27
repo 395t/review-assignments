@@ -139,5 +139,5 @@ Even without fine-tuning, the generative model gains improvement along with # it
 
 ## TL;DR
 * Apply one pre-trained model to many tasks
-* Unsupervised pre-training decoder + supervised fine-tuning
+* Method: Unsupervised pre-training decoder + supervised fine-tuning
 * Language model served as an effective pre-training objective which could help model generalize well
