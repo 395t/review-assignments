@@ -29,7 +29,9 @@ S represents the input to the function g
 
 To calculate the context vector we simply compute a weighted sum of the previous hidden states. The "weight" is how much that previous hidden state should be attended to predict the next token.
 
-![Model for calculating alignment](bahdanau2014neural_1_5.png)![Model for calculating alignment](bahdanau2014neural_1_11.png)
+![Model for calculating alignment](bahdanau2014neural_1_5.png)
+
+![Model for calculating alignment](bahdanau2014neural_1_6.png)
 
 To figure out this weight. The authors make an alignment model, which takes in the current hidden state (representing the context for the current step) and then take the input hidden state and use a MLP to calculate alignment score. This model is trained concurrently when we do backprop.
 
@@ -37,15 +39,16 @@ How well does the paper perform?
 
 The model reaches high BLEU scores. However, suffers as the sentences get larger. The authors compare their model to the baseline model, which doesn't use the same approach. We see that the model outperforms for all sequence lengths. Therefore, they have still made a substantial improvement. The reason why this model does a lot better than the previous state of the art is the use of the alignment scores, which allow the model to focus on important words necessary for translation.
 
-![C](bbahdanau2014neural_1_10.png)
+![C](bahdanau2014neural1_10.png)
 
 We see in the bottom table outperformance in BLEU scores.
 
-![C](bbahdanau2014neural_1_9.png)
+![C](bahdanau2014neural_1_9.png)
 
 We see the qualititative results of the approach below. This shows that the alignment scores are working for certain translations (english/french).
 
-![C](bbahdanau2014neural_1_8.png)
+![C](bahdanau2014neural_1_8.png)
+
 
 What interesting variants are explored?
 
