@@ -9,7 +9,7 @@ score: 10
 
 ## Core Idea
 
-Builds upon their previous work [cite], this paper introduces GPT-3, a 175B-parameter autoregressive language model.
+Builds upon their previous work, this paper introduces GPT-3, a 175B-parameter autoregressive language model.
 The main discovery of this paper is the model's ability to perform few-shot learning **without gradient steps or fine-tuning**.
 This paper presents an extremely thorough large-scale study of GPT-3's performance on a wide range of NLP tasks.
 Their experiments also test GPT-3 on a few non-standard tasks that further push the limits of of the pre-trained language model.
