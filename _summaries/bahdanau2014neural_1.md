@@ -49,6 +49,7 @@ We see the qualititative results of the approach below. This shows that the alig
 
 ![C](bahdanau2014neural_1_8.png)
 
+
 What interesting variants are explored?
 
 No real variants explored.
