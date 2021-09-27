@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: Language Models are Few-Shot Learners
+title: Summary
 paper: brown2020language
 # Please fill out info below
 author: jaywhang
