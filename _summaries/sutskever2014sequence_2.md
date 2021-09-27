@@ -10,10 +10,10 @@ score: 6
 ### What is the core idea?
 
 DNN are models that perform very well on a variety of different tasks. However,
-these models struggle with sequences, problems where the inputs and outputs are
-not fixed. Instead of DNNs, we can use two different LSTMs: one to encode the
-sequence of inputs into a vector representation and another to decode this
-vector into an output sequence.
+these models struggle with sequence-to-sequence problems, tasks where the inputs
+and outputs are not fixed. Instead of DNNs, we can use two different LSTMs: one
+to encode the sequence of inputs into a vector representation and another to
+decode this vector into an output sequence.
 
 ###  How is it realized (technically)?
 
