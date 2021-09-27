@@ -35,7 +35,7 @@ To figure out this weight. The authors make an alignment model, which takes in t
 
 How well does the paper perform?
 
-The model reaches high BLEU scores. However, suffers as the sentences get larger. The authors compare their model to the baseline model, which doesn't use the same approach. We see that the model outperforms for all sequence lengths. Therefore, they have still made a substantial improvement.
+The model reaches high BLEU scores. However, suffers as the sentences get larger. The authors compare their model to the baseline model, which doesn't use the same approach. We see that the model outperforms for all sequence lengths. Therefore, they have still made a substantial improvement. The reason why this model does a lot better than the previous state of the art is the use of the alignment scores, which allow the model to focus on important words necessary for translation.
 
 ![C](bbahdanau2014neural_1_10.png)
 
