@@ -2,8 +2,8 @@
 layout: summary
 title: Summary
 paper: vaswani2017attention
-author: # samatharhay
-score: # 8
+author: samatharhay
+score: 8
 ---
 
 The paper introduced Transformers, an architecture solely based on attention.
