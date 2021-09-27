@@ -25,16 +25,16 @@ The Transformer uses two different types of self-attention: Scaled Dot-Product A
 ![Attention](vaswani2017attention_1b.png)
 
 Scaled Dot-Product Attention
-* Takes as input queries (Q) and keys (K) of dimension $$\mathrm{d_k}$$ and values (V) of dimension $$d_v$$.
+* Takes as input queries (Q) and keys (K) of dimension $\mathrm{d_k}$ and values (V) of dimension $d_v$.
  
 ![SDPA](vaswani2017attention_1d.png)
 
-* Identical to Dot-product attention except for the scaling factor ($$\frac{1}{\sqrt{d_k}}$$).
+* Identical to Dot-product attention except for the scaling factor ($\frac{1}{\sqrt{d_k}}$).
 * Dot-product attention is much faster and more space-efficient then additive attention.
 * Scaling was added to counteract the effect of the dot products of large values of dk growing large in magnitude, causing the softmax function to produce extreamely small gradients.
 
 Multi-Head Attention
-* Linearly projects the queries, keys, and values h times with different learned linear projections to $$d_k$$, $$d_k$$, and $$d_v$$ dimensions.
+* Linearly projects the queries, keys, and values h times with different learned linear projections to $d_k$, $d_k$, and $d_v$ dimensions.
 * Attention is performed on each projected version in parallel, which are then concatenated and once again projected.
 * Allows the model to jointly attend to information from different representations subspaces at different positions.
 
