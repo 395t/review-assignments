@@ -1,10 +1,10 @@
 ---
 layout: summary
-title: 	Neural Machine Translation by Jointly Learning to Align and Translate
-paper: {{bahdanau2014neural}}
+title: Summary
+paper: bahdanau2014neural
 # Please fill out info below
 author: SShivang
-score: 8/10
+score: 8
 ---
 
 What is the core idea?
