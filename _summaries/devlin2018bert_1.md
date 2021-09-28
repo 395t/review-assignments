@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: devlin2018bert
 author:  dalmeraz
 score: 10
 ---
