@@ -7,7 +7,7 @@ score: 10
 ---
 
 ### BERT: Bidirectional Encoder Representation from Transformers
-BERT is a simple and empirically powerful model that achieves state of the art results in a variety of both token and sentence level tasks. Its simplicity comes from only minimal changes needed to be done to use the model in separate tasks and its strength comes from its ability to look at text bidirectionally and pre-training that generates SOTA results when fine-tuned in a whole range of tasks.
+BERT is a simple and empirically powerful model that achieves state of the art results in a variety of both token and sentence level tasks. Its simplicity comes from only minimal changes needed to be done to use the model for separate tasks and its strength comes from its ability to look at text bidirectionally and pre-training that generates SOTA results when fine-tuned in a whole range of tasks. In addition to fine-tuning, BERT's pre-training can also be used for feature-based approaches in which task-specific models use BERT's representations as extra features (similar to ELMo).
 
 <p align="center"> <img src="devlin2018bert_1_a.png" height="300"/> </p>
 
@@ -32,7 +32,7 @@ First, one or two sentences are tokenized via WordPiece into a sequence. Next, t
 ### Pre-training
 BERT is pre-trained through the use of unlabeled data in 2 separate tasks: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).
 
-The MLM pretraining task is what allows the model to be bidrectional and is a token classification task. Language modeling is the task of predicting text giving context, for example chat bots that generate sentences and responses to questions. Typically, language modeling is done either left to right or right to left since doing bidirectional would allow other parts of the sequence to be seen. However BERT solves this by masking certain tokens and making those the tokens to be predicted. 15% of sequence tokens are masked and the model predicts the masked tokens. Key issue with this is that when fine-tuning the model does not recieve '[MASK]' tokens as input, so to mitigates this, 80% of the time the actual '[MASK]' token is used, 10% of the time a random token, and 10% the original.
+The MLM pretraining task is what allows the model to be bidrectional and is a token classification task. Language modeling is the task of predicting text giving context, for example chat bots that generate sentences and responses to questions. Typically, language modeling is done either left to right or right to left since doing bidirectional would allow other parts of the sequence to be seen. However BERT solves this by masking certain tokens and making those the tokens to be predicted. 15% of sequence tokens are masked and the model predicts the masked tokens. Key issue with this is that when fine-tuning the model does not recieve '[MASK]' tokens as input, so to mitigates this, 80% of the time the actual '[MASK]' token is used, 10% of the time a random token, and 10% the original.  MLM's convergence is generally slower than traditional methods but the resulting benefits are worth it.
 
 The NSP task was motivated by tasks such as question answering and natural language inference where it is crucial for the model to understand the relationship between two sentences. NSP is a sentence binary prediction task in which two sentences are given and the model predicts if the second sentence follows the first.
 
@@ -62,11 +62,15 @@ The next experiments studied the effect of pre-training tasks on different metri
 
 <p align="center"> <img src="devlin2018bert_1_g.png" height="200"/> </p>
 
-Finally, the final experiments looks at the effects of different model  sizes on results. One key point to note is generally, the sizes picked for BERT are considerably larger than all other transformers trained previously. L is the number of  transformer blocks, H is the hidden size, and A is the number of self-attention heads.
+Finally, the final experiments looks at the effects of different model  sizes on results. One key point to note is generally, the sizes picked for BERT are considerably larger than all other transformers trained previously. L is the number of  transformer blocks, H is the hidden size, and A is the number of self-attention heads. Generally, as the BERT model got bigger, it performed better.
 
 <p align="center"> <img src="devlin2018bert_1_i.png" height="200"/> </p>
 
+The final experiments explore the uses of BERT as a feature-based approach as opposed to fine-tuning. It is argued that not all  tasks can be modeled in BERT's architecture; however,  we can often find uses for BERT. The following experiment examins the strength of BERT as a feature generator on the NER task. It passes input to pre-trained (and not fine-tuned) BERT to generate contextualized embeddings and then this is fed into a BiLSTM.
+
+<p align="center"> <img src="devlin2018bert_1_j.png" height="200"/> </p>
+
 ## TL;DR
-* Bidirecional pre-training is important to generating good models
+* Pre-training techniques that allow for bidirectionality (such as MLM and NSP) are important to generating good models
 * Generalized pre-trained representations reduce dependencies on complex models for specific tasks
 * Above mentioned points allow for SOTA results on 11 NLP tasks
