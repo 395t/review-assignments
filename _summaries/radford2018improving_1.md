@@ -4,7 +4,7 @@ title: Summary
 paper: radford2018improving
 # Please fill out info below
 author: kraja99
-score: 7 / 10
+score: 7
 ---
 
 ## Overview
