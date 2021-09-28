@@ -42,7 +42,7 @@ Fine tuning BERT is relatively straight forward, input and output are passed int
 ## Experiments
 For the first set of experiments, BERT used the General Language Understanding benchmark (GLUE).
 
-<p align="center"> <img src="devlin2018bert_1_c.png" height="200"/> </p>
+<p align="center"> <img src="devlin2018bert_1_c.png" height="100"/> </p>
 
 BERT large achieves a 7% improvement over the previous SOTA in the benchmark and 11.1% improvement over the best non transformer model.
 
@@ -60,11 +60,11 @@ The fourth experiment was Situations With Adversarial Generations (SWAG) in whic
 
 The next experiments studied the effect of pre-training tasks on different metrics. LTR refers to using left to right LM as opposed to MLM.
 
-<p align="center"> <img src="devlin2018bert_1_g.png" height="200"/> </p>
+<p align="center"> <img src="devlin2018bert_1_g.png" height="100"/> </p>
 
-Finally, the final experiments looks at the effects of different model  sizes on results. One key point to note is generally, the sizes picked for BERT are considerably larger than all other transformers trained previously. L is the number of  transformer blocks, H is the hidden size, and A is the number of self-attention heads. Generally, as the BERT model got bigger, it performed better.
+The second to last experiments looks at the effects of different model  sizes on results. One key point to note is generally, the sizes picked for BERT are considerably larger than all other transformers trained previously. L is the number of  transformer blocks, H is the hidden size, and A is the number of self-attention heads. Generally, as the BERT model got bigger, it performed better.
 
-<p align="center"> <img src="devlin2018bert_1_i.png" height="200"/> </p>
+<p align="center"> <img src="devlin2018bert_1_i.png" height="150"/> </p>
 
 The final experiments explore the uses of BERT as a feature-based approach as opposed to fine-tuning. It is argued that not all  tasks can be modeled in BERT's architecture; however,  we can often find uses for BERT. The following experiment examins the strength of BERT as a feature generator on the NER task. It passes input to pre-trained (and not fine-tuned) BERT to generate contextualized embeddings and then this is fed into a BiLSTM.
 
