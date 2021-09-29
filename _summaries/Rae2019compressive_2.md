@@ -13,5 +13,7 @@ Compressive Transformer also performed very well on the book-level language mode
 The Compressive Transformer not only achieved computational and storage efficiency, but also remember all the past activations. 
 
 ## how is it realized?
-The Compressive Transformer only uses attention to propagate information, and it has two parts of memories --- normal memory and compressed memory. With sequences coming in, they first 
+The Compressive Transformer only uses attention to propagate information, and it has two parts of memories --- respective memory (FIFO memory) and compressed memory. Sequences first come to the respective memory, and with newer sequences come in, old activations are compressed to compressed memory by using some compression functions. In other words, memories obtained recently are make up larger storage while all the old memories make up small part of storage. The following algorithm describes this process: 
+
+
 
