@@ -43,8 +43,20 @@ is approximated by the more efficient version:
 ![favor+](choromanski2020rethinking_1e.png)
 
 <!-- Include experiment information here -->
+The experiments were done by replacing the attention aspect with FAVOR+ and evaluating the model.
+
+The variants talked about during the experiments include Reformer (unidirectional) and Linformer (bidirectional) on the PG19 dataset.
+
+The computational speed results of these tests backup the theoretical analysis. Performers are able to reach linear time complexity and subquadratic memory usage.
+
+It was also proven that FAVOR+ produces better results than the IID and trigonometric features:
+![favor+](choromanski2020rethinking_1f.png)
+
+Experiments proved that performers worked with already trained models with minor finetuning. 
+
+Additionally, the Performer RELU had significantly higher accuracy than both Reformer and Linformer on the bidirectional and undirectional cases of the protein sequences from the TrEMBL. The Performer softmax also had good results, and received the same results as the original softmax.
 
 ## TL;DR
 - Performers provide a time and space efficient approximation of attention using the FAVOR+ approach
 - They overcome the shortcomings of previous approximations that rely on priors or using localized data
-- Performers work with transformers and can be extended to various uses
+- Performers work with transformers and can be extended to various benefits in fields such as biology, environment, research on transformers, and more. 
