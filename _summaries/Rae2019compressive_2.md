@@ -18,7 +18,19 @@ The Compressive Transformer only uses attention to propagate information, and it
 <img width = "600" alt = "compressive_transformer_algo1" src = "compressive_transformer_algo1.png">
 
 ## technical details
-There are four choices for compression functions, which are max/mean pooling, 1D convolution, dilated convolutions, and "most-used"。 Here, the "most-used" function makes memory most used to be preserved. All compression functions can be trained.  
+There are four choices for compression functions, which are max/mean pooling, 1D convolution, dilated convolutions, and "most-used"。 Here, the "most-used" function makes memory most used to be preserved. All compression functions can be trained.  As for the loss, there are two supplementary losses should be considered ---- auto-encoding loss, which recover compressed memories, and attention-reconstruction loss, which recover the context-based attention from respective memories and compressed memories. Attention-reconstruction loss is a bit complicated, as follows:
+
+<img width = "600" alt = "compressive_transformer_algo2" src = "compressive_transformer_algo2.png">
+
+# results
+It seems the Compressive Transformer outperforms TransformerXL on PG-19, which is a large datasets with datas are long-context extracted from project Gutenberg. the Compressive Transformer model also achieved the-state-of-art resutls on Enwik8, and if people use 1D convolution compression function together with attention reconstruction loss function, the result will be the best among all other Compressive Transformer models. The Compressive Transformer also did a good job in speech, comparable to the-state-of-art model, but more parameters efficient. The authors also found that the older memories are not less frequently accessed. 
+
+# three points I like
+1. Compressive Transformer compress old memories rather than discard it
+2. Compressive Transformer doesn't keep all activations, but compress them, which let it becomes more storage efficient
+3. attention increased from the oldest activations stored in respective memory to the compressed memory.
+ 
+
 
 
 
