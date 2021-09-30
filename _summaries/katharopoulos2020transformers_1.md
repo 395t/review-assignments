@@ -7,9 +7,15 @@ author: kelseyball
 score: 9
 ---
 
-# Core idea: Expressing self-attention using kernel feature maps can reduce its time and space complexity quadratic to linear in the sequence length. This formulation allows for a linear, auto-regressive transformer that can be expressed as a recurrent neural network.
+# Core Idea
+Expressing self-attention using kernel feature maps can reduce its time and space complexity from quadratic to linear
 
-# Softmax/dot product attention
+# Main Contributions
+- Formulation of "linear attention" using kernel feature maps
+- Formulation of autoregressive transformers with linear time, constant memory (can also be expressed as RNNs)
+- Experiments demonstrating speedups of autoregressive linear transformers over reformer and transformer with softmax attention
+
+# Softmax Attention to Linear Attention via Kernel Feature Maps
 
 The transformer from Vaswani et. al. 2017 implements the following form of self-attention, where the similarity score is the exponential of the dot product between a query and a key:
 
