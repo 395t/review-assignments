@@ -46,7 +46,7 @@ The reduction from quadratic to linear complexity comes from the fact that the m
 - "Best of bost worlds": linear, autoregressive transformers can be parallelized (unlike RNNs) and also have linear-in-the-sequence time complexity (unlike traditional softmax attention)
 
 # Experiments
-- **Synthetic experiments:* They train autoregressive transformers for an artificial copy task. They show that computation and memory scales linearly with linear transformer and reformer, and quadratically with softmax attention.
+- **Synthetic experiments:** They train autoregressive transformers for an artificial copy task. They show that computation and memory scales linearly with linear transformer and reformer, and quadratically with softmax attention.
 - **Image generation:** They use autoregressive transformers to generate CIFAR-10 images pixel by pixel. Linear transformer generates images 4000x times faster than transformer with softmax attention.
 - **Automatic Speech Recognition (ASR):** Linear transformer has lower phoneme error rate and 3x faster training epochs/sec compared to Bi-LSTM, transformer with softmax attention, and reformer.
 
