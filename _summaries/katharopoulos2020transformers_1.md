@@ -25,7 +25,7 @@ Generalizing from dot product to any positive-valued similarity function, we can
 
 <img width="500px" src="katharopoulos2020transformers_2a.png"/>
 
-Our similarity function can be a *kernel function*. In this context, a kernel function takes two vectors, maps them to another vector space using a "feature map", and returns their inner product. Here is the self-attention equation using a kernel with feature representation phi:
+Our similarity function can also be a **kernel function**. In this context, a kernel function takes two vectors, maps them to another vector space using a **kernel feature map**, and returns their inner product in that space. Here is the self-attention equation using kernel feature map *phi*:
 
 <img width="500px" src="katharopoulos2020transformers_3a.png"/>
 
@@ -46,9 +46,9 @@ The reduction from quadratic to linear complexity comes from the fact that the m
 - "Best of bost worlds": linear, autoregressive transformers can be parallelized (unlike RNNs) and also have linear-in-the-sequence time complexity (unlike traditional softmax attention)
 
 # Experiments
-- *Synthetic experiments:* They train autoregressive transformers for an artificial copy task. They show that computation and memory scales linearly with linear transformer and reformer, and quadratically with softmax attention.
-- *Image generation:* They use autoregressive transformers to generate CIFAR-10 images pixel by pixel. Linear transformer generates images 4000x times faster than transformer with softmax attention.
-- *Automatic Speech Recognition (ASR):* Linear transformer has lower phoneme error rate and 3x faster training epochs/sec compared to Bi-LSTM, transformer with softmax attention, and reformer.
+- **Synthetic experiments:* They train autoregressive transformers for an artificial copy task. They show that computation and memory scales linearly with linear transformer and reformer, and quadratically with softmax attention.
+- **Image generation:** They use autoregressive transformers to generate CIFAR-10 images pixel by pixel. Linear transformer generates images 4000x times faster than transformer with softmax attention.
+- **Automatic Speech Recognition (ASR):** Linear transformer has lower phoneme error rate and 3x faster training epochs/sec compared to Bi-LSTM, transformer with softmax attention, and reformer.
 
 ## TL;DR
 * Softmax attention expressed with kernel feature maps can be computed with linear time and space
