@@ -50,7 +50,7 @@ score: 9
 
     In implementation, there's a linear projection for sliding window attention and a separate linear projection for global attention per token. This method avoids the global and sliding window attentions from convoluting each other.
 
-    **Implementation**: Modern PyTorch/Tensorflow libraries do not support the form of banded matrix multiplication required for the sliding window attention, so the authors implemented 3 ways of doing it: `loop`, `chunks`, and `cuda`. `cuda` is the highly optimized custom CUDA kernel which the authors use to do the banded matrix multiplication.
+    **Implementation Detail**: Modern PyTorch/Tensorflow libraries do not support the form of banded matrix multiplication required for the sliding window attention, so the authors implemented 3 ways of doing it: `loop`, `chunks`, and `cuda`. `loop` is used for testing, `chunks` is used for pretraining/finetuning, `cuda` is a highly optimized custom CUDA kernel that is used for the language modeling experiments.
 
 * What interesting variants are explored?
 
