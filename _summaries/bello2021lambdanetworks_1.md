@@ -17,9 +17,9 @@ In the words of the author: "Whereas self-attention defines a similarity kernel 
 At the first line, I mention position-based interactions. These are interactions which take into account the relative distance between between the context and the query (e.g. a pixel and surrounding pixels).
 
 * How is it realized (technically)?\
-Generally, we have an query input $(q_n, n)$, which gets mapped to an output vector $y_n$ given the context $C$ as:\
-$((q_n, n),C)\leftarrow y_n$ \
-The problem here is that this function ignores the position based interaction $(q_n, (n,m))$. Lambda layers take into account these relation (n, m) between the query and context element positions.\
+Generally, we have an query input $$(q_n, n)$$, which gets mapped to an output vector $$y_n$$ given the context $$C$$ as:\
+$$((q_n, n),C)\leftarrow y_n$$ \
+The problem here is that this function ignores the position based interaction $$(q_n, (n,m))$$. Lambda layers take into account these relation (n, m) between the query and context element positions.\
 Figure 2 shows the computational graph of the lambda layer.\
 ![Bello (2021).](bello_lambda_networks_2021_1_b.PNG)
 The author also provides pseudocode to create a lambda layer.
