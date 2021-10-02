@@ -13,11 +13,11 @@ A new linear transformer model is introduced that uses a kernel based self-atten
 
 They change the attention mechanism from the traditional softmax function to a dot product feature map. In a traditional transformer, given the queries Q, keys K and values V, the self attention function A_l can be calculated as:
 
-![self attention function](./kathoropoulos2020lineartransformer_2a.png)
+![self attention function](./katharopoulos2020lineartransformer_2a.png)
 
 where,
 
-![softmax kernel](./kathoropoulos2020transformers_2b.png)
+![softmax kernel](./katharopoulos2020transformers_2b.png)
 
 Instead of a softmax similarity function, the authors propose using a kernel function of a feature representation \phi(x). So the new self attention function is:
 
@@ -27,7 +27,7 @@ The above attention function has computation cost of O(N) where N is the sequenc
 
 They further change the masking function to span until the i-th position of the query instead of the whole sequence (i.e. all N inputs). They called this ``causal'' masking. They further show how their formulation of a transformer with causal masking can be understood as an RNN.
 
-![causal masking](./kathoropoulos2020lineartransformer_2d.png)
+![causal masking](./katharopoulos2020lineartransformer_2d.png)
 
 
 ## How well does the paper perform?
@@ -38,7 +38,7 @@ The authors test the linear transformers on 3 different tasks, namely:
 
 The authors found that their transformer had a lower computational time (log linear) for a given sequence length compared to other attention functions in literature, including softmax. The memory footprint of their linear transformer was also significantly lower than other in literature, including softmax.
 
-![copy task performance](./kathoropoulos2020lineartransformer_2e.png)
+![copy task performance](./katharopoulos2020lineartransformer_2e.png)
 
 - Image generation
 
@@ -48,7 +48,7 @@ They tested their transformer on the MNIST and CIFAR-10 dataset. They were able 
 
 They trained the linear transformer with connectionist temporal classification (CTC) loss on 80hrs of the WSJ dataset. They find that the Linear transformer converges to a Prediction Error rate (PER) that is lower than LSH-4 and Bi-LSTM. However, their Linear transformer has a PER that is worse than softmax attention. They however beat all other models in terms of training time and evaluation time.
 
-![ASR performance](./kathoropoulos2020lineartransformer_2f.png)
+![ASR performance](./katharopoulos2020lineartransformer_2f.png)
 
 
 ## TL;DR
