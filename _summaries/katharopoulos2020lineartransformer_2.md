@@ -17,7 +17,7 @@ They change the attention mechanism from the traditional softmax function to a d
 
 where,
 
-![softmax kernel](./katharopoulos2020transformer_2b.png)
+![softmax kernel](./katharopoulos2020lineartransformer_2b.png)
 
 Instead of a softmax similarity function, the authors propose using a kernel function of a feature representation \phi(x). So the new self attention function is:
 
