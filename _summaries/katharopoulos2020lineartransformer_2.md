@@ -17,11 +17,11 @@ They change the attention mechanism from the traditional softmax function to a d
 
 where,
 
-![softmax kernel](./katharopoulos2020transformers_2b.png)
+![softmax kernel](./katharopoulos2020transformer_2b.png)
 
 Instead of a softmax similarity function, the authors propose using a kernel function of a feature representation \phi(x). So the new self attention function is:
 
-![linear self attention function](./kathoropoulos2020lineartransformer_2c.png)
+![linear self attention function](./katharopoulos2020lineartransformer_2c.png)
 
 The above attention function has computation cost of O(N) where N is the sequence length. It's memory footprint is also lower as the terms can be reused for every query hence we don't need to store the full attention matrix making it's memory complexity O(N). The authors state that for small sequences the below feature map, phi(x), was used and shown to perform on par to the full traditional transformer.
 
