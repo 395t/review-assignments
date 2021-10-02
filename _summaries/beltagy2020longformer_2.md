@@ -123,7 +123,7 @@ score: 9
             * Coreference Resolution: OntoNotes ([Pradhan et al., 2012](https://aclanthology.org/W12-4501/)).
             * Document Classification: IMDB sentiment classification ([Maas et al., 2011](https://aclanthology.org/P11-1015/)), Hyperpartisan news detection ([Kiesel et al., 2019](https://aclanthology.org/S19-2145/)).
         * Evaluation: TriviaQA, Hyperpartisan metrics are F1. WikiHop and IMDB use accuracy. HotpotQA is join F1. OntoNotes is average F1.
-        * Results: The base models did better than RoBERTa's base model. Large models outperforms SoTA for WikiHop and TriviaQA time of submission, and is off by 1 point from SoTA in HotpotQA at time of submission. Small model results in the top table and large model results in the bottom table.
+        * Results: The base models did better than RoBERTa's base model. Large models outperforms SoTA for WikiHop and TriviaQA at time of submission, and is off by 1 point from SoTA in HotpotQA at time of submission. Small model results in the top table and large model results in the bottom table.
 
     <p align="center">
         <img src="https://d3i71xaburhd42.cloudfront.net/925ad2897d1b5decbea320d07e99afa9110e09b2/8-Table8-1.png" width="50%" height="50%">
