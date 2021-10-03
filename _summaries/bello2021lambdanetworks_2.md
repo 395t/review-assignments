@@ -26,20 +26,27 @@ $$\lambda_n = \overline{K}^{T} V + E_{n}^{T} V$$.
 
 Finally, applying lambda to the query yields $y_n = \lambda_{n}^{T} q_n$.
 
-The paper also argues that using multiple queries in the lambda layers decreases complexity. Lambda layers thus replace the attention mechanism in typical ResNet architecture, leading LambdaResNets.
+The paper also argues that using multiple queries in the lambda layers decreases complexity. Attention mechanism usually have to produce per-example attention maps, and sometimes, attention lags behind with handling large batches with large inputs. 
+
+Given a batch of $|b|$ examples, with $|n|$ inputs each, the number of operations is $O(bnmkv)$ while the memory complexity is $O(knm + bnkv)$. Here, $|k|$ is is a fixed-size set of contextual features and $|m|$ is, derived from the paper's explanation, the number of position in the context.
+
+Lambda layers thus replace the attention mechanism in typical ResNet architecture, leading LambdaResNets.
 
 #### How well does the paper perform? #### 
-Lambda layers outperform convolutions and attention layers.
+Lambda layers outperform convolutions and attention layers. Replacing the 3x3 convolutions in the bottleneck areas of the ResNet-50 architecture, for example, with the lambda layers instead led to a 1.5% ImageNet accuracy improvement. At the same time, parameters were reduced by 40%.
+
+What these results show in the end is the weakness of self-attention: self-attention has trouble modeling global interactions due to memory costs. Lambda layers didn't seem to suffer from this problem.
 
 <img src="./bello2021lambdanetworks_b.png" width="70%">
 
-Lambda layers also reached higher ImageNet accuracies while using less memory and less time than self-attention.
+Lambda layers also reached higher accuracies while using less memory and less time than self-attention.
 
 <img src="./bello2021lambdanetworks_c.png" width="70%">
 
-Finally, LambdaResNets ended up being 3.2 - 4.4x faster than EfficientNets.
+LambdaResNets ended up being 3.2 - 4.4x faster than EfficientNets.
 <img src="./bello2021lambdanetworks_d.png" width="70%">
 
+And finally, LambdaResNets achieved higher Mean Average Precision (AP) during COCO object detection and instance segmentation tasks. In these experiments, LambdaResNets were the "backbone" in the Mask-RCNN.
 
 #### What interesting variants are explored? #### 
 
