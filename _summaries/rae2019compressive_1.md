@@ -20,7 +20,7 @@ outperforming state-of-the-art benchmarks on various sequence based tasks.
 
 - Current architecture discards long-range memories due to resource constraints, this results in a fixed size window of attention
 
-![animation of transformerXL](rae2019compressive_1_custom_b.gif)
+![animation of transformerXL](rae2019compressive_1_b.gif)
 
 
 ## How Can We Improve Attention
@@ -43,7 +43,7 @@ outperforming state-of-the-art benchmarks on various sequence based tasks.
 
 4.) Instead of deleting the oldest memory, we create a mapping to compress it and store it in a stack
 
-![ How compression works ](rae2019compressive_1_custom_a.png)
+![ How compression works ](rae2019compressive_1_a.png)
 
 
 ## How do we compress an activation aka "memory"
@@ -106,8 +106,8 @@ Essentially, you can achieve a vastly larger range of memories, for the same att
   - Enwik8 has 100M bytes of uprocessed Wikipedia Text
   - WikiText-103 contains a large amount of Wikipedia Articles (over 100million tokens)
   
-![Table 4 from paper](rae2019compressive_1_custom_d.png)
-![Table 6 from paper](rae2019compressive_1_custom_c.png)
+![Table 4 from paper](rae2019compressive_1_d.png)
+![Table 6 from paper](rae2019compressive_1_c.png)
 
 - BPC, bits-per-charcters, how many bits are needed to encode a character (lower is better)
 - Testing on perplexity allows the thorough comparisons against other language models trained on byte/character/subword granularity (lower is better)
