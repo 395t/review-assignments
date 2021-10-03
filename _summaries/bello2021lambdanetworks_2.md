@@ -48,6 +48,8 @@ LambdaResNets ended up being 3.2 - 4.4x faster than EfficientNets.
 
 And finally, LambdaResNets achieved higher Mean Average Precision (AP) during COCO object detection and instance segmentation tasks. In these experiments, LambdaResNets were the "backbone" in the Mask-RCNN.
 
+<img src="./bello2021lambdanetworks_e.png" width="70%">
+
 #### What interesting variants are explored? #### 
 
 Larger LambdaResNets were created, such as the LambdaResNet-420 which trained on image sizes of 320. These achieved 84.9% accuracy in what appeared to be ImageNet. 
