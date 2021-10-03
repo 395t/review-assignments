@@ -25,7 +25,7 @@ Instead of a softmax similarity function, the authors propose using a kernel fun
 
 The above attention function has computation cost of O(N) where N is the sequence length. It's memory footprint is also lower as the the summation terms can be reused for every query (associative property of matrices). Hence we don't need to store the full attention matrix making it's memory complexity O(N). The authors state that for small sequences the below feature map, phi(x), was used and shown to perform on par to the full traditional transformer.
 
-They further change the masking function to span until the i-th position of the query instead of the whole sequence (i.e. all N inputs). They called this "causal" masking. They further show how their formulation of a transformer with causal masking can be understood as an RNN.
+They further change the masking function to span until the i-th position of the query instead of the whole sequence (i.e. all N inputs). They called this "causal" masking. They further show how their formulation of a transformer with causal masking can be understood as an RNN. It effectively combines the best of both worlds with faster training and faster inference times.
 
 ![causal masking](./katharopoulos2020lineartransformer_2d.png)
 
@@ -58,7 +58,7 @@ They trained the linear transformer with connectionist temporal classification (
 
 
 ## TL;DR
-- Introduce a linear transformer with a different attention function with causal masking which has much lower memory footprint and computational cost
+- Introduces a linear transformer with a different attention function and with causal masking which has much lower memory footprint and computational cost
 - Linear attention transformer has similar or better performance than softmax, while being much faster to train and evaluate than softmax
-- Demonstrate how transformers with linear attention with causal masking can be seen as an RNN
+- Demonstrates how transformers with linear attention and causal masking can be seen as an RNN
 
