@@ -66,7 +66,7 @@ Performer displayed backward compatibility with pre-trained models benefitting f
 
 <img width="700px" src="wu2021rethinking_2e.png"/>
 
-Performer combined with a ReLU showed better training performance on a 36-layer model  on TrEMBL protein sequence dataset (Consortium, 2019). 
+Performer combined with a ReLU showed better training performance on a 36-layer model on TrEMBL protein sequence dataset (Consortium, 2019). Performer compared with Transformer,Reformer and Linformer.
 
 
 <img width="700px" src="wu2021rethinking_2f.png"/>
