@@ -45,7 +45,7 @@ For example, if the stride is 128 and c = 8, then all future positions greater t
 forth. A visualization is in the following figure.
 
 <center>
-<img width="800px" src="child2019GeneratingLS_2_figure1.png"/><br />
+<img width="800px" src="child2019generating_2_figure1.png"/><br />
 </center>
 
 ### Sparse transformers
