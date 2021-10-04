@@ -31,7 +31,7 @@ For reference, when tested on ImageNet, a global self attention layer utilized 1
 The most impressive results are shown below in the figure below:\
 LambdaResNets achieve a 4.4x speedup over EfficientNets on ImageNet, and they are still more energy efficient.\
 In a semi-supervised learning environment, LambdaResNets achieve up to a 9.5x speedup over EfficientNet NoisyStudent checkpoints (a kind of semi-supervised learning approach).\
-![Bello (2021).](bello_lambda_networks_2021_1_c.PNG)
+![Bello (2021).](bello_lambda_networks_2021_1_c.PNG) \
 The authors evaluated LambdaResNets as a backbone in Mask-RCNN for COCO object detection. Lambda layers resulted in gains across all object sizes. Shown below in the table:\
 ![Bello (2021).](bello_lambda_networks_2021_1_d.PNG)
 
