@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: zaheer2021bigbird
+paper: zaheer2021big
 # Please fill out info below
 author: biofizzatreya
 score: 8
