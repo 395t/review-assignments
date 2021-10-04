@@ -6,7 +6,6 @@ paper: {{paper_tag}}
 author: patelojas
 score: 9
 
-vaswani2017attention_2a.png
 ---
 
 # Core Idea
