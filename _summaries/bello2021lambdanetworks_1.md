@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{hendrycks2016gaussian_1}}
+paper: {{bello2021lambdanetworks_1}}
 # Please fill out info below
 author:  marcobueso
 score:  10
