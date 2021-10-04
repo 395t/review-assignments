@@ -20,6 +20,37 @@ The Linformer Model gets around that by using the fact that often, the actual in
 ![](wang2020linformer_2a.png)
 In this paper, the authors show both theoretically and empirically that the attention dot product matrix can always be closely approximated by a matrix of much lower rank, which can be obtained by calculating the singular value decomposition (SVD) of the key and value matrices and only using a fixed number of the largest singular values. Since SVD calculation also adds computational complexity, the authors replace it with a linear projection layer (as shown in the picture) that serves to reduce the dimensionality. For simplicity, the trainable projection layer parameters can be shared between attention heads and/or between layers.
 
+The Transformer is built upon the idea of Multi-Head Self-Attention (MHA). MHA is defined as: 
+
+![](wang2020linformer_2d.png)
+
+And each head is defined as:
+
+![](wang2020linformer_2e.png)
+
+K and V represent the keys and values used in attention. W are learned matrices. The Transformer uses P to capture the input context for a given token and computing P is very expensive which uses O(n^2) time. This paper focus on reducing this to O(n) time by using linear projection.
+
+The paper finally derives:
+
+![](wang2020linformer_2f.png)
+
+Where it only requires O(nk) time and space complexity.
+
+
+
+
+
+### Additional Efficiency Techniques
+
+**Parameter sharing between projections:** One can share parameters for the linear projection matrices Ei
+, Fi across layers and heads.
+
+**Nonuniform projected dimension:** One can choose a different projected dimension k for different
+heads and layers.
+
+**General projections:** One can also choose different kinds of low-dimensional projection methods
+instead of a simple linear projection.
+
 ### The Result
 ![](wang2020linformer_2c.png)
 
