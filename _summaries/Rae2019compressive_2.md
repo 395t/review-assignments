@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: Rae2019compressive_2
+paper: Rae2019compressive
 # Please fill out info below
 author: specfazhou
-score: 8/10
+score: 8
 ---
 
 ## core idea
