@@ -53,7 +53,7 @@ score: 9
 
     In the case of a QA task, global attention is provided on all question tokens. Because the number of tokens with global attention is small relative to sequence length, the combined local and global attention is still bounded by $$\mathcal{O}(n)$$.
 
-    In implementation, there's a linear projection for sliding window attention and a separate linear projection for global attention per token. This method avoids the global and sliding window attentions from convoluting each other.
+    In implementation, different $$Q, K, V$$ linear projections (per token) are used for computing local (sliding or dilated) vs. global attention. This method avoids the global and sliding window attentions from convoluting each other.
 
     **Implementation Detail**: Modern PyTorch/Tensorflow libraries do not support the form of banded matrix multiplication required for the sliding window attention, so the authors implemented 3 ways of doing it: `loop`, `chunks`, and `cuda`. `loop` is used for testing, `chunks` is used for pre-training/fine-tuning, `cuda` is a highly optimized custom CUDA kernel that is used for the language modeling experiments.
 
@@ -134,7 +134,7 @@ score: 9
     * **LED**
         * Dataset: arXiv summarization dataset ([Cohan et al., 2018](https://aclanthology.org/N18-2097/)), which has 14.5K tokens at the 90th percentile of document lengths.
         * Evaluation: ROUGE-1 (R-1), ROUGE-2 (R-2), and ROUGE-L (R-L) ([Lin, 2004](https://aclanthology.org/W04-1013/)).
-        * Results: State-of-the-art. Outperforms BigBird ([Zaheer et al., 2020](https://papers.nips.cc/paper/2020/hash/c8512d142a2d849725f31a9a7a361ab9-Abstract.html)).
+        * Results: State-of-the-art. Slightly outperforms BigBird ([Zaheer et al., 2020](https://papers.nips.cc/paper/2020/hash/c8512d142a2d849725f31a9a7a361ab9-Abstract.html)) without pre-training or task-specific initialization. Note that BigBird, which supports only up to 4K tokens, starts from and continues pre-training Pegasus ([Zhang et al., 2019](https://arxiv.org/abs/1912.08777)), a model specifically designed and pre-trained for summarization.
 
     <p align="center">
         <img src="beltagy2020longformer/t11.png" width="30%" height="30%">
