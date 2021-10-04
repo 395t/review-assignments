@@ -18,7 +18,7 @@ The core idea includes two aspects:
 * How is it realized (technically)?
 
 ### Attention with locality sensitive hashing
-The first simplification is enforcing identical Queries and Keys, so the linear layers used to project inputs can be reduced and buckets spread more evenly.
+The first simplification is enforcing identical Queries and Keys, so the linear layers used to project inputs can be reduced and the significance of query matching can be considered as self-correlation and equivalence relations.
 There is a key observation of the original original attention formulation: the softmax in $$\operatorname{softmax}\left(Q K^{T}\right)$$ is dominated by the largest terms in $$Q K^{T}$$.
 By the first simplification, this observation reduces to partitioning the query set into nearest neighbors $$q_j \in Q$$ for each query $$q_i$$.
 
@@ -28,10 +28,10 @@ The specific hash function that the author choose is an angular locality sensiti
 
 The key idea of this scheme is to first project vectors on a unit sphere and then divide the space into cardinal sectors as buckets by comparing the the coordinate numbers.
 A figure on simplified 2D case for LSH is shown below.
-Once points are on the circle, whether coordinate $$x_0 > x_1$$ and $$ -x_0 > x_1$$ defines the two diagonal lines and therefore separates the space into four sectors -- four buckets.
+Once points are on the circle, the conditions $$x_0 > x_1$$ and $$ -x_0 > x_1$$ define the two diagonal lines and therefore separate the space into four sectors -- four buckets.
 ![F76EC8AB-A423-4993-A77C-E79FF4A01917](https://user-images.githubusercontent.com/25853995/135883728-d0e7f6f7-5648-4601-a4d3-98d92b730650.png)
 
-Now that we have a working LSH, the equivalence relations given by the LSH would partition vectors into serveral buckets, where only intra-bucket attention computation is significant enough.
+Now that we have a working LSH, the equivalence relations given by the LSH would partition vectors into serveral buckets, where only intra-bucket attention computation is significant enough to be considered in the softmax.
 There is one last optimization for better implementation on gpu and peak memory reduction: batching and chuncking.
 The queries are sorted by LSH results into buckets and the queries are chopped into even size chuncks.
 To fully cover attentions in the same LSH partition, the attentions are calculated within the current chunck and the previous chunck.
@@ -42,14 +42,14 @@ Such approximation reduces the memory consumption as well as the computation tim
 
 ### Reversible residuals
 
-When stacking multiple layers of transformers, the intermediate activations still consume a lot of memory, which are necessary for back-propagation.
+When stacking multiple layers of transformers, we have to keep the intermediate activations for back-propagation, which undesirably consumes a lot of memory.
 The authors propose to use the reversible residuals in order to recover the pre-image from the output and therefore eliminate the necessity of storing pre-images for back-propagation.
 Technically, the reversible residual networks work as linear systems with intertwined variables to enable simple additive/substractive solutions for pre-images.
-Original ResNet can be formulated as $$ y = x + F(x) $$ and reversible Resnet operates on paris of input/output as $$(x_1, x_2) \mapsto (y_1, y_2)$$.
+Original ResNet can be formulated as $$ y = x + F(x) $$ and reversible Resnet operates on pairs of input/output as $$(x_1, x_2) \mapsto (y_1, y_2)$$.
 Specifically, the forward pass can be defined as $$ y_{1}=x_{1}+F\left(x_{2}\right) \quad y_{2}=x_{2}+G\left(y_{1}\right) $$ and the pre-images can be easily obtained by $$ x_{2}=y_{2}-G\left(y_{1}\right) \quad x_{1}=y_{1}-F\left(x_{2}\right) $$.
 For the application in transformer, the reversible residuals are realized as $$Y_{1}=X_{1}+\text { Attention }\left(X_{2}\right) \quad Y_{2}=X_{2}+\text { FeedForward }\left(Y_{1}\right)$$.
 
-Therefore, the proposed method eliminate the memory consumption of storing the intermediate activations for back-propagation.
+Therefore, the proposed method further eliminates the memory consumption of storing the intermediate activations for back-propagation.
 
 
 * How well does the paper perform?
