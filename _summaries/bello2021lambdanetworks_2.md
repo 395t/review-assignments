@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: bello2021lambda-networks
+paper: bello2021lambdanetworks
 # Please fill out info below
 author: jchavezberkeley
 score: 8
