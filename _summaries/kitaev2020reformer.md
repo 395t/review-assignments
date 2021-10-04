@@ -12,15 +12,15 @@ score: 8
 
 The authors propose a new transformer to improve the memory efficiency of the original transformer, named as reformer. 
 The core idea includes two aspects: 
-use reversible residuals instead of the original residuals to disgard intermediate activations; 
-replace dot-product attentions with locality sensitive hashing to reduce the size of attention maps from $$O(L^2)$$ to $$O(L log L)$$.
+1. replace dot-product attentions with locality sensitive hashing bucketing to reduce the size of attention maps from $$O(L^2)$$ to $$O(L log L)$$.
+2. use reversible residuals instead of the original residuals to disgard intermediate activations.
 
 * How is it realized (technically)?
 
 ### Attention with locality sensitive hashing
-The first simplification is enforcing identical Queries and Keys, so the linear layers used to project inputs can be reduced.
-There is a key observation of the original original attention formulation: $$\operatorname{softmax}\left(Q K^{T}\right)$$ is a softmax and therefore dominated by the largest terms in $$Q K^{T}$$.
-By the first simplification, this observation reduces to finding the nearest neighbors $$q_j \in Q$$ for each query $$q_i$$.
+The first simplification is enforcing identical Queries and Keys, so the linear layers used to project inputs can be reduced and buckets spread more evenly.
+There is a key observation of the original original attention formulation: the softmax in $$\operatorname{softmax}\left(Q K^{T}\right)$$ is dominated by the largest terms in $$Q K^{T}$$.
+By the first simplification, this observation reduces to partitioning the query set into nearest neighbors $$q_j \in Q$$ for each query $$q_i$$.
 
 The authors introduce locality-sensitive hashing (LSH), an effective way to find such nearest neighbors quickly in high-dimensional spaces.
 An LSH is defined as a hash function that assigns the same hash exclusively to nearby vectors with high probability.
@@ -74,6 +74,8 @@ The authors explore the implementation for chuncking and batching.
 Since the transformer is basically a temporally decoupled sequence model, it was designed to operate parallelly across the temporal dimension.
 Therefore, it enables chunking the model into smaller batches to train models operating on very long sequences without overwhelming the memory.
 In this work, the authors explore techniques to apply chuncking and batching on the proposed method as well, which successfully extends the transformer to train and operate on extremely long sequences in some scenarios.
+
+Additionally, the authors propose multi-round LSH for more stable and accurate identifications of nearest neighbors to alleviate the probabilistic nature of LSH.
 
 
 ## TL;DR
