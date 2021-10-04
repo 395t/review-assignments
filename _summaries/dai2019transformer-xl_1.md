@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: dai2019transformer
+paper: dai2019transformer-xl
 # Please fill out info below
 author: slycane9
 score: 9
@@ -21,8 +21,8 @@ First, Transformer-XL used Segment-Level Recurrence and State Reuse to avoid fix
 
 Below we can see the difference in segment connections between regular Transformers and Transformer-XL.
 
-![norecurrence](dai2019transformer_1a.png)
-![recurrence](dai2019transformer_1b.png)
+![norecurrence](dai2019transformer-xl_1a.png)
+![recurrence](dai2019transformer-xl_1b.png)
 
 
 Advantages of this change are two-fold.  
@@ -40,7 +40,7 @@ In terms of how Transformer-XL performs, results showed that it outperforms stat
 
 Below we can see in Table 2 that Transformer-XL was the first to break 1.0 bit per character on the enwiki8 dataset, a notable achievement for the time.  Also in Table 1 we can see that Transformer-XL has reduced perplexity to SoTA with a comparable parameter count.
 
-![result1](dai2019transformer_1c.png)
+![result1](dai2019transformer-xl_1c.png)
 
 
 Next we look at Relative Effective Conext Length (RECL), which measures the longest length of context that causes a gain across a threshold.  Transformer-XL achieved context lengths 80% longer than RNNs and 450% longer than transformers, meaning Transformer-XL is empirically able to better capture longer-term dependency.
@@ -48,7 +48,7 @@ Next we look at Relative Effective Conext Length (RECL), which measures the long
 
 Finally, Transformer-XL also took less time to evaluate than the state-of-the-art language models.
 
-![result2](dai2019transformer_1d.png)
+![result2](dai2019transformer-xl_1d.png)
 
 
 ## TL;DR
