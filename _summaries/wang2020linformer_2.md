@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: wang2020linformer
 # Please fill out info below
 author: Jordi
 score: 8
