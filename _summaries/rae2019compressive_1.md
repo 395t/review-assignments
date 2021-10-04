@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: rae2019compressive_1
+paper: rae2019compressive
 # Please fill out info below
 author: zayne-sprague
 score: 9
