@@ -18,7 +18,7 @@ This paper presented Big Bird Transformers for longer Sequences of input. The Tr
 
 • All tokens attending to a set of r random tokens.
 
-![LeNet](BigBirdFig1.png)
+![LeNet](zaheer2020big_1_1.png)
 
 ## The BIG BIRD Architecture:
 
@@ -35,7 +35,7 @@ This paper presented Big Bird Transformers for longer Sequences of input. The Tr
 ## It is Empirically defined as :
 
 
-![LeNet](bigbirdfig2.png)
+![LeNet](zaheer2020big_1_2.png)
 
 where Qh, Kh : R d → R m are query and key functions ,
 Vh : R d → R d is a value function,
@@ -51,7 +51,7 @@ Vh : R d → R d is a value function,
 
 Results:The accuracy of different model is depicted below
 
-![LeNet](BigBirdFig3.png)
+![LeNet](zaheer2020big_1_3.png)
 
 • Task 2: Similarly the expriment was conducted for classification of text on same datasets and has been found that the gains of using BIGBIRD are more significant when we have longer documents and fewer training examples
 
