@@ -26,13 +26,18 @@ The author also provides pseudocode to create a lambda layer.
 
 * How well does the paper perform?\
 The LambdaNetworks were tested against self-attention models, and resulted in better performance, as well as being more computationally efficient, and faster than the other models, which were sometimes slowed down and hindered by large memory costs, impractical implementations, or the requirement of huge amounts of data.\
-The most impressive results are:\
+In terms of complexity, transformers using self-attention have $\Theta (blhn^2)$ memory footprint, where b = batch size, l = number of layers, h = number of heads/queries, n = input length). On the other hand, LambdaNetworks have a  $\Theta (lkn^2)$ of memory footprint, where l = number of layers, k = query length/depth, and n =  input length.\
+For reference, when tested on ImageNet, a global self attention layer utilized 120GB of memory, while a Lambda Layer utilized 1.9 GB (a Lambda Layer with shared embeddings used even less, 0.63 GB of memory).\
+The most impressive results are shown below in the figure below:\
 LambdaResNets achieve a 4.4x speedup over EfficientNets on ImageNet, and they are still more energy efficient.\
-In a semi-supervised learning environment, LambdaResNets achieve up to a 9.5x speedup over EfficientNet NoisyStudent checkpoints (a kind of semi-supervised learning approach).
-
+In a semi-supervised learning environment, LambdaResNets achieve up to a 9.5x speedup over EfficientNet NoisyStudent checkpoints (a kind of semi-supervised learning approach).\
+![Bello (2021).](bello_lambda_networks_2021_1_c.PNG)
+The authors evaluated LambdaResNets as a backbone in Mask-RCNN for COCO object detection. Lambda layers resulted in gains across all object sizes. Shown below in the table:\
+![Bello (2021).](bello_lambda_networks_2021_1_d.PNG)
 
 * What interesting variants are explored?\
-The authors explore wiht hybrid architectures. They do this because even with the time and memory saving compared to self-attention, the lambda layer still incurs a quadratic time complexity. The authors study a convolution-lambda hybrid, which increases representational power at no throughput cost.
+The authors explore with hybrid architectures. They do this because even with the time and memory saving compared to self-attention, the lambda layer still incurs a quadratic time complexity. The authors study a convolution-lambda hybrid, which increases representational power at no throughput cost.\
+The authors also test on larger datasets with pseudo-labels. They trained LambdaResNets in a semi-supervised learning setting using 130 million pseudo-labeled images from the JFT dataset. Similarly, they trained EfficientNet. LambdaNets achieved the same accuracy of 86.7%, but were 9.5x faster than Efficient Nets.
 
 
 
