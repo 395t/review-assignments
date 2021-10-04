@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: 	Big Bird Transformers for Longer Sequences
+paper: 	zaheer2020big
 author: Shivi Agarwal
 score: 10
 ---
