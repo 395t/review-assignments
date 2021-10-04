@@ -1,16 +1,13 @@
 ---
 layout: summary
 title: Summary
-
 paper: zeiler2012adadelta
-
 # Please fill out info below
 author:  sritank
 score:  10
 ---
 
 TODO: Summarize the paper:
-
 
 * Main idea
 - Adaptively change the learning rate in a way that it reduces oscillations i.e. slows down close to minimas, and is large otherwise.
@@ -43,7 +40,6 @@ where epsilon is used to condition the denominator for numerical purposes.
 - The lower layer gradients are larger than top layer gradients indicating that ADADELTA doesn't suffer from diminishing gradient problem (also tackles vanishing gradient in tanh network).
 - Step size converges to a constant at the end of training resulting in parameter updates converging to zero (gradients become too small). Acts as if annealing schedule is present.
 - For Audio signal classification, ADADELTA converged faster than other methods even under circumstances where accumulated gradients had significant noise.
-
 
 ![audio](zeiler2012adadelta_1g.png)
 
