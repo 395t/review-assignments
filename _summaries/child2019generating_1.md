@@ -12,7 +12,7 @@ score: 9
   * Sparse transformers are a variation on Transformers
   * Sparse Transformers introduce sparse factorizations of the attention matrix which reduces the time and memory required by transformers from $$O(n^2)$$ to $$O(n\sqrt{n})$$.
   * The paper also introduces
-    1. A variation of the Transformer archietecture and initialisation for training Sparse Transformers on even deeper networks
+    1. A variation of the Transformer architecture and initialisation for training Sparse Transformers on even deeper networks
     2. Recomputing attention matrices
     3. Fast attention kernels for training
 * Background
