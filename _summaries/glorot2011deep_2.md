@@ -4,29 +4,41 @@ title: Summary
 paper: glorot2011deep
 # Please fill out info below
 author: ywen666
-score: 9/10
+score: 9
 ---
 
-### The core idea:
-Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations).
+### Background:
 
-Even from the view of machine learning researchers, sparsity is a concept of interest. A dense representation is highly entangled because almost any change in the input modifies most of the entries in the representation vector. This violates the postulation that deep learning algorithms disentangle the factors explaining the variations in the data.
+Same authors as the last paper. The last paper studied the weight initialization and mentioned that neither sigmoid and tanh is a good activation function. So naturally they studied what could be a good alternative activation function.
+
+### The core idea:
+
+Neuroscience observations suggest that our neurons encode information in a highly sparse fashion. However without explicit L1 regularization, deep neural networks are not designed to honor sparsity. 
+
+For example, a commonly used non-linear activation function sigmoid has a stead state at 1/2, which means neurons tend to fire at half their saturation regime (this is dense represenations).
+
+Even from the view of machine learning researchers, sparsity is a concept of interest. A dense representation is highly entangled because almost any change in the input modifies most of the entries in the representation vector. This violates the postulation that deep learning algorithms disentangle the factors which can explain the variations in the data.
 
 Therefore, this paper propose to explore the use of rectifying non-linear activation functions as alternatives to the hyperbolic tangent or sigmoid in deep artificial neural networks to promote sparsity.
+
 
 ### Advantages of rectifier(x) = max(0, x) as activation functions
 1.	It naturaly induces 50% inactive neurons, leading to desirable sparsity.
 2.	When neurons are active, they are linear. This allows gradient signals to backprop without any loss of information. 
 3.	The computation is efficient and the implementation is easy.
 
+
 ### Potential problems:
-It is non-differentiable at 0. A variant -- softplus was also proposed. The figure illstruates the difference between ReLU and Softplus. 
-![ReLU](glorot11a_2.png)
+
+It is non-differentiable at 0. A variant -- softplus $f(x) = log(1 + e^x)$ was also proposed. The figure illstruates the difference between ReLU and Softplus. 
+<p align="left">
+    <img src="glorot2011deep_1_2.png" width="900" height="380">
+</p>
 
 ### Experiments
 Experiements in this paper cover image recognition (MNIST, CIFAR10, NISTP and NORB) and sentiment analysis (opentable review data). 
 
-Experiments on bot image and text data indicate that training proceeds better when neurons are either off or operating mostly in a linear regime. This justifies the use of rectifying non-linear activation functions. 
+Experiments on both image and text data indicate that training proceeds better when neurons are either off or operating mostly in a linear regime. This justifies the use of rectifying non-linear activation functions. 
 
 Moreover, ReLU performed better than other commonly used activation functions such as tanh and sigmoid, especially without unsupervied pretraining. 
 
