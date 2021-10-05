@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: duchi2011adaptive 
+paper: child2019generating
 # Please fill out info below
 author: ywen666 
 score: 9
