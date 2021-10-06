@@ -14,15 +14,20 @@ score: # 6
 # Their model: Data-efficient image Transformers (DeiT)
 - Architecture is identical to Dosovitskiy et al 2015; differences is the distillation strategy
 - Larger model is the same as ViT-Base; smaller ones have fewer params and faster throughput
+
 <img width="500px" src="touvron2020training_2a.png"/>
+
 - Training procedure: train on Imagenet1k, finetune on same images at larger resolution
 
 # New distillation method: "Hard-Label Distillation"
 - They add a trainable "distillation" token to the end of the input sequence of image patches
 - On output, this token is used to predict the hard label (argmax) predicted by the teacher
+
 <img width="500px" src="touvron2020training_2b.png"/>
+
 - The training loss is the simple average of the cross-entropy losses of (1) the true-label prediction from the class token output and (2) the teacher-label prediction using the distillation token output
 - They also use both targets during the fine-tuning stage on higher-resolution images, using the targets from a same-resolution teacher
+
 <img width="500px" src="touvron2020training_2c.png"/>
 
 ## Teacher models
@@ -31,10 +36,12 @@ score: # 6
 
 ## Results
 <img width="500px" src="touvron2020training_2d.png"/>
+
 - Hard distillation outperforms soft distillation for transformers, even w/o the added distillation token
 - Predicting from a classifier on the class and distillation tokens works slightly better than only predicting from either alone
 - Distillation benefits more from longer training than no distillation:
 <img width="500px" src="touvron2020training_2e.png"/>
+
 - Authors verify that the class and distillation tokens learn different representations
 
 # Efficiency vs. accuracy for their model
