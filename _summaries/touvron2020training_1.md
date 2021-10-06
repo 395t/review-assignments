@@ -27,7 +27,12 @@ There are actually two type of distillation methods -- soft distillation and har
 Second, during the training process, the authors use truncated normal distribution to initialize weights to avoid divergence. The authors also use several data-argumentation methods, and it seems all data augmentation methods help with performance.   
   
 * How well does the paper perform?<br/>
-  
+  1. Choosing CNNs as teacher model, the trained DeiT perform better than choosing Transformer as teacher model. <br/>
+  2. using hard distillation method helps DeiT achieve better performance <br/>
+  3. On other datasets, DeiT achieved state-of-the_art results or close to state-of-the-art results <br/>
+  4. data augmentation helps improve performance <br/>
+  5. AdamW optimizer with same learning as used in Vision Transformer helps DeiT achieved the best result. In general, DieT is sensitive for hyperparameters of optimizer. <br/>
+  6. higher fine-tuning resolution helps DeiT achieved better performance <br/>
   
   
 * What interesting variants are explored?<br/>
@@ -37,4 +42,6 @@ Second, during the training process, the authors use truncated normal distributi
 * Three
 * Bullets
 * To highlight the core concepts
-  
+  1. We spend significantly shorter time to train DeiT <br/>
+  2. We can train DeiT on significant smaller and open-sourced datasets <br/>
+  3. Distillation method introduced
