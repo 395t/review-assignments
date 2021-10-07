@@ -43,7 +43,16 @@ By splitting images into chunks and putting the chunks in a sequence, we can uti
 
 # Why does it do so well?
 
+- ViT Learns the basic CNN building blocks, but better! 
+
 ![Visualization of ViT Features](dosovitskiy2020an_2_e.png)
+
+- Far left is the linear projection layer, they look **CNN convolution kernels**
+
+- Middle are the position embedding, not only do they have high weight at their corresponding location, they are also **relating to patches nearby**
+
+- Far right, the Transformer learns to utilize **large receptive fields** (like CNNs do) as the layers increase
+
 
 # So why not use ViT everywhere, where's the catch?
 
