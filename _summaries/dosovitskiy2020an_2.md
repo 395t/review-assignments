@@ -63,5 +63,5 @@ By splitting images into chunks and putting the chunks in a sequence, we can uti
 
 ## TL;DR
 - Splitting images into chunks and then embedding them as vectors allows us to use the Transformer Architecture (ViT)
-- ViT requires less total training but requires larger datasets to outperform CNN baselines
-- 
+- ViT learns kernel like filters and receptive fields like CNNs after sufficient training and can outperform CNN baselines
+- CNNs are still better to use for small datasets
