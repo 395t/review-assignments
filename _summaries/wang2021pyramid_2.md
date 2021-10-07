@@ -13,13 +13,13 @@ It presents a progressive shrinking pyramid to reduce the computations of large 
 ViT is good for image classification, but has two drawbacks:\
 (1) its output feature map is single-scale and low-resolution\
 (2) its computational and memory costs are relatively high even for common input image sizes\
-[Wang, 2021](wang2021pyramid_2_a.PNG)
+![Wang, 2021](wang2021pyramid_2_a.PNG)
 
 ## How is it realized (technically)?
 (1) taking fine-grained image patches (i.e., 4×4 pixels per patch) as input to learn high-resolution representation, which is essential for dense prediction tasks;\
 (2) introducing a progressive shrinking pyramid to reduce the sequence length of Transformer as the network deepens, significantly reducing the computational cost;\
 (3) adopting a spatial-reduction attention (SRA) layer to further reduce the resource consumption when learning high-resolution features.\
-[Wang, 2021](wang2021pyramid_2_b.PNG) \
+![Wang, 2021](wang2021pyramid_2_b.PNG) \
 PVT's closest model is the ViT. They're both models without convolutions. The primary difference between them is the pyramid structure.\
 The PVT's progressive shrinking pyramid generates multi-scale feature maps like a traditional CNN backbone.\
 The SRA layer is also a main feature of the PVT, which allows for high-resolution feature maps, and reduces computational and memory costs.
