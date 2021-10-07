@@ -53,6 +53,11 @@ score: # 6
 - DeiT on par with convnet models
 <img width="500px" src="touvron2020training_2g.png"/>
 
+# Variants explored
+Table 8 below shows the results of their ablation study on DeiT:
+<img width="500px" src="touvron2020training_2h.png"/>
+
+
 ## TL;DR
 * Show that you can train a competitive vision transformer with limited data using knowledge distillation
 * Introduce distillation technique for vision transformers: add distillation token to input sequence and predict from both class and distillation tokens
