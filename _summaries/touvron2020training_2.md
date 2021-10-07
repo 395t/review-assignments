@@ -11,6 +11,20 @@ score: # 6
 - They efficiently train a vision transformer on only Imagenet1k (trains in a few days on one machine) by distilling with a convnet teacher model
 - They introduce a new distillation procedure and show that it works better than the usual methods
 
+# Background
+
+## Vision Transfomers
+- Input images are decomposed into a batch of N patches of fixed size
+- Each patch is projected with a linear layer that conserves overall dimension (768)
+- Positional embeddings are added to encode patch position
+- A "class" token is added to the input sequence of patches and used for prediction on output
+
+## Knowledge Distillation
+- Knowledge distillation is a technique for transfering knowledge from one model to another by minimizing some distance metric between the student and teacher models' output distributions
+- It's often used to compress a larger "teacher" model to a smaller "student" model.
+- "Soft" distillation refers to using the teacher's predicted class probabilities as the target distribution; "hard" distillation would take the argmax of the teacher's predictions as the target distribution
+
+
 # Their model: Data-efficient image Transformers (DeiT)
 - Architecture is identical to Dosovitskiy et al 2015; differences is the distillation strategy
 - Larger model is the same as ViT-Base; smaller ones have fewer params and faster throughput
