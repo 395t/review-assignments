@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: touvron2020training
 # Please fill out info below
 author: # kelseyball
 score: # 6
