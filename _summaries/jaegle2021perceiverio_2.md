@@ -61,4 +61,4 @@ Other variants discussed were to finetune the size of the latent space specific 
 ## TL;DR
 - PerceiverIO improves on the original Perceiver architecture by using a decoder with cross-attention to allow for more complex structures of outputs
 - PerceiverIO is more scalable than current popular methods such as transformers due to the fixed size of PerceiverIO's latent space
-- It can perform very well on various tasks with respect to language, visual understanding, videogame strategy, multi-modal tasks 
+- It can perform very well on various tasks with respect to classification, language, visual understanding, videogame strategy, and multi-modal tasks 
