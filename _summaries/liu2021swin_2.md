@@ -41,5 +41,20 @@ and feature transformation is denoted as “Stage 2”.
 
 ## Shifted Window based Self-Attention
 ### Self-attention in non-overlapped windows
+Global self-attention computation is generally unaffordable for a large $$hw$$, while the window based self-attention is scalable.
+
+### Shifted window partitioning in successive blocks
+To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, we propose a shifted window partitioning approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks.
+
+As illustrated in the above figure, the first module uses a regular window partitioning strategy which starts from the top-left pixel, and the $$8 \times 8$$ feature map is evenly partitioned into $$2 \times 2$$ windows of size $$4 \times 4 (M = 4)$$. 
+
+
+Then, the next module adopts a windowing configuration that is shifted from
+that of the preceding layer, by displacing the windows by $$(\text{floor}(\frac{M}{2}), \text{floor}(\frac{M}{2}))$$.
+
+### Efficient batch computation for shifted configuration
+To reduce the latency, the authors  propose a more efficient batch computation approach by cyclic-shifting toward the top-left direction, as illustrated in figure below. After this shift, a batched window may be composed of several sub-windows that are not adjacent in the feature map, so a masking mechanism is employed to limit self-attention computation to within each sub-window.
+
+<img width="500px" src="liu2021swin_2d.png"/>  
 
 ## Experiements
