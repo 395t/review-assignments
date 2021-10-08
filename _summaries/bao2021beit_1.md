@@ -30,8 +30,13 @@ TODO: Summarize the paper:
         <img src="bao2021beit/eq1.png" width="30%" height="30%">
     </p>
 
-* How well does the paper perform?
+    This pre-trained can be viewed as variational autoencoder ([Kingma and Welling, 2014](https://arxiv.org/abs/1312.6114)) training. Refer to section 2.4 in the paper for more information.
+
+    The pre-trained is done on the training set of ImageNet-1K with augmentations. The labels are not used for the self-supervised training. Training for 500k steps took about 5 days using 16 Nvidia Tesla V100 32GB GPU cards.
+
 * What interesting variants are explored?
+
+* How well does the paper perform?
 
 ## TL;DR
 * Three
