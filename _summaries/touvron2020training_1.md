@@ -18,11 +18,13 @@ First, the distillation method requires one image classification model to be a t
 <image width = 300 alt = "training_Deit_2" src = "training_Deit_2.png">
 
 There are actually two type of distillation methods -- soft distillation and hard distillation. The main difference between them is they use different objective functions.
-  In general, denote $Z_s$ is logits of student model, $Z_t$ is logits of teacher model, $KL$ is Kullback-Leibler divergence loss, $L_{CE}$ is cross-entropy. $\phi$ is softmax function, and $y_{t} = argmax_{c} Z_{t} (c)$ <br/>
+  In general, denote $$Z_s$$ is logits of student model, $$Z_t$$ is logits of teacher model, $$KL$$ is Kullback-Leibler divergence loss, $$L_{CE}$$ is cross-entropy. $$\phi$$ is softmax function, and $$y_{t} = argmax_{c} Z_{t} (c)$$ <br/>
   **For soft distillation methods, the objective function is:** <br/>
   <img width = 600 alt = "training_Deit_3" src = "training_Deit_3.png"> <br/>
   **For hard distillation methods, the objective function is:** <br/>
   <img width = 600 alt = "training_Deit_4" src = "training_Deit_4.png"> <br/>
+  
+In other words, the soft distillation makes the student model try to mimic all the teacher model's classifications, while the hard distillation makes the student only mimic teacher models correct classifications. 
   
 Second, during the training process, the authors use truncated normal distribution to initialize weights to avoid divergence. The authors also use several data-argumentation methods, and it seems all data augmentation methods help with performance.   
   
@@ -36,7 +38,7 @@ Second, during the training process, the authors use truncated normal distributi
   
   
 * What interesting variants are explored?<br/>
-  I don't think this paper mentions any variant of DeiT. 
+  In the ablation section, the authors mention how different training strategies affect how DeiT perform.
 
 ## TL;DR
 * Three
