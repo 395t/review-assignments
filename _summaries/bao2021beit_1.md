@@ -36,7 +36,13 @@ TODO: Summarize the paper:
 
 * What interesting variants are explored?
 
+    After pre-training BEiT, the authors appended a task layer upon the Transformer, and fine-tuned the parameters on downstream tasks:
+    * Image Classification: Linearly project all BEiT representation outputs with a matrix, aggregate with an average pool, then apply a softmax for classification. Both parameters of BEiT and the softmax classifier are updated during fine-tuning.
+    * Semantic Segmentation: Use BEiT as a backbone encoder, and incorporate several deconvolution layers as decoder to produce segmentation ([Zheng et al., 2020](https://arxiv.org/abs/2012.15840)). This is also fine-tuned end-to-end like image classification model.
+    * Intermediate Fine-Tuning: After self-supervised pre-training, further train BEiT on a datarich intermediate dataset (i.e. ImageNet-1K), then fine-tune the model on target downstream tasks.
+
 * How well does the paper perform?
+
 
 ## TL;DR
 * Three
