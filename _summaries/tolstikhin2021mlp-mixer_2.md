@@ -18,6 +18,9 @@ Mixer first uses a fully-connected layer for each patch of the input image.  The
 
 ![mixerarch](tolstikhin2021mlp-mixer_2a.png)
 
+In comparison to CNNs, Mixer's channel mixing layers can be seen as a 1x1 convolution.  The token mixing layers can also be seen as a single-channel depth wise convolution with parameter sharing and receptive fields.  However, convolutions are still more complex than the simple matrix multiplications in Mixer MLPs.
+
+
 Tying parameteres across channels differentiates Mixer from CNNS, but it also provides a memory perfomance boost to Mixer because it prevents the network from growing too fast when chaning the hidden dimension or sequence length.  This will tie in to the high efficiency of Mixer analyzed later in the paper.
 
 Finally, all layer inputs in Mixer are of the same dimension, meaning it is isotropic similar to Transformers while CNNS tend to decrease dimensions as it gets deeper into the network.  Mixer also utilizes skip connections and layer normalization.
