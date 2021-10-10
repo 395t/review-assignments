@@ -7,7 +7,6 @@ author: TongruiLi # Your GitHub id
 score: 10/10
 ---
 
-TODO: Summarize the paper:
 * What is the core idea?
 
 The paper proposed LeViT， a high speed vision based transofrmer that achieves relatively high accuracy on both CPU and GPU based hardware. They have integrated a few known discoveries from previous work, and new discoveries like the attention bias together for fast inference. 
@@ -34,7 +33,7 @@ With the above motivation in mind, LeViT uses ViT and DeiT transformer training 
 6. *Attention bias* replaces positional embedding, which allows injection of position information in attention
 7. *Smaller Keys* Attention bias reduce pressure on location information, which means that we can safely reduce V matrix's size.
 8. *Attention Activation* use Hardwish activation to $$A^hV$$, which is similar to ResNet bottleneck
-8. *Reducing MLP blocks* reduce expansion factor of convolution to minimize compution cost
+9. *Reducing MLP blocks* reduce expansion factor of convolution to minimize compution cost
 
 * How well does the paper perform?
 
@@ -49,9 +48,9 @@ In comparsion to other efficient models, LeVit net greatly improve efficiency wh
 
 ![ablation](graham2021levit_2a.png)
 
-The autho also performed ablation study with different components removed. Without pyramid shape the number of parameters takes a drastic hit along the accuracy. Other variations shows similar performance and paramter size with the base model.
+The author also performed ablation study with different components removed. Without pyramid shape the number of parameters takes a drastic hit along the accuracy. Other variations shows similar performance and paramter size with the base model.
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* With Levit, we can achieve relatively good classification accuracy with increditable speed
+* State of art NN with efficiency can be run on CPU at inference time
+* Incorprating multiple known techniques can have profound effect on performance.
