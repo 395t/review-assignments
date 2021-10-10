@@ -7,8 +7,6 @@ author: biofizzatreya
 score: 8
 ---
 
-TODO: Summarize the paper:
-
 The paper attempts to combine, convolutional networks and training principle from CNNs with vision transformers. While transformers can generalize well over large datasets, transformers themselves have certain problems. Transformers lose all positional information and since most images are locally similar, it takes more data to train vision transformers. Moreover due to quadratic complexity of the self-attention matrix, transformers have difficulty dealing with large images. LeVit's solution to these problems is instead of feeding an image to the transformer, they feed a image after passing it through multiple convolution layers.
 
 ![image](https://user-images.githubusercontent.com/13065170/136635751-c21a6e5d-c6ce-4813-bda9-4f3ef884e265.png)
