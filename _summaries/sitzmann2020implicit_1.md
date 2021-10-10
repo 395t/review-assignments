@@ -26,7 +26,7 @@ TODO: Summarize the paper:
     ![Architecture](sitzmann2020implicit_1a.png)
 
     * Implicit equations relate an input, a function, and the function's derivatives to 0
-        * simple loss functions could just be absolute value of the relation
+        * a simple loss function is just absolute value of the relation
         * loss calculated at random points in the domain and summed up
     * Sinusoidal representation network (SIREN)
         * MLP with sine as the activation function
