@@ -40,7 +40,7 @@ PVT-Large+Semantic FPN archives the best mIoU of 44.8, which is very close to th
 ## What interesting variants are explored?
 The authors compared deeper vs wider networks on PVT, and concluded that deeper models (PVT-Medium) work better than wide ones (PVT-Small-Wide).\
 They detail the specificaitons of the different PVTs in the following table:\
-![Wang, 2021](wang2021pyramid_2_c.PNG) \
+![Wang, 2021](wang2021pyramid_2_c.PNG) 
 
 ## TL;DR
 * The Pyramid Vision Transformer (PVT) is the first pure Transformer backbone designed for various pixel-level dense prediction tasks. It allows for models without convolutions.
