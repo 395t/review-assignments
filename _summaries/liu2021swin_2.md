@@ -58,3 +58,12 @@ To reduce the latency, the authors  propose a more efficient batch computation a
 <img width="500px" src="liu2021swin_2d.png"/>  
 
 ## Experiements
+
+The paper conducted a thorough empirical evaluation on ImageNet-1k classification, object detection and semantic segmentation. The results showed that Swin-Transformer outperforms ResNet and Vit when used as the backbone model.
+
+<img width="500px" src="liu2021swin_2e.png"/>
+<img width="500px" src="liu2021swin_2f.png"/>
+<img width="500px" src="liu2021swin_2g.png"/>
+
+## TL;DR
+Swin-Transformer — A hierarchical Transformer whose representation is computed with Shifted windows. This hierarchical architecture has the flexibility to model at various scales and has linear computational complexity with respect to image size. It achieved SOTA on various of vision benchmarks when used as the backbone model.
