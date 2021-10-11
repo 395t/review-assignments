@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: graham2021levitt
+paper: graham2021levit
 # Please fill out info below
 author: biofizzatreya
 score: 8
