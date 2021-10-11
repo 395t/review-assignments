@@ -99,6 +99,6 @@ score: 9
   * Top-1 validation accuracy (in %) on Model-Net40. PointNet++ uses extra geometric features and other techniques not used in the blue models.
 
 ## TL;DR
-* Uses iterative attention
-* Is a multimodal architecture
-* Performs competitively against specialised models.
+* Uses iterative asymmetric cross-attention to decouple network depth from input size allowing for large networks
+* Motivated to be a generalisable architecture - and thus, Is a multimodal architecture
+* Performs competitively against specialised models with inductive biases baked in.
