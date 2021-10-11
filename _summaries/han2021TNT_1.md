@@ -3,7 +3,7 @@ layout: summary
 title: Summary
 paper: han2021TNT
 author:  sritank
-score:  10
+score:  9
 ---
 
 ## What is the core idea?
@@ -15,9 +15,15 @@ Transformers perform very well in NLP tasks where the input and ground truth lab
 
 ![self attention function](./han2021TNT_1a.png)
 
-The outer layer transformer extracts the features and attentions of visual sentences,i.e. patches. The inner layer transformers are responsible for extracting features of details from visual words, i.e. sub patches. This allows the TNT model to extract visual information with finer granularity and provide more details to inferred features. The image is divided into n patches as ![patches](./han2021TNT_1b.png). Each patch is then divided into subpatches as ![sub patches](./han2021TNT_1c.png)
+The outer layer transformer extracts the features and attentions of visual sentences,i.e. patches. The inner layer transformers are responsible for extracting features of details from visual words, i.e. sub patches. This allows the TNT model to extract visual information with finer granularity and provide more details to inferred features. The image is divided into n patches as 
+![patches](./han2021TNT_1b.png). 
 
-These patches are then mapped into a sequence of word embeddings using linear projection as ![words](./han2021TNT_1d.png). The relationship between these words are then learnt by the inner transformer block as:
+Each patch is then divided into subpatches as 
+![sub patches](./han2021TNT_1c.png)
+
+These patches are then mapped into a sequence of word embeddings using linear projection as ![words](./han2021TNT_1d.png). 
+
+The relationship between these words are then learnt by the inner transformer block as:
 
 ![word embeddings](./han2021TNT_1e.png)
 
