@@ -10,7 +10,8 @@ score: 9
 Summarize the paper:
 * What is the core idea?
 
-    The authors propose to analyze the dynamics of training deep networks by constraining on the linear network cases, which demonstrated similar behaviours to nonlinear ones.
+
+The authors propose to analyze the dynamics of training deep networks by constraining on the linear network cases, which demonstrated similar behaviours to nonlinear ones.
 The authors formulate the learning process as differential equations and developed analysis into the properties as a result of the dynamics, including symmetries, invariants, and stable points, which implies the network would reach optimal learning speed and convergence when initialized according to these properties.
 Finally, the authors demonstrate the claims on MNIST and shed light on nonlinear case by arguing they share same properties due to the norm-preserving properties of the constructed network.
 * How is it realized (technically)?
@@ -30,6 +31,7 @@ In this equation, we see that the first term implies the vectors in weight matri
 Therefore, the result is a set of vectors that are either pairwise orthogonal or colinear.
 
 The authors further examine the induced equivariance manifold of weight vectors and find that their modes in the spectra evolve independently and staying orthogonal.
+
 With similar but limited noisy initial condition, the authors find that the learning speed follows a sigmoid function as described in
 $$
 u_{f}(t)=\frac{s e^{2 s t / \tau}}{e^{2 s t / \tau}-1+s / u_{0}}
@@ -56,3 +58,4 @@ They perform experiments to validate the claim as well.
 * Solving linear networks analytically as diffeqs demonstrates properties (symmetries, invariants) which have implications on the learning dynamics of them.
 * With such invariants, there is a manifold where the learning trajectory is optimal
 * Initializing the weights on the manifold of orthogonal weights gives rise to fast and converging learning dynamics, which is validated by experiments
+

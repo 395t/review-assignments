@@ -61,3 +61,4 @@ For semantic segmentation, the TNT-S model had the best mIoU (intersection over 
 - They introduce a TNT block with outer and inner transformer blocks and demonstrate how the subpatches help capture visual word embeddings better
 - TNT better preserves local information for visual recognition. The attention values of subpatches are good at capturing similarity to query images, which is not done in other visual transformer models
 
+
