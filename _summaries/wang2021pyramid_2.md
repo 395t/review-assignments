@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{	Pyramid Vision Transformer: A Versatile Backbone for Dense Prediction without Convolutions}}
+paper: wang2021pyramid
 # Please fill out info below
 author: marcobueso
 score: 10
