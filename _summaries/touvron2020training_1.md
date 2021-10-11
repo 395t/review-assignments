@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: touvron2020training_1
+paper: touvron2020training
 # Please fill out info below
 author: specfazhou
-score: 8/10
+score: 8
 ---
 
 TODO: Summarize the paper:
