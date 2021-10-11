@@ -15,7 +15,7 @@ it further embeds a sub-transformer into the architecture for excavating the fea
 aggregated into the corresponding visual sentence. Hence TNT model is capable of extracting visual information with fine granularity and provide features 
 with more details.
 
-![LeNet](TNT_1.png)
+![LeNet](han2021Transformer_1x.png)
 
 ## Network Architecture:
 
@@ -31,17 +31,17 @@ It transforms the visual words into a sequence of word embeddings
 				
 The two data flows in which one flow operates across the visual sentences and the other processes the visual words inside each sentence:
 					
-![LeNet](TNT_2.png)
+![LeNet](han2021Transformer_2x.png)
 
 Y is the input block and l is the length of each block
 
 Sentence embedding is represented as 
 
-![LeNet](TNT_3.png)
+![LeNet](han2021Transformer_3x.png)
 
 The inputs and outputs of the TNT block include the visual word embeddings and sentence embeddings
 
-![LeNet](TNT_4.png)
+![LeNet](han2021Transformer_4x.png)
 
 where Y represents Word embeddings and Z represents Sentenc embeddings.
 
@@ -50,7 +50,7 @@ the intrinsic information from the sequence of sentences. The TNT Architecture c
 as m = 4 • 4 = 16 by default. there are two variants of TNT networks with different model sizes, namely, TNT-S and TNT-B. They consist of 23.8M and 65.6M 
 parameters respectively.
 
-![LeNet](TNT_5.png)
+![LeNet](han2021Transformer_5x.png)
 
 ## Experiments: 
 
@@ -60,7 +60,7 @@ parameters respectively.
 
 • Results:: TNT out performed all other networks.
 
-![LeNet](TNT_6.png)
+![LeNet](han2021Transformer_6x.png)
 
 
 ## TL;DR
