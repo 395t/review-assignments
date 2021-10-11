@@ -31,15 +31,34 @@ By splitting images into chunks and putting the chunks in a sequence, we can uti
 
 ![Basic Vision Transformer](dosovitskiy2020an_2_a.gif)
 
+
+## Math on Image Patches
+
+Image Definition
+- $$x \in \mathbb{R}^{H x W x C} $$ where H = height, W = width, C = channels of input images, and $$x_p$$ is a sampled image
+
+Patch Definiton
+- $$x_p \in \mathbb{R}^{Nx(P^2xC)} $$ where P = size of image patch, N = $$HW/P^2$$ (number of patches depends on patch size and size of the image)
+
+
+
+
 # Does it work?
 
 - Yep! With sufficiently sized models, ViT out performs CNN based models significantly
+
+- Multiple variants were tested, mostly varying the size of the model to be comparable with others (BiT) but also to see how good the model could get.
+
+- The tables below show comparisons of classification accuracies on various benchmarks across models, as well as outline the other variants tested.
 
 ![Results table](dosovitskiy2020an_2_b.png)
 
 - at 2% of the training time, ViT-L is able to achieve competitive performance to BiT
   
 - at 7% ViT-L outperforms BiTL in nearly every category
+
+Note: JFT-300M is a dataset google made with 300million images. (This was and I think currently is still privately held)
+
 
 # Why does it do so well?
 
@@ -68,6 +87,15 @@ By splitting images into chunks and putting the chunks in a sequence, we can uti
 
 ![Example of ViT vs Dataset Size](dosovitskiy2020an_2_c.png)
 ![Visualization of ViT vs CNN learning](dosovitskiy2020an_2_d.gif)
+
+
+# Why not combine CNNs & Transformers (other variants)
+
+- You can processes images with a CNN and get a feature map rather than slicing images into patches, these models were called Hybrids in the paper.
+
+- Once you have the feature maps, you flatten them for feature vectors and apply the patch embedding to them (everything after this is the same)
+
+- For smaller models with less training time, hybrid models outperform Transformers and Resnets, but as the models get larger -- transformers outperform.
 
 
 ## TL;DR
