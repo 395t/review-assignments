@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: dosovitskiy2020an
 # Please fill out info below
 author: zayne-sprague
 score: 7
