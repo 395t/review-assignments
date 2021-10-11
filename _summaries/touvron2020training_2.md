@@ -3,8 +3,8 @@ layout: summary
 title: Summary
 paper: touvron2020training
 # Please fill out info below
-author: # kelseyball
-score: # 6
+author: kelseyball
+score: 6
 ---
 
 # Main contributions
