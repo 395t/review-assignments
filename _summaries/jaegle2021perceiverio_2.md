@@ -41,8 +41,6 @@ Queries are useful to provide different types of outputs from the same latent sp
 The query for outputs of
 - classification is reused for other simple output problems
 - spatial or sequence structures use positional encodings
-- multi-task or multimodal structures learn a separate query for each task or modal 
-- all other outputs should be related to the corresponding input at the query location
 
 ## Experiments
 Experiments were done on language, visual understanding, videogames, and multi-modal tasks.
