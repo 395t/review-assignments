@@ -8,6 +8,7 @@ score: 8
 ---
 
 Traditionally, computer vision problems were attempted with CNN architectures, however, due to the success of Transformers with NLP tasks, this paper experiments with applying Transformers to computer vision problems.
+The advantage of this is that transformers require much less computational resources than CNN architectures during training.
 
 This is done by dividing the images into patches which are then flattened and transformed into a sequence of linear embeddings.
 Positional information is retained by adding positional embeddings to the patch embeddings.
@@ -17,14 +18,19 @@ An overview of this Vision Transformer model is picture below in Figure 1.
 
 ![transformer_vision_arch](https://user-images.githubusercontent.com/7085644/136285121-ec21b736-b778-40c7-b3fc-19f277fc119b.PNG)
 
-The paper does make significant modifications to the standard Transformer architecture so that scalable NLP Transformer architectures can be used for these compute vision tasks as well.
+The paper does not make significant modifications to the standard Transformer architecture so that scalable NLP Transformer architectures can be used for these compute vision tasks as well.
 
 CNNs have much more image-specific inductive bias compared to the Vision Transformer due to their locality, 2D neighborhood structure, and translation equivariance in each layer of the model while the Vision Transformer only has translation equivariance and locality in MLP layers.
 
 Training of the Vision Transformer is done on large datasets and then it is fine-tuned for smaller tasks.
 The paper finds that training on large datasets mitigates the inductive bias issue.
+They also found that using a higher resolution dataset for fine-tuning is more effective than during pre-training.
+For these high resolution images the patch size remains the same fora larger effective sequence length.
 
 Evaluation of the model shows that the Vision Transformer attained state-of-the-art results for representation learning at much lower pre-training costs.
+The ImageNet dataset was used to evaluate the scalability of the model.
+When pretrained on the smallest dataset, ImageNet, the large vision transformer models performed worse than the base ones.
+The base and large vision transformer variants were based on the BERT configurations while the huge model was novel to the paper
 They evaluated different size configurations of the model as seen in Table 1 below.
 
 ![transformer_vision_variants](https://user-images.githubusercontent.com/7085644/136287435-fd02feca-8679-45f7-815c-9610d0a709b7.PNG)
