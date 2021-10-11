@@ -62,6 +62,10 @@ Object detection experiments were done on the COCO benchmark. The tables below s
 
 <img src="./wang2021pyramid_1_e.png">
 
+Finally, there were a few ablation studies performed on the ImageNet and COCO datasets. Some of these studies compared the difference between wider and deeper networks, pre-trained weights, computational overhead, and detection vs segmentation results. 
+
+It was found that having a deeper model was better than a wider one. In addition, a PVTs converged faster and better with pre-trained weights performed better without pre-trained weights. A few experiments suggested that a PVT with multiple stacks of Mult-head attention layers could be more "flexible and expressive". Next, it was shown that PVT was more suitable for medium-resolution input tasks. Finally, in the experiments between detection and segmentation, a PVT without convolutions can be easily used in dense prediction models.
+
 * What interesting variants are explored?
 
 To reach the "limit of no convolution", a transformer pipeline for object detection was built from combining PVT with a transformer-based detection head.
