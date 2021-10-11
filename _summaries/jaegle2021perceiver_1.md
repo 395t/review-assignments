@@ -48,6 +48,15 @@ The parameter efficiency of the model is increased by sharing weights between th
 
 The resulting architecture has the functional form of an RNN with a cross-attention input projection, a bottlenecked latent dimensionality and a latent Transformer recurrent core.
 
+### Result
+#### Image Validation Accuracy:
+![](jaegle2021perceiver_1b.png)
+![](jaegle2021perceiver_1c.png)
+#### Audio Set Performance:
+![](jaegle2021perceiver_1d.png)
+#### 3D Model classification Accuracy:
+![](jaegle2021perceiver_1e.png)
+
 ## TL;DR
 * Perceiver is one of the first large scale architectures able to process different input types.
 * Perceiver can scale well by attending to the inputs iteratively and channel its limited capacity to the most relevant inputs
