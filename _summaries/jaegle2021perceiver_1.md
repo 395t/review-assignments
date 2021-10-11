@@ -19,7 +19,34 @@ To address this, Perceiver builds upon Transformers and hence relies on a genera
 
 ![](jaegle2021perceiver_1a.png)
 
+**Overview**  
 
+The Architecture has two components:  
+1. A cross-attention module that maps a byte array (e.g. an
+pixel array) and a latent array to a latent array
+2. A
+Transformer tower that maps a latent array to a latent array.  
+
+The size of the byte array is determined by the input data and is generally large, the size of the latent array is a hyperparameter which is typically much smaller.
+
+The model applies the cross-attention module and the Transformer in alternation. 
+
+**Taming quadratic complexity with cross-attention**
+
+Let M be the index dimensionality of large-scale inputs like images (M = 50176 for 224 × 224 ImageNet images). The complexity of a normal QKV attention operation is $O(M^2)$. Using cross-attention: $K$
+ and $V$ are projections of the input byte array, $Q$ is a projection of a learned latent array with index dimension $N$ $<<$ $M$. N being a hyperparameter, the resulting cross-attention operation has complexity $O(MN)$
+
+ **Uncoupling depth with a latent Transformer**
+
+The cross-attention layer induces a bottleneck. Therefore Transformers in the latent space come at the low cost of $O(M^2)$. Let $L$ be the number of layers, a latent Transformer has a complexity of $O(LN^2)$
+
+Therefore the architecture as a whole has complexity $O(MN+LN^2)$. Since the cost is independent of the input size, we can construct very large networks on large-scale data.
+
+**Iterative cross-attention & weight Sharing**
+
+The parameter efficiency of the model is increased by sharing weights between the corresponding blocks of each latent Transformer and/or between cross-attend modules. 
+
+The resulting architecture has the functional form of an RNN with a cross-attention input projection, a bottlenecked latent dimensionality and a latent Transformer recurrent core.
 
 ## TL;DR
 * Perceiver is one of the first large scale architectures able to process different input types.
