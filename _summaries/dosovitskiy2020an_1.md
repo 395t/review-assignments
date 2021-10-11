@@ -9,8 +9,10 @@ score: 8
 
 Traditionally, computer vision problems were attempted with CNN architectures, however, due to the success of Transformers with NLP tasks, this paper experiments with applying Transformers to computer vision problems.
 The advantage of this is that transformers require much less computational resources than CNN architectures during training.
+Related work includes the iGPT model that first reduces image resolution and color space before employing Transformers to the image pixels.
+The iGPT model achieves 72% accuracy on ImageNet.
 
-This is done by dividing the images into patches which are then flattened and transformed into a sequence of linear embeddings.
+This technique of using Transformers for vision is done by dividing the images into patches which are then flattened and transformed into a sequence of linear embeddings.
 Positional information is retained by adding positional embeddings to the patch embeddings.
 This sequence of embeddings is then fed into a standard Transformer. 
 The model is then trained with supervision for image classification.
@@ -30,7 +32,7 @@ For these high resolution images the patch size remains the same fora larger eff
 Evaluation of the model shows that the Vision Transformer attained state-of-the-art results for representation learning at much lower pre-training costs.
 The ImageNet dataset was used to evaluate the scalability of the model.
 When pretrained on the smallest dataset, ImageNet, the large vision transformer models performed worse than the base ones.
-The base and large vision transformer variants were based on the BERT configurations while the huge model was novel to the paper
+The 'base' and 'large' vision transformer variants were based on the BERT configurations while the 'huge' model was novel to the paper.
 They evaluated different size configurations of the model as seen in Table 1 below.
 
 ![transformer_vision_variants](https://user-images.githubusercontent.com/7085644/136287435-fd02feca-8679-45f7-815c-9610d0a709b7.PNG)
@@ -42,6 +44,10 @@ The following Table 2 displays results showing that all the Vision Transformer v
 The following chart in Figure 4 shows how the Vision Transformer performs better with larger datasets while the ResNets are better on smaller datasets.
 
 ![transformer_vision_pretrain](https://user-images.githubusercontent.com/7085644/136291500-8f5c166d-144f-480b-896f-b7b25b9f7642.PNG)
+
+Visualizing the attention aspect of the model reveals that it is able to focus on regions of the image that are relavant for classification as seen in the figure below.
+
+![attention](https://user-images.githubusercontent.com/7085644/136749160-2c03a2cf-6193-4c1f-84cc-063cf7def3ca.PNG)
 
 ## TL;DR
 * CNNs are typically used for computer vision tasks, however a standard Transformer can be applied instead by dividing the images into patches and then feeding them as an input sequence of linear embeddings.
