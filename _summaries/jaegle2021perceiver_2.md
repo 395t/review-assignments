@@ -92,8 +92,11 @@ score: 9
 * <img src="jaegle2021perceiver_2_b.png" alt="jaegle2021perceiver_2_b" style="zoom:50%;" />
   * Top-1 validation accuracy (in %). Compares baseline from literature, baseline with Fourier Features, Transformer with Fourier Features against *Perceiver*. *Perceiver* performs as well as baseline. 
 * <img src="jaegle2021perceiver_2_c.png" alt="jaegle2021perceiver_2_c" style="zoom:50%;" />
+  * Top-1 validation accuracy (in %). Shows the *Perceiver* model's resiliency to permuted dataset. This is due to global attention. Input RF refers to the Input Receptive Field (RF) in pixels - this is the size of the local neighbourhood used for 2D convolutions
 * <img src="jaegle2021perceiver_2_d.png" alt="jaegle2021perceiver_2_d" style="zoom:50%;" />
+  * Very comparable results. In future work, hope to incorporate the insights that are also used in CNN-14 (Kong et al., 2020).
 * <img src="jaegle2021perceiver_2_e.png" alt="jaegle2021perceiver_2_e" style="zoom:50%;" />
+  * Top-1 validation accuracy (in %) on Model-Net40. PointNet++ uses extra geometric features and other techniques not used in the blue models.
 
 ## TL;DR
 * Uses iterative attention
