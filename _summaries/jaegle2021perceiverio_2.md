@@ -34,11 +34,13 @@ Related work and why this is more adaptable:
 
 ![perceiverio](jaegle2021perceiverio_2b.png)
 
+Queries are useful to provide different types of outputs from the same latent space information.
+
 The query for outputs of
-- classification is reused
-- spatital or sequence structure uses positional encodings
-- multi-task structure learns a query for each task
-- all other outputs should be related to the input at that query location
+- classification is reused for other simple output problems
+- spatial or sequence structures use positional encodings
+- multi-task structure learns a separate query for each task
+- all other outputs should be related to the corresponding input at the query location
 
 Experiments were done on language, visual understanding, videogames, and multi-modal tasks.
 
@@ -55,7 +57,7 @@ Additionally, the new model performed better than the original architecture on c
 ![perceiverio](jaegle2021perceiverio_2d.png)
 
 
-Other variants discussed were to finetune the size of the latent space specific to the task, allow for generative models, and provide more robustness to adversarial attacks. However, the author did not explicitly address these within this paper. 
+Other variants discussed were to finetune the size of the latent space specific to the task, allow for generative models, and provide more robustness to adversarial attacks. However, the author did not implement or test these within this paper. 
 
 
 ## TL;DR
