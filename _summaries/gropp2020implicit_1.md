@@ -1,17 +1,24 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: {{gropp2020implicit}}
 # Please fill out info below
-author: # Your GitHub id
+author: mmcinnestaylor # Your GitHub id
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
 TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored?
+## Core idea?  
+* hello world  
+
+## Technical Implementation  
+* hello world  
+
+## Results  
+* hello world  
+
+## Variants  
+* hello world
 
 ## TL;DR
 * Three
