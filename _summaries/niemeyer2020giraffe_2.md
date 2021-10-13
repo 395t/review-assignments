@@ -41,7 +41,7 @@ The model also exhibited controllable scene generation. With the help of disenta
 
 ![ALT TEXT](niemeyer2020giraffe_2_1d.PNG)
 
-GIRAFFE attains similar if not better FID scores than the benchmark approaches. This was done using fewer number of network parameters when compared to the benchmark models. 
+GIRAFFE attains similar if not better FID scores than the baseline approaches. This was done using fewer number of network parameters when compared to the baseline models. 
 
 <p float="middle">
   <img src="niemeyer2020giraffe_2_1e.PNG" width="49%"/>
@@ -50,7 +50,7 @@ GIRAFFE attains similar if not better FID scores than the benchmark approaches. 
 
 ## What interesting variants are explored?
 
-TODO
+The combination of 3D volume rendering and 2D neural rendering led to faster inference for the GIRAFFE approach. They even report a significant rendering time speed up such as 1595 ms to 5.9 ms for 256 * 256 pixels. The paper also claims that GIRAFFE is able to generate objects or actions that were not directly found in the training data while correctly maintaining disentanglement. GIRAFFE's ability to disentangle the background from the objects allowed for more consistent image generation when performing tasks such as rotating objects in a scene when compared to the baseline methods.
 
 ## TL;DR
 * Three
