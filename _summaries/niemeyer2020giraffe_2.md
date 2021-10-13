@@ -1,10 +1,10 @@
 ---
 layout: summary
-title: Summary
-paper: {{paper_tag}}
+title: GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields
+paper: neimeyer2020girraffe
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: saikm200022
+score: 8
 ---
 
 TODO: Summarize the paper:
