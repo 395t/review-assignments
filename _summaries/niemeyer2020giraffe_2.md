@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields
+title: GIRAFFE Representing Scenes as Compositional Generative Neural Feature Fields
 paper: neimeyer2020girraffe
 # Please fill out info below
 author: saikm200022
@@ -27,10 +27,24 @@ The paper finally uses a combination of 3D volume rendering and 2D neural render
 
 The Generator aspect of their model is defined by the three steps summarized above. The Discriminator portion of the model is a CNN that use Leakly ReLU non-linearity. The gradient of the Discriminator based on the Generator output was used to train on a non-saturating GAN objective. The paper claims they were able to effectively train their model on raw images without extra supervision. 
 
-
 ## How well does the paper perform?
 
-TODO
+Experiments were done on a variety of single-object datasets with limited backrgound information. The paper also looks at model results on more real-world datasets. 
+
+Experiments revealed that there was good disentanglement of the objects with the background of an image, not requiring supervision that would cause such a behavior. Their model was even able to disentangle multiple objects in a scene from each other through the unsupervised training approach. 
+
+![ALT TEXT](niemeyer2020giraffe_2_1c.PNG)
+
+The model also exhibited controllable scene generation. With the help of disentangling parts of a scene, the model was also capable of successfully apply some transformations to objects such as rotation and changing camera elevation. Here are the results presented in the paper:
+
+![ALT TEXT](niemeyer2020giraffe_2_1d.PNG)
+
+GIRAFFE attains similar if not better FID scores than the benchmark approaches. This was done using fewer number of network parameters when compared to the benchmark models. 
+
+<p float="middle">
+  <img src="niemeyer2020giraffe_2_1e.PNG" width="49%"/>
+  <img src="niemeyer2020giraffe_2_1f.PNG" width="49%" /> 
+</p>
 
 ## What interesting variants are explored?
 
