@@ -11,7 +11,9 @@ score: 8
 
 ## What is the core idea?
 
-TODO
+Generating 2D images that are realistic and at high resolutions has been made possible by GANs (Generative Adversarial Networks). However, it is also important to be able to generate these images in a manner that is controllable. The paper suggests an approach, GIRAFFE, that uses a 3D composition representation of scenes that leads to better disentanglement and controllable image generation. This compositional scene approach allows GIRAFFE to be able to learn from raw collections of images without any supplementary supervision.
+
+![ALT TEXT](niemeyer2020giraffe_2_1g.PNG)
 
 ## How is it realized (technically)?
 
