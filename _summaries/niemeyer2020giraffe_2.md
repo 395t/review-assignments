@@ -53,6 +53,6 @@ GIRAFFE attains similar if not better FID scores than the baseline approaches. T
 The combination of 3D volume rendering and 2D neural rendering led to faster inference for the GIRAFFE approach. They even report a significant rendering time speed up such as 1595 ms to 5.9 ms for 256 * 256 pixels. The paper also claims that GIRAFFE is able to generate objects or actions that were not directly found in the training data while correctly maintaining disentanglement. GIRAFFE's ability to disentangle the background from the objects allowed for more consistent image generation when performing tasks such as rotating objects in a scene when compared to the baseline methods.
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* GIRAFFE is a image synthesis approach that leads to effective disentanglement and controllable results.
+* This paper utilizes compositional 3D representations of scenes that led to disentanglement between objects and background in the image.
+* GIRAFFE achieved baseline results with faster inference times, less parameters, and less additional supervision.
