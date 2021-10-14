@@ -42,7 +42,7 @@ As can be seen on the image above, the quality of the model remains extremely co
 Opacity regularization
 Time and space for volumetric representation was strongly associated with sparsity of opacity in the model.  To encourage this sparsity, the model uses a regulazier that calculates loss for  predicted densities based on Cauchy loss.
 
-<p align="center"> <img src="hedman2021baking_2_f.png" height="300"/> </p>
+<p align="center"> <img src="hedman2021baking_2_f.png" height="100"/> </p>
 
 ## TL;DR
 * Storing geometry data in a precomputed data structure leads to high speed improvements
