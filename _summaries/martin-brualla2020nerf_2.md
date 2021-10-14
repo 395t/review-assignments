@@ -4,7 +4,7 @@ title: Summary
 paper: martin-brualla2020nerf
 # Please fill out info below
 author: nilesh2797
-score: 8
+score: 9
 ---
 
 ## What is the core idea?
