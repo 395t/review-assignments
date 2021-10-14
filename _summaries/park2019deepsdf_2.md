@@ -11,7 +11,7 @@ score: 9
 
 The paper introduces a DeepSDF, a learned continuous Signed Distance Function (SDF), which represent class of shapes that results in 3D shape representation, interpolation and completion from partial and noisy 3D input data. A generative model is learned to produce the DeepSDF. The DeepSDF acts as a learned shape-conditioned classifier for which decision boundary is the shape surface itself. A novel way of using probabilistic auto decoder to learn the 3D shapes is used.
 
-![DeepSDF representation](./park2019deepsdf_2a.png)
+![DeepSDF representation](./park2019deepsdf_2d.png) | ![DeepSDF representation](./park2019deepsdf_2a.png)
 
 **How is it realized (technically)?**
 
