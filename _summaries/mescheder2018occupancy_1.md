@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: mescheder2018occupancy
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: ishanashah
+score: 7
 ---
 
 TODO: Summarize the paper:
@@ -12,6 +12,7 @@ TODO: Summarize the paper:
 * How is it realized (technically)?
 * How well does the paper perform?
 * What interesting variants are explored?
+
 
 ## TL;DR
 * Three
