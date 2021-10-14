@@ -8,7 +8,7 @@ score: 8
 ---
 
 ## What is the core idea?
-* NeRF works well on images of static subjects captured under controlled settings but it fails to model real-world variabilities such as  illumination or transient occluders
+* NeRF works well on images of static subjects captured under controlled settings, but it fails to model real-world variabilities such as illumination and transient occluders
 * NeRF-W (this paper) extends NeRF to address these issues and is able to render accurate reconstructions from unstructured image collections taken from the internet!
 <p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-demo.gif" height="200"/> <img src="martin-brualla2020nerf_2/nerf-w-demo-2.gif" height="200"/> <img src="martin-brualla2020nerf_2/nerf-w-demo-3.gif" height="200"/></p>
 <p align="center">Sample image renders taken from https://nerf-w.github.io </p>
