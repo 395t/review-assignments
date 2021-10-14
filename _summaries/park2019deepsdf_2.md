@@ -21,41 +21,41 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
 * A deep neural network is trained given a target shape by preparing a set of pairs X composed of 3D point samples and their SDF values. 
 
-![Equation 2](./park2019deepsdf_2eq2.png)
+  ![Equation 2](./park2019deepsdf_2eq2.png)
 
-![DeepSDF singleShape](./park2019deepsdf_2b.png)
+  ![DeepSDF singleShape](./park2019deepsdf_2b.png)
 
 * The parameter θ of multilayer fully connected network is trained on training set S to make fθ a good approximator. 
 
-![Equation 3](./park2019deepsdf_2eq3.png)
+  ![Equation 3](./park2019deepsdf_2eq3.png)
 
 * The training is done by minimizing sum over losses between predicted and real SDF values by using the following loss function where clamp(x, δ) := min(δ, max(−δ, x))
 
-![Equation 4](./park2019deepsdf_2eq4.png)
+  ![Equation 4](./park2019deepsdf_2eq4.png)
 
 * A latent vector z, encoding the desired shape is added as a second input to the neural network. The latent shape code vector is stacked with the sample location and feeded to the fully connected neural network (8 layers) at the input and 4th layer. The latent vectors are randomly assigned initialled and later on optimized by bac propogation.
 
-![Equation 5](./park2019deepsdf_2eq5.png)
+  ![Equation 5](./park2019deepsdf_2eq5.png)
 
-![Auto decoder](./park2019deepsdf_2c.png)
+  ![Auto decoder](./park2019deepsdf_2c.png)
 
 * In the previous works, auto encoder is not used in inference, hence they proposed to use just auto decoder to learn shape embeddings. A probabilistic auto-decoder is used where each latent code zi is paired with training shape Xi where θ parameterizes the SDF likelihood. 
 
-![Equation 6](./park2019deepsdf_2eq6.png)
+  ![Equation 6](./park2019deepsdf_2eq6.png)
 
-![Equation 7](./park2019deepsdf_2eq7.png)
+  ![Equation 7](./park2019deepsdf_2eq7.png)
 
 * SDF likelihood with a deep feedforward neural network is represented as:
 
-![Equation 8](./park2019deepsdf_2eq8.png)
+  ![Equation 8](./park2019deepsdf_2eq8.png)
 
 * At training time, the joint log posterior over all training shapes is maximised with respect to the individual shape codes {zi}Ni=1 and the network parameter θ :
 
-![Equation 9](./park2019deepsdf_2eq9.png)
+  ![Equation 9](./park2019deepsdf_2eq9.png)
 
 * For inference, a shape code zi for shape Xi can be evaluated via Maximum-a-Posterior (MAP) estimation as:
 
-![Equation 10](./park2019deepsdf_2eq10.png)
+  ![Equation 10](./park2019deepsdf_2eq10.png)
 
 * The model was trained on "ShapeNet" with complete 3D shape meshes. Each mesh was normalized to a unit sphere and sampled signed distance values for 500,000 spatial points. Sampling was done more aggresively on surfadce areas o capture greater geometric detail of the object.
 
