@@ -14,6 +14,8 @@ Problem: Need a good representation of 3D data for deep learning.
 * Point Clouds: Don't have connectivity information between points, so difficult to extract surfaces.
 * Meshes: Usually based on a template mesh, because it is very difficult to handle meshes of very different objects.
 
+![FIGURE_1](mescheder2018occupancy_1a.PNG)
+
 ## Solution
 Reason about occupancy not only at fixed discrete 3D locations, but at any possible 3D point.
 
@@ -36,6 +38,8 @@ Use Multiresolution IsoSurface Extraction (MISE) to extract surface from occupan
 * Keep finding active voxels and splitting active voxels until you reach desired resolution.
 * Finally, use Marching Cubes algorithm to get a surface.
 
+![FIGURE_2](mescheder2018occupancy_1b.PNG)
+
 ## Results
 
 Evaluate on ShapeNet dataset against voxel-based, point-based, and mesh-based approaches.
@@ -44,16 +48,19 @@ Representation Power:
 * Evaluate on the "chair" category of the ShapeNet dataset.
 * The occupancy network is able to encode all 4746 training samples with only 6M parameters.
 
+![FIGURE_3](mescheder2018occupancy_1c.PNG)
+
 Condition Occupancy Networks on Noisy Point Clouds:
+
+![FIGURE_4](mescheder2018occupancy_1d.PNG)
 
 
 Condition Occupancy Networks on Low-Resolution Voxels (3D Super-resolution):
 
-
-
+![FIGURE_5](mescheder2018occupancy_1e.PNG)
 
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* Representing 3D data for deep learning is a difficult problem.
+* Solution: Use a binary classifier that classifies any 3D point as occupied or not.
+* Combine input 3D point with an input image to perform 3D reconstruction.
