@@ -53,11 +53,11 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
   ![Equation 9](./park2019deepsdf_2eq9.png)
 
-* For inference, a shape code zi for shape Xi can be evaluated via Maximum-a-Posterior (MAP) estimation as:
+* For inference, a shape code $$z_{i}$$ for shape$$X_{i}$$ can be evaluated via Maximum-a-Posterior (MAP) estimation as:
 
   ![Equation 10](./park2019deepsdf_2eq10.png)
 
-* The model was trained on "ShapeNet" with complete 3D shape meshes. Each mesh was normalized to a unit sphere and sampled signed distance values for 500,000 spatial points. Sampling was done more aggresively on surfadce areas o capture greater geometric detail of the object.
+* The model was trained on "ShapeNet" with complete 3D shape meshes. Each mesh was normalized to a unit sphere and sampled signed distance values for 500,000 spatial points. Sampling was done more aggresively on surface areas to capture greater geometric detail of the object.
 
 **How well does the paper perform?**
 
