@@ -7,12 +7,6 @@ author: ishanashah
 score: 10
 ---
 
-TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored?
-
 Problem: Need a good representation of 3D data for deep learning.
 
 ## Related Work
@@ -43,6 +37,17 @@ Use Multiresolution IsoSurface Extraction (MISE) to extract surface from occupan
 * Finally, use Marching Cubes algorithm to get a surface.
 
 ## Results
+
+Evaluate on ShapeNet dataset against voxel-based, point-based, and mesh-based approaches.
+
+Representation Power:
+* Evaluate on the "chair" category of the ShapeNet dataset.
+* The occupancy network is able to encode all 4746 training samples with only 6M parameters.
+
+Condition Occupancy Networks on Noisy Point Clouds:
+
+
+Condition Occupancy Networks on Low-Resolution Voxels (3D Super-resolution):
 
 
 
