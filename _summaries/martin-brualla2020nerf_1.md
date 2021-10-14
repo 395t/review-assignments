@@ -1,11 +1,19 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: martin-brualla2020nerf
 # Please fill out info below
-author: # Your GitHub id
+author: mattkelleher
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
+
+## Core Idea
+
+## Technical Implementation
+
+## Results
+
+
 
 TODO: Summarize the paper:
 * What is the core idea?
