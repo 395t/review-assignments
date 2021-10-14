@@ -28,10 +28,10 @@ score: 8
   
 ## How well does the paper perform?
 NeRF-W outperforms baselines on various scenese from Phototourism dataset
-<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-table.png" height="300"/> </p>
-<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-qual.png" height="500"/> </p>
+<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-table.png"/> </p>
+
+<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-qual.png"/> </p>
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* Most neural rendering algorithms including NeRF doesn't work very well on images taken in uncontrolled settings
+* NeRF-W **models the photometric variabilities** and **disentangles static and transient features** of the image to do novel view synthesis on unconstrained photo collections
