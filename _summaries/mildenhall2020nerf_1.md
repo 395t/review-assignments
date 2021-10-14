@@ -8,9 +8,9 @@ score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
 ## Core Idea
-
+~in progress
 ## Technical Implementation
-
+~in progress
 ## Results
 
 Evaluation Metrics:
@@ -18,8 +18,8 @@ Evaluation Metrics:
 - Structural SImilarity Index (SSIM)
 - Learned Perceptual Image Patch SImilarity (LPIPS)  
 
-
-
+<img src="mildenhall2020nerf_1_results.PNG" width="815" />
+~in progress,
 
 TODO: Summarize the paper:
 * What is the core idea?
