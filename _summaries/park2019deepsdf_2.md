@@ -45,9 +45,11 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
   ![Equation 7](./park2019deepsdf_2eq7.png)
 
-* SDF likelihood with a deep feedforward neural network is represented as:
+* SDF likelihood via a deep feedforward neural network is represented as:
 
   ![Equation 8](./park2019deepsdf_2eq8.png)
+  
+  where L( $$\tilde{s}_{j}$$ , $$s_{j}$$ ) is a loss function penalizing the deviation of the network prediction from the actual SDF value $$s_{j}$$ .
 
 * At training time, the joint log posterior over all training shapes is maximised with respect to the individual shape codes $${z_{i}}_{i=1}^{N}$$ and the network parameter _θ_ :
 
