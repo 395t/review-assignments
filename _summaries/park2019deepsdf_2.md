@@ -9,7 +9,7 @@ score: 9
 
 **What is the core idea?**
 
-The paper introduces a DeepSDF, a learned continuous Signed Distance Function (SDF), which represent class of shapes that results in 3D shape representation, interpolation and completion from partial and noisy 3D input data. A generative model is lea*rned to produce the DeepSDF. The DeepSDF acts as a learned shape-conditioned classifier for which decision boundary is the shape surface itself. A novel way of using probabilistic auto decoder to learn the 3D shapes is used.
+The paper introduces a DeepSDF, a learned continuous Signed Distance Function (SDF), which represent class of shapes that results in 3D shape representation, interpolation and completion from partial and noisy 3D input data. A generative model is learned to produce the DeepSDF. The DeepSDF acts as a learned shape-conditioned classifier for which decision boundary is the shape surface itself. A novel way of using probabilistic auto decoder to learn the 3D shapes is used.
 
 ![DeepSDF representation](./park2019deepsdf_2a.png)
 
@@ -19,13 +19,13 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
   ![Equation 1](./park2019deepsdf_2eq1.png)
 
-* A deep neural network is trained given a target shape by preparing a set of pairs X composed of 3D point samples and their SDF values. 
+* A deep neural network is trained given a target shape by preparing a set of pairs _X_ composed of 3D point samples and their SDF values. 
 
   ![Equation 2](./park2019deepsdf_2eq2.png)
 
   ![DeepSDF singleShape](./park2019deepsdf_2b.png)
 
-* The parameter θ of multilayer fully connected network is trained on training set S to make fθ a good approximator. 
+* The parameter _θ_ of multilayer fully connected network is trained on training set _S_ to make $$f_{θ}$$ a good approximator. 
 
   ![Equation 3](./park2019deepsdf_2eq3.png)
 
@@ -33,13 +33,13 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
   ![Equation 4](./park2019deepsdf_2eq4.png)
 
-* A latent vector z, encoding the desired shape is added as a second input to the neural network. The latent shape code vector is stacked with the sample location and feeded to the fully connected neural network (8 layers) at the input and 4th layer. The latent vectors are randomly assigned initialled and later on optimized by bac propogation.
+* A latent vector _z_, encoding the desired shape is added as a second input to the neural network. The latent shape code vector is stacked with the sample location and feeded to the neural network (8 layers) at the input and 4th layer. The latent vectors are randomly assigned initially and later on optimized by back propogation.
 
   ![Equation 5](./park2019deepsdf_2eq5.png)
 
   ![Auto decoder](./park2019deepsdf_2c.png)
 
-* In the previous works, auto encoder is not used in inference, hence they proposed to use just auto decoder to learn shape embeddings. A probabilistic auto-decoder is used where each latent code zi is paired with training shape Xi where θ parameterizes the SDF likelihood. 
+* In the previous works, auto encoder is not used in inference, hence they proposed to use just auto decoder to learn shape embeddings. A probabilistic auto-decoder is used where each latent code $$z_{i}$$ is paired with training shape $$X_{i}$$ where _θ_ parameterizes the SDF likelihood. 
 
   ![Equation 6](./park2019deepsdf_2eq6.png)
 
@@ -49,7 +49,7 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
   ![Equation 8](./park2019deepsdf_2eq8.png)
 
-* At training time, the joint log posterior over all training shapes is maximised with respect to the individual shape codes {zi}Ni=1 and the network parameter θ :
+* At training time, the joint log posterior over all training shapes is maximised with respect to the individual shape codes $${z_{i}}_{i=1}^{N}$$ and the network parameter _θ_ :
 
   ![Equation 9](./park2019deepsdf_2eq9.png)
 
@@ -61,11 +61,11 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
 **How well does the paper perform?**
 
-DeepSDF outperformed state-of-the-art methods such as AtlasNet and OGN in known and unknown 3D shape representation tasks regarding model generalization and detail description while reducing the model size by an order of magnitude compared with previous work. Both qualitative and quantitative results showed DeepSDF’s ability to produce a wide class of shapes (chair, plane, table, etc.) with high accuracy and precision, smooth and complete surface detail, and no defects.
+DeepSDF outperformed state-of-the-art methods like AtlasNet and OGN in known and unknown 3D shape representation tasks regarding model generalization and detail description while reducing the model size by an order of magnitude compared with previous work. DeepSDF also outperforms 3D-EPN in shape completion task. Both qualitative and quantitative results showed DeepSDF’s ability to produce a wide class of shapes (chair, plane, table, etc.) with high accuracy and precision, smooth and complete surface detail, and no defects.
 
 **What interesting variants are explored?**
 
-During inferemce, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model.
+During inference, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model. With the variation of the input noise level, the reconstruction error increases much slowly than the noise level, thus DeepFS is quite robust to noise. 
 
 ## TL;DR
 * DeepSDF, a continuous shape surface represents a class of shapes which enables representing 3D shapes and completing it from partial and noisy data. 
