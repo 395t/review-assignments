@@ -17,7 +17,7 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
 * DeepSDF represents a continuous surface boundary by a continuous volumetric field. The value of a point in the field is the distance to the surface boundary. The (-) and (+) sign of the DeepSDF function specify the region is inside or outside of the shape respectively with the iso-surface represented by SDF (·) = 0 
 
-![Equation 1](./park2019deepsdf_2eq1.png)
+  ![Equation 1](./park2019deepsdf_2eq1.png)
 
 * A deep neural network is trained given a target shape by preparing a set of pairs X composed of 3D point samples and their SDF values. 
 
