@@ -69,6 +69,7 @@ They experiment with the proposed method on free-viewpoint rendering of 360-degr
 
 ## What interesting variants are explored?
 They offer some interesting ablation studies regarding their design decisions. 
+
 ![image](https://user-images.githubusercontent.com/35536646/137432718-fbeafe75-c180-4cc1-819a-79c97c8cb8a8.png)
 
 Table 2. basically shows that using a smaller network (Tinyview) and deferred NeRF do hurt performance. Using compression schemes also displayed similiar effect. But these are just crucial parts to speeding up the inference time, and the performance drops are not too significant. 
