@@ -13,7 +13,7 @@ The paper proposes that using a Fourier feature mapping of the inputs allows a c
 
 Leveraging literature that approximates deep networks with kernel regression, the paper theoretically explains the reason for this spectral bias and then shows how the Fourier features help in overcoming the problem. Specifically, it proves that the Fourier features transform the NTK into a stationary kernel with tunable frequency components -- thus allowing the network to learn high frequency functions. It also proves the above claims empirically through a few simple experiments.
 
-<img width="1000" alt="tancik2020fourier_1a" src="tancik2020fourier_1a.png">
+<img width="800" alt="tancik2020fourier_1a" src="tancik2020fourier_1a.png">
 
 ## How is it realised?
 
@@ -55,7 +55,7 @@ Note that the kernel above is stationary, i.e. it only depends on the difference
 
 Using these input embeddings to train a network is equivalent to kernel regression with the stationary NTK function. Thus, the training dynamics of the network, specifically the rate of convergence and the generalizability of the model can be tuned using the $$a_j$$ and $$\textbf{b}_j$$ parameters of the kernel to control the bandwidth of NTK as shown in figure below.
 
-<img width="1000" alt="tancik2020fourier_1b" src="tancik2020fourier_1b.png">
+<img width="800" alt="tancik2020fourier_1b" src="tancik2020fourier_1b.png">
 
 The magnitude of the higher frequency components reduces with the parameter $$p$$ in the figure. $$p=0$$ corresponds to equal magnitude of all frequencies and $$p=\infty$$ corresponds to just 1 frequency. Figures (b) and (d) show that $$p=\infty$$ leads to underfitting and $$p=0$$ leads to overfitting. Therefore, $$p=1$$ has adequate power across frequencies to still learn higher frequency functions rapidly but not overfit to them. Figure (c) shows the convergence of the different frequency components of the training error. 
 
@@ -64,7 +64,7 @@ The magnitude of the higher frequency components reduces with the parameter $$p$
 
 In real-world problems of higher dimensions, it is not possible to densely sample the Fourier basis frequencies for the feature mapping because of scalability issues. Therefore, the paper proposes to sample a smaller set of random Fourier features from a parametric distribution which matches the performance of the dense set of Fourier features. It further finds that the performance does not depend so much on the family of the distribution (distribution shape) but on its scale (standard deviation). Proved empirically in the figure below. The three subfigures are experiments with three different synthetic datasets.
 
-<img width="1000" alt="tancik2020fourier_1c" src="tancik2020fourier_1c.png">
+<img width="900" alt="tancik2020fourier_1c" src="tancik2020fourier_1c.png">
 
 ## Performance
 
