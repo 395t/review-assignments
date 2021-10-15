@@ -7,8 +7,6 @@ author: timchen0618
 score: 8/10
 ---
 
-TODO: Summarize the paper:
-
 ## What is the core idea?
 NeRF is a good method to recreate 3D scenes from viewpoints unobserved by the system. However, it is computationally intensive and cannot be applied in real-time, since rendering one pixel would require evaluating MLP hundreds of times. Overall, the paper first reformulated the calculation of NeRF such that only 1 MLP operation is needed for constructing the image pixel in each ray. Then, they precomputed the values needed to construct NeRF and stored them in a structure called Sparse Neural Radiance Grid (SNeRG). With those, they achieved real-time rendering.
 
