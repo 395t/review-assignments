@@ -9,7 +9,7 @@ score: # How did you like this paper 0(dislike) to 10(love)
 
 ## Core Idea
 This paper introduces a fully connected deep network that synthesizes 2D views of complex 3D scenes given a location $$(x,y,z)$$ and direction $$(\Theta , \Phi )$$. 
-The scene is represented by the network and 
+The scene is represented by the network and is trained by using multiple images from know location and viewing directions.
 
 ## Technical Implementation
 
@@ -17,9 +17,16 @@ The scene is represented by the network and
 
 ### Positional Encoding
 
-### Hierarchical Volume Sampling
+The authors reference previous work that suggests that neural networks are biased towards learning lower frequency functions. 
+This was backed up by the fact that early iterations of NeRF struggled when trying to represent high frequency variations in geometry and color. 
+To overcome this the authors project the input into higher dimentional space before feeding them into the network. 
+The projection can be seen below:
 
+<img src="mildenhall2020nerf_1_PE.PNG" />
 
+$$\gamma$$ is applied to each of the three location inputs (x,y,z) individually. 
+It is also applied to a Cartesian unit vector constructed from $$(\Theta , \Phi )$$. 
+This encoding is very similar to the one used in the popular transformer presented in the Attention is all you need paper.  
 
 ## Results
 
@@ -31,9 +38,9 @@ Evaluation Metrics:
 - Learned Perceptual Image Patch SImilarity (LPIPS)  
 
 NeRF is compared against the following methods for View Synthesis
-- Neural Volumes (NV): Leverages pairs of images, one with just the background, one with the object in front of the background to train a 3D deep convolutional network for rendering.
-- Scene Representation Networks (SRN): Represents a scene using a fully connected network which maps each point to a feature vector. Uses a recurrent network to move through rays in the scene using the features to predict next steps and ulitmately prediciting color values. 
-- Local Light Field Fusion (LLFF): A 3D convolutional network that takes location, direction, as well as images of the scene at know locations as input and redners views from novel locations and directions. Note that this network does not have to be trained for each scene.
+- **Neural Volumes (NV)**: Leverages pairs of images, one with just the background, one with the object in front of the background to train a 3D deep convolutional network for rendering.
+- **Scene Representation Networks (SRN)**: Represents a scene using a fully connected network which maps each point to a feature vector. Uses a recurrent network to move through rays in the scene using the features to predict next steps and ulitmately prediciting color values. 
+- **Local Light Field Fusion (LLFF)**: A 3D convolutional network that takes location, direction, as well as images of the scene at know locations as input and redners views from novel locations and directions. Note that this network does not have to be trained for each scene.
 
 <img src="mildenhall2020nerf_1_results.PNG" width="815" />
 
@@ -56,6 +63,6 @@ They also show (rows 5-6) that with less views of the object (training data) the
 Finally the authors show that the choice of maximum frequence used (rows 7-8) in the postional encoding step is in fact a sweet spot as increasing or decreasing this value hurts performance.
 
 ## TL;DR
-* Three
-* Bullets
+* Introduces a fully connected network to synthesize a complex scene and render 2D images of the scene from novel locations and viewing directions
+* Projects the 5D input information into a higher dimesnional space using positional encoding allowing for bettere handling of color and geometry changes
 * To highlight the core concepts
