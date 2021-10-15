@@ -70,5 +70,5 @@ Finally the authors show that the choice of maximum frequence used (rows 7-8) in
 
 ## TL;DR
 * Introduces a fully connected network to synthesize a complex scene and render 2D images of the scene from novel locations and viewing directions
-* Projects the 5D input information into a higher dimesnional space using positional encoding allowing for bettere handling of color and geometry changes
-* To highlight the core concepts
+* Projects the 5D input information into a higher dimesnional space using positional encoding allowing for better handling of high frequency color and geometry changes
+* Generally outperforms other methods in scene synetheiss and novel view rendering tasks
