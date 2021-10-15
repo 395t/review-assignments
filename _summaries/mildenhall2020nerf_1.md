@@ -8,12 +8,17 @@ score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
 ## Core Idea
-This paper introduces a fully connected deep network that synthesizes 2D views of complex 3D scenes given a location $$(x,y,z)$$ and direction $$(\Theta , \Phi )$$. 
+This paper introduces a fully connected deep network that synthesizes 2D views of complex 3D scenes given a location $$(x,y,z)$$ and viewing direction $$(\Theta , \Phi )$$. 
 The scene is represented by the network and is trained by using multiple images from know location and viewing directions.
 
 ## Technical Implementation
 
-~in progress
+The 3D scenes are represented by the network as a Neural Radiance Fields (NeRF) consisting of a color and a volume density, $$\sigma$$. 
+
+<img src="mildenhall2020nerf_1_rendering.PNG" />
+
+The network is restricted so that the location density, $$\sigma$$ is dependant only of the location while color value is depenant on location and viewing direction.  
+It is optimized to be consistent with all of the (training) images with known locations and viewing directions.
 
 ### Positional Encoding
 
