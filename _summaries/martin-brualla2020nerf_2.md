@@ -27,7 +27,7 @@ score: 9
 * The transient MLP also outputs a uncertainity parameter which allows it to adapt reconstruction loss to ignore unreliable pixels and 3D locations that are likely to contain occluders. 
   
 ## How well does the paper perform?
-NeRF-W outperforms baselines on various scenese from Phototourism dataset
+NeRF-W outperforms baselines on various scenes from Phototourism dataset
 <p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-table.png" width="1000"/> </p>
 
 <p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-qual.png" width="1000"/> </p>
