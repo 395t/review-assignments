@@ -14,7 +14,8 @@ The scene is represented by the network and is trained by using multiple images 
 ## Technical Implementation
 
 The 3D scenes are represented by the network as a Neural Radiance Fields (NeRF) consisting of a color and a volume density, $$\sigma$$. 
-
+Volume density can be thought of as the probability that a ray terminates at a given point.
+ 
 <img src="mildenhall2020nerf_1_rendering.PNG" />
 
 The network is restricted so that the location density, $$\sigma$$ is dependant only of the location while color value is depenant on location and viewing direction.  
