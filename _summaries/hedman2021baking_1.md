@@ -72,15 +72,17 @@ They experiment with the proposed method on free-viewpoint rendering of 360-degr
 ## What interesting variants are explored?
 They offer some interesting ablation studies regarding their design decisions. 
 ![image](https://user-images.githubusercontent.com/35536646/137432718-fbeafe75-c180-4cc1-819a-79c97c8cb8a8.png)
+
+Table 2. basically shows that using a smaller network (Tinyview) and deferred NeRF do hurt performance. Using compression schemes also displayed similiar effect. But these are just crucial parts to speeding up the inference time, and the performance drops are not too significant. 
+
 ![image](https://user-images.githubusercontent.com/35536646/137432701-f7490333-5054-4b70-937b-f18ed191e91c.png)
 
-
-They offer some interesting ablation studies regarding their design decisions. 
-Table 2. basically shows that using a smaller network (Tinyview) and deferred NeRF do hurt performance. Using compression schemes also displayed similiar effect. But these are just crucial parts to speeding up the inference time, and the performance drops are not too significant. 
 Table 3. showed the compression techniques do reduce memory usage. For example, H264 reduce storage by 200x and sacrifice little performance.
 
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+- NeRF is great method for view synthesis, but it cannot be applied real-time. They proposed a deferred version of NeRF and store precomputed values in structure called Sparse Neural Radiance Grid (SNeRG) to speed up. 
+- Specifically, SNeRG uses a sparse voxel grid to store precomputed values of a scene, and the view-dependent residuals are computed and added at inference time. 
+- They achieved real-time image rendering without much performance loss compared to baseline methods.
+
+
