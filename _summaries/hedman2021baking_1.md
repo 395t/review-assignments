@@ -64,8 +64,21 @@ For each pixel,
 **Compresssion:** Represent all values with only 8 bits; compress a indirection grid as a lossless PNG and 3D atlas as a set of lossless PNGs, a set of JPEGs or a video encoded with H264.
 
 ## How well does the paper perform?
+They experiment with the proposed method on free-viewpoint rendering of 360-degree scenes. The quality of their model is comparable to other methods, yet the runtime is significantly faster. 
+
+![image](https://user-images.githubusercontent.com/35536646/137431571-07e17268-7abf-4dc3-9c9e-6ef0e8822b25.png)
+
 
 ## What interesting variants are explored?
+They offer some interesting ablation studies regarding their design decisions. 
+![image](https://user-images.githubusercontent.com/35536646/137432718-fbeafe75-c180-4cc1-819a-79c97c8cb8a8.png)
+![image](https://user-images.githubusercontent.com/35536646/137432701-f7490333-5054-4b70-937b-f18ed191e91c.png)
+
+
+They offer some interesting ablation studies regarding their design decisions. 
+Table 2. basically shows that using a smaller network (Tinyview) and deferred NeRF do hurt performance. Using compression schemes also displayed similiar effect. But these are just crucial parts to speeding up the inference time, and the performance drops are not too significant. 
+Table 3. showed the compression techniques do reduce memory usage. For example, H264 reduce storage by 200x and sacrifice little performance.
+
 
 ## TL;DR
 * Three
