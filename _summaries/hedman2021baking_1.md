@@ -14,9 +14,11 @@ NeRF is a good method to recreate 3D scenes from viewpoints unobserved by the sy
 
 
 ## How is it realized (technically)?
-The original NeRF ...
-We do not want to do so many MLP operations for one pixel, so we have to exchange storage for computation. 
-But also, we do not want to precompute and store the entire 5D representation. 
+
+To reduce computation, we do not want to do so many MLP operations for one pixel, so we have to trade computation for storage. 
+But also, we do not want to precompute and store the entire 5D representation. (Too memory intensive)
+
+What they do is a hybrid approach which precomutes some value in a sparse 3D space and leave some computation to inference time. 
 
 ### Deferred NeRF 
 They reconstruct NeRF to output diffuse colors, volume densitise and 4-dimensional feature vectors. 
@@ -29,14 +31,15 @@ First, they calculate the accumulated diffuse color and feature vector along the
 
 ![image](https://user-images.githubusercontent.com/35536646/137429557-43f72f38-2208-44d8-8009-1231e0852d16.png)
 
+This deferred version of NeRF requires only 1 MLP evaluation per pixel. (In contrast to hundreds of samples as in standard NeRF.)
 
 
 ### Sparse Neural Radiance Grids (SNeRG)
 They need to store diffuse colors, volume densities, and feature vectors. 
 Instead of storing a dense voxel grid, they devised a block-sparse representation. 
 
-**Macroblock: ** They used blocks of $$B^3$$ each to represent a densely occupied region. 
-**Indirection Grid: ** Size of $$(N/B)^3$$, either indicates each macroblock is empty or points to the content of that macroblock in the 3D atlas.
+**Macroblock:** They used blocks of $$B^3$$ each to represent a densely occupied region. 
+**Indirection Grid:** Size of $$(N/B)^3$$, either indicates each macroblock is empty or points to the content of that macroblock in the 3D atlas.
 
 ### Rendering
 
@@ -50,10 +53,19 @@ For each pixel,
 4. With the accumulated values, we can compute the pixel color as in Eq. 7
 
 
+### Other Tricks & Details
+**Regularization:** To enable block-sparse representation mentioned previously and reduce rendering time and storage, they introduce opacity regularization. This essentially encourages sparsity in NeRF's opacity fields. Regularization is done by penalizing predicted density. 
+
+![image](https://user-images.githubusercontent.com/35536646/137430839-8723c8ac-028c-4c82-876a-5de081fd1134.png)
 
 
-* How well does the paper perform?
-* What interesting variants are explored?
+**Sparsification:** They also further sparsify the voxel grid by culling macroblocks with low opacity and visibility.
+
+**Compresssion:** Represent all values with only 8 bits; compress a indirection grid as a lossless PNG and 3D atlas as a set of lossless PNGs, a set of JPEGs or a video encoded with H264.
+
+## How well does the paper perform?
+
+## What interesting variants are explored?
 
 ## TL;DR
 * Three
