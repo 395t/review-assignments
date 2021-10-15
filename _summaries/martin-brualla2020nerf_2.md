@@ -28,9 +28,9 @@ score: 9
   
 ## How well does the paper perform?
 NeRF-W outperforms baselines on various scenese from Phototourism dataset
-<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-table.png"/> </p>
+<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-table.png" width="1000"/> </p>
 
-<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-qual.png"/> </p>
+<p align="center"> <img src="martin-brualla2020nerf_2/nerf-w-qual.png" width="1000"/> </p>
 
 ## TL;DR
 * Most neural rendering algorithms including NeRF doesn't work very well on images taken in uncontrolled settings
