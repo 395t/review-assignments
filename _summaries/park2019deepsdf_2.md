@@ -11,7 +11,7 @@ score: 9
 
 The paper introduces a DeepSDF, a learned continuous Signed Distance Function (SDF), which represent class of shapes that results in 3D shape representation, interpolation and completion from partial and noisy 3D input data. A generative model is learned to produce the DeepSDF. The DeepSDF acts as a learned shape-conditioned classifier for which decision boundary is the shape surface itself. A novel way of using probabilistic auto decoder to learn the 3D shapes is used.
 
-![DeepSDF representation](./park2019deepsdf_2d.png) | ![DeepSDF representation](./park2019deepsdf_2a.png)
+![DeepSDF representation](./park2019deepsdf_2a.png)
 
 **How is it realized (technically)?**
 
@@ -65,9 +65,11 @@ The paper introduces a DeepSDF, a learned continuous Signed Distance Function (S
 
 DeepSDF outperformed state-of-the-art methods like AtlasNet and OGN in known and unknown 3D shape representation tasks regarding model generalization and detail description while reducing the model size by an order of magnitude compared with previous work. DeepSDF also outperforms 3D-EPN in shape completion task. Both qualitative and quantitative results showed DeepSDF’s ability to produce a wide class of shapes (chair, plane, table, etc.) with high accuracy and precision, smooth and complete surface detail, and no defects.
 
+![DeepSDF representation](./park2019deepsdf_2d.png)
+
 **What interesting variants are explored?**
 
-During inference, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model. With the variation of the input noise level, the reconstruction error increases much slowly than the noise level, thus DeepFS is quite robust to noise. 
+During inference, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model. With the variation of the input noise level, the reconstruction error increases much slowly than the noise level, thus DeepFDS is quite robust to noise. 
 
 ## TL;DR
 * DeepSDF, a continuous shape surface represents a class of shapes which enables representing 3D shapes and completing the 3D shapes from partial and noisy data. 
