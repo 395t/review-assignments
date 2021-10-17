@@ -21,11 +21,11 @@ The paper represents objects in an image as neural feature fields. A feature fie
 
 ![ALT TEXT](niemeyer2020giraffe_2_1a.PNG)
 
-Next, they rely on the additive nature of the object neural feature fields to create a feature image representation of the scene. This composition operator adds the outputs of the individual feature fields (density values) given a point and its viewing direction to obtain a scene as compositions of the objects and background:
+Next, they rely on the additive nature of the object neural feature fields to create a combined representation of the scene. This composition operator adds the outputs of the individual feature fields given a point and its viewing direction to obtain a scene as compositions of the objects and background:
 
 ![ALT TEXT](niemeyer2020giraffe_2_1b.PNG)
 
-The paper finally uses a combination of 3D volume rendering and 2D neural rendering to devise a 2D neural rendering network that takes a feature image and maps it to an RGB image. 
+The paper then creates a feature image from the 3D scene representation using a 3D Volume Rendering approach. The feature image is passed to a 2D neural rendering network that upsamples the feature image into an RGB image. They claim that the combination of 3D volume rendering and 2D neural rendering led to better quality of images and faster image rendering.
 
 The Generator aspect of their model is defined by the three steps summarized above. The Discriminator portion of the model is a CNN that use Leakly ReLU non-linearity. The gradient of the Discriminator based on the Generator output was used to train on a non-saturating GAN objective. The paper claims they were able to effectively train their model on raw images without extra supervision. 
 
