@@ -17,7 +17,7 @@ Generating 2D images that are realistic and at high resolutions has been made po
 
 ## How is it realized (technically)?
 
-The paper represents objects in an image as neural feature fields. To allow for disentanglement, they decided to have each object have its own feature field. This is different from previous approaches such as NeRF, because this paper's approach does not represent the entire scene with one model. A transformation from object space to scene space is performed using the below procedure:
+The paper represents objects in an image as neural feature fields. A feature field is a mapping function outputs a volume density and RGB value with a 3D point and a viewing direction as input. To allow for disentanglement, they decided to have each object have its own feature field. This is different from previous approaches such as NeRF, because this paper's approach does not represent the entire scene with one model. A transformation from object space to scene space is performed using the below procedure:
 
 ![ALT TEXT](niemeyer2020giraffe_2_1a.PNG)
 
