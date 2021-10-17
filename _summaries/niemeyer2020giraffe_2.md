@@ -21,7 +21,7 @@ The paper represents objects in an image as neural feature fields. A feature fie
 
 ![ALT TEXT](niemeyer2020giraffe_2_1a.PNG)
 
-Next, they rely on the additive nature of the object neural feature fields to create a feature image representation of the scene. This composition operator adds the outputs of the individual feature fields (density values) given a point and its viewing direction denoted x and d respectively:
+Next, they rely on the additive nature of the object neural feature fields to create a feature image representation of the scene. This composition operator adds the outputs of the individual feature fields (density values) given a point and its viewing direction to obtain a scene as compositions of the objects and background:
 
 ![ALT TEXT](niemeyer2020giraffe_2_1b.PNG)
 
