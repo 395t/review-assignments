@@ -69,7 +69,7 @@ DeepSDF outperformed state-of-the-art methods like AtlasNet and OGN in known and
 
 **What interesting variants are explored?**
 
-During inference, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model. With the variation of the input noise level, the reconstruction error increases much slowly than the noise level, thus DeepFDS is quite robust to noise. 
+During inference, auto decoding takes more time than previous models as it optimizes explicitly over the latent vector. A future work is to replace ADAM optimization by more efficient Gauss-Newton or similar methods which utlizes analytic derivative of the model. With the variation of the input noise level, the reconstruction error increases much slowly than the noise level, thus DeepSDF is quite robust to noise. 
 
 ## TL;DR
 * DeepSDF, a continuous shape surface represents a class of shapes which enables representing 3D shapes and completing the 3D shapes from partial and noisy data. 
