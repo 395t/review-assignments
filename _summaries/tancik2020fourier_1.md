@@ -9,7 +9,7 @@ score: 9
 
 ## The core idea
 
-The paper proposes that using a Fourier feature mapping of the inputs allows a coordinate-based MLP to learn **high frequency functions** in low dimension problems such as images and 3D objects. The Fourier features are a more general case of the sinusoidal position encoding. It shows using kernel regression (with a Neural Tangent Kernel (NTK)) that standard MLPs without Fourier features are not well suited for coordinate-based tasks such as shape representation, texture synthesis, shape inference, novel view synthesis because of their **spectral bias** towards low frequency functions.
+The paper proposes that using a Fourier feature mapping of the inputs allows a coordinate-based MLP to learn **high frequency functions** in low dimension problems such as images and 3D objects. The Fourier features are a more general case of the sinusoidal position encoding. It shows using kernel regression (with a Neural Tangent Kernel (NTK)) that standard MLPs without Fourier features are not well suited for coordinate-based tasks like shape representation because of their **spectral bias** towards low frequency functions.
 
 Leveraging literature that approximates deep networks with kernel regression, the paper theoretically explains the reason for this spectral bias and then shows how the Fourier features help in overcoming the problem. Specifically, it proves that the Fourier features transform the NTK into a stationary kernel with tunable frequency components -- thus allowing the network to learn high frequency functions. It also proves the above claims empirically through a few simple experiments.
 
