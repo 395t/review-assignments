@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: niemeyer2020giraffe_1
+paper: niemeyer2020giraffe
 # Please fill out info below
 author: chengchunhsu
-score: 9/10
+score: 9
 ---
 
 ## What is the core idea?
