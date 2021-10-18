@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{mildenhall2020nerf_2}}
+paper: mildenhall2020nerf
 # Please fill out info below
 author: WhyToFly
 score: 9
