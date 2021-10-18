@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: hedman2021baking
 author: dalmeraz
 score: 7
 ---
