@@ -9,6 +9,8 @@ score: 10
 
 Problem: Need a good representation of 3D data for deep learning.
 
+Unlike images, there's no canonical representation for 3D objects.
+
 ## Related Work
 * Voxels: 3D pixels, but memory requirements grow cubically with size.
 * Point Clouds: Don't have connectivity information between points, so difficult to extract surfaces.
@@ -23,13 +25,17 @@ Learn a nonlinear binary classifier that can determine whether any given 3D poin
 
 The function is called an occupancy network, because it predicts the probability that a point is occupied.
 
+Using an occupancy network results in less space complexity, because you only need to store the network instead of every 3D point.
+
 The surface of points where the probability of occupancy is 0.5 is the surface of the object.
 
 For 3D reconstruction, the occupancy network takes a pair of the input image and 3D location as inputs.
 
 ## Training and Inference
 
-Occupancy network is trained on a random sample of points with known labels.
+Implemented using a fully-connected neural network with 5 ResNet blocks.
+
+Occupancy network is trained on a uniform random sample of points with known labels.
 
 Use Multiresolution IsoSurface Extraction (MISE) to extract surface from occupancy network.
 * Evaluate all points in a starting resolution.
@@ -58,6 +64,9 @@ Condition Occupancy Networks on Noisy Point Clouds:
 Condition Occupancy Networks on Low-Resolution Voxels (3D Super-resolution):
 
 ![FIGURE_5](mescheder2018occupancy_1e.PNG)
+
+
+Found that uniform random sampling performs significantly better than sampling the same number of points inside and outside the mesh (equal sampling) or sampling half the points uniformly and half the points near the surface of the mesh (surface sampling).
 
 
 ## TL;DR
