@@ -27,7 +27,7 @@ This figure, shows how the model works intuitively. We divide the image into a g
 ![Example z and x values](chen2020learning_2_5.png)
 ![Example z and x values](chen2020learning_2_6.png)
 
-The paper also makes certain optimizations to this original idea. For each of the latent vectors, they concatentate the neighboring cell latent vector to find the new latent vector. (Feature Unfolding)  This allows for a richer representation. Another optimization they make is that instead of using the closest latent vector they use the weighted average of latent vector (weighted by the distance from the coordinate x). (Local Ensemble)
+The paper also makes certain optimizations to this original idea. For each of the latent vectors, they concatentate the neighboring cell latent vector to find the new latent vector. (Feature Unfolding) This allows for a richer representation.  Another optimization they make is that instead of using the closest latent vector they use the weighted average of latent vector (weighted by the distance from the coordinate x). (Local Ensemble) The local ensemble optimization allows for the z vector to be smoothed out and removes discontinuities that arise when using the originally proposed function.
 
 ![Cell Decoding](chen2020learning_2_7.png)
 
@@ -46,7 +46,7 @@ The paper shows that given a 48x48 path, they are able to make the best x30 reso
 
 ![Quantitative Performance](chen2020learning_2_11.png)
 
-They show outperformance to other methods across all datasets.
+They surpass them in Out-of-distribution tasks, but for in-distribution tasks they have almost same performance
 
 What interesting variants are explored?
 
@@ -57,5 +57,5 @@ The paper does some interesting ablation testing. They try to see the effect of 
 
 ## TL;DR
 * For image models, images have to be resized to the same size (losing information in the process)
-* Authors present a Implicit Image Function as a way to generate images given an input resolution
-* Their model delivers SOTA performance on the task
+* Authors present a Implicit Image Function as a way to generate images using an encoder-decoder architecture given an input resolution
+* Their model delivers SOTA performance on the task of taking images and transforming them given a resolution
