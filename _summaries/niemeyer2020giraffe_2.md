@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: GIRAFFE Representing Scenes as Compositional Generative Neural Feature Fields
+title: Summary
 paper: neimeyer2020girraffe
 # Please fill out info below
 author: saikm200022
