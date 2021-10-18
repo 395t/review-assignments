@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: chen2020learning
 # Please fill out info below
 author: trowk
-score: 10/10
+score: 10
 ---
 
 ### What is the core idea?
