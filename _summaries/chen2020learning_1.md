@@ -75,6 +75,8 @@ did have noticeably higher performance.
 
 <img width="500px" src="chen2020learning_1/chen2020learning_1d.PNG"/>
 
+<img width="500px" src="chen2020learning_1/chen2020learning_1e.PNG"/>
+
 ### What interesting variants are explored?
 
 As mentioned above, the authors experimented with cell decoding. The heigh and
@@ -94,6 +96,7 @@ performance.
 ## TL;DR
 * Local Implicit Image Function (LIIF) attempts to provide a continuous
 representation for images.
-* LIFF has an encoder that maps images to a matrix of latent codes
-* LIFF uses a MLP decoder function to map coordinates and latent codes to rgb
-values.
+* LIFF has an encoder that maps images to a matrix of latent codes and a MLP
+decoder function to map coordinates and latent codes to rgb values
+* LIFF outperformed other models for generalizing to arbitrary pixel
+resolutions.
