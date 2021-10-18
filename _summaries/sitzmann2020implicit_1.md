@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: sitzmann2020implicit_1
+paper: sitzmann2020implicit
 # Please fill out info below
 author: rll2396
 score: 7
