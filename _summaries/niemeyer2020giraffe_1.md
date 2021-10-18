@@ -10,7 +10,9 @@ score: 9/10
 ## What is the core idea?
 
 * <u>Problem:</u> content creation needs to be controllable
-* <u>Solution:</u> disentangle the scene by multiple "feature fields"
+* <u>Solution:</u> 
+  * interpret the scene in the 3D domain rather than 2D
+  * disentangle the scene by multiple "feature fields" (i.e., h_1 ~ h_N)
 
 ![1](niemeyer2020giraffe_1_1.png)
 
@@ -22,31 +24,30 @@ score: 9/10
 
 
 
-
-
-
-
-
-
 <u>Object as Neural Feature Fields</u>
 
-Represent each object using a separate feature filed in combination with an affine transformation.
+How to represent multiple objects?
 
-![2](niemeyer2020giraffe_1_2.png)
+- Using a separate feature filed in combination with an affine transformation for each object.
+- Transform points from object to scene space by:
+  - ![1](niemeyer2020giraffe_1_3.png)
+  - **s**: scale parameter
+  - **t**: translation parameter
+  - **R**: rotation matrix
+  - **x**: 3D points
 
-* s: scale parameter
-* t: translation parameter
-* R: rotation matrix
 
-
-
-Transform points from object to scene space by
-
-![1](niemeyer2020giraffe_1_3.png)
 
 Volume rendering
 
-![1](niemeyer2020giraffe_1_4.png)
+- The **generative neural feature field (h_θ)** maps (x, d, z_s, z_a) to volume density and scene features which are used to construct the scene
+  - ![1](niemeyer2020giraffe_1_4.png)
+  - **σ**: volume density
+  - **f**: features (for scene generation)
+  - **x**: 3D points
+  - **d**: view direction
+  - **z_s**: shape code
+  - **z_a**: appearance code
 
 
 
@@ -56,21 +57,18 @@ Summation of all feature fields
 
 ![12](niemeyer2020giraffe_1_12.png)
 
+- **σ**: volume density
+- **f**: features (for scene generation)
 
+<u>Training</u>
 
-<u>Neural Rendering</u>
-
-![1](niemeyer2020giraffe_1_6.png)
-
-![1](niemeyer2020giraffe_1_7.png)
-
-
-
-
-
-<u>Objectives</u>
-
-![1](niemeyer2020giraffe_1_8.png)
+- Generator objectives: 
+  - ![1](niemeyer2020giraffe_1_8.png)
+  - **N**: number of entities (i.e., objects and background)
+  - **N_s**: number of sample points along each ray
+  - **d_k**: ray for *k*-th pixel
+  - **x_jk**: the *j*-th sample point for the k-th pixel / ray
+- Discriminator objectives: binary cross entropy
 
 
 
@@ -79,7 +77,7 @@ Summation of all feature fields
 <u>**Disentangled Scene Generation**</u>
 
 - Which degree our model learns to generate disentangled scene representations?
-- Are objects disentangled from the background?
+  - "disentangled scene": are objects disentangled from the background?
 
 ![1](niemeyer2020giraffe_1_9.png)
 
