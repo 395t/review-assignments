@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{hedman2021baking}}
+paper: hedman2021baking
 # Please fill out info below
 author: timchen0618
-score: 8/10
+score: 8
 ---
 
 ## What is the core idea?
