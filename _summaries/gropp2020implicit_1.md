@@ -7,7 +7,6 @@ author: mmcinnestaylor # Your GitHub id
 score: 8 # How did you like this paper 0(dislike) to 10(love)
 ---
 
-TODO: Summarize the paper:
 ## Core idea?  
 * 2D and 3D Shapes can be represented as level sets of neural networks.    
 * Neural shape representations can be learned from raw data by using implicit geometric regularization.  
