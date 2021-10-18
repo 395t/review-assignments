@@ -1,10 +1,10 @@
 ---
 layout: summary
-title: Learning Continuous Image Representation with Local Implicit Image Function
+title: Summary
 paper: chen2020learning
 # Please fill out info below
 author: # SShivang
-score: 8/10
+score: 8
 ---
 
 What is the core idea?
