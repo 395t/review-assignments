@@ -21,6 +21,8 @@ Volume density can be thought of as the probability that a ray terminates at a g
 The network is restricted so that the location density, $$\sigma$$ is dependant only of the location while color value is depenant on location and viewing direction.  
 It is optimized to be consistent with all of the (training) images with known locations and viewing directions.
 
+Predictions are made at inference time by marching a ray originating at the given location with the given direction through the scene and using the location density information to predict where the ray would end and what color light would be seen from the given vantage point. 
+
 ### Positional Encoding
 
 The authors reference previous work that suggests that neural networks are biased towards learning lower frequency functions. 
