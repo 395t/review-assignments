@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: park2019deepsdf
 # Please fill out info below
 author: patelojas
 score: 5
