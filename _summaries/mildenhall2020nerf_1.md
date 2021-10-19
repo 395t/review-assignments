@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: martin-brualla2020nerf
+paper: mildenhall2020nerf
 # Please fill out info below
 author: mattkelleher
 score: # How did you like this paper 0(dislike) to 10(love)
