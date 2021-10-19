@@ -59,11 +59,11 @@ TODO: Summarize the paper:
         * SDF outputs the distance to the boundary of the shape
         * the SDF values are negative when outside the shape and positive when inside the shape
         * gradient is $$1$$ almost everywhere
-            * $$|||\nabla_x(\Phi(x))| - 1||$$ for all points
+            * $$\| \|\nabla_x(\Phi(x))\| - 1\|$$ for all points
         * distance values on the shape should be close to 0
-            * $$||\Phi(x)||$$ for all points on the shape
+            * $$\|\Phi(x)\|$$ for all points on the shape
         * distance values off the shape should not be close to 0
-            * $$\exp(-\alpha \cdot |\Phi(x)|)$$ for all points off the shape
+            * $$\exp(-\alpha \cdot \|\Phi(x)\|)$$ for all points off the shape
         * for calculating loss, sum up these values
             * sample random points in the domain, half on the shape half off it
 
