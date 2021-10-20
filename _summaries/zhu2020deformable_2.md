@@ -4,8 +4,17 @@ title: Summary
 paper: zhu2020deformable
 # Please fill out info below
 author: mattkelleher
-score: # How did you like this paper 0(dislike) to 10(love)
+score: 8 # TODO
 ---
+
+## Core Idea
+
+## Technical Implementation
+
+## Results
+
+## Ablations
+
 
 TODO: Summarize the paper:
 * What is the core idea?
