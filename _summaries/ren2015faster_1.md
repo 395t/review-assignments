@@ -29,10 +29,27 @@ An important feature of this paper is the ability to share convolution feature m
 1. Initialize RPN with Detection Network parameters and keep the shared convolutional layers constant
 1. Fine tune layers in the RPN and Fast R-CNN that are unique to themselves
 
+## How well does the paper peform?
 
-TODO: Summarize the paper:
-* How well does the paper perform?
-* What interesting variants are explored?
+The paper provides many results from the experiments that they conducted. For this summary, the results from the experiments on the PASCAL VOC data set are highlighted.
+
+The Faster R-CNN approach was evaluated on the PASCAL VOC 2007 data set. Using the pre-trained ImageNet model for the RPN and a ZFNet object detection network, they were able to achieve a mean average precision of 59.9% despite needing less number of proposals compared to the other region proposal methods. 
+
+![Alt Text](ren2015faster_2_1c.PNG)
+
+
+In addition, using VGG as the object detection network with the shared convolutional layers approach, Faster R-CNN was able to outpeform Selective Search approach to get a best mean average precision of 78.8%:
+
+![Alt Text](ren2015faster_2_1d.PNG)
+
+The paper also conducts ablation studies to check the effect of the classification and box regression layers on performance for the PASCAL VOC 2007 data set. They found that not having the bounding box regression layer led to a significant drop in mean average precision. The same occurred when they removed the classification layer in the RPN which also led to a decrease in mean average precision. Overall, it appears that both of these layers are crucial for the accuracy of the RPN. 
+
+![Alt Text](ren2015faster_2_1e.PNG)
+
+The paper also boasts faster detection times due to the shared convolutional layers between the RPN and object detection networks. Specifically, the Selective Search method took 1-2 seconds for the end-to-end object detection, while their RPN + VCG model led to 198 ms for the entire object detection process. 
+
+
+## What interesting variants are explored?
 
 ## TL;DR
 * Three
