@@ -1,9 +1,9 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: zhu2020deformable
 # Please fill out info below
-author: # Your GitHub id
+author: mattkelleher
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
