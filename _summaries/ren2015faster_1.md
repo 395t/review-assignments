@@ -51,7 +51,9 @@ The paper also boasts faster detection times due to the shared convolutional lay
 
 ## What interesting variants are explored?
 
+One of the main contributions of this paper is the idea of anchors that more efficiently account for different scales and aspect ratios of region proposals. The paper states that this anchor approach is translation invariant because the convolution layers of the RPN should behave the same despite the translation. Since RPN accounts for translation, the paper claims that this property reduces the number of parameters required for region proposal when compared to other approaches that are not translation invariant.
+
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* There is a computational bottleneck in Object Detection systems during the region proposal algorithm
+* This paper suggests Region Proposal Networks that share convolutional layers with the object detection network to get Faster R-CNN
+* The anchor approach allow for RPNs to produce robust region proposals that consider varying scales and aspect ratios
