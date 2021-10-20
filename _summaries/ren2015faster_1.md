@@ -11,7 +11,7 @@ score: 8
 
 ## What is the core idea?
 
-Despite state of the art results achieved by region-based CNNs such as Fast R-CNN, there is a computional bottleneck during test time when finding region proposals. This paper suggests a deep learning approach for determining region proposals called Region Proposal Networks that leads to more efficient object detection for Fast R-CNN architecture. These RPNs addresses the issue of the bottleneck because convolutional feature maps are now shared between the RPN and the object detection classifer network. On top of the efficiency of object detection, the paper suggests a new concept called anchor boxes that allows the RPN to consider bounding boxes at various scales and aspect ratios.
+Despite state-of-the-art results achieved by region-based CNNs such as Fast R-CNN, there is a computional bottleneck during test time when finding region proposals. This paper suggests a deep learning approach for determining region proposals called Region Proposal Networks that leads to more efficient object detection for Fast R-CNN architecture. These RPNs addresses the issue of the bottleneck because convolutional feature maps are now shared between the RPN and the object detection classifer network. On top of the efficiency of object detection, the paper suggests a new concept called anchor boxes that allows the RPN to consider bounding boxes at various scales and aspect ratios.
 
 ![Alt Text](ren2015faster_2_1a.PNG)
 
@@ -25,20 +25,20 @@ The paper talks about the concept of anchors which is the center of the 3 x 3 sl
 
 An important feature of this paper is the ability to share convolution feature maps between the RPN and the Fast R-CNN object detection network. They use a 4 step training algorithm to achieve this:
 1. Train the RPN using stochastic gradient descent and backpropogation. Using a pre-trained Imagenet model initialization that is fine-tuned
-1. Train the detection network from Fast R-CNN using proposals from previous step
+1. Train the Fast R-CNN detection network using proposals from previous step
 1. Initialize RPN with Detection Network parameters and keep the shared convolutional layers constant
-1. Fine tune layers in the RPN and Fast R-CNN that are unique to themselves
+1. Fine tune layers in the RPN and Fast R-CNN object detection network that are unique to themselves
 
 ## How well does the paper peform?
 
 The paper provides many results from the experiments that they conducted. For this summary, the results from the experiments on the PASCAL VOC data set are highlighted.
 
-The Faster R-CNN approach was evaluated on the PASCAL VOC 2007 data set. Using the pre-trained ImageNet model for the RPN and a ZFNet object detection network, they were able to achieve a mean average precision of 59.9% despite needing less number of proposals compared to the other region proposal methods. 
+The Faster R-CNN approach was evaluated on the PASCAL VOC 2007 data set. Using the pre-trained ImageNet model for the RPN and a ZFNet for object classification, they were able to achieve a mean average precision of 59.9% despite needing less number of proposals compared to the other region proposal methods. 
 
 ![Alt Text](ren2015faster_2_1c.PNG)
 
 
-In addition, using VGG as the object detection network with the shared convolutional layers approach, Faster R-CNN was able to outpeform Selective Search approach to get a best mean average precision of 78.8%:
+In addition, using VGG as the object classifier with the shared convolutional layers approach, Faster R-CNN was able to outpeform Selective Search approach to get a best mean average precision of 78.8%:
 
 ![Alt Text](ren2015faster_2_1d.PNG)
 
@@ -54,6 +54,6 @@ The paper also boasts faster detection times due to the shared convolutional lay
 One of the main contributions of this paper is the idea of anchors that more efficiently account for different scales and aspect ratios of region proposals. The paper states that this anchor approach is translation invariant because the convolution layers of the RPN should behave the same despite the translation. Since RPN accounts for translation, the paper claims that this property reduces the number of parameters required for region proposal when compared to other approaches that are not translation invariant.
 
 ## TL;DR
-* There is a computational bottleneck in Object Detection systems during the region proposal algorithm
+* Paper introduces Region Proposal Networks (RPNs) that address computational bottleneck in Fast R-CNN approach
 * This paper suggests Region Proposal Networks that share convolutional layers with the object detection network to get Faster R-CNN
-* The anchor approach allow for RPNs to produce robust region proposals that consider varying scales and aspect ratios
+* The papers' anchor approach allow for RPNs to produce robust region proposals that consider varying scales and aspect ratios
