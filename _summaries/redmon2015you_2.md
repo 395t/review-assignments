@@ -26,6 +26,7 @@ TODO: Summarize the paper:
 
 * How is it realized (technically)?
     * Model
+
         ![Detection](redmon2015you_2b.png)
         * Input image is divided into $$S \times S$$ patches
         * $$B$$ bounding boxes with confidence values are predicted for each patch
@@ -33,18 +34,11 @@ TODO: Summarize the paper:
         * Class probablities are predicted for each patch
             * only one set of class probs per patch
         * For the Pascal VOC dataset, $$S = 7, B = 2$$ was used
+ 
         ![Architecture](redmon2015you_2a.png)
         * 24 convolutional layers followed by 2 FC layers
         * Faster model uses 9 conv layers and fewer filters; otherwise the same
-        * Leaky ReLU activation function
-
-$$
-\phi(x)=
-\begin{cases}
-x, &\text{if } x > 0\\
-0.1x,&\text{otherwise}\\
-\end{cases}
-$$
+        * Leaky ReLU activation function $$\phi(x)=\begin{cases}x, &\text{if } x > 0\\0.1x,&\text{otherwise}\\\end{cases}$$
         * Loss is sum-squared error
             * geometric distance to assigned ground truth box
             * difference between square roots of weights and heights, squared
@@ -66,12 +60,15 @@ $$
         * Loss function treats error for small bounding boxes and larger ones the same
 
 * How well does the paper perform?
+
     ![Table](redmon2015you_2c.png)
     * easily achieves SOTA for real-time detection
     * still a bit behind SOTA for offline, however
+    
     ![Pie](redmon2015you_2e.png)
     * R-CNN often mistakes background patches for objects
     * YOLO often isn't able to localize the exact location of objects
+    
     ![Graph](redmon2015you_2d.png)
     * The models are only trained on VOC data
     * R-CNN's performance drops significantly when trained on natural images and applied to art
@@ -79,6 +76,7 @@ $$
 
 * What interesting variants are explored?
     * Combining Fast R-CNN and YOLO
+
         ![Combine](redmon2015you_2f.png)
         * Fast R-CNN and YOLO make different types of errors, so combining them could yield a noticeable performance boost
         * Give boosts to Fast R-CNN predictions if YOLO makes a similar one
