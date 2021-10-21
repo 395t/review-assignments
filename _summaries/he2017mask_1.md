@@ -1,16 +1,23 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
-# Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+paper: He2017mask
+author: samatharhay
+score: 10
 ---
 
-TODO: Summarize the paper:
 * What is the core idea?
+The authors of the paper introduce a new architecture, Mask R-CNN, for object instance segmentation.
+This new method builds off of Faster R-CNN by adding a branch for predicting an object mask in parallel with the exisiting branch for bounding box recognition.
+Mask R-CNN is proved to be easy to train and and generalize to other tasks such as estimating human poses.
+
 * How is it realized (technically)?
+
+
+
 * How well does the paper perform?
+
+
 * What interesting variants are explored?
 
 ## TL;DR
