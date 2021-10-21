@@ -1,9 +1,9 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: cai2017cascade
 # Please fill out info below
-author: # Your GitHub id
+author: mmcinnestaylor # Your GitHub id
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
