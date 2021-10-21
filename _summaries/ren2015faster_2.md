@@ -3,7 +3,7 @@ layout: summary
 title: Summary
 paper: {{paper_tag}}
 # Please fill out info below
-author: # Your GitHub id
+author: trowk
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
