@@ -9,7 +9,7 @@ score: 9
 
 **What is the core idea?**
 
-The central idea of the paper is to train multiple detection heads with multiple intersection over union (IoU) thresholds. The cascade R-CNN architecture solves two problems, overfitting during training and inference-time mismatch between the IoU for which the detector is optimal versus IoU of the input hypothesis. The model consists of sequence of detectors trained with increasing IoU thresholds with the ouptut of the previous detector is fed into the next as a resampling mechanism with no discrepancy between training and inference.
+The central idea of the paper is to train multiple detection heads with multiple intersection over union (IoU) thresholds. The cascade R-CNN architecture solves two problems, overfitting during training and inference-time mismatch between the IoU for which the detector is optimal versus IoU of the input hypothesis. The model consists of sequence of detectors trained with increasing IoU thresholds with the ouptut of the previous detector fed into the next as a resampling mechanism with no discrepancy between training and inference.
 
 ![Problem example](./cai2017cascade_1a.png)
 
@@ -25,21 +25,21 @@ The central idea of the paper is to train multiple detection heads with multiple
 
   ![Detector loss equation](./cai2017cascade_1d.png)
 
-* This is achieved by minimizing the loss where $$b^{t} = f_{t-1}(x^{t-1}, b^{t-1})$$, _g_ is the ground truth object for $$x^{t}$$, λ = 1 the trade-off coefficient and  $$y^{t}$$ is the label of $$x^{t}$$ given by
+* This is achieved by minimizing the above loss where $$b^{t} = f_{t-1}(x^{t-1}, b^{t-1})$$, _g_ is the ground truth object for $$x^{t}$$, λ = 1 is the trade-off coefficient and  $$y^{t}$$ is the label of $$x^{t}$$ given by
 
   ![Output equation](./cai2017cascade_1e.png)
 
-* Cascade R-CNN have four stages, one region proposal network (RPN) and three for detection with U = {0.5, 0.6, 0.7}
+* Cascade R-CNN have four stages, one region proposal network (RPN) and three stages for detection with U = {0.5, 0.6, 0.7}
 
 **How well does the paper perform?**
 
-The Cascade R-CNN, based on FPN+ and ResNet-101 outperforms all the earlier state of the art single model detectors like Faster-RCNN, YOLO, Mask-RCNN etc on COCO dataset. It also outperforms Iterative BBox and Integral Loss. The difference in result is more visible with higher IoU. As the computational cost of detection head is usually small, when compared to RPN, the computational overhead of RCNN is small for both training and testing. 
+The Cascade R-CNN, based on FPN+ and ResNet-101 outperforms all the earlier state of the art single model detectors like Faster-RCNN, YOLO, Mask-RCNN etc on COCO dataset. It also outperforms Iterative BBox and Integral Loss models. The difference in result is more visible with higher IoU. As the computational cost of detection head is usually small, when compared to RPN, the computational overhead of RCNN is small for both training and testing. 
 
 ![Results](./cai2017cascade_1f.png)
 
 **What interesting variants are explored?**
 
-Various architectures like Faster-RCNN, R-FCN with ResNet-50 and ResNet-101 backbone, FPN+ with ResNet-50 and ResNet-101 backbone are trained with and without cascading. The cascade variants of all these models outperforms the corresponding non-cascade models. Other ablation experiments were performed on IoU threshold, stagewise comparison and number of stages with the result that the three stage cascade (the cascade-RCNN model ) achieves the best tradeoff. 
+Various architectures like Faster-RCNN, R-FCN with ResNet-50 and ResNet-101 backbone, FPN+ with ResNet-50 and ResNet-101 backbone are trained with and without cascading. The cascade variants of all these models outperforms the corresponding non-cascade models. Other ablation experiments were performed on IoU thresholds, stagewise comparison and number of stages with the result that the three stage cascade (the cascade-RCNN model ) achieves the best tradeoff. 
 
 
 ## TL;DR
