@@ -17,17 +17,17 @@ The central idea of the paper is to train multiple detection heads with multiple
 
 ![Architecture](./cai2017cascade_1b.png)
 
-* Cascade-RCNN extends the two-stage architecture of faster-RCNN relying on a cascade of specialized regressors where _T_ is the total number of cascade stages. Each regressor ft in the cascade is optimized with respect to the sample distribution {bt} arriving at the tth stage, instead of initial distribution b1. 
+* Cascade-RCNN extends the two-stage architecture of faster-RCNN relying on a cascade of specialized regressors where _T_ is the total number of cascade stages. Each regressor $$f_{t}$$ in the cascade is optimized with respect to the sample distribution {$$b^{t}$$} arriving at the tth stage, instead of initial distribution $$b^{t}$$ . 
 
-![Regressor equation](./cai2017cascade_1c.png)
+  ![Regressor equation](./cai2017cascade_1c.png)
 
-* At each stage t, the RCNN has a classifier ht and regressor ft which is optimized for IoU threshold ut
+* At each stage _t_, the RCNN has a classifier $$h_{t}$$ and regressor $$f_{t}$$ which is optimized for IoU threshold $$u^{t}$$, where $$u^{t}>u^{t-1}$$ .
 
-![Detector loss equation](./cai2017cascade_1d.png)
+  ![Detector loss equation](./cai2017cascade_1d.png)
 
-where ut > u(t-1). This is achieved by minimizing the loss where bt is  ft−1(x , b ), g is the ground truth object for xt, λ = 1 the trade-off coefficient,  yt is the label of xt given by
+This is achieved by minimizing the loss where $$b^{t} = f_{t-1}(x^{t-1}, b^{t-1})$$, _g_ is the ground truth object for $$x^{t}$$, λ = 1 the trade-off coefficient and  $$y^{t}$$ is the label of $$x^{t}$$ given by
 
-![Output equation](./cai2017cascade_1e.png)
+  ![Output equation](./cai2017cascade_1e.png)
 
 * Cascade R-CNN have four stages, one RPN and three for detection with U = {0.5, 0.6, 0.7}
 
@@ -44,5 +44,5 @@ Various architectures like Faster-RCNN, R-FCN with ResNet-50 and ResNet-101 back
 
 ## TL;DR
 * The cascade-RCNN model consists of sequence of detectors trained with increasing IoU thresholds. 
-* The model aims to reduce overfitting, matchc inference and training architecture, and detect true positives while supressing close false positives,
+* The model aims to reduce overfitting, match inference and training architecture, and detect true positives while supressing close false positives.
 * The Cascade-RCNN model outperforms all the previous models like Fast RCNN, YOLO, Mask-RCNN, etc on COCO dataset. 
