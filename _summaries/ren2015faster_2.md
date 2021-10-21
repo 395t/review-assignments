@@ -15,6 +15,8 @@ the authors propose a new convolutional neural network called a
 *Regional Proposal Network* (RPN). This RPN shares convolutional layers with
 object detection networks like Fast R-CNN to drastically increase performance.
 
+![Alt Text](ren2015faster2/ren2015faster2a.png)
+
 ### How is it realized (technically)?
 
 The final model used to detect images is called Faster-CNN. It is composed of
@@ -31,6 +33,8 @@ Let an anchor be defined as the center of the $$n \times n$$ sliding window in
 conjunction with some scale and aspect ratio. The box-regression layer takes an
 anchor and  outputs a bounding box. The box-classification outputs
 probabilities of the anchors containing objects.
+
+![Alt Text](ren2015faster2/ren2015faster2b.png)
 
 When training the RPN, the authors used binary labels to denote if an anchor
 contained an object or not. If an anchor either contained the highest
@@ -75,9 +79,13 @@ R-CNN and the resulting detection mean Average Precision scores (mAP) were
 compared. RPN was found to achieve competitive results even when generating
 fewer proposals. Several ablation experiments were also run on this dataset.
 
+![Alt Text](ren2015faster2/ren2015faster2c.png)
+
 An experiment was also run where the shared convolutional layers used the VGG-16
 network. When compared to the Selective Search (SS) object proposal method,
 RPN acheived competitive performance at a fraction of the time SS took.
+
+![Alt Text](ren2015faster2/ren2015faster2d.png)
 
 Experiments were also run on the COCO dataset, a dataset with 80K training
 images and 40K validation images. The results were competitive when compared
