@@ -9,7 +9,7 @@ score: 10/10
 
 TODO: Summarize the paper:
 ## What is the core idea?
-Previous object detection methods identify objects as bounding boxes. However, it is not efficient as it is required to enumerate all possible bounding boxes; that is, the model need to consider object at all possible location and of all possible sizes. 
+Previous object detection methods identify objects as bounding boxes. However, it is not efficient as it required the model to enumerate all possible bounding boxes; that is, the model need to consider object at all possible location and of all possible sizes. 
 
 This paper detect the center point of each object using keypoint estimation, and then regress to the size of the bounding box.
 The same framework also applies to tasks like 3D detection and human pose detection where they regress to other properties such as 3D size and pose.
