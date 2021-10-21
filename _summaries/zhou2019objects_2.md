@@ -31,11 +31,15 @@ To account for where the center point is in the RxR patch, they predict a offset
 
 ### Objection Detection
 For each center point, the model also regresses to the size of the object . 
+
 ![image](https://user-images.githubusercontent.com/35536646/138213827-43be5b32-b964-49d8-ae57-b3b9235ddb8c.png)
 
 So for each location, the model produce C+4 outputs at each location; C for the heat map, 2 for the offset and 2 for the size of the object.
 
+The inference of this method is simple. First, we extract all the peaks (responses whose value is highest among 8 neighbors) and keep the top 100. 
+
 ![image](https://user-images.githubusercontent.com/35536646/138218692-51d6afb9-3f74-440c-aa5a-b818acda5f92.png)
+
 
 ### 3D Detection
 
@@ -43,10 +47,22 @@ For 3D detection, the model additionally predicts the depth, 3D dimension and or
 
 ### Human Pos Estimation
 
-* How well does the paper perform?
-* What interesting variants are explored?
+## What interesting variants are explored?
+They experiment with different backbone CNN structure including ResNet-18, ResNet-101, DLA-34, and Hourglass-104. 
+
+
+## How well does the paper perform?
+
+The model CenterNet with Hourglass-104 outperforms all other one-stage detectors. It did not beat the two-stage models, but is a lot faster. 
+
+![image](https://user-images.githubusercontent.com/35536646/138371324-529b8d82-4b2f-47c0-83f4-4c52f676df8a.png)
+
+They also report results on 3D bounding box estimation (Table 4) and pose estimation (Table 5). The model performs on par with the baselines but faster on 3D estimation, and it performs slightly worse than state-of-the-art models on pose estimation.
+
+![image](https://user-images.githubusercontent.com/35536646/138371504-0165da8d-d02c-456d-ad0c-2bd14d53ec19.png)
+
+![image](https://user-images.githubusercontent.com/35536646/138371528-557fb39b-a21c-474e-bf0d-28057124c17c.png)
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+- The paper propose CenterNet, which represents objects using the keypoint and regresses to other values such as size of bounding box, 3D location, orientation, and pose.
+- The paper is 
