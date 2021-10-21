@@ -4,7 +4,7 @@ title: Summary
 paper: {{paper_tag}}
 # Please fill out info below
 author: trowk
-score: 8
+score: 9
 ---
 
 ### What is the core idea?
@@ -68,13 +68,26 @@ increased the training speed.
 
 ### How well does the paper perform?
 
+An experiment was run on PASCAL VOC 2007 detection benchmark, a data set
+consisting of 5 thousand train and test images over 20 object categories.
+Several different object proposal methods were used in conjunction with Fast
+R-CNN and the resulting detection mean Average Precision scores (mAP) were
+compared. RPN was found to achieve competitive results even when generating
+fewer proposals. Several ablation experiments were also run on this dataset.
 
+An experiment was also run where the shared convolutional layers used the VGG-16
+network. When compared to the Selective Search (SS) object proposal method,
+RPN acheived competitive performance at a fraction of the time SS took.
 
-### What interesting variants are explored?
+Experiments were also run on the COCO dataset, a dataset with 80K training
+images and 40K validation images. The results were competitive when compared
+to SS.
+
 
 ## TL;DR
 * RPNs use shared convolutional layers with Fast R-CNN to speed up object region
 proposals
 * Anchors, feature vectors with an assigned aspect ratio and scale, are used to
 generate several different bounding boxes quickly.
-* READ
+* RPN can perform competitively with fewer proposals to other region proposal
+methods.
