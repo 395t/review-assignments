@@ -64,5 +64,6 @@ They also report results on 3D bounding box estimation (Table 4) and pose estima
 ![image](https://user-images.githubusercontent.com/35536646/138371528-557fb39b-a21c-474e-bf0d-28057124c17c.png)
 
 ## TL;DR
-- The paper propose CenterNet, which represents objects using the keypoint and regresses to other values such as size of bounding box, 3D location, orientation, and pose.
-- The paper is 
+- The paper propose CenterNet, which represents objects using their keypoints and regresses to other values such as size of bounding box, 3D location, orientation, and pose.
+- The novel idea of representing objects as points is simple and can be generalized to other application.
+- CenterNet is simpler and faster than other object detectors. It also achieves best performance among one-stage detectors.
