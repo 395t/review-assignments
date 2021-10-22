@@ -37,6 +37,12 @@ For each center point, the model also regresses to the size of the object .
 So for each location, the model produce C+4 outputs at each location; C for the heat map, 2 for the offset and 2 for the size of the object.
 
 The inference of this method is simple. First, we extract all the peaks (responses whose value is highest among 8 neighbors) and keep the top 100. 
+For each keypoint prediction at location $$(x_i, y_i)$$, the coordinates of the 4 corners of bounding box is represented as follows:
+
+![image](https://user-images.githubusercontent.com/35536646/138375399-9f3e033c-845f-4b35-a294-e28c81717177.png)
+
+
+where $$(\delta \hat{x_i}, \delta \hat{y_i}) = \hat{O}_{\hat{x_i}, \hat{y_i}}$$ is the offset prediction and $(\hat{w_i}, \hat{h_i}) = \hat{S}_{\hat{x_i}, \hat{y_i}}$ is the size of the object.
 
 ![image](https://user-images.githubusercontent.com/35536646/138218692-51d6afb9-3f74-440c-aa5a-b818acda5f92.png)
 
