@@ -44,7 +44,7 @@ For each keypoint prediction at location $$(x_i, y_i)$$, the coordinates of the 
 
 where $$(\delta \hat{x_i}, \delta \hat{y_i}) = \hat{O}_{\hat{x_i}, \hat{y_i}}$$ is the offset prediction and $(\hat{w_i}, \hat{h_i}) = \hat{S}_{\hat{x_i}, \hat{y_i}}$ is the size of the object.
 
-![image](https://user-images.githubusercontent.com/35536646/138218692-51d6afb9-3f74-440c-aa5a-b818acda5f92.png)
+
 
 
 ### 3D Detection
@@ -52,7 +52,10 @@ where $$(\delta \hat{x_i}, \delta \hat{y_i}) = \hat{O}_{\hat{x_i}, \hat{y_i}}$$ 
 For 3D detection, the model additionally predicts the depth, 3D dimension and orientation of the object. Three separate heads are added accrodingly on top of the backbone. The depth d is a scalar, the 3D dimensions are 3 scalars, and the orientation is represented by 8 scalars. The details of how to construct the 3D bounding box from the predictions can be found in Appendix B in the paper. 
 
 ### Human Pos Estimation
+Here we want to estimate k(=17) human joints location in the image. During inference, the model first identify the keypoint, and then regress to the location of each joint, modeled as offset to the keypoint. To refine the prediction, it also outputs a heatmap for each joint, and use this as a correction to the regressed location. Specifically, the model finds the keypoint which is closest to the regressed joint location on the heatmap and use this as final prediction.
 
+
+![image](https://user-images.githubusercontent.com/35536646/138218692-51d6afb9-3f74-440c-aa5a-b818acda5f92.png)
 ## What interesting variants are explored?
 They experiment with different backbone CNN structure including ResNet-18, ResNet-101, DLA-34, and Hourglass-104. 
 
