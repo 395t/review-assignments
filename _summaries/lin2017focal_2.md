@@ -19,11 +19,15 @@ One-stage detectors before this paper employed the cross-entropy loss for traini
 
 The class imbalance can be somewhat addressed using a balanced CE loss $$CE(p_t) = -\alpha_t log(p_t)$$ where $$\alpha_t$$ is higher for the rare class to assign more importance, but it is unable to distinguish between hard and easy examples. Therefore, to enable the loss from hard examples to drive the model updates, the paper introduces Focal Loss to down-weight easy examples and focus on hard negatives. The focal loss is defined as $$FL(p_t) = -(1-p_t)^{\gamma} log(p_t)$$ with a tunable focusing parameter $$\gamma > 0$$.
 
-
+<p align="center">
+  <img width="600" alt="lin2017focal_2a" src="lin2017focal_2a.png">
+</p>
 
 Figure above shows a comparison of the CE loss with the proposed loss for different values of $$\gamma$$. It can be seen that FL reduces the loss contribution from easy examples ($$p_t >> 0.5$$) and extends the range in which an example receives low loss. E.g. it reduces the loss 100$$\times$$ for $$p_t=0.9$$ and 1000$$\times$$ for $$p_t\approx 0.97$$ compared to CE. This increases the importance of correcting misclassified examples ($$p_t < 0.5$$) whose loss is scaled down by only a single-digit factor. 
 
-
+<p align="center">
+  <img width="1000" alt="lin2017focal_2b" src="lin2017focal_2b.png">
+</p>
 
 Figure above shows the cumulative distribution of the loss for positive (rare foreground) and negative (frequent background) examples from a converged (trained with $$\gamma=2$$) model. The second plot clearly shows that as $$\gamma $$ increases the proposed loss concentrates only on the very few hard negative examples and the large number of easy negatives contribute negligibly to the loss.
 
@@ -41,7 +45,13 @@ RetinaNet is a one-stage object detection network that uses a Feature Pyramid Ne
 ## Performance
 The paper uses a balanced focal loss with $$\gamma=2$$ and $$\alpha=0.25$$ to report the results of their evaluation on the bounding box detection track of the COCO benchmark. They compare the inference speed and the accuracy (AP) of their model with 2-stage and other 1-stage detector baselines on the test-dev split of the dataset with no public labels.
 
+<p align="center">
+  <img width="600" alt="lin2017focal_2c" src="lin2017focal_2c.png">
+</p>
 
+<p align="center">
+  <img width="1000" alt="lin2017focal_2d" src="lin2017focal_2d.png">
+</p>
 
 The plot and table above demonstrate the substantial gain in accuracy provided by the proposed loss function while maintaining the high inference speed of the 1-stage network. RetinaNet with focal loss beats existing 1-stage networks by 6 AP points and the SOTA 2-stage networks by $$\sim 3$$ AP.
 
