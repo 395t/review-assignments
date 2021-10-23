@@ -17,12 +17,12 @@ The same framework also applies to tasks like 3D detection and human pose detect
 ## How is it realized (technically)?
 
 ### Keypoint Estimation
-They try to produce a keypoint heatmap $$\hat{Y} \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$, where R is the output stride and C is number of keypoint types. (C=17 human joints in pose detection and C=80 object classes in object detection) $$\hat{Y}_{x,y,c}=1$$ stands for a detected keypoint, and $$\hat{Y}_{x,y,c}=1$$ represents background. 
+They try to produce a keypoint heatmap $$\hat{Y} \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$, where R is the output stride and C is number of keypoint types. (C=17 human joints in pose detection and C=80 object classes in object detection) Essentially this is like dividing the image into patches of dimension RxR and predict the probability of each patch as a keypoint. $$\hat{Y}_{x,y,c}=1$$ stands for a detected keypoint, and $$\hat{Y}_{x,y,c}=1$$ represents background. 
 
 Ground truth keypoint is denoted $$T \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$. 
-Ground truth heatmap is then constructed using a Gaussian kernel, where each ground truth keypoint is the center of the Gaussian. Each gaussian kernel has different standard deviation since the object can be of various sizes.
+Ground truth heatmap $$Y \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$ is then constructed using a Gaussian kernel, where each ground truth keypoint is the center of the Gaussian. Each gaussian kernel has different standard deviation since the object can be of various sizes.
 
-The training objective is penalty-reduced pixel-wise logistic regression with focal loss:
+The training objective is penalty-reduced pixel-wise logistic regression with focal loss: (N is the number of keypoints in the image.)
 
 ![image](https://user-images.githubusercontent.com/35536646/138367795-b3711374-dcac-4c97-bc52-99abec63d40b.png)
 
