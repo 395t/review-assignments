@@ -17,7 +17,7 @@ TODO: Summarize the paper:
         * slow and complex
     * YOLO is a convolutional network that finds bounding boxes and generates class probablities simultaneously
         * very fast
-            * base runs at 45 fps
+            * base runs at 45 fps on Titan X GPU
             * fast version runs at 150 fps
         * rarely mistakes background for object
         * generalizes well
@@ -36,7 +36,7 @@ TODO: Summarize the paper:
         ![Architecture](redmon2015you_2a.png)
         * 24 convolutional layers followed by 2 FC layers
         * Faster model uses 9 conv layers and fewer filters; otherwise the same
-        * Leaky ReLU activation function
+        * Leaky ReLU activation function for most layers, no activation for last
 
 $$
 \phi(x)=
@@ -46,8 +46,10 @@ x, &\text{if } x > 0\\
 \end{cases}
 $$
         * Loss is sum-squared error
+
+            ![Loss](redmon2015you_2g.png)
             * geometric distance to assigned ground truth box
-            * difference between square roots of weights and heights, squared
+            * difference between square roots of widths and heights, squared
                 * same difference between boxes of different sizes should result in different loss
             * confidence error squared
             * class probabilities error squared
@@ -59,6 +61,11 @@ $$
             * increase input res to $$448 \times 448$$
         * batch size of 64, momentum of .9
         * dropout and data augmentation used
+        * learning rate warms up then decays
+            * 1e-3 to 1e-2 "for first few epochs"
+            * 1e-2 for 75 epochs
+            * 1e-3 for 30 epochs
+            * 1e-4 for 30 epochs
     * Limitations
         * Each patch can only predict one class and two bounding boxes
             * difficult for the model to predict objects that are close together
