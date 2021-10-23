@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: lin2017focal
 # Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+author: ayushchauhan
+score: 10
 ---
 
 TODO: Summarize the paper:
