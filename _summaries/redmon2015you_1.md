@@ -45,7 +45,10 @@ The loss is specifically optimized for this task:
 * only one of the B predictors is assigned to each object, depending on which prediction has the highest IOU with the ground truth to specialize the predictors on different boxes  
 * since squared loss weighs errors in large and small boxes equally but the same error has a larger effect for small boxes, the square root of the sizes are used in the loss to reduce the impact of this issue
 
-The network is trained on the PASCAL VOC 2007 dataset with a scheduled learning rate, dropout and extensive data augmentation.
+<img width="100%" src="redmon2015you_1_WhyToFly_loss.png"/>
+loss function
+
+The network is trained on the PASCAL VOC 2007 dataset using SGD with a scheduled learning rate, dropout and extensive data augmentation.
 
 ## How well does the paper perform?
 
@@ -72,9 +75,9 @@ This successsfully reduces background errors:
 
 <img width="100%" src="redmon2015you_1_WhyToFly_ensemble.png"/>
 
-The speed of the system is now limited by Fast R-CNN however, since both models have to be run.
+The speed of the system is now limited by Fast R-CNN however, since the input has to be passed through both R-CNN and YOLO.
 
 ## TL;DR
 * YOLO predicts bounding boxes for objects using a single CNN
 * It detects object centers, widths, heights and detection confidences for 7x7 patches in the image
-* Because of its simplicity is is very fast and can be used on real-time video while still being very accurate
+* Because of its simplicity is is very fast and can be used on real-time video (e.g. [in robotics](https://github.com/leggedrobotics/darknet_ros)) while still being very accurate
