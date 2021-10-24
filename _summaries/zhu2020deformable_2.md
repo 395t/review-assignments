@@ -8,13 +8,15 @@ score: 8 # TODO
 ---
 
 ## Core Idea
-Extends DETR by focusing the attention modules onto a small set of sampling points by using the idea of deformable convolution. 
-This allowing for better results in significantly fewer training epochs and addresses the issues DETR has when attempting to detect small objects. 
+Extends DETR by focusing the attention modules onto a small set of sampled points by using the ideas proposed in the deformable convolution paper. 
+
+This allows for better results in significantly fewer training epochs and addresses the issues DETR has when attempting to detect small objects. 
 
 
 ## Technical Implementation
 Below we see the a representation of the Deformable DETR model.
-We see that convolutional features maps are extracted from an image using a convolutional neural network (the authors used ResNet-50) before being fed into the encoder attention module.
+
+Convolutional feature maps are extracted from an image using a convolutional neural network (the authors used ResNet-50) before being fed into the encoder section of the network.
 Information from the encoder along with object queries are then fed into the decoder to produce bounding boxes.
 
 <img src="zhu2020deformable_2_model.PNG" width="850" />
