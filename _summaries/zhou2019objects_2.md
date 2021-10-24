@@ -67,7 +67,7 @@ The model CenterNet with Hourglass-104 outperforms all other one-stage detectors
 
 They also report results on 3D bounding box estimation (Table 4) and pose estimation (Table 5). The model performs on par with the baselines but faster on 3D estimation, and it performs slightly worse than state-of-the-art models on pose estimation.
 
-![image](https://user-images.githubusercontent.com/35536646/138371504-0165da8d-d02c-456d-ad0c-2bd14d53ec19.png)
+![image](https://user-images.githubusercontent.com/35536646/138610510-1b81dedb-8afc-4f96-8d25-a898e397f3d0.png)
 
 ![image](https://user-images.githubusercontent.com/35536646/138610490-6818aab3-8a36-4a62-959b-ce9a4f6c7b5f.png)
 
