@@ -31,7 +31,7 @@ To account for where the center point is in the RxR patch, they predict a offset
 ### Objection Detection
 For each center point, the model also regresses to the size of the object . 
 
-![image](https://user-images.githubusercontent.com/35536646/138213827-43be5b32-b964-49d8-ae57-b3b9235ddb8c.png)
+![image](https://user-images.githubusercontent.com/35536646/138610393-41ba34c5-ebbd-41f8-b47a-5f4a8a4c332c.png)
 
 So for each location, the model produce C+4 outputs at each location; C for the heat map, 2 for the offset and 2 for the size of the object.
 
