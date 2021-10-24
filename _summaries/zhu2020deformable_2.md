@@ -14,7 +14,7 @@ This allowing for better results in significantly fewer training epochs and addr
 
 ## Technical Implementation
 Below we see the a representation of the Deformable DETR model.
-We see that convolutional features maps are extracted from an image using a convolutional neural network (the authors used ResNet-20) before being fed into the encoder attention module.
+We see that convolutional features maps are extracted from an image using a convolutional neural network (the authors used ResNet-50) before being fed into the encoder attention module.
 Information from the encoder along with object queries are then fed into the decoder to produce bounding boxes.
 
 <img src="zhu2020deformable_2_model.PNG" width="850" />
@@ -56,8 +56,17 @@ Because we already use deformable attention in the encoder we do not use it in t
 The self attention modules interact on object queires, here the deformable attention modules are used. 
 
 ## Results
+All experiements were conducted on the COCO 2017 dataset. 
 
+A ResNet-50 model that was pretrained on ImageNet was used to extract the convolutional feature maps fed into the encoder. 
+
+The parameters of the Deformable DETR followed the reccomendations of those presented in the DETR paper. 
+One main difference was that Focal Loss was changed to 2 due to an increase in the number of object queried. 
+The authors trained a vanilla DETR-DC5 with parameters matching those in their Deformable DETR model an report the results seen below as DETR-DC5+. 
+ 
 <img src="zhu2020deformable_2_results.PNG" width="900" />
+
+As we can see above the Deformable DETR converges much quicker than the original DETR and is able to out perform DETR models that train for over 20x as many epochs. 
 
 ## Two-Stage Deformable DETR
 In the original DETR and Deformable DETR the object quieres given to the decoder are independent of the image being looked at. 
