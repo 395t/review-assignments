@@ -53,8 +53,8 @@ For 3D detection, the model additionally predicts the depth, 3D dimension and or
 ### Human Pos Estimation
 Here we want to estimate k(=17) human joints location in the image. During inference, the model first identify the keypoint, and then regress to the location of each joint, modeled as offset to the keypoint. To refine the prediction, it also outputs a heatmap for each joint, and use this as a correction to the regressed location. Specifically, the model finds the keypoint which is closest to the regressed joint location on the heatmap and use this as final prediction.
 
+![image](https://user-images.githubusercontent.com/35536646/138610431-ad1d8be2-007e-4ff4-99c8-55a06b1445ca.png)
 
-![image](https://user-images.githubusercontent.com/35536646/138218692-51d6afb9-3f74-440c-aa5a-b818acda5f92.png)
 ## What interesting variants are explored?
 They experiment with different backbone CNN structure including ResNet-18, ResNet-101, DLA-34, and Hourglass-104. 
 
