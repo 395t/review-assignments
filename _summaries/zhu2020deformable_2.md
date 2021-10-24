@@ -33,7 +33,8 @@ Seen below is the deformable attention module introduced in this paper.
 
 <img src="zhu2020deformable_2_attention.PNG" width="900" />
 
-It is very similar to a normal attention module with the addition of the learned Sampling Offsets block as seen in the equations below:
+It is very similar to a normal attention module with the addition of the learned Sampling Offsets block seen above. 
+We can also see from the equations below that the deformable attention is only a slight modification of the general multi head attention. 
 
 <img src="zhu2020deformable_2_MultiheadAttn.PNG" width="700" />
 
