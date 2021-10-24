@@ -53,7 +53,7 @@ For 3D detection, the model additionally predicts the depth, 3D dimension and or
 ### Human Pos Estimation
 Here we want to estimate k(=17) human joints location in the image. During inference, the model first identify the keypoint, and then regress to the location of each joint, modeled as offset to the keypoint. To refine the prediction, it also outputs a heatmap for each joint, and use this as a correction to the regressed location. Specifically, the model finds the keypoint which is closest to the regressed joint location on the heatmap and use this as final prediction.
 
-![image](https://user-images.githubusercontent.com/35536646/138610431-ad1d8be2-007e-4ff4-99c8-55a06b1445ca.png)
+![image](https://user-images.githubusercontent.com/35536646/138610477-69fec021-4695-4c5d-b124-809109b27dd7.png)
 
 ## What interesting variants are explored?
 They experiment with different backbone CNN structure including ResNet-18, ResNet-101, DLA-34, and Hourglass-104. 
@@ -69,7 +69,7 @@ They also report results on 3D bounding box estimation (Table 4) and pose estima
 
 ![image](https://user-images.githubusercontent.com/35536646/138371504-0165da8d-d02c-456d-ad0c-2bd14d53ec19.png)
 
-![image](https://user-images.githubusercontent.com/35536646/138371528-557fb39b-a21c-474e-bf0d-28057124c17c.png)
+![image](https://user-images.githubusercontent.com/35536646/138610490-6818aab3-8a36-4a62-959b-ce9a4f6c7b5f.png)
 
 ## TL;DR
 - The paper propose CenterNet, which represents objects using their keypoints and regresses to other values such as size of bounding box, 3D location, orientation, and pose.
