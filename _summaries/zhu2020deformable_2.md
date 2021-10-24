@@ -52,9 +52,9 @@ Takes feature maps (from the convolutional network) as inputs and returns featur
 Also uses the same general structure as the encoder in DETR. 
 Takes in object queries and references the feature maps computed in the encoder.
 Made up of both self- and cross-attention modules.
-The cross attention modules interact with the features extracted in the encoder. 
-Because we already use deformable attention in the encoder we do not use it in the cross attention modules.
-The self attention modules interact on object queires, here the deformable attention modules are used. 
+The cross-attention modules interact with the features extracted in the encoder. 
+Because deformable attention is already used in the encoder it is not used in the cross-attention modules.
+The self-attention modules interact on object queires, here the deformable attention modules are used. 
 
 ## Results
 All experiements were conducted on the COCO 2017 dataset. 
@@ -63,7 +63,7 @@ A ResNet-50 model that was pretrained on ImageNet was used to extract the convol
 
 The parameters of the Deformable DETR followed the reccomendations of those presented in the DETR paper. 
 One main difference was that Focal Loss was changed to 2 due to an increase in the number of object queried. 
-The authors trained a vanilla DETR-DC5 with parameters matching those in their Deformable DETR model an report the results seen below as DETR-DC5+. 
+The authors trained a vanilla DETR-DC5 with parameters matching those in their Deformable DETR model and report the results seen below as DETR-DC5+. 
  
 <img src="zhu2020deformable_2_results.PNG" width="900" />
 
@@ -73,7 +73,7 @@ As we can see above the Deformable DETR converges much quicker than the original
 In the original DETR and Deformable DETR the object quieres given to the decoder are independent of the image being looked at. 
 The authors explored using a variant of Deformable DETR to find region proposals specific to the given image to be fed into the decoder as object queries.
 This Deformable DETR variant consists only of the encoder and is used for region proposal generation. 
-Each pixel if first assigned as an object query and bounding boxes are generated. 
+Each pixel is first assigned as an object query and bounding boxes are generated. 
 The bounding boxes with the highest scores are given to the main Deformable DETR decoder as region proposal object queries.
 
 ## TL;DR
