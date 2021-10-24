@@ -34,18 +34,37 @@ Seen below is the deformable attention module introduced in this paper.
 <img src="zhu2020deformable_2_attention.PNG" width="900" />
 
 It is very similar to a normal attention module with the addition of the learned Sampling Offsets block seen above. 
+
 We can also see from the equations below that the deformable attention is only a slight modification of the general multi head attention. 
 
 <img src="zhu2020deformable_2_MultiheadAttn.PNG" width="700" />
 
 <img src="zhu2020deformable_2_DeformAttn.PNG" width="700" />
 
+**Encoder: ** 
+Uses the same general structure as the encoder in DETR. 
+Made up of only deformable self-attention modules.
+Takes feature maps (from the convolutional network) as inputs and returns features maps of the same size as outputs.
+
+
+**Decoder: **
+Also uses the same general structure as the encoder in DETR. 
+Takes in object queries and references the feature maps computed in the encoder.
+Made up of both self- and cross-attention modules.
+The cross attention modules interact with the features extracted in the encoder. 
+Because we already use deformable attention in the encoder we do not use it in the cross attention modules.
+The self attention modules interact on object queires, here the deformable attention modules are used. 
+
 ## Results
 
 <img src="zhu2020deformable_2_results.PNG" width="900" />
 
 ## Two-Stage Deformable DETR
-
+In the original DETR and Deformable DETR the object quieres given to the decoder are independent of the image being looked at. 
+The authors explored using a variant of Deformable DETR to find region proposals specific to the given image to be fed into the decoder as object queries.
+This Deformable DETR variant consists only of the encoder and is used for region proposal generation. 
+Each pixel if first assigned as an object query and bounding boxes are generated. 
+The bounding boxes with the highest scores are given to the main Deformable DETR decoder as region proposal object queries.
 
 ## TL;DR
 * Combines the ideas of DETR and deformable convolution to create end to end object detection model 
