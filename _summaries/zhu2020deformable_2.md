@@ -46,13 +46,7 @@ It is very similar to a normal attention module with the addition of the learned
 ## Two-Stage Deformable DETR
 
 
-TODO: Summarize the paper:
-* What is the core idea?
-* How is it realized (technically)?
-* How well does the paper perform?
-* What interesting variants are explored?
-
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* Combines the ideas of DETR and deformable convolution to create end to end object detection model 
+* Outperforms DETR and can be be trained in significantly fewer epochs
+* Explores a Two-Stage deformable DETR model which further boosts performance 
