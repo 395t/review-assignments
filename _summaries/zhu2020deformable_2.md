@@ -9,7 +9,6 @@ score: 8 # TODO
 
 ## Core Idea
 Extends DETR by focusing the attention modules onto a small set of sampled points by using the ideas proposed in the deformable convolution paper. 
-
 This allows for better results in significantly fewer training epochs and addresses the issues DETR has when attempting to detect small objects. 
 
 
@@ -43,13 +42,13 @@ We can also see from the equations below that the deformable attention is only a
 
 <img src="zhu2020deformable_2_DeformAttn.PNG" width="700" />
 
-**Encoder: ** 
+**Encoder:** 
 Uses the same general structure as the encoder in DETR. 
 Made up of only deformable self-attention modules.
 Takes feature maps (from the convolutional network) as inputs and returns features maps of the same size as outputs.
 
 
-**Decoder: **
+**Decoder:**
 Also uses the same general structure as the encoder in DETR. 
 Takes in object queries and references the feature maps computed in the encoder.
 Made up of both self- and cross-attention modules.
