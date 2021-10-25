@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: law2018cornernet
 author: dalmeraz
 score: 8
 ---
