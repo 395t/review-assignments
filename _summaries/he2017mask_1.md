@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: He2017mask
+paper: he2017mask
 author: samatharhay
 score: 10
 ---
