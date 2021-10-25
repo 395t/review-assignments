@@ -21,8 +21,11 @@ Region Proposal Networks (RPN) take an image as input and produce scored object 
 
 ![Alt Text](ren2015faster_2_1b.PNG)
 
-The paper talks about the concept of anchors which is the center of the 3 x 3 sliding window considered during the convolution. Using this anchor, they come up with different anchor boxes (total of 9 for 3 x 3 window) for different scales and aspect ratios. 
+The paper talks about the concept of anchors which is the center of the 3 x 3 sliding window considered during the convolution. Using this anchor, they come up with different anchor boxes (total of 9 for 3 x 3 window) for different scales and aspect ratios. The various anchor boxes are classified, and their coordinates are determined using bounding box regression. The paper claims that this approach is more cost-efficient when compared to previous approaches who require images and feature maps at different scales.
 
+![Alt Text](ren2015faster_2_1f.PNG)
+
+For the 3 x 3 spatial window, 9 bounding box regressors are tuned that are each responsible for one scale and aspect ratio. Since these regressors rely on the same feature map from the fixed 3 x 3 window, this allows for robust bounding box regression and reduced computation.
 
 An important feature of this paper is the ability to share convolution feature maps between the RPN and the Fast R-CNN object detection network. They use a 4 step training algorithm to achieve this:
 1. Train the RPN using stochastic gradient descent and backpropogation. Using a pre-trained Imagenet model initialization that is then fine-tuned
