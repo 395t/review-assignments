@@ -18,7 +18,8 @@ Two previous solutions:
 CNN modules have fixed geometric structures.
 * Convolutions sample the input at fixed locations.
 * Pooling layers reduce the resolution at a fixed ratio.
-* RIO pooling layers seperate an RIO into fixed spatial bins.
+* ROI (Region of Interest) pooling layers seperate an ROI into fixed spatial bins.
+  * ROI pooling is used for object detection and transforms a variable-size region of interest into a fixed-size feature map using max-pooling. 
 * All activations in the same CNN layer have the same receptive field sizes, but different locations may correspond to different objects with different sizes.
 * Object detection still relies on bounding boxes.
 
@@ -40,15 +41,15 @@ Both convolutional kernels for producing output features and offsets are learned
 
 ![MNIST](dai2017deformable_1b.PNG)
 
-## Deformable RIO Pooling
+## Deformable ROI Pooling
 
-RIO pooling converts an arbitrary sized input rectagular region into fixed size features.
+ROI pooling converts an arbitrary sized input rectagular region into fixed size features.
 
 Similar to deformable convolutions, offsets are added to spatial binning positions.
 
-Offsets are obtained by first generating the pooled feature maps, then running a fully connected layer to generate normalized offsets, and finally transforming the normalized offsets into real offsets by scaling it with the RIO's width and height.
+Offsets are obtained by first generating the pooled feature maps, then running a fully connected layer to generate normalized offsets, and finally transforming the normalized offsets into real offsets by scaling it with the ROI's width and height.
 
-Offset normalization allows offsets to be independent of RIO size.
+Offset normalization allows offsets to be independent of ROI size.
 
 ![MNIST](dai2017deformable_1c.PNG)
 
