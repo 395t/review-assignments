@@ -61,7 +61,7 @@ The plot and table above demonstrate the substantial gain in accuracy provided b
 
 
 ## Interesting variants
-The paper mentions that the exact form of the loss function is not crucial and therefore explores another instantiation of the focal loss $$FL^*$$ with similar properties and shows that it performs equally well. $$FL^*$$ involves an additional paramater $$\beta$$.
+The paper mentions that the exact form of the loss function is not crucial and therefore explores another instantiation of the focal loss FL\* with similar properties and shows that it performs equally well. FL\* involves an additional paramater $$\beta$$.
 
 <p align="center">
   <img width="400" alt="lin2017focal_2f" src="lin2017focal_2f.png">
