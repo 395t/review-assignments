@@ -28,7 +28,7 @@ Deformable convolution adds 2D offsets to the regular grid sampling locations in
 
 ![MNIST](dai2017deformable_1a.PNG)
 
-The offsets are learned from precending feature maps.
+The offsets are learned from preceding feature maps.
 
 The offsets are obtained by applying a convolutional layer over the same input.
 
