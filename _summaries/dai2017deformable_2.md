@@ -27,7 +27,7 @@ CNN modules have fixed geometric structures.
 
 Deformable convolution adds 2D offsets to the regular grid sampling locations in standard convolutions.
 
-![MNIST](dai2017deformable_1a.PNG)
+![MNIST](dai2017deformable_2a.PNG)
 
 The offsets are learned from preceding feature maps.
 
@@ -39,7 +39,7 @@ The output offset fields have the same spatial resolution as the input, with 2N 
 
 Both convolutional kernels for producing output features and offsets are learned simulataneously during training.
 
-![MNIST](dai2017deformable_1b.PNG)
+![MNIST](dai2017deformable_2b.PNG)
 
 ## Deformable ROI Pooling
 
@@ -51,23 +51,23 @@ Offsets are obtained by first generating the pooled feature maps, then running a
 
 Offset normalization allows offsets to be independent of ROI size.
 
-![MNIST](dai2017deformable_1c.PNG)
+![MNIST](dai2017deformable_2c.PNG)
 
 
 ## Results
 
 Accuracy improves with more deformable convolutional layers:
 
-![MNIST](dai2017deformable_1e.PNG)
+![MNIST](dai2017deformable_2e.PNG)
 
 
 Effective dilation is a rough measure of receptive field size of a filter.
 
 The receptive field sizes of deformable convolutions are correlated to object sizes:
 
-![MNIST](dai2017deformable_1d.PNG)
+![MNIST](dai2017deformable_2d.PNG)
 
-![MNIST](dai2017deformable_1f.PNG)
+![MNIST](dai2017deformable_2f.PNG)
 
 
 ## TL;DR
