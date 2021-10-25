@@ -96,13 +96,13 @@ Discussion #1: what is the importance of each decoder layer?
 
 ![image-20211022151701535](carion2020end-to-end_2_7.png)
 
-</u>
+
 
 Discussion #2: what is the FFN?
 
-Network parameters: 41.3M → 28.7M
+- Network parameters: 41.3M → 28.7M
 
-Performance: 62.4 → 60.1 (mAP @ 0.5)
+- Performance: 62.4 → 60.1 (mAP@0.5)
 
 
 
