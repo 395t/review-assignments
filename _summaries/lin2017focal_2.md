@@ -42,6 +42,10 @@ Another key design choice is the model initialization. A default initialization 
 
 RetinaNet is a one-stage object detection network that uses a Feature Pyramid Network (FPN) on top of a feedforward ResNet architecture. The paper uses 5 levels of different resolution in the pyramid each with 256 channels. Each level has a total of 9 anchor boxes with 3 different aspect ratios and 3 different scales. Each level then feeds to 2 separate FCN with same architecture -- one for object classification and other for bounding box regression. 
 
+<p align="center">
+  <img width="800" alt="lin2017focal_2e" src="lin2017focal_2e.png">
+</p>
+
 ## Performance
 The paper uses a balanced focal loss with $$\gamma=2$$ and $$\alpha=0.25$$ to report the results of their evaluation on the bounding box detection track of the COCO benchmark. They compare the inference speed and the accuracy (AP) of their model with 2-stage and other 1-stage detector baselines on the test-dev split of the dataset with no public labels.
 
@@ -57,7 +61,11 @@ The plot and table above demonstrate the substantial gain in accuracy provided b
 
 
 ## Interesting variants
-The paper mentions that the exact form of the loss function is not crucial and therefore explores another instantiation of the focal loss with similar properties and shows that it performs equally well.
+The paper mentions that the exact form of the loss function is not crucial and therefore explores another instantiation of the focal loss $$FL^*$$ with similar properties and shows that it performs equally well. $$FL^*$$ involves an additional paramater $$\beta$$.
+
+<p align="center">
+  <img width="400" alt="lin2017focal_2f" src="lin2017focal_2f.png">
+</p>
 
 
 
