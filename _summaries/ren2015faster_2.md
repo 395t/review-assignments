@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: ren2015faster
 # Please fill out info below
 author: trowk
 score: 9
