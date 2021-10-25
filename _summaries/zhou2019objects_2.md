@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{zhou2019objects}}
+paper: zhou2019objects
 # Please fill out info below
 author: timchen0618
-score: 10/10
+score: 10
 ---
 
 TODO: Summarize the paper:
