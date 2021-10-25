@@ -34,7 +34,7 @@ The offsets are obtained by applying a convolutional layer over the same input.
 
 Both convolutional kernels have the same spatial resolution and dilation.
 
-The output offset fields have the same spatial resolution as the input, with 2N channels corresponding to N offsets.
+The output offset fields have the same spatial resolution as the input, with 2N channels corresponding to N 2D offsets.
 
 Both convolutional kernels for producing output features and offsets are learned simulataneously during training.
 
