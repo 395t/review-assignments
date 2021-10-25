@@ -1,10 +1,10 @@
 ---
 layout: summary
-title: Focal Loss for Dense Object Detection
-paper: {{lin2017focal_1}}
+title: Summary
+paper: lin2017focal
 # Please fill out info below
-author: # SShivang
-score: # 7/10
+author: SShivang
+score: 7
 ---
 
 What is the core idea?
