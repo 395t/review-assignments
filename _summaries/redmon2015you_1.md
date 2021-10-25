@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: redmon2015you_1
+paper: redmon2015you
 # Please fill out info below
 author: WhyToFly
 score: 7
