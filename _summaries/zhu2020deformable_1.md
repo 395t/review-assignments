@@ -13,8 +13,8 @@ The author propose Deformable DETR, an improved version of the object detection 
 The main component proposed by the authors is the **deformable attention module**, which was inspired by deformable convolutions [2].
 Specifically, the new attention module reduces the computational cost of regular attention by only attending to a small set of locations around a reference point (more details below).
 This has two advantages.
-First, the network trains faster -- 10x fewer epochs compared to DETR.
-Second, the network achieves better overall AP ("Average Precision") score than DETR and is particularly better at detecting small objects.
+First, the network trains faster -- **10x fewer epochs** compared to DETR.
+Second, the network achieves better overall AP ("Average Precision") score than DETR and is particularly better at **detecting small objects**.
 
 ## How is the idea realized?
 
@@ -97,8 +97,8 @@ These improvements lead to a substantial improvement in AP, as shown at the bott
 
 ## TL;DR
 * Deformable DETR proposes **multi-scale deformable attention** modules, which reduce the computational complexity by restricting query to attend over a fixed number of points.
-* Compared to DETR, Deformable DETR trains **10x** faster while maintaining a comparable performance.
-* Using a large ResNet backbone, Deformable DETR is able to achieve state-of-the-art object detection performance.
+* Compared to DETR, Deformable DETR trains **10x faster** while maintaining a comparable performance.
+* Using a large ResNet backbone, Deformable DETR is able to achieve **state-of-the-art object detection performance**.
 
 ## References
 
