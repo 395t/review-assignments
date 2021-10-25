@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: he2017mask
 # Please fill out info below
 author: patelojas
 score: 7
