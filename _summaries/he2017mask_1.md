@@ -6,12 +6,9 @@ author: samatharhay
 score: 10
 ---
 
-* What is the core idea?
 The authors of the paper introduce a new architecture, Mask R-CNN, for object instance segmentation.
 This new method builds off of Faster R-CNN by adding a branch for predicting an object mask in parallel with the exisiting branch for bounding box recognition.
 Mask R-CNN is proved to be easy to train and and generalize to other tasks such as estimating human poses.
-
-* How is it realized (technically)?
 
 The architecture of Mask R-CNN is a relatively simple addition to Faster R-CNN.
 Faster R-CNN outputs for each candidate object a class label and a bounding-box offset, Mask R-CNN adds a third branch that outputs the object mask.
@@ -40,7 +37,6 @@ Bilinear interpolation is used to compute the exact values of input features at 
  
  ![image 1](he2017mask_1c.png)
 
-* How well does the paper perform?
 
 They did a comparison to SOTA with comprehensive ablation on the COCO dataset.
 Mask R-CNN outperformed the baseline variants for all previous SOTA models
@@ -60,8 +56,6 @@ The last experiment they did was on human pose estimation.
 
 ![image 1](he2017mask_1h.png)
 
-
-* What interesting variants are explored?
 
 ## TL;DR
 * The authors proposed Mask R-CNN a variant of Faster R-CNN
