@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: Faster R-CNN Towards Real-Time Object Detection with Region Proposal Networks
+title: Summary
 paper: ren2015faster
 # Please fill out info below
 author: saikm200022
