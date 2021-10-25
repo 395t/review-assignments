@@ -9,8 +9,7 @@ score: 8 # How did you like this paper 0(dislike) to 10(love)
 
 ## Core Idea  
 * In object detection, an intersection over union (IoU) threshold is used to define the percentage of overlap of a predicted bounding box over the ground truth bounding box in order to be considered a positive sample.  
-* Cascade R-CNN uses a sequence of detectors with increasing IoU thresholds, leading to higher selectivity against false positives.  
-* The output distribution of a lower quality detector at the previous stage used as input for a higher quality detector at the successive stage.  
+* Cascade R-CNN uses a sequence of detectors with increasing IoU thresholds, leading to higher selectivity against false positives. The output distribution of a lower quality detector at the previous stage is used as input for a higher quality detector at the successive stage.    
 * The cascade procedure helps reduce overfitting during training, and leads to closer matches between the hypothesis and detector quality at each stage during inference.  
 
 ## Technical Implementation  
@@ -26,8 +25,9 @@ score: 8 # How did you like this paper 0(dislike) to 10(love)
 	* $$L(x^t, g) = L_{cls}(h_t(x^t),y^t) + \lambda[y^t\geq 1]L_{loc}(f_t(x^t,\textbf{b}^t),\textbf{g})$$  
 		* $$\textbf{b}^t = f_{t-1}(x^{t-1},\textbf{b}^{t-1})$$  
 		* And where $$g$$ is the ground truth object for $$x^t$$, $$\lambda = 1$$ is the tradeoff coefficient, $$[\cdot]$$ is the indicator function, and $$y^t$$ is the label of $$x^t$$ given $$u^t$$  
+	* The function is the sum of two terms related to seperate tasks in object detection.  
 	* The first term in the loss is related to the bounding box regression task, while the second term is related to the classification task  
-	* The tradeoff coefficient help manage the contribution of the two tasks to the overall loss  
+	* The tradeoff coefficient helps manage the contribution of the two tasks to the overall loss  
 
 ## Variants  
 * Experiments were performed implementing the architecture while varying the number of cascade stages. The results are summarized below.  
