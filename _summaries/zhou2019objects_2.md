@@ -17,7 +17,7 @@ The same framework also applies to tasks like 3D detection and human pose detect
 ## How is it realized (technically)?
 
 ### Keypoint Estimation
-They try to produce a keypoint heatmap $$\hat{Y} \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$, where R is the output stride and C is number of keypoint types. (C=17 human joints in pose detection and C=80 object classes in object detection) Essentially this is like dividing the image into patches of dimension RxR and predict the probability of each patch as a keypoint. $$\hat{Y}_{x,y,c}=1$$ stands for a detected keypoint, and $$\hat{Y}_{x,y,c}=1$$ represents background. 
+They try to produce a keypoint heatmap $$\hat{Y} \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$, where R is the output stride and C is number of keypoint types. (C=17 human joints in pose detection and C=80 object classes in object detection) Essentially this is like dividing the image into patches of dimension RxR and predict the probability of each patch as a keypoint. $$\hat{Y}_{x,y,c}=1$$ stands for a detected keypoint, and $$\hat{Y}_{x,y,c}=0$$ represents background. 
 
 Ground truth heatmap $$Y \in [0,1]^{\tfrac{W}{R} \times \tfrac{H}{R} \times C} $$ is then constructed using a Gaussian kernel $$Y_{xyc} = exp(-\tfrac{(x-\tilde{p_x})^2+(y-\tilde{p_y})^2}{2{\sigma_p}^2})$$, where each ground truth keypoint $$(\tilde{p_x}, \tilde{p_y})$$ is the center of the Gaussian. Each gaussian kernel has different standard deviation since the object can be of various sizes.
 
@@ -41,7 +41,7 @@ For each keypoint prediction at location $$(x_i, y_i)$$, the coordinates of the 
 ![image](https://user-images.githubusercontent.com/35536646/138375399-9f3e033c-845f-4b35-a294-e28c81717177.png)
 
 
-where $$(\delta \hat{x_i}, \delta \hat{y_i}) = \hat{O}_{\hat{x_i}, \hat{y_i}}$$ is the offset prediction and $(\hat{w_i}, \hat{h_i}) = \hat{S}_{\hat{x_i}, \hat{y_i}}$ is the size of the object.
+where $$(\delta \hat{x_i}, \delta \hat{y_i}) = \hat{O}_{\hat{x_i}, \hat{y_i}}$$ is the offset prediction and $$(\hat{w_i}, \hat{h_i}) = \hat{S}_{\hat{x_i}, \hat{y_i}}$$ is the size of the object.
 
 
 
