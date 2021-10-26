@@ -26,7 +26,7 @@ score: 8 # How did you like this paper 0(dislike) to 10(love)
 		* $$\textbf{b}^t = f_{t-1}(x^{t-1},\textbf{b}^{t-1})$$  
 		* And where $$g$$ is the ground truth object for $$x^t$$, $$\lambda = 1$$ is the tradeoff coefficient, $$[\cdot]$$ is the indicator function, and $$y^t$$ is the label of $$x^t$$ given $$u^t$$  
 	* The function is the sum of two terms related to seperate tasks in object detection.  
-	* The first term in the loss is related to the bounding box regression task, while the second term is related to the classification task  
+	* The first term in the loss is related to the classification task, while the second term is related to the bounding box regression task  
 	* The tradeoff coefficient helps manage the contribution of the two tasks to the overall loss  
 
 ## Variants  
