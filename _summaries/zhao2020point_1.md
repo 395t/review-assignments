@@ -1,6 +1,6 @@
 ---
 layout: summary
-title: Summary
+title: Point Transformer
 paper: zhao2020point
 # Please fill out info below
 author: kelseyball
