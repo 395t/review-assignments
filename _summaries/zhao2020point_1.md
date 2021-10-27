@@ -20,8 +20,8 @@ score: 10
 <img width="500px" src="zhao2020point_1i.png"/>
 
 ### Position Encoding Function
-- Learnable position encoding function
-- The difference of two 3D point coordinates (anchor point and neighboring point) is passed into a 2-layer MLP with ReLU
+- The position encoding is the difference of two 3D point coordinates (anchor point and neighboring point), passed into a 2-layer MLP with ReLU which is learned end-to-end
+- This value is added to both the attention vector and transformed feature vector
 <img width="200px" src="zhao2020point_1a.png"/>
 
 ## Point Transformer Block
