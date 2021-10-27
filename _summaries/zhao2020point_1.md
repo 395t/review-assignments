@@ -13,21 +13,20 @@ score: # How did you like this paper 0(dislike) to 10(love)
 
 # How is it realized (technically)?
 ## Point Transformer Layer
-- Point transformer layer uses vector self-attention (rather than scalar dot-product attention)
+- Point transformer layer uses vector self-attention (rather than scalar dot-product attention) with learnable position encoding function
 - Attention is computed per point over its k nearest neighbors
 <img width="500px" src="zhao2020point_1h.png"/>
 <img width="500px" src="zhao2020point_1i.png"/>
 
 ### Position Encoding Function
 - Learnable position encoding function
-<img width="500px" src="zhao2020point_1a.png"/>
 - The difference of two 3D point coordinates (anchor point and neighboring point) is passed into a 2-layer MLP with ReLU
-- Parameters of MLP are trained end-to-end
+<img width="200px" src="zhao2020point_1a.png"/>
 
 ## Point Transformer Block
-- Comprised of: linear projections to reduce dimensionality, point transformer layer for information exchange, and a residual connection
+- Comprised of: linear projections, point transformer layer, and a residual connection
 - Input **x** is a set of feature vectors with associated coordinates **p**
-<img width="500px" src="zhao2020point_1b.png"/>
+<img width="200px" src="zhao2020point_1b.png"/>
 
 ## Point Transformer Network
 - Point transformer blocks are combined with downsampling and interpolation modules which reduce and increase the cardinality of the point set as needed
