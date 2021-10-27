@@ -3,8 +3,8 @@ layout: summary
 title: Summary
 paper: zhao2020point
 # Please fill out info below
-author: # kelseyball
-score: # How did you like this paper 0(dislike) to 10(love)
+author: kelseyball
+score: 10
 ---
 
 # What is the core idea?
