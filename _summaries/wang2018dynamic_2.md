@@ -9,10 +9,11 @@ score: 8/10
 
 TODO: Summarize the paper:
 * What is the core idea? <br/>
-In this paper, the authors come up with a new neural network architecture called EdgeConv that can use local geometric information of point clouds. Therefore, the 
+In this paper, the authors come up with a new neural network module called EdgeConv that can use local geometric information of point clouds, which is permutational invariant and translational invariant. Therefore, the 
 
 
 * How is it realized (technically)? <br/>
+
 
 * How well does the paper perform? <br/>
 EdgeConv has achieved great results in classification, part segmentation, and semantic segmentation. 
