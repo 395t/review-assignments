@@ -8,7 +8,8 @@ score: 10
 ---
 
 # What is the core idea?
-- The authors investigate how to apply transformers to 3D point cloud processing
+- Self-attention is fundamentally a set operator (permutation-invariant) and thus a natural fit for modeling 3D point clouds, which are sets of 3D points
+- The authors investigate how to apply self-attention/transformers to 3D point cloud processing
 - "Point Transformer" networks outperform a variety of models in large- and small-scale 3D image understanding tasks
 
 # How is it realized (technically)?
