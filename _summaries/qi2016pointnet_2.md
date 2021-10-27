@@ -12,6 +12,7 @@ Instead data scientists would transform them to either 3D voxel grids or image c
 The downside to these transformations is that it makes the data voluminous compared to keeping them in point clouds.
 This paper uses their unified PointNet architecture to process point cloud inputs and classify them as a whole or by segments.
 
+The novel approach in this paper is to use a single symmetric max pooling to select informative points from the point cloud
 
 
 TODO: Summarize the paper:
