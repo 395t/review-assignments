@@ -38,19 +38,27 @@ score: 10
 ## Semantic Segmentation
 - Task/Dataset: S3DIS -- 271 rooms, each point has a semantic label (floor, chair, etc.). The task is to label each point.
 - Eval metrics: mean classwise accuracy (mAcc), overall pointwise accuracy (OA), and mean classwise Intersection over Union (IoU) (IoU computes the ratio of (1) the intersection of the predicted and true points for a class and (2) their union)
+<img width="500px" src="zhao2020point_1j.png"/>
 <img width="500px" src="zhao2020point_1d.png"/>
 
 ## Shape Classification
 - Task/Dataset: ModelNet40; classify 12,311 CAD models into 40 object categories
 - Eval metrics: mean classwise accuracy (mAcc) and overall accuracy over all classes (OA)
+<img width="500px" src="zhao2020point_1k.png"/>
 <img width="500px" src="zhao2020point_1e.png"/>
 
 ## Object Part Segmentation
 - Task/Dataset: ShapeNetPart; 16k models of 16 shape types, each annotated with 2-6 parts, 50 part types total. Classify each point with a part.
 - Eval metrics: IoU averaged over part category (cat. mIoU) and IoU averaged per instance over parts (inst. mIou)
+<img width="500px" src="zhao2020point_1l.png"/>
 <img width="500px" src="zhao2020point_1f.png"/>
 
 # What interesting variants are explored?
+Takeaways from ablation study:
+- Vector attention significantly outperforms scalar dot-product attention
+- k=16 neighbors works better than smaller or larger values
+- Relative position encoding works better than absolute, and adding the encoding to both the attention vector and feature vectors works better than either alone
+- Using softmax regularization in the attention computation is essential
 <img width="500px" src="zhao2020point_1g.png"/>
 
 # TL;DR
