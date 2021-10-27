@@ -33,6 +33,11 @@ score: 10
 - Point transformer blocks are combined with downsampling and interpolation modules which reduce and increase the cardinality of the point set as needed
 <img width="1000px" src="zhao2020point_1c.png"/>
 
+## Training details
+- SGD optimizer, momentum=0.9, weight decay=0.0001.
+- For semantic segmentation: 40K iterations with initial LR=0.5, dropped by 10x at steps 24K and 32K.
+- For shape classification/object part segmentation: 200 epochs, initial LR=0.05, dropped by 10x at epochs 120 and 160.
+
 # How well does the paper perform?
 Point Transformers achieve new state-of-the-art on semantic segmentation, shape classification, and object part segmentation, outperforming a variety of models including pointwise MLPs, voxel-based models, graph-based models, sparse convolutional networks, and continuous convolutional networks.
 
