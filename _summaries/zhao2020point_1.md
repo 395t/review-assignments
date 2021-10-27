@@ -34,6 +34,7 @@ score: 10
 <img width="1000px" src="zhao2020point_1c.png"/>
 
 # How well does the paper perform?
+Point Transformers achieve new state-of-the-art on semantic segmentation, shape classification, and object part segmentation, outperforming a variety of models including pointwise MLPs, voxel-based models, graph-based models, sparse convolutional networks, and continuous convolutional networks.
 
 ## Semantic Segmentation
 - Task/Dataset: S3DIS -- 271 rooms, each point has a semantic label (floor, chair, etc.). The task is to label each point.
