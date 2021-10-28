@@ -59,10 +59,12 @@ Loss was the same as used in SECOND
 
 <!-- image 1 bird's eye view mean average precision -->
 Bird's eye view results:
+
 ![pointpillars](lang2018pointpillars_1a.png)
 
 <!-- image 2 3d detection results -->
 3D detection results:
+
 ![pointpillars](lang2018pointpillars_1d.png)
 
 Object orientation results:
