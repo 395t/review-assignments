@@ -19,7 +19,7 @@ Figure 2 (numbering from the paper), shows the CenterPoint network.\
 ![Yin (2020).](yin2020_center_based_1a.PNG)
 
 The authors further propose a Two-Stage CenterPoint. One point-feature from the 3D center of each face of the predicted bounding box is taken. For each point, a featyre us extracted using bilinear interpolation from the backbne map-view output M.\
-These features are the passed through an MLP. This second stage predicts a class-agnostic confidence score and box refinement on top of the first stage's results.\
+These features are the passed through an MLP. This second stage predicts a class-agnostic confidence score and box refinement on top of the first stage's results.
 
 All first-stage outputs share a 3x3 convolutional layer, BatchNorm, and ReLU. Each output then uses its own branch of 2 3x3 convolutions, separated by batchnorm and ReLU. The second stage uses a two-layer MLP, batch norm, ReLU and dropout (0.3), followed by two branches of 3 fully-connected layers.
 
@@ -28,6 +28,7 @@ The paper tests the models on two popular large datasets: Waymo Open Dataset, an
 The testing shows a 3-4 mAP increase in 3D detection under different backbones. With some additional overhead (10%), a two-stage refinement inceases mAP by 2 more points.
 Tables 1 and 2 show results obtaiend for 3D detection on Waymo test set, and nuScenes test set. In both, and other tests not shown below, CenterPoint performs better than all other models.\
 ![Yin (2020).](yin2020_center_based_1b.PNG)
+
 ![Yin (2020).](yin2020_center_based_1c.PNG)
 
 Authors also show that center-based methods for 3D detection, like CenterPoint, outperform anchor-based methods.
