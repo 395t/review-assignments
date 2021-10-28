@@ -89,10 +89,6 @@ score: 8
 
 - The hyperparameter K (how large are the neighbourhoods) is fickle, and can lead to impaired performance if too high
 
-## Other Variants
-
-
-
 ## TL;DR
 * EdgeConv takes 1 vertex, then compares it through some metric to a bunch of other vertices, which then go through a nonlinear transform then is aggregated with the other neighbouring vertices.
 * Recomputing graph based CNNs can help improve accuracy 
