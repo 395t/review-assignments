@@ -8,7 +8,7 @@ score: 8
 ---
 
 TODO: Summarize the paper:
-Transformers changed NLP because they are capable of using the attention mechanism. Where an entire sequence is converted into an attention matrix. This allows the network to see the entire sequence simultaneously. Thus the network can infer long-range correlations, which is otherwise difficult for linear models such as LSTM or RNN.  However creating the attention matrix is memory intensive, which restricts the use of transformers on longer sequences. Big-bird attempts to circumvent this challenge by using sparse-attention.
+Transformers changed NLP because they are capable of using the self attention mechanism. Where an entire sequence is converted into an attention matrix. This allows the network to see the entire sequence simultaneously. Thus the network can infer long-range correlations, which is otherwise difficult for linear models such as LSTM or RNN.  However creating the attention matrix is memory intensive as it is quadratic in input sequence length, which restricts the use of transformers on longer sequences. Big-bird attempts to circumvent this challenge by using sparse-attention.
 
 ![image](https://user-images.githubusercontent.com/13065170/135767499-1f21fc47-ba6c-402f-bf1e-a1fe6730466b.png)
 
@@ -28,6 +28,8 @@ $$ Q_h $$ and $$ K_h $$ are query and key functions respectively. $$ V_h $$ is a
 
 BigBird performs better than models such as RoBERTa and Longformer when it comes to QA type tasks. BigBird also performs better in classification tasks, compared to BERT especially for longer documents. This is presumably because BERT itself starts failing on longer documents.
 
+![image](https://user-images.githubusercontent.com/13065170/136301260-e56dbc23-5382-488d-a52c-8e9cdffc4427.png)
+
 ![image](https://user-images.githubusercontent.com/13065170/135767425-ca4965ae-382d-4177-8004-29e96666e729.png)
 
 The authors tested BigBird on genomic sequences as well. Here BigBird outperforms currently available networks, especially in Promoter Region prediction.
@@ -36,6 +38,6 @@ The authors tested BigBird on genomic sequences as well. Here BigBird outperform
 
 
 ## TL;DR
-* Attention memory intensive
+* Self attention memory intensive
 * Sparse attention in BigBird
 * Works better on longer sequences
