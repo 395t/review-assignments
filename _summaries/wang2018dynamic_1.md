@@ -70,7 +70,7 @@ score: 8
 
 - DGCNN can also segment objects, although it is not state of the art in its results, it is able to find similarities across various objects
 
-![Classification Results](wang2018dynamic_1f.png)
+![Qualitative Segmentation Results](wang2018dynamic_1f.png)
 
 - DGCNN finds similar regions on unseen objects (right) from trained on point clouds (left).
 
