@@ -4,7 +4,7 @@ title: Summary
 paper: qi2016pointnet
 # Please fill out info below
 author: elampietti
-score: 8
+score: 9
 ---
 
 Point clouds were traditionally difficult to process as input because of their irregular format.
