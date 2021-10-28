@@ -13,6 +13,8 @@ The paper introduced VoxelNet, an end to end deep network that goes from raw 3d 
 
 * How is it realized (technically)?
 
+![](zhou2017voxelnet_2d.png)
+
 **Voxel Partitioning** From a raw 3d point cloud input, VoxelNet first partitions the points to voxels.
 
 **Grouping** Points are grouped according to the voxels. Some voxels may contain significantly more points than others
@@ -23,13 +25,26 @@ The paper introduced VoxelNet, an end to end deep network that goes from raw 3d 
 
 **Sparse Tensor Representation**  Due to majority (90%) of the voxels beeing empty, we can represent the entire voxels as a sparse 4D tesnor of size CxD'xH'xW'
 
+![](zhou2017voxelnet_2c.png)
 **Region Proposal Network** The algorithm then feed the feature map to the RPN, which is modified from the origional network
 
-**Loss Function** Loss on 3d ground truth box.
+![](zhou2017voxelnet_2a.png)
+**Loss Function** Loss on 3d ground truth box by distinguishing positive anchors (Intersection over union with ground truth is above 0.6) from negative anchors (IoU is below 0.45)
+
 
 * How well does the paper perform?
 
-* What interesting variants are explored?
+![](zhou2017voxelnet_2b.png)
+
+![](zhou2017voxelnet_2e.png)
+
+![](zhou2017voxelnet_2f.png)
+
+Overall, voxelnet performed much better than the baseline and previous works on all of Car, Pedestrian, and Cyclist detection
+
+Visually, most of the bounding box matches the expectation
+
+
 
 ## TL;DR
 * Three
