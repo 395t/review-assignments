@@ -22,7 +22,6 @@ where alpah(x) is the transformed features and gamma is the attention vector. Th
 
 They define their position encoding based on the point coordinates multiplied with trainable parameters as below:
 
-
 ![Position encoding](zhao2020point_2c.png)
 
 The vector theta is an MLP which optimizes the encoding parameters. 
@@ -41,13 +40,30 @@ Overall the network structure is as below:
 ![Network](zhao2020point_2f.png)
 
 
-* Performance
+* Model Performance
 
-They perform
+They test their model on 3D semantic segmentation and shape classification tasks. 
 
-* Interesting variants
+For Segmentation tasks, the Point Transformer outperformed all prior models such as PointNet in all metrics. It even performed better than voxel based architectures such as SegCloud.
+
+![Seg expts](zhao2020point_2g.png)
+
+For shape classification, the PointTransformer outperformed all prior classifiers and achieved SOTA results as shown below:
+
+![classification](zhao2020point_2h.png)
+
+![examples](zhao2020point_2i.png)
+
+
+* Variants
+
+The authors tried using relative and absolute position encodings and found relative positions to work the best.
+
+They tried using scalar attention instead of vector attention and found that vector attention outperformed by more than 6% absolute.
+
+
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* Authors create a transformer for 3D point cloud processing
+* The transformer applies multiple techniques to make it invariant and reduce cardinality of the point cloud set making it easier to learn with transfomers
+* The Point Transformer model outperformed all prior 3D point cloud models and achieved SOTA results
