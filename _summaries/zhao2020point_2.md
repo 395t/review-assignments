@@ -1,8 +1,7 @@
 ---
 layout: summary
-title: Summary
+title: Point Transformer
 paper: Zhao2020point
-# Please fill out info below
 author: # sritank
 score: # 9/10
 
