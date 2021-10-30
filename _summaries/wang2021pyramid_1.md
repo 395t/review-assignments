@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{wang2021pyramid}}
+paper: wang2021pyramid
 # Please fill out info below
 author: jchavezberkeley
 score: # How did you like this paper 0(dislike) to 10(love)
