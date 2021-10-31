@@ -36,6 +36,6 @@ EdgeConv has achieved great results in classification, part segmentation, and se
 One very interesting point is that you can regard PointNet, PointNet++, MoNet, and PCNN as special cases with special choices of edge features and aggregation operations. 
 
 ## TL;DR
-* The EdgeConv module gives local information of point clouds
+* The EdgeConv module gives both global and local information of point clouds
 * EdgeConv can be easily used to other different point clouds processing methods
 * using dynamic graph of relationships
