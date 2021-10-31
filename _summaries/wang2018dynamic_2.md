@@ -9,7 +9,7 @@ score: 8/10
 
 TODO: Summarize the paper:
 * What is the core idea? <br/>
-In this paper, the authors come up with a new neural network module called EdgeConv that can use local geometric information of point clouds, which is permutational invariant and translational invariant. By dynamically updating a graph of relationships, EdgeConv is able to perform semantic segmentation task. EdgeConv can also easily be integrated into other point cloud processing pipelines. The following picture shows the entire model architecture for classification and segmentation,<br/>
+In this paper, the authors come up with a new neural network module called EdgeConv that can use local geometric information of point clouds, which is permutational invariant and partially translational invariant. By dynamically updating a graph of relationships, EdgeConv is able to perform semantic segmentation task. EdgeConv can also easily be integrated into other point cloud processing pipelines. The following picture shows the entire model architecture for classification and segmentation,<br/>
 <img src = 'model_arch.png'>
 
 
