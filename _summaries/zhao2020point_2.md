@@ -3,7 +3,7 @@ layout: summary
 title: Point Transformer
 paper: Zhao2020point
 author: sritank
-score: 9/10
+score: 10/10
 
 ---
 
