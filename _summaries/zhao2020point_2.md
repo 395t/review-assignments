@@ -5,9 +5,11 @@ paper: Zhao2020point
 author: # sritank
 score: # 9/10
 
+---
+
 * Core idea?
 
-They design a Point Transformer layer for point cloud processing suitable for point cloud labeling and segmentation. They introduce vector self-attention and trainable position encoding among others to make their residual transformer network invariant to permutation and cardinality. 
+They design a Point Transformer network suitable for point cloud labeling and segmentation. They state that slef-attention function is a set operator that is invariant to permuation and cardinality of the inputs making it suitable for 3D point cloud processing. They introduce vector self-attention and trainable position encoding among others to make their residual transformer network invariant to permutation and cardinality. 
 
 * Technical Implementation?
 
@@ -19,7 +21,7 @@ where alpah(x) is the transformed features and gamma is the attention vector. Th
 
 ![Point transformer layer](zhao2020point_2b.png)
 
-They define their position encoding based on the point coordinates multiplied with trainable parameters as below:
+They define their position encoding based on the point coordinates multiplied with trainable parameters. This trainable encoding is added to both the attention and feature transformation as below:
 
 ![Position encoding](zhao2020point_2c.png)
 
@@ -38,6 +40,7 @@ Overall the network structure is as below:
 
 ![Network](zhao2020point_2f.png)
 
+The model was trained using SGD with momentum and weight decay.
 
 * Model Performance
 
@@ -47,18 +50,22 @@ For Segmentation tasks, the Point Transformer outperformed all prior models such
 
 ![Seg expts](zhao2020point_2g.png)
 
+![examples](zhao2020point_2i.png)
+
 For shape classification, the PointTransformer outperformed all prior classifiers and achieved SOTA results as shown below:
 
 ![classification](zhao2020point_2h.png)
 
-![examples](zhao2020point_2i.png)
-
+![classification](zhao2020point_2k.png)
 
 * Variants
 
 The authors tried using relative and absolute position encodings and found relative positions to work the best.
 
+![examples](zhao2020point_2j.png)
+
 They tried using scalar attention instead of vector attention and found that vector attention outperformed by more than 6% absolute.
+
 
 
 
