@@ -32,15 +32,21 @@ The second phase of CenterPoint extracts additional point-features from the back
 
 Experiments were run on the Waymo Open Dataset and the nuScenes dataset using the CenterPoint-Voxel Model. On the Waymo test set, the CenterPoint model achieves 71.8 level 2 mAPH on vehicle detection and 66.4 level 2 mAPH for pedestrian detection. These results surpase previous performance by 7.1% mAPH for vehicles and 10.6% for pedestrians.
 
-<img src="yin2020center-based_b.png">
+<img src="yin2020center-based_b.png" width="50%">
 
 On the nuScenes dataset, CenterPoint outperforms CBGS with multi-scale inputs and multi-model ensemble by 5.2% mAP and 2.2% NDS.
 
-<img src="yin2020center-based_c.png">
+<img src="yin2020center-based_c.png" width="50%">
+
+The CenterPoint model outperforms all other submissions under the neural planar metric (PKL), which is a hidden metric.
+
+For 3D tracking, the CenterPoint's tracking does not require a separate motion model and runs in "negligable time". Yet, CenterPoint's 3D tracking achieved higher scores (19.4 and 18.9 MOTA improvement) for vehicle and pedestrian tracking.
 
 * What interesting variants are explored?
 
 One-stage and two-stage CenterPoint were compared as part of the ablation study. Other things that were looked at were Voxel Set abstraction and radial basis function interpolation.
+
+<img src="yin2020center-based_d.png" width="50%">
 
 ## TL;DR
 * CenterPoint is a framework to detect and track 3D objects
