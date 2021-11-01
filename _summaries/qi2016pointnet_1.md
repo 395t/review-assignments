@@ -2,6 +2,7 @@
 layout: summary
 title: Summary
 paper: qi2016pointnet
+# Please fill out info below
 author: slycane9
 score: 9
 ---
