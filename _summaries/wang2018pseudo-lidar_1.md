@@ -11,7 +11,7 @@ score: 9
 3D object detection is an important task in autonomous driving.  There are several approaches for 3D object detection based on cheaper monocular or stereo 
 imagery data, but these have resulted in lower accuracies due to poor image based depth estimation. This paper discusses that it is not the quality of data 
 but its representation that causes poor accuracy. The core idea of this paper is to do data representation by  converting image-based depth maps to 
-pseudo-LiDAR representations --- essentially mimicking the LiDAR signal. LiDAR is (Light Detection And Ranging), which provide accurate 3D point clouds of 
+pseudo-LiDAR representations - essentially mimicking the LiDAR signal. LiDAR is (Light Detection And Ranging), which provide accurate 3D point clouds of 
 the surrounding environment .With such representation there are different LiDAR-based detection algorithms that can be applied.Hence this paper shows that 
 a major cause for the performance gap between stereo-based and LiDAR-based 3D object detection is not the quality of the estimated depth but its 
 representation. Second, the  pseudo-LiDAR as a new recommended representation of estimated depth for 3D object detection and show that it leads to 
@@ -51,7 +51,7 @@ Frustum PointNet. In Frustum pointnet the e pseudo-LiDAR informa tion as a 3D po
 View (BEV). In particular, the 3D information is converted into a 2D image from the top-down view.
 
 				
-![LeNet](wang2018pseudo_1a.png)
+![LeNet](wang2018pseudo-lidar_1a.png)
 
 ## Experiments: 
 
@@ -61,7 +61,7 @@ View (BEV). In particular, the 3D information is converted into a 2D image from 
 
 • Results:: LiDAR and pseudo-LiDAR lead to highly accurate predictions, especially for the nearby objects.
 
-![LeNet](wang2018pseudo_1b.png)
+![LeNet](wang2018pseudo-lidar_1b.png)
 
 
 ## TL;DR
