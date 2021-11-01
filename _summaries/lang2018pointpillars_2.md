@@ -4,7 +4,8 @@ title: Summary
 paper: lang2018pointpillars
 # Please fill out info below
 author: aabayomi
-score: # How did you like this paper 0(dislike) to 10(love)
+# How did you like this paper 0(dislike) to 10(love)
+score: 8 
 ---
 <!-- 
 TODO: Summarize the paper:
@@ -15,7 +16,7 @@ TODO: Summarize the paper:
 
 # Core Idea
 
-The authors proposes as much faster approach by which encoder that learns point cloud representations by stacking learned features as vertical tensors. 
+The authors proposes faster and efficient approach for 3D object detection and representation. PointPillars is an encoder that learns 3D point cloud representations by stacking learned features as vertical tensors and flattens to 2D pseudo image.
 
 # Main Contributions
 
@@ -27,25 +28,30 @@ The authors proposes as much faster approach by which encoder that learns point 
 
 * Single-shot detectors regresses to 3D boxes
 
+PointPillars can be used with an standard 2D backbone.
+
 # Loss function 
 
-The loss formulation combines the sotfmax classification loss, focal loss on object classification  and localization loss.This is optimized using Adam of learning rate of $2 * 10^−4$ with a decay rate 0.8 at every 15 epoch.
+The loss formulation combines the sotfmax classification loss, focal loss on object classification and localization loss.This is optimized using Adam of learning rate of $2 * 10^−4$ with a decay rate 0.8 at every 15 epoch.
 
 ![](lang2018pointpillars_2b.png)
 
+Data augmentation was crucial to achieving great performance and one of the approaches used was the random selection of ground truth samples from a lookup table.
 
 # Performance
 
-On KITTI datasets PointPillars  outperforms fusion based methods on cars and cyclists my respect to mean average precision (mAP) compared to lidar-only methods.
+On KITTI datasets PointPillars  outperforms fusion based methods recognizing cars and cyclists with respect to mean average precision (mAP) compared to lidar-only methods.
 
 ![](lang2018pointpillars_2c.png)
 
-PointPillar is faster compared to SOTA on BEV
+PointPillar showed better accuracy and speed compared to SOTA methods while varying the size of the spatial binning.
 
 ![](lang2018pointpillars_2d.png)
 
 ## TL;DR
 
-* PointPillars encoder is computationally efficient and performant on object detection. 
+* PointPillars uses only the lidar point clouds as inputs and it is computationally efficient on object detection.
 
-* Data Augmentation is required for good performance
+* Data Augmentation is required for good performance.
+
+* PointPillars can be used with different backbones.
