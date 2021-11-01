@@ -18,8 +18,11 @@ score: 8
 
 - Edges are constructed by drawing directed edges to each vertex in the local graph, including edges pointing to the same vertex.
     - This should sound familiar -- it's similar to self-attention from transformers 
-  
-![Edge Construction](wang2018dynamic_1b.png)
+
+<p align="center">
+  <img width="1200" alt="Edge Construction" src="./wang2018dynamic_1b.png">
+</p>
+
 
 ## How do we calculate the values of these edges (how is it realized technically)
 
@@ -29,11 +32,14 @@ score: 8
 
 - You can change the non-linearity and the aggregation function in different ways to achieve various effects.
 
+$$x^′_i\ =\  □_{j:(i,j)∈\varepsilon}\ hΘ(x_i , x_j)$$
+
+- $$x_i$$ is the current vertex being computed
+- $$x_j$$ is a neighbouring vertice (this is chosen via a kNN operation)
+- $$□$$ is an aggregation function like Sum, Max, Multiplication, etc.
+- $$hΘ$$ is a non-linear transformation (linear layer with no activation)
+
 ![Edge Conv](wang2018dynamic_1c.png)
-  - Look at how $$e_{ij}$$ is computed, you take both vertices and feed their features (in this case X,Y,Z coordinates) into linear layers that will be convoled over later
-
-
-// TODO - put the formal definition of EdgeConv here
 
 
 ## Okay... but why is it called "Dynamic Graph"
@@ -45,6 +51,8 @@ score: 8
 - This leads to points in the cloud becoming closer due to their feature space similarity not despite their input proximity!
 
 - This recomputation of the K nearest neighbour is a reconstruction of the graph and thus influenced the authors to name their method "Dynamic Graph CNN"
+
+- Although we are recomputing the kNN every forward pass for every layer, DGCNN is still faster than PointNet++ (6x faster) but slower than PointNet (4x slower)
 
 
 ## How is this different from PointNet & PointNet++
@@ -64,20 +72,24 @@ score: 8
 
 - With a new distance function that looks at global and local structure, DGCNN outperforms all models on ModelNet40 (dramatically with more points!)
 
-- DGCNN is faster than PointNet++ (slower than PointNet)
-
-![Classification Results](wang2018dynamic_1e.png)
+<p align="center">
+  <img width="900" alt="Classification Results" src="./wang2018dynamic_1e.png">
+</p>
 
 - DGCNN can also segment objects, although it is not state of the art in its results, it is able to find similarities across various objects
 
-![Qualitative Segmentation Results](wang2018dynamic_1f.png)
+<p align="center">
+  <img width="900" alt="Segmentation Examples" src="./wang2018dynamic_1f.png">
+</p>
 
 - DGCNN finds similar regions on unseen objects (right) from trained on point clouds (left).
 
 
 ## What are the limitations?
 
-![Dependency on Dense Data](wang2018dynamic_1a.png)
+<p align="center">
+  <img width="900" alt="Dependencies on Dense Data" src="./wang2018dynamic_1a.png">
+</p>
 
 - DGCNN requires consistently dense data to perform well, sparse data will have a large drop off in accuracy
 
@@ -85,11 +97,13 @@ score: 8
 
 - Again because of the requirement of dense data, DGCNN does not reduce the number of data points per layer like other point cloud algorithms (consistently dense input)
 
-![K Hyperparameter can hurt performance](wang2018dynamic_1g.png)
+<p align="center">
+  <img width="900" alt="The K hyperparameter table" src="./wang2018dynamic_1g.png">
+</p>
 
 - The hyperparameter K (how large are the neighbourhoods) is fickle, and can lead to impaired performance if too high
 
 ## TL;DR
-* EdgeConv takes 1 vertex, then compares it through some metric to a bunch of other vertices, which then go through a nonlinear transform then is aggregated with the other neighbouring vertices.
-* Recomputing graph based CNNs can help improve accuracy 
+* EdgeConv computes all edges from one vertex to a neighborhood of other vertices, including an edge to the same vertex, these edge values are then aggregated updating the original value of the vertex.
+* Recomputing kNN for each layer based on newly computed point vectors can help improve final accuracy
 * DGCNN is great for large scale machines with dense datasets 
