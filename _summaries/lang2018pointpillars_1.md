@@ -56,15 +56,16 @@ Loss was the same as used in SECOND
     - Focal loss used for object classification
     - Softmax classification loss on discretized directions
 
-- PointPillars uses NMS with overlapping threshold of 0.5 IoU to pick best bounding box
-
-- Data augmentation was very important to the performance of PointPillars
-    - Ground truths were randomly sampled into point cloud
-    - Each true box was rotated and translated to provide more robust test set
-    - All data received flipped x axis, rotation and scaling, and translation to emulate noise
-
 
 ![pointpillars](lang2018pointpillars_1c.png)
+
+PointPillars uses NMS with overlapping threshold of 0.5 IoU to pick best bounding box
+
+Data augmentation was very important to the performance of PointPillars
+- Ground truths were randomly sampled into point cloud
+- Each true box was rotated and translated to provide more robust test set
+- All data received flipped x axis, rotation and scaling, and translation to emulate noise
+
 
 ## How well does the paper perform?
 - Uses KITTI object detection benchmark dataset
@@ -87,7 +88,11 @@ Object orientation results:
 
 Ablation results: 
 
+There was a speed vs accuracy trade off 
+- Smaller pillars are slower, but provide more features and learning
 ![pointpillars](lang2018pointpillars_1f.png)
+
+Learning the feature encoding was significantly better than methods using a fixed encoding
 
 ![pointpillars](lang2018pointpillars_1g.png)
 
