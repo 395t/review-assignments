@@ -9,7 +9,7 @@ score: # How did you like this paper 0(dislike) to 10(love)
 
 ### What is the core idea?
 The authors propose CenterPoint, a 3D object-tracking approach which simplifies the algorithm to a greedy closest-point matching. \
-The paper aims to represent objects as points, avoiding difficulties on other models, related to the object's orientation, rotation, etc.
+The paper aims to represent objects as points, avoiding difficulties on other models, related to the object's orientation, rotation, etc. It outperforms other models by using a 3D point-cloud encoder and some conv layers to produce a bird-eye-view heatmap. The detection is a local peak extraction with refinement. All these features make CenterPoint outperform other modesl while remaining simple, and near real-time.
 
 
 
@@ -33,10 +33,11 @@ Tables 1 and 2 show results obtaiend for 3D detection on Waymo test set, and nuS
 
 Authors also show that center-based methods for 3D detection, like CenterPoint, outperform anchor-based methods.
 
-
 ### What interesting variants are explored?
-Initial ablation study was center-based v. anchor-based methods. As mentioned above, center-based performs better.\
-Next, a study on one-stage v. two-stage models was performed. Two stage models worked better on larger datasets (Waymo, vs. smaller set nuScenes)
+Initial ablation study was center-based v. anchor-based methods. To test this, the authors separathed the objects on the database depending on their rotation degree (0-15, 15-30, and 30-45 degree bins), and also on their size (small, medium, large). As mentioned above, center-based performs better, the results are shown on the table below. This highlights the model’s ability to capture the rotation and size invariance when detecting objects, and the advantage of point-based representations of 3D objects.\
+![Yin (2020).](yin2020_center_based_1d.PNG)
+
+Next, a study on one-stage v. two-stage models was performed. Two stage models worked better on larger datasets (Waymo, vs. smaller set nuScenes), with little overhead.
 
 
 ## TL;DR
