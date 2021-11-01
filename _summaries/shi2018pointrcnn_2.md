@@ -81,6 +81,12 @@ Where $$\mathcal{B}$$ is the set of 3D proposals from stage-1 and $$\mathcal{B}_
 
 * What interesting variants are explored?
 
+**Implementation Variations**: The authors subsampled 16,384 points from each scene as inputs. If there are less than 16,384 points, points will be randomly repeated to reach 16,384 points. For the box proposal refinement sub-network, 512 points are randomly sampled from the pooled region of each proposal.
+
+The stage-1 sub-network are trained independently of the stage-2 sub-networki with different hyperparameter settings.
+
+**Augmentations**: For training the stage-2 sub-network, the authors randomly augmented the 3D proposals with small variations to increase the diversity of proposals. Data augmentations include random flip, scaling, and rotation around the vertical $$Y$$ axis.
+
 **GT-AUG**: To simulate objects with various environments, the authors copied several ground-truth boxes and their inside points from some scenes to same locations of other scenes. This slightly improved mAP on the validation set.
 
 * How well does the paper perform?
@@ -115,6 +121,12 @@ Full bin-based loss (BB-loss) outperformed residual-based loss and other losses 
 
 <p align="center">
     <img src="shi2018pointrcnn/ablate3.png" width="30%" height="30%">
+</p>
+
+**Qualitative Results of PointRCNN on the KITTI Test Split**
+
+<p align="center">
+    <img src="shi2018pointrcnn/fig6.png" width="100%" height="100%">
 </p>
 
 
