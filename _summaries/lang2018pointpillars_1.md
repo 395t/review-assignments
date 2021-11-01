@@ -15,7 +15,7 @@ score: 7
 
 ## What is the core idea?
 
-Previous solutions for 3D object detection were too slow. PointPillars is a solution for 3D object detection that uses only 2D convolution layers in the end to end learning process. It does this by using "pillars", which is basically looking at the 3D object from a bird's eye view and interpreting each space of the 2D bird's eye view as a vertical column (providing 3D depth). PointPillars then predicts 3D boxes for the objects.
+Previous solutions for 3D object detection were too slow, especially for real time usage. This paper proposes PointPillars, a novel point cloud encoder and network, to solve 3D object detection while only using 2D convolution layers in the end to end learning process. It does this by using "pillars", which is basically looking at the 3D object from a bird's eye view and interpreting each space of the 2D bird's eye view as a vertical column (providing 3D depth). PointPillars then predicts 3D boxes for the objects. This network can work with any standard 2D convolutional architecture.
 
 There are several benefits to PointPillars over other common approaches
 - Uses full information provided by point cloud by learning features 
@@ -33,7 +33,7 @@ There are three stages
 - point cloud input is x,y,z,r where r is reflectance
 - point cloud is turned into a grid
 - The points within each pillar are then additionally described by their distance to the pillar arithmetic mean and offset to the x,y center
-- Sparse nature of pillar taken advantage of to create dense tensor representation
+- Sparse nature of pillar used to create dense tensor representation
     - Random sampling if too many points
     - Zero padding if not enough
 - Apply simple version of PointNet
@@ -52,10 +52,24 @@ There are three stages
 
 Loss was the same as used in SECOND
 - Combination of localization loss, object classification loss, and discretized direction loss
+    - Localization loss defined as the L1 loss of Sigma( ∆ (x,y,z,w,l,h,theta) )
+    - Focal loss used for object classification
+    - Softmax classification loss on discretized directions
+
+- PointPillars uses NMS with overlapping threshold of 0.5 IoU to pick best bounding box
+
+- Data augmentation was very important to the performance of PointPillars
+    - Ground truths were randomly sampled into point cloud
+    - Each true box was rotated and translated to provide more robust test set
+    - All data received flipped x axis, rotation and scaling, and translation to emulate noise
+
+
+![pointpillars](lang2018pointpillars_1c.png)
 
 ## How well does the paper perform?
 - Uses KITTI object detection benchmark dataset
     - Only trains on lidar point clouds
+- Performed better than SOTA in both accuracy and speed
 
 <!-- image 1 bird's eye view mean average precision -->
 Bird's eye view results:
