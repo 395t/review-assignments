@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{yin2020center-based}}
+paper: yin2020center-based
 # Please fill out info below
 author: jchavezberkeley
 score: 10 # How did you like this paper 0(dislike) to 10(love)
