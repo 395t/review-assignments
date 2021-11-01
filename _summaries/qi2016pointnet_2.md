@@ -51,7 +51,7 @@ PointNet also achieves state-of-the-art results for point classification and tie
 
 ![classification results](https://user-images.githubusercontent.com/7085644/139203060-965a0560-dbe0-4685-a6cf-95e83c93c4c2.PNG)
 
-For classification and segmentation problems in scenes, PointNet beats the baselines in overall accuracy and mean IoU.
+For classification and segmentation problems in scenes, PointNet beats the baselines in overall accuracy and mean intersection over union (mIoU).
 
 ![scene results](https://user-images.githubusercontent.com/7085644/139204127-63d75b62-b86d-485b-9c54-c0cd582abffb.PNG)
 ![scene results visualized](https://user-images.githubusercontent.com/7085644/139204116-93a1d0d1-e70c-4448-82cc-eda1168c5220.PNG)
