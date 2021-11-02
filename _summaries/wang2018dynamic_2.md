@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {wang2018Ddynamics}
+paper: wang2018Ddynamics
 # Please fill out info below
 author: specfazhou
-score: 8/10
+score: 8
 ---
 
 TODO: Summarize the paper:
