@@ -39,6 +39,10 @@ $$L_q = - log \frac{exp(q \cdot k_+ / t)}{\sum^K_{t=0}exp(q \cdot k_i / t)}$$
 
 ## Why is a Queue and Momentum useful for Encoding keys in Contrastive Learning (technical implementation)
 
+![MoCo Model](./he2019momentum_2a.jpeg)
+
+(queue is not shown in this diagram)
+
 - You have to have sufficient numbers of negative samples to get good representations
 
 - At the same time, you don't want to compare keys that were encoded by an outdated previous iteration of the network 
@@ -55,17 +59,39 @@ $$\theta_k \leftarrow m\theta_k + (1-m)\theta_q$$
 
 ## How does it perform
 
-- Extremely well!
+- MoCo was trained on Image Net 1k (authors call it 1m because each image is a "class" in their pretext task) as well as Instagram 1 Billion (940million public images)
 
-- MoCo outperforms every model on nearly every down stream task
+- MoCo was evaluated agianst other pretraining models on the same pretext task.
 
-- MoCo is also capable of scaling up to extremely large unsupervised datasets, and performs better consistently as the pretext dataset increases.
+- MoCo was evaluated against supervised pretraining and randomly initialized models for downstream tasks 
+    - Because MoCo is fine-tuned on downstream tasks, the experiment was setup, so the fine-tuning was as long as the supervised/random initialized training so that direct comparisons could take place.
+
+
+
+- Extremely well!  It outperforms all other unsupervised pretext models.
+
+<p align="center">
+  <img width="1200" alt="Pretext Tasks" src="./he2019momentum_2d.png">
+</p>
+
+- MoCo also outperforms every model on nearly every down stream task (note the one failure being semantic segmentations on VOC)
+
+<p align="center">
+  <img width="1200" alt="Downstream Tasks" src="./he2019momentum_2c.png">
+</p>
 
 ## Does the pretext task or backbone matter (other variants)
 
 - The pretext task does matter, by tweaking the data augmentation the authors were able to get large performance gains (10%+) on the pretext task.
 
+- MoCo is also capable of scaling up to extremely large unsupervised datasets, and performs better consistently as the pretext dataset increases.
+
 - The backbone does matter as well, the reason is unknown at the time of the paper.
+
+<p align="center">
+  <img width="1500" alt="MoCo compared with IG 1B vs IN 1M and C50 vs FPN" src="./he2019momentum_2b.png">
+</p>
+
 
 ## TL;DR
 
