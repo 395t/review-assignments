@@ -4,7 +4,7 @@ title: Summary
 paper: kang2019decoupling
 # Please fill out info below
 author: joshpapermaster
-score: # How did you like this paper 0(dislike) to 10(love)
+score: 7 # How did you like this paper 0(dislike) to 10(love)
 ---
 
 <!-- TODO: Summarize the paper:
