@@ -15,7 +15,7 @@ The paper demonstrates that basic pre-training tasks of predicting the caption w
 
 * The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the $$N^{2}-N$$ incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
 
-![Architecture](radford2021learning_2a.png)
+  ![Architecture](radford2021learning_2a.png)
 
 * A simplified version of ConVIRT model is trained from scratch, with linear projection from each encoder to the multi-modal embedding space. Only random crop was done for data augmentation.
 * Modified ResNet-50 or ViT was used for image encoder and a variation of Transormer was used for text encoder. The image encoder was scaled along width, depth, and resolution and text encoder scaled only along width.
