@@ -13,7 +13,7 @@ The paper demonstrates that basic pre-training tasks of predicting the caption w
 
 **How is it realized (technically)?**
 
-* The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the $${N^2 − N}$$ incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
+* The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the $$N^{2}-N$$ incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
 
 ![Architecture](radford2021learning_2a.png)
 
