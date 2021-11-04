@@ -63,11 +63,24 @@ Experiments done on three datasets
 
 The many, medium, few, all titles below refer to the number of images trained on from the dataset
 
-![decoupling](kang2019decoupling_2a)
+Sampling method critically matters for joint methods, but overall decoupled methods worked better. 
+![decoupling](kang2019decoupling_2a.png)
 
+Looking at different areas of restarting learning
+![decoupling](kang2019decoupling_2b.png)
 
+Instance-balanced sampling provides generalizable representations
+![decoupling](kang2019decoupling_2c.png)
+
+Results continue to show decoupled methods providing the best results
+![decoupling](kang2019decoupling_2d.png)
+![decoupling](kang2019decoupling_2e.png)
+
+## What interesting variants are explored?
+- Mentioned but didn't evaluate loss re-weighting in representation learning
+- No other variants besides all the different methods evaluated above 
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+- This paper evaluated different ways of implementing joint and decoupled models for the long-taled distribution problem 
+- Joint methods were heavily dependent on the type of sampling
+- Instance-balanced sampling with re-balancing the classifiers provides state of the art results
