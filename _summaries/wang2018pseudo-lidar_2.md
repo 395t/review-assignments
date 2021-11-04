@@ -1,9 +1,9 @@
 layout: summary
 title: Summary
-paper: wang2018pseudo-lidar_2
+paper: wang2018pseudo-lidar
 # Please fill out info below
 author: biofizzatreya
-score: 9/10
+score: 9
 ---
 
 TODO: Summarize the paper:
