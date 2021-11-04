@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{radford2021learning}}
+paper: radford2021learning
 # Please fill out info below
 author: DartingMelody
 score: 10/10
@@ -13,8 +13,9 @@ The paper demonstrates that basic pre-training tasks of predicting the caption w
 
 **How is it realized (technically)?**
 
-* The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the N^2 − N incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
-<>image
+* The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the $${N^2 − N}$$ incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
+
+![Architecture](radford2021learning_2a.png)
 
 * A simplified version of ConVIRT model is trained from scratch, with linear projection from each encoder to the multi-modal embedding space. Only random crop was done for data augmentation.
 * Modified ResNet-50 or ViT was used for image encoder and a variation of Transormer was used for text encoder. The image encoder was scaled along width, depth, and resolution and text encoder scaled only along width.
@@ -27,6 +28,9 @@ The paper demonstrates that basic pre-training tasks of predicting the caption w
 * The performance of the CLIP model is compared with 30 different existing computer vision datasets. The model transfers to most of the tasks and is often competitive with fully supervised baselines without the need for any dataset specific training. CLIP also outperforms the best publicly available ImageNet model while also being computationally efficient. 
 * On evaluating on natural distribution shifts such as ImageNetV2, ImageNet Sketch, ImageNet-Vid, ObjectNet, ImageNet Adversarial, ImageNet Rendition, Zero-shot CLIP improves robustness to distribution shift, reducing the gap by up to 75%. 
 * CLIP’s zero-shot performance is still weak on some specialized, complex, or abstract datasets/tasks. On training CLIP on unfiltered images and text from the internet results in the model learning many social biases.
+|---|---|
+| ![results1](radford2021learning_2b.png) | ![results2](radford2021learning_2c.png) |
+| ![results3](radford2021learning_2d.png) | ![results4](radford2021learning_2e.png) |
 
 **What interesting variants are explored?**
 
