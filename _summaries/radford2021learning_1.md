@@ -1,13 +1,16 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: radford2021learning
 # Please fill out info below
-author: # Your GitHub id
+author: jchavezberkeley
 score: # How did you like this paper 0(dislike) to 10(love)
 ---
 
 TODO: Summarize the paper:
+
+Will summarize everything tomorrow, sorry for the delay!
+
 * What is the core idea?
 * How is it realized (technically)?
 * How well does the paper perform?
