@@ -35,7 +35,7 @@ Zero shot clip versus Linear Probe on ResNet-50 | Comparison of zero shot versus
 
 ![results3](radford2021learning_2d.png)
 
-             Linear probe performance of CLIP models in comparison with state-of-the-art computer vision models
+  Linear probe performance of CLIP models in comparison with state-of-the-art computer vision models.
  
 ![results4](radford2021learning_2e.png)
 
