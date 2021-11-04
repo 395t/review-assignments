@@ -29,7 +29,7 @@ The paper determined the following findings from using their decoupled process:
 
 ## How is it realized technically?
 
-Experiments were done covering the different decoupled techniques to determine which were most effective
+Experiments covered the following different decoupled techniques to determine which were most effective
 
 Representation Learning:
 - Instance-balanced sampling
