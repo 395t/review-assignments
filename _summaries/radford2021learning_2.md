@@ -35,11 +35,12 @@ Zero shot clip versus Linear Probe on ResNet-50 | Comparison of zero shot versus
 
 ![results3](radford2021learning_2d.png)
 
+Linear probe performance of CLIP models in comparison with state-of-the-art computer vision models
 ![results4](radford2021learning_2e.png)
 
 **What interesting variants are explored?**
 
-The paper used different backbones for image encoder like Resnet-50, 101, RN50x4, RN50x16, RN50x64, ViT-B/32, ViT-B/16, ViT-L/14 and ViT-L/14@336px with the last model being the best. 
+The paper used different backbones for image encoder like Resnet-50, 101, RN50x4, RN50x16, RN50x64, ViT-B/32, ViT-B/16, ViT-L/14 and ViT-L/14@336px with the last CLIP model being the best. 
 
 ## TL;DR
 * CLIP uses contrastive representation learning with jointly training VIT/Resnet image encoder and transformer text encoder to predict (image, text) pairs.  
