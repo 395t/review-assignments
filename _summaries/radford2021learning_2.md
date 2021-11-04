@@ -44,7 +44,7 @@ Zero shot clip versus Linear Probe on ResNet-50 | Comparison of zero shot versus
 The paper used different backbones for image encoder like Resnet-50, 101, RN50x4, RN50x16, RN50x64, ViT-B/32, ViT-B/16, ViT-L/14 and ViT-L/14@336px with the last CLIP model being the best. 
 
 ## TL;DR
-* CLIP uses contrastive representation learning with jointly training VIT/Resnet image encoder and transformer text encoder to predict (image, text) pairs.  
-* Large scale natural language supervision (400 million examples) is used to facilitate zero-shot transfer. 
-* Zero-shot CLIP models are more robust than supervised ImageNet models of equivalent accuracy as CLIP transfers to most of the datasets/tasks. 
+* The CLIP model uses contrastive representation learning with jointly training VIT/Resnet image encoder and transformer text encoder to predict (image, text) pairs.  
+* Large scale natural language supervision (400 million examples) is used to facilitate zero-shot transfer.
+* Zero-shot CLIP models are more robust than supervised ImageNet models of equivalent accuracy as the CLIP model transfers to most of the datasets/tasks. 
 
