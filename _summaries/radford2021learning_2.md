@@ -28,12 +28,14 @@ The paper demonstrates that basic pre-training tasks of predicting the caption w
 * The performance of the CLIP model is compared with 30 different existing computer vision datasets. The model transfers to most of the tasks and is often competitive with fully supervised baselines without the need for any dataset specific training. CLIP also outperforms the best publicly available ImageNet model while also being computationally efficient. 
 * On evaluating on natural distribution shifts such as ImageNetV2, ImageNet Sketch, ImageNet-Vid, ObjectNet, ImageNet Adversarial, ImageNet Rendition, Zero-shot CLIP improves robustness to distribution shift, reducing the gap by up to 75%. 
 * CLIP’s zero-shot performance is still weak on some specialized, complex, or abstract datasets/tasks. On training CLIP on unfiltered images and text from the internet results in the model learning many social biases.
+
 Results over 30 datasets | Results on linear probe '
 :-|-:
-| ![results1](radford2021learning_2b.png) | ![results2](radford2021learning_2c.png) |
+![results1](radford2021learning_2b.png) | ![results2](radford2021learning_2c.png)
+
 Model transfer capabilities results | Results over various datasets '
 :-|-:
-| ![results3](radford2021learning_2d.png) | ![results4](radford2021learning_2e.png) |
+![results3](radford2021learning_2d.png) | ![results4](radford2021learning_2e.png)
 
 **What interesting variants are explored?**
 
