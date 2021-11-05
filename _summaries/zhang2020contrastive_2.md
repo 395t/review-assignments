@@ -3,7 +3,7 @@ layout: summary
 title: Summary
 paper: zhang2020contrastive
 # Please fill out info below
-author: TL25693
+author: TongruiLi
 score: 4/10 
 ---
 
