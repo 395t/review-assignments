@@ -1,13 +1,11 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
-# Please fill out info below
-author: # Your GitHub id
-score: # How did you like this paper 0(dislike) to 10(love)
+paper: desai2020virtex
+author: liaojh1998
+score: some magic number
 ---
 
-TODO: Summarize the paper:
 * What is the core idea?
 * How is it realized (technically)?
 * How well does the paper perform?
