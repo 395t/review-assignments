@@ -13,7 +13,9 @@ A large dynamic dictionary of keys in a queue, built via a momentum encoder, can
 
 ## What's hard about unsupervised pre-training in vision
 
-- Pretraining on images is difficult because they are in a continuous space, and the representations learned may not transfer
+- Language Tasks can utilize unsupervised pre-training easily due to their inherent structure (words are tokens, and finite)
+
+- Pretraining on images is difficult because they are in a continuous space, and the representations learned may not transfer due to the extremely large set of signals an image can represent
 
 - Some work has been done on pretraining computer vision models using pretext tasks, but by in large have failed to outperform supervised pretraining
 
@@ -77,7 +79,18 @@ $$\theta_k \leftarrow m\theta_k + (1-m)\theta_q$$
 - MoCo also outperforms every model on nearly every down stream task (note the one failure being semantic segmentations on VOC)
 
 <p align="center">
+  <img width="1200" alt="Downstream Tasks" src="./he2019momentum_2e.png">
+</p>
+<p align="center">
+  <span>VOC object detection, all use C4 backbone compared against different pretraining datasets and pretext tasks vs supervised pretraining.</span>
+</p>
+
+
+<p align="center">
   <img width="1200" alt="Downstream Tasks" src="./he2019momentum_2c.png">
+</p>
+<p align="center">
+<span>MOCO performance on downstream tasks.</span>
 </p>
 
 ## Does the pretext task or backbone matter (other variants)
