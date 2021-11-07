@@ -51,7 +51,7 @@ Note: mAP is reported for PASCAL VOC 2007 and top-1 accuracy is reported for Ima
     <img src="desai2020virtex/dataefficiency.png" width="50%" height="50%">
 </p>
 
-**Fine-Tuning**: The authors tested on 4 fine-tuning tasks: 1) Instance Segmentation on COCO, 2) Instance Segmentation on LVIS, 3) Object Detection on PASCAL VOC 2007, and 4) Fine-grained Classification on iNaturalist 2018. The baselines are: 3 IN-sup models, each pretrained with {10, 50, 100}% of ImageNet images, and 2 MoCo models, one pretrained using ImageNet images (MoCo-IN) and one pretrained using COCO images (MoCo-COCO). **VirTex outperforms or closely matches all methods here despite using 10x fewer pretraining images, and it also outperforms methods that use similar or more pretraining images.**
+**Fine-Tuning**: The visual backbone of VirTex is fine-tuned here for downstream tasks. The authors tested on 4 fine-tuning tasks: 1) Instance Segmentation on COCO, 2) Instance Segmentation on LVIS, 3) Object Detection on PASCAL VOC 2007, and 4) Fine-grained Classification on iNaturalist 2018. The baselines are: 3 IN-sup models, each pretrained with {10, 50, 100}% of ImageNet images, and 2 MoCo models, one pretrained using ImageNet images (MoCo-IN) and one pretrained using COCO images (MoCo-COCO). **VirTex outperforms or closely matches all methods here despite using 10x fewer pretraining images, and it also outperforms methods that use similar or more pretraining images.**
 
 <p align="center">
     <img src="desai2020virtex/finetune.png" width="50%" height="50%">
