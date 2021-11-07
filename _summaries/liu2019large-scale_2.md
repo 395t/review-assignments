@@ -41,7 +41,7 @@ direct feature and the centroid of its group and maximize the distance to other 
 
 Composing Memory Feature (v-memory): The memory feature relates the centroids in the memory, transferring knowledge to the tail class.
 	
-		![LeNet](liu2019large-scale_2e.png)
+![LeNet](liu2019large-scale_2a.png)
 												
 Where o belongs  R K is the coefficients hallucinated from the direct feature , o = Thal(v-direct).
 
@@ -57,7 +57,7 @@ attention to encourage samples of different classes to use different contexts. a
 self-correlation . It is used as contextual information and added back  to the original feature map. The modulated attention MA(f) is then designed as 
 conditional spatial attention applied to the self-attention map.The final attention feature map becomes:
 
-		![LeNet](liu2019large-scale_2b.png)
+![LeNet](liu2019large-scale_2b.png)
 												
 where f is a feature map in CNN, SA(•) is the self attention operation, and MA(•) is a conditional attention function with a softmax normalization.	
 
@@ -66,7 +66,7 @@ Learning: The cosine classifier  is used to produce the final classification res
 Loss Function: The final loss function L is a combination of the cross-entropy classification loss LCE and the large-margin loss between the embeddings 
 and the centroids LLM.
 
-		![LeNet](liu2019large-scale_2c.png)
+![LeNet](liu2019large-scale_2c.png)
 
 ## Experiments: 
 
