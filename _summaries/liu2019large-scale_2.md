@@ -41,7 +41,7 @@ direct feature and the centroid of its group and maximize the distance to other 
 
 Composing Memory Feature (v-memory): The memory feature relates the centroids in the memory, transferring knowledge to the tail class.
 	
-		![LeNet](liu2019large-scale_2a.png)
+		![LeNet](liu2019large-scale_2e.png)
 												
 Where o belongs  R K is the coefficients hallucinated from the direct feature , o = Thal(v-direct).
 
