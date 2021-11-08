@@ -9,10 +9,11 @@ score: 10/10
 
 **What is the core idea?**
 
-The paper demonstrates that basic pre-training tasks of predicting the caption which best describes the image is a scalable and efficient method to learn state of the art image representation from scratch on the WebImageText dataset (introduced in this paper) of 400 million (image, text) pairs obtained from internet. Motivated by the idea of learning perception from supervision contained within natural language, CLIP (Contrastive Language-Image Pretraining, where constrastive learning is identifying between similiar and dissimilar iamges), efficiently performs zero-shot transfer (predicting unseen tasks/datasets).
+The paper demonstrates that basic pre-training tasks of predicting the caption which best describes the image is a scalable and efficient method to learn state of the art image representation from scratch on the WebImageText dataset (introduced in this paper) of 400 million (image, text) pairs obtained from internet. Motivated by the idea of learning perception from supervision contained within natural language, CLIP (Contrastive Language-Image Pretraining, where constrastive learning is identifying between similiar and dissimilar images), efficiently performs zero-shot transfer (predicting unseen tasks/datasets).
 
 **How is it realized (technically)?**
 
+* The WebImageText dataset of 400 million (image, text) pairs is created by the authors for this task as earlier datasets filtered with images and natural language titles/descriptions get reduced to just 15 million in size.  
 * The image below depicts the way CLIP jointly trains an image encoder and text encoder to predict the pairing of (image, text). To do this, CLIP learns a multi-modal embedding space by jointly training an image encoder and text encoder to maximize the cosine similarity of the image and text embeddings of the N real pairs in the batch while minimizing the cosine similarity of the embeddings of the $$N^{2}-N$$ incorrect pairings. A symmetric cross entropy loss is used over these similarity scores.
 
   ![Architecture](radford2021learning_2a.png)
@@ -44,7 +45,7 @@ Zero shot clip versus Linear Probe on ResNet-50 | Comparison of zero shot versus
 The paper used different backbones for image encoder like Resnet-50, 101, RN50x4, RN50x16, RN50x64, ViT-B/32, ViT-B/16, ViT-L/14 and ViT-L/14@336px with the last CLIP model being the best. 
 
 ## TL;DR
-* The CLIP model uses contrastive representation learning with jointly training VIT/Resnet image encoder and transformer text encoder to predict (image, text) pairs.  
+* The CLIP model uses contrastive representation learning with jointly training VIT/Resnet image encoder and transformer text encoder to predict (image, text) pairs using the WebImageText dataset introduced by the authors.  
 * Large scale natural language supervision (400 million examples) is used to facilitate zero-shot transfer.
 * Zero-shot CLIP models are more robust than supervised ImageNet models of equivalent accuracy as the CLIP model transfers to most of the datasets/tasks. 
 
