@@ -4,7 +4,7 @@ title: Summary
 paper: kang2019decoupling
 # Please fill out info below
 author: joshpapermaster
-score: 7 # How did you like this paper 0(dislike) to 10(love)
+score: 8 # How did you like this paper 0(dislike) to 10(love)
 ---
 
 <!-- TODO: Summarize the paper:
@@ -35,6 +35,7 @@ Experiments covered the following different decoupled techniques to determine wh
 Representation Learning:
 
 ![decoupling](kang2019decoupling_2f.png)
+
 Probability of sampling an image from class j where C is the number of classes
 
 - Instance-balanced sampling
