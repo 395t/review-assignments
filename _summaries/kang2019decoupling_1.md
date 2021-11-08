@@ -1,7 +1,7 @@
 ---
 layout: summary
 title: Summary
-paper: {{paper_tag}}
+paper: kang2019decoupling
 # Please fill out info below
 author: aabayomi # Your GitHub id
 score: 9/10  # How did you like this paper 0(dislike) to 10(love)
