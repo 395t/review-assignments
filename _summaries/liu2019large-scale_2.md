@@ -17,6 +17,9 @@ that maps an image to a feature space such that visual concepts. It can relate t
 classification while acknowledging the novelty of the open world. This dynamic meta-embedding combines a direct image feature and an associated memory 
 feature, with the feature norm indicating the familiarity to known classes. It has modulated attention to encourage the head and tail classes to use 
 different sets of spatial features. As the Meta embedding relates head and tail classes, the modulated attention maintains discrimination between them.
+The head, tail and open classes can be defined as per the diagram below:
+ 
+![LeNet](liu2019large-scale_2f.png)
 
 
 ## Model and Technical representation:
@@ -85,6 +88,6 @@ and the centroids LLM.
 •  The  OLTR task  learns from natural long-tail open-end distributed data and optimizes the overall accuracy over a balanced test set.
 
 •  The integrated OLTR algorithm can be used, with dynamic meta-embedding, in order to share visual knowledge between head and tail classes and to reduce 
-   confusion between tail and open classes
-
-•  It gives good accuracy over ImageNet-LT.
+   confusion between tail and open classes.It gives good accuracy over ImageNet-LT.
+   
+• It has been validated on three curated large-scale OLTR benchmarks (ImageNet-LT, Places-LT and MS1M-LT) for future research. 
