@@ -36,7 +36,7 @@ The authors performed experiments using the visual backbone on 6 downstream task
 
 * How well does the paper perform?
 
-**Frozen Features**: The authors trained linear models that use these features for object detection on PASCAL VOC 2007 and for image classification on ImageNet-1k. They tested VirTex against a self-supervised method (MoCo-COCO), a label-supervised method (Multi-label Classification), and an instance segmentation-supervised method. Because COCO Captions provide 5 gold captions, only 1 of the 5 is randomly sampled during pretraining for fair comparisons in data efficiency between methods. Furthermore, the authors tested VirTex against competitive self-supervised methods (MoCo-IN, PCL, SwAV) and concurrent works (ICMLM). **VirTex outperforms all models here, even when trained with only 1 caption per image.***
+**Frozen Features**: The authors trained linear models that use these features for object detection on PASCAL VOC 2007 and for image classification on ImageNet-1k. They tested VirTex against a self-supervised method (MoCo-COCO), a label-supervised method (Multi-label Classification), and an instance segmentation-supervised method. Because COCO Captions provide 5 gold captions, only 1 of the 5 is randomly sampled during pretraining for fair comparisons in data efficiency between methods. Furthermore, the authors tested VirTex against competitive self-supervised methods (MoCo-IN, PCL, SwAV) and concurrent works (ICMLM). **VirTex outperforms all models here, even when trained with only 1 caption per image.**
 
 Note: mAP is reported for PASCAL VOC 2007 and top-1 accuracy is reported for ImageNet-1k.
 
@@ -54,13 +54,13 @@ Note: mAP is reported for PASCAL VOC 2007 and top-1 accuracy is reported for Ima
 **Fine-Tuning**: The visual backbone of VirTex is fine-tuned here for downstream tasks. The authors tested on 4 fine-tuning tasks: 1) Instance Segmentation on COCO, 2) Instance Segmentation on LVIS, 3) Object Detection on PASCAL VOC 2007, and 4) Fine-grained Classification on iNaturalist 2018. The baselines are: 3 IN-sup models, each pretrained with {10, 50, 100}% of ImageNet images, and 2 MoCo models, one pretrained using ImageNet images (MoCo-IN) and one pretrained using COCO images (MoCo-COCO). **VirTex outperforms or closely matches all methods here despite using 10x fewer pretraining images, and it also outperforms methods that use similar or more pretraining images.**
 
 <p align="center">
-    <img src="desai2020virtex/finetune.png" width="50%" height="50%">
+    <img src="desai2020virtex/finetune.png" width="60%" height="60%">
 </p>
 
 **Ablations and Caption Attentions**: The authors found bicaptioning task to do better than weaker pretraining tasks - forward captioning, token classification, and masked language modeling. Bigger visual backbones and larger transformers (wider, deeper) improve downstream performance.
 
 <p align="center">
-    <img src="desai2020virtex/visualizations.png" width="100%" height="100%">
+    <img src="desai2020virtex/visualizations.png" width="70%" height="70%">
 </p>
 
 ## TL;DR
