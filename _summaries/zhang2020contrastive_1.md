@@ -1,10 +1,10 @@
 ---
 layout: summary
 title: Summary
-paper: {{zhang2020contrastive}}
+paper: zhang2020contrastive
 # Please fill out info below
 author: biofizzatreya
-score: 5/10
+score: 5
 ---
 
 TODO: Summarize the paper:
