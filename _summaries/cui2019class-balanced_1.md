@@ -19,6 +19,7 @@ score: # How did you like this paper 0(dislike) to 10(love)
 ![](cui2019class-balanced_1f.png)
 
 ## TL;DR
-* Three
-* Bullets
-* To highlight the core concepts
+* The paper tackles the problem of long-tailed data distribution where a few classes account for most
+of the data, while most classes are under-represented.
+* The paper provides a theoretical framework to study the effective number of samples and show how to design a class-balanced term to deal with long-tailed training data.
+* The paper shows that significant performance improvements can be achieved by adding the proposed class-balanced term to existing commonly used loss functions including softmax cross-entropy, sigmoid cross-entropy and focal loss.
