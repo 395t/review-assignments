@@ -1,0 +1,6 @@
+_site/*
+_summaries/_site/*
+.jekyll-cache/*
+_summaries/.jekyll-cache/*
+.DS_Store
+assets/.DS_Store

@@ -57,3 +57,4 @@ Finally, a more balanced COCO dataset was tested on, and BAGS yielded higher mAP
 * Object Detection Models did not do well in detecting low-frequency classes (in long-tail datasets)
 * BAGS solves this by grouping classes by frequency when training
 * BAGS yields significant improvements in mAP in both detection and segmentation models
+
