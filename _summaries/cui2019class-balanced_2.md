@@ -9,11 +9,13 @@ score: 9
 
 ## What is the core idea?
 
-With large-scale data comes the problem of having only a few classes account for most of the data, while most other claases being under-represented.
+With large-scale data comes the problem of having only a few classes account for most of the data, while most other classes being under-represented.
 
 Therefore, it is critical to address the problem of tailed data distribution.
 
 In this paper, the authors design a re-weighting scheme that uses the effective number of samples for each class to re-balance the loss.
+
+The key idea is to associate each sample with a small neighboring region instead of a single point.
 
 ## How is it realized (technically)?
 
@@ -56,11 +58,18 @@ The following loss functions are described in the paper.
 * Class-Balanced Sigmoid Cross-Entropy Loss
   * <img src="cui2019class_balanced_2_c.png" alt="cui2019class_balanced_2_c" style="zoom:67%;" />
 * Class-Balanced Focal Loss
+  * Focal Loss adds a modulating factor to the sigmoid CE loss
+    * This allows the model to focus on difficult samples, instead of well-classified samples
+  
+  * Introducing a class-balanced version of Focal Loss will therefore be interesting to compare as both losses are trying to solve the problem introduced by class imbalance in the data.
   * <img src="cui2019class_balanced_2_d.png" alt="cui2019class_balanced_2_d" style="zoom:67%;" />
+  
 
 ## How well does the paper perform?
 
 <img src="cui2019class_balanced_2_e.png" alt="cui2019class_balanced_2_e" style="zoom: 50%;" />
+
+* Notice how the class-balanced losses, even when compared to normal Focal Loss, is the most optimal
 
 <img src="cui2019class_balanced_2_f.png" alt="cui2019class_balanced_2_f" style="zoom: 50%;" />
 
