@@ -30,11 +30,18 @@ This similarity loss function is shown below.
 
 Momentum Contrast is employed to make sure that the dynamic dictionary being built is large and the encoder of the keys is consistent during its evolution.
 This is done by using a queue for the dictionary data samples so that the dictionary size can be larger than the mini-batch size and set as a hyper-parameter.
+The queue is set up so that the current mini-batch is enqueued to the dictionary and then the oldest mini-batch is removed, which allows the re-use of immediately preceding mini-batches.
+This dictionary will therefore always represent a sampled subset of all data.
 A momentum update is then employed during back-propagation to solve the issue for updating keys when using a queue for samples.
 This means that the encoder will evolve slowly, therefore keeping it consistent.
-This momentum update is shown below.
+This momentum update is shown below where m = \[0,1) is the momentum coefficient.
 
 ![momentum_update](https://user-images.githubusercontent.com/7085644/140274470-4a219377-7e3d-4043-a2f4-d7faf5b09120.PNG)
+
+Since only theta_q is updated with back-propagation, the key updates evolve slowly and are encoded by slightly different encoders in different mini-batches.
+
+Two previous mechanisms are end-to-end updates and the memory bank approach.
+The end-to-end update uses back-propagation however it is challegend by large mini-batch optimization and the memory bank approach sufferes from inconsistency in the encodings.
 
 Pseudocode of Momentum Constrast is shown below where the pretext tasks has positive sample pairs for a query and key if they are from the same image, and negative sample pairs otherwise.
 
@@ -80,6 +87,12 @@ Finally, downstream task evaluation reveals that MoCo is competitive with ImageN
 ![downstream_evaluation](https://user-images.githubusercontent.com/7085644/140278379-59d5c698-4c63-4d7b-84d9-c641b941d64c.PNG)
 
 The better results with MoCo pre-trained on the less curated dataset IG-1B compared to IN-1M shows that MoCo is good for real-world unsupervised learning.
+
+Some ablations performed include COCO longer fine-tuning which shows that the MoCo pre-trained features have an advantage over the supervised features of ImageNet if they are fine-tuned for longer.
+Another ablation includes shuffling and not shuffling the batch normalization.
+Without shuffling shows overfitting for the pretext task and cheating by revealing which sub-batch the positive key is in.
+
+![shuffling_BN](https://user-images.githubusercontent.com/7085644/140696157-ccc0ff59-ba96-4c28-864b-b35f7250b9c7.PNG)
 
 ## TL;DR
 * Unsupervised visual learning is challenging due to the continuous, high-dimensional space.
