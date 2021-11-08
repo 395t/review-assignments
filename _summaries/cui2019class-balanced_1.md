@@ -68,15 +68,69 @@ The paper denotes the loss as $$ረ(p,y)$$, where $$y\in\{1,2,...,C\}$$, and $$C
 
 The class-balanced (CB) loss can be written as:
 ![](cui2019class-balanced_1d.png)
-where$$n_y$$is the number of samples in the ground-truth class $$y$$. The visualization is as follows where it depicts a function of $$n_y$$ for different $$\beta$$
+where$$n_y$$is the number of samples in the ground-truth class $$y$$. The visualization is as follows where it depicts a function of $$n_y$$ for different β
 ![](cui2019class-balanced_1c.png)
 
 Note that β=0 corresponds to no re-weighting and  β→1 corresponds to re-weighing by inverse class frequency. The proposed novel concept of effective number of samples enables us to use a hyperparameter β to smoothly adjust the class-balanced term between no re-weighting and re-weighing by inverse class frequency.
+#### Class-Balanced Softmax Cross-Entropy Loss
+Given a sample with class label y, the softmax cross-entropy (CE) loss for this sample is written as:
+![](cui2019class-balanced_1h.png)
+Suppose class y has $$n_y$$ training samples, the class-balanced (CB) softmax cross-entropy loss is:
+![](cui2019class-balanced_1i.png)
 
+#### Class-Balanced Sigmoid Cross-Entropy Loss
+When using sigmoid function for multi-class problem, each output ode of the network is performing a one-vs-all classification to predict the probability of the target class over the rest of classes.
+
+In this case, Sigmoid doesn’t assume the mutual exclusiveness among classes.
+
+Since each class is considered independent and has its own predictor, sigmoid unifies single-label classification with multi-label prediction. This is a nice property to have since real-world data often has more than one semantic label.
+
+The sigmoid cross-entropy (CE) loss can be written as:
+![](cui2019class-balanced_1j.png)
+
+The class-balanced (CB) sigmoid cross-entropy loss is:
+![](cui2019class-balanced_1k.png)
+
+#### Class-Balanced Focal Loss
+The focal loss (FL) proposed in RetinaNet, reduce the relative loss for well-classified samples and focus on difficult samples:
+![](cui2019class-balanced_1l.png)
+
+The class-balanced (CB) Focal Loss is:
+![](cui2019class-balanced_1m.png)
 ### Experimental Results
+#### Datasets
 ![](cui2019class-balanced_1e.png)
-![](cui2019class-balanced_1f.png)
+5 long-tailed versions of both CIFAR-10 and CIFAR-100 with imbalance factors of 10, 20, 50, 100 and 200 respectively, are tried.
 
+iNaturalist and ILSVRC are class imbalance in nature.
+![](cui2019class-balanced_1f.png)
+The above shows the number of images per class with different imbalance factors.
+
+#### CIFAR Datasets
+![](cui2019class-balanced_1o.png)
+The search space of hyperparameters is {softmax, sigmoid, focal} for loss type, β ∈ {0.9, 0.99, 0.999, 0.9999}, and γ ∈ {0.5, 1.0, 2.0} for Focal Loss.
+
+The best β is 0.9999 on CIFAR-10 unanimously.
+
+But on CIFAR-100, datasets with different imbalance factors tend to have different and smaller optimal β.
+
+![](cui2019class-balanced_1p.png)
+
+On CIFAR-10, when re-weighting based on β = 0.9999, the effective number of samples is close to the number of samples. This means the best re-weighting strategy on CIFAR-10 is similar with re-weighting by inverse class frequency.
+
+On CIFAR-100, the poor performance of using larger β suggests that re-weighting by inverse class frequency is not a wise choice. A smaller β is needed that has smoother weights across classes.
+
+For example, the number of unique prototypes of a specific bird species should be smaller than the number of unique prototypes of a generic bird class. Since classes in CIFAR-100 are more fine-grained than CIFAR-10, CIFAR-100 have smaller N compared with CIFAR-10.
+
+#### Large-Scale Datasets
+![](cui2019class-balanced_1q.png)
+The class-balanced Focal Loss is used since it has more flexibility and it is found that β = 0.999 and γ = 0.5 yield reasonably good performance on all datasets.
+
+Notably, ResNet-50 is able to achieve comparable performance with ResNet-152 on iNaturalist and ResNet-101 on ILSVRC 2012 when using class-balanced Focal Loss to replace softmax cross-entropy loss.
+
+![](cui2019class-balanced_1r.png)
+
+The above figures show the class-balanced Focal Loss starts to show its advantage after 60 epochs of training.
 ## TL;DR
 * The paper tackles the problem of long-tailed data distribution where a few classes account for most
 of the data, while most classes are under-represented.
