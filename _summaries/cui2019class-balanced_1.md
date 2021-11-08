@@ -61,8 +61,18 @@ where $$ β = \frac{(N− 1)}{N} $$
 This proposition is proved by mathematical induction.
 
 ### Class-Balanced Loss (CB Loss)
-![](cui2019class-balanced_1c.png)
+The Class-Balanced Loss is designed to address the
+problem of training from imbalanced data by introducing a weighting factor that is inversely proportional to the effective number of samples.
+
+The paper denotes the loss as $$ረ(p,y)$$, where $$y\in\{1,2,...,C\}$$, and $$C$$ is the total number of classes, and $$p$$ is the estimated class probability.
+
+The class-balanced (CB) loss can be written as:
 ![](cui2019class-balanced_1d.png)
+where$$n_y$$is the number of samples in the ground-truth class $$y$$. The visualization is as follows where it depicts a function of $$n_y$$ for different $$\beta$$
+![](cui2019class-balanced_1c.png)
+
+Note that β=0 corresponds to no re-weighting and  β→1 corresponds to re-weighing by inverse class frequency. The proposed novel concept of effective number of samples enables us to use a hyperparameter β to smoothly adjust the class-balanced term between no re-weighting and re-weighing by inverse class frequency.
+
 ### Experimental Results
 ![](cui2019class-balanced_1e.png)
 ![](cui2019class-balanced_1f.png)
