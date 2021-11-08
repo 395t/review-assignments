@@ -29,7 +29,7 @@ Softmax is then applied to each group individually.  It was chosen due to its ab
 With the current BAGS setup, we have an issue of 1 class in each group having the highest probability score, which does not help us decide which of the 4 to choose.  To fix this, the authors added a category called "other" in each group.  This avoids false positives that may form in a group by giving the group the option to essentially select none of the classes in that group (by selecting "other").  The ratio of "others" would naturally be high, so a sample ratio $$\beta$$ was used to control the amount of "other" proposals for training.
 
 
-For inference, BAGS ignores the "other" category and outputs one probability matrix with all the category IDS.
+For inference, BAGS ignores the "other" category and outputs one probability matrix with all the category IDS.  These probabilities are calculated using a softmax in each group and then scaling each probability by the probability of a foreground proposal (ie the chance of a detection class not being the 'background').
 
 
 * How well does the paper perform?
