@@ -61,7 +61,7 @@ The model achieves SOTA results on ImageNet-LT, MegaFace and SUN-LT datasets and
 * What interesting variants are explored?
 They explore using different memory features and influence of dataset long tailed-ness. They find that their method is very robust to skewed/imbalanced datsets.
 
-![robustness]](liu2019large-scale_1k.png)
+![robustness](liu2019large-scale_1k.png)
 
 ![learnt meta feature](liu2019large-scale_1l.png)
 
