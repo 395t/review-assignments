@@ -1,9 +1,9 @@
 ---
 layout: summary
-title: Large-Scale Long-Tailed Recognition in an Open World
+title: Summary
 paper: liu2019large-scale
 author: sritank
-score: 9/10
+score: 9
 ---
 
 * Core idea
